@@ -47,15 +47,18 @@ void setup()
   prvt_conf.privacy_mode = BLE_GAP_PRIVACY_MODE_DEVICE_PRIVACY;
   prvt_conf.private_addr_type = BLE_GAP_ADDR_TYPE_RANDOM_PRIVATE_NON_RESOLVABLE ;
   prvt_conf.private_addr_cycle_s = 60*15;
+  // Should add the adafruit error checking wrapper around the command below
   uint8_t err_code = sd_ble_gap_privacy_set(&prvt_conf);
-  Serial.print("err_code:");
   
   // Set up and start advertising
   startAdv();
 
   Serial.println("Advertising is started"); 
-  Serial.print("test ");
-  Serial.println(Bluefruit.Advertising.test());
+  /*  Check that using modified bluefruit libraries  */
+  if (false) {
+    Serial.print("test should be 1, it is: ");
+    Serial.println(Bluefruit.Advertising.test());
+  }
 }
 
 
@@ -71,7 +74,15 @@ void startAdv(void)
   uint8_t flag[] = {0x1A};
   
   // Advertising packet
-  Bluefruit.Advertising.addFlags(BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE);
+  Bluefruit.Advertising.setType(BLE_GAP_ADV_TYPE_NONCONNECTABLE_NONSCANNABLE_UNDIRECTED);
+  if (true) {
+    Bluefruit.Advertising.addTxPower();
+  } 
+  if (false) {
+    Bluefruit.Advertising.addData(0x1, flag, 1 ); // Cannot get this received by a scanner 
+  } else {
+    Bluefruit.Advertising.addFlags(BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE);  
+  }
   // Add service 
   //Bluefruit.Advertising.addUuid(BLEUuid(0xFD6F)); // this works also
   Bluefruit.Advertising.addData(0x3, service, 2);
@@ -123,7 +134,7 @@ void update_rpi(void)
  */
 void adv_stop_callback(void)
 {
-  Serial.println("Advertising time passed, advertising will now stop.");
+  Serial.println("Advertising time passed, changing RPI and restarting.");
   update_rpi();
   Bluefruit.Advertising.re_adv();
   Bluefruit.Advertising.start(ADV_TIMEOUT);  
