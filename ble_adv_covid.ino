@@ -33,13 +33,44 @@ void setup()
   Serial.begin(115200);
   while ( !Serial ) delay(10);   // for nrf52840 with native usb
 
-  Serial.println("Bluefruit52 Advanced Advertising Example");
+  Serial.println("Bluefruit52 covid tracking Example");
   Serial.println("----------------------------------------\n");
-
-  Bluefruit.begin();
-  Bluefruit.setTxPower(4);    // Check bluefruit.h for supported values
-  Bluefruit.setName("Bluefruit52");
   
+  // Initialize Bluefruit with maximum connections as Peripheral = 0, Central = 1
+  // SRAM usage required by SoftDevice will increase dramatically with number of connections
+  Bluefruit.begin(0, 1);
+  Bluefruit.setTxPower(4);    // Check bluefruit.h for supported values
+  Bluefruit.setName("CovidBluefruit52");
+  //
+  //
+  /*******************************
+   * Setup scan/observing
+   */
+
+
+  /* Start Central Scanning
+   * - Enable auto scan if disconnected
+   * - Filter out packet with a min rssi
+   * - Interval = 100 ms, window = 50 ms
+   * - Use active scan (used to retrieve the optional scan response adv packet)
+   * - Start(0) = will scan forever since no timeout is given
+   */
+  Bluefruit.Scanner.setRxCallback(scan_callback);
+  Bluefruit.Scanner.restartOnDisconnect(true);
+  Bluefruit.Scanner.filterRssi(-80);
+  //  Can we use a filter to call the routine to log the contact/encounter?
+  //Bluefruit.Scanner.filterUuid(BLEUART_UUID_SERVICE); // only invoke callback if detect bleuart service
+  Bluefruit.Scanner.setInterval(160, 80);       // in units of 0.625 ms
+  //  No scan response
+  Bluefruit.Scanner.useActiveScan(false);        // Do not Request scan response data
+  Bluefruit.Scanner.start(0);                   // 0 = Don't stop scanning after n seconds
+
+  Serial.println("Scanning ...");  
+  //
+  // 
+  /*******************************
+   *   Setup advertising
+   */
   // Setup private random nonresolvable MAC address, change every 60*15 seconds
   
   ble_gap_privacy_params_t prvt_conf;
@@ -61,6 +92,45 @@ void setup()
   }
 }
 
+void scan_callback(ble_gap_evt_adv_report_t* report)
+{
+  PRINT_LOCATION();
+  uint8_t len = 0;
+  uint8_t buffer[32];
+  memset(buffer, 0, sizeof(buffer));
+
+  /*  This is where we would check advertisement and log if contact  */
+  if ( ~report->type.connectable ) 
+  {
+    if (report->rssi >-60) {
+      
+      
+      Serial.printf("[%9d]  ", millis());
+      // MAC is in little endian --> print reverse
+      Serial.printBufferReverse(report->peer_addr.addr, 6, ':');
+      /* 
+       Serial.print("\n");
+  
+      // RSSI value 
+      Serial.printf("%14s %d dBm\n", "RSSI", report->rssi);
+  
+      // Raw buffer contents 
+      // Serial.printf("%14s %d bytes\n", "PAYLOAD", report->data.len);
+      */
+      if (report->data.len)
+      {
+        //Serial.printf("%15s", " ");
+        Serial.printf("%3s", " ");
+        Serial.printBuffer(report->data.p_data, report->data.len, '-');
+        Serial.println();
+      }
+    }
+  }
+
+  // For Softdevice v6: after received a report, scanner will be paused
+  // We need to call Scanner resume() to continue scanning
+  Bluefruit.Scanner.resume();
+}
 
 void startAdv(void)
 { 
