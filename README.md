@@ -6,6 +6,11 @@
 1.  Cryptographic code for calculting RPI
 2.  Real time clock for crypto
 
+##  Remaining minor issues
+1. The program won't run on the feather unless it is run from the IDE with the serial monitor on to see the print statements... Not sure why... Probably a funny setting somewhere
+2. Figure out how to port this to the nRF52840 Dongle from Nordic Semiconductors
+3. Fix the "Flag" field of the advertised message... It is not sending the correct value right now.
+
 ##  Requirements
 1.  Hardware: Adafruit nRF52840
 2.  Libraries: nRF52 Adafruit arduino library
@@ -21,4 +26,5 @@
 3. These files are modified so that the advertising data which contains the rotating proximity identifier can be changed easily.  The modified files are in the subdirectory modified_files in the repo
   
 ## Tested with Arduino 1.18.12, nRF52 library 0.19
+
 SaeWoo Nam, 2020-04-13
