@@ -39,7 +39,17 @@ void setup()
   Bluefruit.begin();
   Bluefruit.setTxPower(4);    // Check bluefruit.h for supported values
   Bluefruit.setName("Bluefruit52");
-
+  
+  // Setup private random nonresolvable MAC address, change every 60*15 seconds
+  
+  ble_gap_privacy_params_t prvt_conf;
+  memset(&prvt_conf, 0, sizeof(prvt_conf));
+  prvt_conf.privacy_mode = BLE_GAP_PRIVACY_MODE_DEVICE_PRIVACY;
+  prvt_conf.private_addr_type = BLE_GAP_ADDR_TYPE_RANDOM_PRIVATE_NON_RESOLVABLE ;
+  prvt_conf.private_addr_cycle_s = 60*15;
+  uint8_t err_code = sd_ble_gap_privacy_set(&prvt_conf);
+  Serial.print("err_code:");
+  
   // Set up and start advertising
   startAdv();
 
