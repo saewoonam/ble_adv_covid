@@ -1,10 +1,12 @@
-# Arduino project for Adafruit nRF52840 feather to implement advertising part of Google/Apple contact tracing bluetooth protocol
+# Arduino project for Adafruit nRF52840 feather to implement bluetooth part of Google/Apple contact tracing bluetooth protocol
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
 ##  Things missing
 1.  Cryptographic code for calculting RPI
 2.  Real time clock for crypto
+3.  Logging of data on device
+4.  Add a way to fetch data off the device, maybe USB?
 
 ##  Remaining minor issues
 1. The program won't run on the feather unless it is run from the IDE with the serial monitor on to see the print statements... Not sure why... Probably a funny setting somewhere
