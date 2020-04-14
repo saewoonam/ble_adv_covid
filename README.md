@@ -11,6 +11,7 @@
 ##  Remaining minor issues
 1. The program won't run on the feather unless it is run from the IDE with the serial monitor on to see the print statements... Not sure why... Probably a funny setting somewhere
 2. Figure out how to port this to the nRF52840 Dongle from Nordic Semiconductors
+3. The scanner does not seem to continuously receive advertisements... It could be because of the interval settings, but I have not checked carefully.   Need to do that.
 
 ##  MAJOR ISSUE 
 1. When I try to use the 0x1A for the "Flag" field of the advertised message... I don't see it in any scanner... Not sure if it is a advertise or scanner/observer issue.  For now sending, 0x06.
