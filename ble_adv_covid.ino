@@ -12,12 +12,35 @@
  any redistribution
 *********************************************************************/
 
-/* This sketch demonstrates the Bluefruit.Advertising API(). When powered up,
- * the Bluefruit module will start advertising for ADV_TIMEOUT seconds (by
- * default 30 seconds in fast mode, the remaining time slow mode) and then
- * stop advertising completely. The module will start advertising again if
- * PIN_ADV is grounded.
+/* 
+ *  This sketch implements most of the RF protocol for contact tracing proposed
+ *  by Apple and Google
+ *  
  */
+//  Stuff to store data on the external QSPI
+#include <SPI.h>
+#include <SdFat.h>
+#include <Adafruit_SPIFlash.h>
+
+// On-board external flash (QSPI or SPI) macros should already
+// defined in your board variant if supported
+// - EXTERNAL_FLASH_USE_QSPI
+// - EXTERNAL_FLASH_USE_CS/EXTERNAL_FLASH_USE_SPI
+#if defined(EXTERNAL_FLASH_USE_QSPI)
+  Adafruit_FlashTransport_QSPI flashTransport;
+
+#elif defined(EXTERNAL_FLASH_USE_SPI)
+  Adafruit_FlashTransport_SPI flashTransport(EXTERNAL_FLASH_USE_CS, EXTERNAL_FLASH_USE_SPI);
+
+#else
+  #error No QSPI/SPI flash are defined on your board variant.h !
+#endif
+
+Adafruit_SPIFlash flash(&flashTransport);
+
+// file system object from SdFat
+FatFileSystem fatfs;
+ 
 #include <bluefruit.h>
 
 #define PIN_ADV       A0
@@ -36,6 +59,22 @@ void setup()
   Serial.println("Bluefruit52 covid tracking Example");
   Serial.println("----------------------------------------\n");
   
+  // Initialize flash library and check its chip ID.
+  if (!flash.begin()) {
+    Serial.println("Error, failed to initialize flash chip!");
+    while(1) yield();
+  }
+  Serial.print("Flash chip JEDEC ID: 0x"); Serial.println(flash.getJEDECID(), HEX);
+
+  // First call begin to mount the filesystem.  Check that it returns true
+  // to make sure the filesystem was mounted.
+  if (!fatfs.begin(&flash)) {
+    Serial.println("Error, failed to mount newly formatted filesystem!");
+    Serial.println("Was the flash chip formatted with the SdFat_format example?");
+    while(1) yield();
+  }
+  Serial.println("Mounted filesystem!");
+    
   // Initialize Bluefruit with maximum connections as Peripheral = 0, Central = 1
   // SRAM usage required by SoftDevice will increase dramatically with number of connections
   Bluefruit.begin(0, 1);
@@ -151,7 +190,11 @@ void startAdv(void)
   if (false) {
     Bluefruit.Advertising.addData(0x1, flag, 1 ); // Cannot get this received by a scanner 
   } else {
-    Bluefruit.Advertising.addFlags(BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE);  
+    uint8_t flag = 0x06; // BLE_GAP_ADV_FLAG_LE_GENERAL_DISC_MODE  ; 
+                   // BLE_GAP_ADV_FLAG_LE_BR_EDR_CONTROLLER ;
+                   //  BLE_GAP_ADV_FLAG_LE_BR_EDR_HOST  ;
+    // Serial.println(flag);
+    Bluefruit.Advertising.addFlags(flag);  
   }
   // Add service 
   //Bluefruit.Advertising.addUuid(BLEUuid(0xFD6F)); // this works also
