@@ -1,8 +1,9 @@
-# Arduino project for Adafruit nRF52840 feather to implement bluetooth part of Google/Apple contact tracing bluetooth protocol
+# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle in progress
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
-##  Things missing
+#  Adafruit notes
+##  Things missing for Adafruit
 1.  Cryptographic code for calculting RPI
 2.  Real time clock for crypto
 3.  Logging of data on device
@@ -28,5 +29,10 @@
 3. These files are modified so that the advertising data which contains the rotating proximity identifier can be changed easily.  The modified files are in the subdirectory modified_files in the repo
   
 ## Tested with Arduino 1.18.12, nRF52 library 0.19
+
+#  nRF52840 dongle
+## Progress so far
+1. Tried to adapt a project included in the nRF5 SDK   It is in the folder 'nrf52 dongle\ble_app_beacon
+2. Also, tried another advertising beacon tutorial it is in the folder: 'nrf52 dongle/nrf52-ble-tutorial-advertising'
 
 SaeWoo Nam, 2020-04-13

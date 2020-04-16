@@ -74,6 +74,18 @@ void setup()
     while(1) yield();
   }
   Serial.println("Mounted filesystem!");
+  
+  // Create a file in the test directory and write data to it.
+  // Note the FILE_WRITE parameter which tells the library you intend to
+  // write to the file.  This will create the file if it doesn't exist,
+  // otherwise it will open the file and start appending new data to the
+  // end of it.
+  File writeFile = fatfs.open("/contact.dat", FILE_WRITE);
+  if (!writeFile) {
+    Serial.println("Error, failed to open contact.dat for writing!");
+    while(1) yield();
+  }
+  Serial.println("Opened file /contact.dat for writing/appending...");  
     
   // Initialize Bluefruit with maximum connections as Peripheral = 0, Central = 1
   // SRAM usage required by SoftDevice will increase dramatically with number of connections
