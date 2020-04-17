@@ -47,15 +47,15 @@ FatFileSystem fatfs;
 #define ADV_TIMEOUT   60 // seconds
 
 uint8_t rpi[18];
+File writeFile;
+uint8_t logdata_bool = true;
 
 void setup() 
 {
-  // configure PIN_ADV as input with a pullup (pin is active low)
-  pinMode(PIN_ADV, INPUT_PULLUP);
-  
   Serial.begin(115200);
-  while ( !Serial ) delay(10);   // for nrf52840 with native usb
-
+  while ( !Serial ) delay(10);   // This waits for serial port to get opened
+  
+  /*
   Serial.println("Bluefruit52 covid tracking Example");
   Serial.println("----------------------------------------\n");
   
@@ -74,22 +74,33 @@ void setup()
     while(1) yield();
   }
   Serial.println("Mounted filesystem!");
-  
+  */
+  flash.begin();   // Need to do something if it fails
+  fatfs.begin(&flash);  // Need to do something if it fails
   // Create a file in the test directory and write data to it.
   // Note the FILE_WRITE parameter which tells the library you intend to
   // write to the file.  This will create the file if it doesn't exist,
   // otherwise it will open the file and start appending new data to the
   // end of it.
-  File writeFile = fatfs.open("/contact.dat", FILE_WRITE);
+  writeFile = fatfs.open("/contact.dat", FILE_WRITE);  // Need to do somthing if it fails
+  /* 
   if (!writeFile) {
     Serial.println("Error, failed to open contact.dat for writing!");
     while(1) yield();
   }
   Serial.println("Opened file /contact.dat for writing/appending...");  
-    
+  
+  */
+  Serial.print("Size: "); Serial.println(writeFile.size());
+  Serial.print("Position: ");
+  Serial.println(writeFile.position());
+  // Sync clock and log to file
+
+
+  
   // Initialize Bluefruit with maximum connections as Peripheral = 0, Central = 1
   // SRAM usage required by SoftDevice will increase dramatically with number of connections
-  Bluefruit.begin(0, 1);
+  Bluefruit.begin(1, 1);
   Bluefruit.setTxPower(4);    // Check bluefruit.h for supported values
   Bluefruit.setName("CovidBluefruit52");
   //
@@ -116,7 +127,7 @@ void setup()
   Bluefruit.Scanner.useActiveScan(false);        // Do not Request scan response data
   Bluefruit.Scanner.start(0);                   // 0 = Don't stop scanning after n seconds
 
-  Serial.println("Scanning ...");  
+  // Serial.println("Scanning ...");  
   //
   // 
   /*******************************
@@ -135,7 +146,7 @@ void setup()
   // Set up and start advertising
   startAdv();
 
-  Serial.println("Advertising is started"); 
+  // Serial.println("Advertising is started"); 
   /*  Check that using modified bluefruit libraries  */
   if (false) {
     Serial.print("test should be 1, it is: ");
@@ -155,10 +166,22 @@ void scan_callback(ble_gap_evt_adv_report_t* report)
   {
     if (report->rssi >-60) {
       
-      
-      Serial.printf("[%9d]  ", millis());
+      unsigned long now = millis();
+      /*
+      Serial.printf("[%9d]  ", now);
       // MAC is in little endian --> print reverse
       Serial.printBufferReverse(report->peer_addr.addr, 6, ':');
+      */
+      if (logdata_bool) {
+        //Serial.println("logging data");
+        uint8_t len[1] = {0x4};
+        writeFile.write(len, 1);
+        writeFile.write(&now, 4);
+        *len = 6;
+        writeFile.write(len, 1);
+        writeFile.write(report->peer_addr.addr, *len);
+        writeFile.flush();
+      }
       /* 
        Serial.print("\n");
   
@@ -170,10 +193,13 @@ void scan_callback(ble_gap_evt_adv_report_t* report)
       */
       if (report->data.len)
       {
-        //Serial.printf("%15s", " ");
-        Serial.printf("%3s", " ");
-        Serial.printBuffer(report->data.p_data, report->data.len, '-');
-        Serial.println();
+        //Serial.printf("%3s", " ");
+        if (logdata_bool) {
+          //Serial.printBuffer(report->data.p_data, report->data.len, '-');
+          //Serial.println();
+          writeFile.write(report->data.p_data, report->data.len);
+          writeFile.flush();
+        }
       }
     }
   }
@@ -230,19 +256,6 @@ void startAdv(void)
   Bluefruit.Advertising.start(ADV_TIMEOUT);      // Stop advertising entirely after ADV_TIMEOUT seconds 
 }
 
-void loop() 
-{
-  // Only check pin when advertising has already stopped
-  if ( !Bluefruit.Advertising.isRunning() )
-  {
-    // Check if Pin is grounded
-    if ( digitalRead(PIN_ADV) == 0 )
-    {
-      Bluefruit.Advertising.start(ADV_TIMEOUT);
-      Serial.println("Advertising is started");
-    }
-  }
-}
 void update_rpi(void)
 {
   uint8_t *data, len;
@@ -263,4 +276,43 @@ void adv_stop_callback(void)
   update_rpi();
   Bluefruit.Advertising.re_adv();
   Bluefruit.Advertising.start(ADV_TIMEOUT);  
+}
+
+void loop() 
+{
+  // Only check pin when advertising has already stopped
+  uint8_t buf[ 64 ];
+  if ( Serial.available() )
+  {
+    char choice = Serial.read();
+    uint8_t got;
+    if (choice=='r') {
+      File readFile = fatfs.open("\contact.dat", FILE_READ); 
+      do {
+        got = readFile.read(buf, 42);
+        if (got==0) break; 
+        Serial.printBuffer(buf, 42,' ');
+        Serial.println();
+      } while (true);
+      readFile.close();
+      Serial.println("Done.");
+    } else if (choice=='s' ) { // "s" sync
+      uint8_t raw_time[8];
+      Serial.readBytes(raw_time, 8);
+      Serial.printBuffer(raw_time, 8);
+      unsigned long now = millis();
+      uint8_t len[1] = {0x0C};
+      
+      writeFile.write(len, 1);
+      writeFile.write(raw_time, 8);
+      writeFile.write(&now, 4);
+      writeFile.flush();
+    } else if (choice=='c') { // 'c' clear/erase log
+      uint8_t zero = 0;
+      writeFile.close();
+      fatfs.remove("/contact.dat");
+      writeFile = fatfs.open("/contact.dat", FILE_WRITE);  // Need to do somthing if it fails      
+    }
+
+  }
 }

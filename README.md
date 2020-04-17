@@ -3,16 +3,20 @@
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
 #  Adafruit notes
+
+##  Implementation notes:
+1.  Data is logged in external Flash memory
+2.  Data can be fetched by sending commands via usb-serial to the device
+3.  time information can be transferred to the device via usb-serial, untested
+
 ##  Things missing for Adafruit
 1.  Cryptographic code for calculting RPI
 2.  Real time clock for crypto
-3.  Logging of data on device
-4.  Add a way to fetch data off the device, maybe USB?
 
 ##  Remaining minor issues
-1. The program won't run on the feather unless it is run from the IDE with the serial monitor on to see the print statements.   Need to eliminate serial print statements.
-2. Figure out how to port this to the nRF52840 Dongle from Nordic Semiconductors with their SDK so it can be ported to other types of dongles.
-3. The scanner does not seem to continuously receive advertisements... It could be because of the interval settings, but I have not checked carefully.   Need to do that.
+1. Figure out how to port this to the nRF52840 Dongle from Nordic Semiconductors with their SDK so it can be ported to other types of dongles.
+2. The scanner does not seem to continuously receive advertisements... It could be because of the interval settings, but I have not checked carefully.   Need to do that.
+3. Check if it can be powered by an external source and still be connected to a computer as needed to retrieve data or sync the clock
 
 ##  Requirements
 1.  Hardware: Adafruit nRF52840
