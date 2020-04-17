@@ -12,11 +12,13 @@
 ##  Things missing for Adafruit
 1.  Cryptographic code for calculting RPI
 2.  Real time clock for crypto
+3.  How to handle error?
 
 ##  Remaining minor issues
 1. Figure out how to port this to the nRF52840 Dongle from Nordic Semiconductors with their SDK so it can be ported to other types of dongles.
 2. The scanner does not seem to continuously receive advertisements... It could be because of the interval settings, but I have not checked carefully.   Need to do that.
 3. Check if it can be powered by an external source and still be connected to a computer as needed to retrieve data or sync the clock
+4.  Need to sort out the byte order of the UUID.
 
 ##  Requirements
 1.  Hardware: Adafruit nRF52840

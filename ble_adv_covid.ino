@@ -121,7 +121,7 @@ void setup()
   Bluefruit.Scanner.restartOnDisconnect(true);
   Bluefruit.Scanner.filterRssi(-80);
   //  Can we use a filter to call the routine to log the contact/encounter?
-  //Bluefruit.Scanner.filterUuid(BLEUART_UUID_SERVICE); // only invoke callback if detect bleuart service
+  Bluefruit.Scanner.filterUuid(0xFD6F); // only invoke callback if detect bleuart service
   Bluefruit.Scanner.setInterval(160, 80);       // in units of 0.625 ms
   //  No scan response
   Bluefruit.Scanner.useActiveScan(false);        // Do not Request scan response data
