@@ -38,7 +38,7 @@
 
 #  nRF52840 dongle
 ## Progress so far
-1. Tried to adapt a project included in the nRF5 SDK   It is in the folder 'nrf52 dongle\ble_app_beacon
-2. Also, tried another advertising beacon tutorial it is in the folder: 'nrf52 dongle/nrf52-ble-tutorial-advertising'
+1. Tried to adapt a project included in the nRF5 SDK   It is in the folder 'nrf52 dongle\ble_app_beacon.  The advertising mode is almost finished... Just need to add the rotating identifier/contact number... Right now it is fixed.
+2. Also, tried another advertising beacon tutorial it is in the folder: 'nrf52 dongle/nrf52-ble-tutorial-advertising'... This has too much stuff in it... Should just focus on the above.
 
 SaeWoo Nam, 2020-04-13
