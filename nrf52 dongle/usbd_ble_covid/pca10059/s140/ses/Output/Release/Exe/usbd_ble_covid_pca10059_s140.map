@@ -126,8 +126,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x7ac Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
  .debug_macro   0x0000000000000000       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
  .debug_macro   0x0000000000000000       0x55 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
- .debug_line    0x0000000000000000      0x39f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
- .debug_str     0x0000000000000000    0x852b2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
+ .debug_line    0x0000000000000000      0x476 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
+ .debug_str     0x0000000000000000    0x852aa Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_rtt.o
@@ -1048,8 +1048,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x55 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
  .debug_macro   0x0000000000000000       0x72 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
  .debug_macro   0x0000000000000000       0x49 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
- .debug_line    0x0000000000000000      0x3b8 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
- .debug_str     0x0000000000000000    0x857b5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
+ .debug_line    0x0000000000000000      0x464 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
+ .debug_str     0x0000000000000000    0x857ad Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_handler_gcc.o
@@ -1273,8 +1273,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
  .debug_macro   0x0000000000000000       0x55 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
  .debug_macro   0x0000000000000000       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
- .debug_line    0x0000000000000000      0x76f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
- .debug_str     0x0000000000000000    0x8547c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
+ .debug_line    0x0000000000000000      0x846 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
+ .debug_str     0x0000000000000000    0x85474 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_fifo.o
@@ -1399,8 +1399,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x88 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
  .debug_macro   0x0000000000000000       0x3a Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
  .debug_macro   0x0000000000000000       0x8c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
- .debug_line    0x0000000000000000      0x6bc Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
- .debug_str     0x0000000000000000    0x86924 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
+ .debug_line    0x0000000000000000      0x793 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
+ .debug_str     0x0000000000000000    0x8691c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_scheduler.o
@@ -1775,8 +1775,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
  .debug_macro   0x0000000000000000       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
  .debug_macro   0x0000000000000000       0x3f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
- .debug_line    0x0000000000000000      0xb4f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
- .debug_str     0x0000000000000000    0x8f0d1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
+ .debug_line    0x0000000000000000      0xd7e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
+ .debug_str     0x0000000000000000    0x8f0c9 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_uart_fifo.o
@@ -3310,8 +3310,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xad Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
  .debug_macro   0x0000000000000000      0x16d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
  .debug_macro   0x0000000000000000       0x49 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
- .debug_line    0x0000000000000000      0x2fc Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
- .debug_str     0x0000000000000000    0x74943 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
+ .debug_line    0x0000000000000000      0x37d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
+ .debug_str     0x0000000000000000    0x7493b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_assert.o
@@ -4589,8 +4589,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x49 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
  .debug_macro   0x0000000000000000       0x8c Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
  .debug_macro   0x0000000000000000       0x18 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
- .debug_line    0x0000000000000000      0x470 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
- .debug_str     0x0000000000000000    0x8672a Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
+ .debug_line    0x0000000000000000      0x547 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
+ .debug_str     0x0000000000000000    0x86722 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/retarget.o
@@ -7874,8 +7874,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000     0x20d7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
  .debug_macro   0x0000000000000000       0x47 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
  .debug_macro   0x0000000000000000      0x115 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
- .debug_line    0x0000000000000000     0x131f Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
- .debug_str     0x0000000000000000    0x7f158 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
+ .debug_line    0x0000000000000000     0x13cb Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
+ .debug_str     0x0000000000000000    0x7f150 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT.o
@@ -8009,8 +8009,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x115 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
  .debug_macro   0x0000000000000000       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
  .debug_macro   0x0000000000000000       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
- .debug_line    0x0000000000000000      0x8b7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
- .debug_str     0x0000000000000000    0x7ee9f Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
+ .debug_line    0x0000000000000000      0x963 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
+ .debug_str     0x0000000000000000    0x7ee97 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/SEGGER_RTT_printf.o
@@ -8525,8 +8525,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x9a Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
  .debug_macro   0x0000000000000000       0x11 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
  .debug_macro   0x0000000000000000       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
- .debug_line    0x0000000000000000      0xf83 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
- .debug_str     0x0000000000000000    0x902dc Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
+ .debug_line    0x0000000000000000     0x115c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
+ .debug_str     0x0000000000000000    0x902d4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advertising.o
@@ -9321,8 +9321,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
  .debug_macro   0x0000000000000000       0x55 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
  .debug_macro   0x0000000000000000       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
- .debug_line    0x0000000000000000      0x56f Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
- .debug_str     0x0000000000000000    0x8a7b5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
+ .debug_line    0x0000000000000000      0x69c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
+ .debug_str     0x0000000000000000    0x8a7ad Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
  .comment       0x0000000000000000       0x48 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
  .ARM.attributes
                 0x0000000000000000       0x39 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_link_ctx_manager.o
@@ -15910,67 +15910,67 @@ OUTPUT(Output/Release/Exe/usbd_ble_covid_pca10059_s140.elf elf32-littlearm)
  .comment       0x0000000000000047       0x48 /Applications/SEGGER Embedded Studio for ARM 4.52a/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2.o)
  .comment       0x0000000000000047       0x48 /Applications/SEGGER Embedded Studio for ARM 4.52a/lib/libvfprintf_v7em_fpv4_sp_d16_hard_t_le_eabi.o
 
-.debug_line     0x0000000000000000    0x2d84d
+.debug_line     0x0000000000000000    0x3444f
  .debug_line    0x0000000000000000      0x1e4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/thumb_crt0.o
- .debug_line    0x00000000000001e4      0x761 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
- .debug_line    0x0000000000000945      0xa1d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_uart.o
- .debug_line    0x0000000000001362      0x658 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_default_backends.o
- .debug_line    0x00000000000019ba     0x1365 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_frontend.o
- .debug_line    0x0000000000002d1f      0x872 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_str_formatter.o
- .debug_line    0x0000000000003591      0xda7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_button.o
- .debug_line    0x0000000000004338      0x3d0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
- .debug_line    0x0000000000004708      0x7a6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
- .debug_line    0x0000000000004eae      0xdef Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_line    0x0000000000005c9d     0x2561 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_line    0x00000000000081fe     0x2b19 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_line    0x000000000000ad17     0x15af Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
- .debug_line    0x000000000000c2c6      0x7c5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
- .debug_line    0x000000000000ca8b      0x860 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
- .debug_line    0x000000000000d2eb      0x60c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
- .debug_line    0x000000000000d8f7     0x118d Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
- .debug_line    0x000000000000ea84      0x3ca Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
- .debug_line    0x000000000000ee4e      0x83c Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
- .debug_line    0x000000000000f68a      0x7ee Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
- .debug_line    0x000000000000fe78      0x6c8 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
- .debug_line    0x0000000000010540      0x70b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
- .debug_line    0x0000000000010c4b      0x74f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
- .debug_line    0x000000000001139a      0x447 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
- .debug_line    0x00000000000117e1      0x8a7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
- .debug_line    0x0000000000012088      0x889 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
- .debug_line    0x0000000000012911      0xd29 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_line    0x000000000001363a      0x7f5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
- .debug_line    0x0000000000013e2f      0x469 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
- .debug_line    0x0000000000014298      0x643 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
- .debug_line    0x00000000000148db      0x43d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
- .debug_line    0x0000000000014d18       0xa2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf52840.o
- .debug_line    0x0000000000014dba       0xc1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf_common.o
- .debug_line    0x0000000000014e7b      0x522 Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
- .debug_line    0x000000000001539d      0xb8c Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
- .debug_line    0x0000000000015f29      0xe44 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
- .debug_line    0x0000000000016d6d      0xc72 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
- .debug_line    0x00000000000179df      0x730 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
- .debug_line    0x000000000001810f      0x8e2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
- .debug_line    0x00000000000189f1      0xcb4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
- .debug_line    0x00000000000196a5     0x1cef Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
- .debug_line    0x000000000001b394      0xd08 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
- .debug_line    0x000000000001c09c      0x7e5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
- .debug_line    0x000000000001c881      0x7be Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
- .debug_line    0x000000000001d03f     0x1831 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
- .debug_line    0x000000000001e870     0x1774 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
- .debug_line    0x000000000001ffe4     0x358c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
- .debug_line    0x0000000000023570      0xe27 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
- .debug_line    0x0000000000024397      0x996 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_line    0x0000000000024d2d     0x186e Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_line    0x000000000002659b      0xf97 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
- .debug_line    0x0000000000027532      0xb7c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
- .debug_line    0x00000000000280ae      0xc52 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
- .debug_line    0x0000000000028d00      0x71c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
- .debug_line    0x000000000002941c      0xb5a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
- .debug_line    0x0000000000029f76     0x1297 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
- .debug_line    0x000000000002b20d      0xb68 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
- .debug_line    0x000000000002bd75      0xab0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
- .debug_line    0x000000000002c825      0x9f2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
- .debug_line    0x000000000002d217      0x636 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
+ .debug_line    0x00000000000001e4      0x8e0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
+ .debug_line    0x0000000000000ac4      0xcf8 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_uart.o
+ .debug_line    0x00000000000017bc      0x7ac Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_default_backends.o
+ .debug_line    0x0000000000001f68     0x154f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_frontend.o
+ .debug_line    0x00000000000034b7      0x9f1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_str_formatter.o
+ .debug_line    0x0000000000003ea8     0x10ad Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_button.o
+ .debug_line    0x0000000000004f55      0x451 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
+ .debug_line    0x00000000000053a6      0x8df Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
+ .debug_line    0x0000000000005c85     0x10f5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_line    0x0000000000006d7a     0x2892 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_line    0x000000000000960c     0x2e4a Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_line    0x000000000000c456     0x18b5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
+ .debug_line    0x000000000000dd0b      0x9f4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
+ .debug_line    0x000000000000e6ff      0xaba Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
+ .debug_line    0x000000000000f1b9      0x68d Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
+ .debug_line    0x000000000000f846     0x1410 Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
+ .debug_line    0x0000000000010c56      0x4a1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
+ .debug_line    0x00000000000110f7      0xa15 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
+ .debug_line    0x0000000000011b0c      0x971 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
+ .debug_line    0x000000000001247d      0x7ca Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
+ .debug_line    0x0000000000012c47      0x7e2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
+ .debug_line    0x0000000000013429      0x8d2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
+ .debug_line    0x0000000000013cfb      0x51e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
+ .debug_line    0x0000000000014219      0x97e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
+ .debug_line    0x0000000000014b97      0xa0c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
+ .debug_line    0x00000000000155a3     0x1085 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_line    0x0000000000016628      0x8f7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
+ .debug_line    0x0000000000016f1f      0x540 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
+ .debug_line    0x000000000001745f      0x7c6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
+ .debug_line    0x0000000000017c25      0x514 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
+ .debug_line    0x0000000000018139       0xa2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf52840.o
+ .debug_line    0x00000000000181db       0xc1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf_common.o
+ .debug_line    0x000000000001829c      0x54d Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
+ .debug_line    0x00000000000187e9      0xd65 Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
+ .debug_line    0x000000000001954e     0x10ca Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
+ .debug_line    0x000000000001a618      0xe77 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
+ .debug_line    0x000000000001b48f      0x8df Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
+ .debug_line    0x000000000001bd6e      0xa31 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
+ .debug_line    0x000000000001c79f      0xf64 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
+ .debug_line    0x000000000001d703     0x1f9f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
+ .debug_line    0x000000000001f6a2      0xf0c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
+ .debug_line    0x00000000000205ae      0xa3f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
+ .debug_line    0x0000000000020fed      0x9c2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
+ .debug_line    0x00000000000219af     0x1ae1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
+ .debug_line    0x0000000000023490     0x1a24 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
+ .debug_line    0x0000000000024eb4     0x383c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
+ .debug_line    0x00000000000286f0     0x1102 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
+ .debug_line    0x00000000000297f2      0xc1b Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_line    0x000000000002a40d     0x1e9d Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_line    0x000000000002c2aa     0x106e Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
+ .debug_line    0x000000000002d318      0xd55 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
+ .debug_line    0x000000000002e06d      0xdd5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
+ .debug_line    0x000000000002ee42      0x7f3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
+ .debug_line    0x000000000002f635      0xcdd Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
+ .debug_line    0x0000000000030312     0x1445 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
+ .debug_line    0x0000000000031757      0xd97 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
+ .debug_line    0x00000000000324ee      0xc33 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
+ .debug_line    0x0000000000033121      0xb75 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
+ .debug_line    0x0000000000033c96      0x7b9 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
 
 .debug_info     0x0000000000000000    0x366be
  .debug_info    0x0000000000000000       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/thumb_crt0.o
@@ -16218,126 +16218,126 @@ OUTPUT(Output/Release/Exe/usbd_ble_covid_pca10059_s140.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000001a68       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
 
-.debug_str      0x0000000000000000    0xbadc4
+.debug_str      0x0000000000000000    0xbae26
  .debug_str     0x0000000000000000       0xc7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/thumb_crt0.o
- .debug_str     0x00000000000000c7    0x87827 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
-                                      0x89f15 (size before relaxing)
- .debug_str     0x00000000000878ee     0x85ec Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_uart.o
-                                      0x91fd6 (size before relaxing)
- .debug_str     0x000000000008feda      0x147 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_default_backends.o
-                                      0x89cd1 (size before relaxing)
- .debug_str     0x0000000000090021     0x1389 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_frontend.o
-                                      0x8b183 (size before relaxing)
- .debug_str     0x00000000000913aa      0x304 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_str_formatter.o
-                                      0x8a067 (size before relaxing)
- .debug_str     0x00000000000916ae     0x1aaa Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_button.o
-                                      0x91d86 (size before relaxing)
- .debug_str     0x0000000000093158      0x11f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
-                                      0x74938 (size before relaxing)
- .debug_str     0x0000000000093277      0xa7d Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
-                                      0x8ad13 (size before relaxing)
- .debug_str     0x0000000000093cf4     0x1150 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
-                                      0x91a6d (size before relaxing)
- .debug_str     0x0000000000094e44     0x6141 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
-                                      0x96eb6 (size before relaxing)
- .debug_str     0x000000000009af85     0x3534 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
-                                      0x980b7 (size before relaxing)
- .debug_str     0x000000000009e4b9     0x12e1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
-                                      0x968d7 (size before relaxing)
- .debug_str     0x000000000009f79a      0x235 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
-                                      0x9241b (size before relaxing)
- .debug_str     0x000000000009f9cf     0x147f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
-                                      0x92e52 (size before relaxing)
- .debug_str     0x00000000000a0e4e      0x2c3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
-                                      0x75d68 (size before relaxing)
- .debug_str     0x00000000000a1111      0x7b3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
-                                      0x913e1 (size before relaxing)
- .debug_str     0x00000000000a18c4       0x94 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
-                                      0x852d6 (size before relaxing)
- .debug_str     0x00000000000a1958      0x199 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
-                                      0x8a468 (size before relaxing)
- .debug_str     0x00000000000a1af1      0x187 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
-                                      0x88294 (size before relaxing)
- .debug_str     0x00000000000a1c78      0x3ef Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
-                                      0x8566f (size before relaxing)
- .debug_str     0x00000000000a2067      0x65b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
-                                      0x859ca (size before relaxing)
- .debug_str     0x00000000000a26c2      0x17f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
-                                      0x89cfa (size before relaxing)
- .debug_str     0x00000000000a2841      0x12d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
-                                      0x85564 (size before relaxing)
- .debug_str     0x00000000000a296e      0x52f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
-                                      0x85a4d (size before relaxing)
- .debug_str     0x00000000000a2e9d      0x1d0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
-                                      0x8807e (size before relaxing)
- .debug_str     0x00000000000a306d     0x11fe Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
-                                      0x932ed (size before relaxing)
- .debug_str     0x00000000000a426b      0x107 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
-                                      0x867a4 (size before relaxing)
- .debug_str     0x00000000000a4372       0x7f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
-                                      0x857dd (size before relaxing)
- .debug_str     0x00000000000a43f1       0xf0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
-                                      0x87ee3 (size before relaxing)
- .debug_str     0x00000000000a44e1      0x118 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
-                                      0x8538a (size before relaxing)
- .debug_str     0x00000000000a45f9       0x65 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf52840.o
+ .debug_str     0x00000000000000c7    0x87891 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
+                                      0x89f0d (size before relaxing)
+ .debug_str     0x0000000000087958     0x85ec Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_uart.o
+                                      0x91fce (size before relaxing)
+ .debug_str     0x000000000008ff44      0x147 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_default_backends.o
+                                      0x89cc9 (size before relaxing)
+ .debug_str     0x000000000009008b     0x1389 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_frontend.o
+                                      0x8b17b (size before relaxing)
+ .debug_str     0x0000000000091414      0x304 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_str_formatter.o
+                                      0x8a05f (size before relaxing)
+ .debug_str     0x0000000000091718     0x1aaa Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_button.o
+                                      0x91d7e (size before relaxing)
+ .debug_str     0x00000000000931c2      0x11f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
+                                      0x74930 (size before relaxing)
+ .debug_str     0x00000000000932e1      0xa7d Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
+                                      0x8ad0b (size before relaxing)
+ .debug_str     0x0000000000093d5e     0x1150 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+                                      0x91a65 (size before relaxing)
+ .debug_str     0x0000000000094eae     0x6141 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+                                      0x96eae (size before relaxing)
+ .debug_str     0x000000000009afef     0x3534 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+                                      0x980af (size before relaxing)
+ .debug_str     0x000000000009e523     0x12e1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
+                                      0x968cf (size before relaxing)
+ .debug_str     0x000000000009f804      0x235 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
+                                      0x92413 (size before relaxing)
+ .debug_str     0x000000000009fa39     0x147f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
+                                      0x92e4a (size before relaxing)
+ .debug_str     0x00000000000a0eb8      0x2c3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
+                                      0x75d60 (size before relaxing)
+ .debug_str     0x00000000000a117b      0x7b3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
+                                      0x913d9 (size before relaxing)
+ .debug_str     0x00000000000a192e       0x94 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
+                                      0x852ce (size before relaxing)
+ .debug_str     0x00000000000a19c2      0x199 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
+                                      0x8a460 (size before relaxing)
+ .debug_str     0x00000000000a1b5b      0x187 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
+                                      0x8828c (size before relaxing)
+ .debug_str     0x00000000000a1ce2      0x3ef Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
+                                      0x85667 (size before relaxing)
+ .debug_str     0x00000000000a20d1      0x65b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
+                                      0x859c2 (size before relaxing)
+ .debug_str     0x00000000000a272c      0x17f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
+                                      0x89cf2 (size before relaxing)
+ .debug_str     0x00000000000a28ab      0x12d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
+                                      0x8555c (size before relaxing)
+ .debug_str     0x00000000000a29d8      0x52f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
+                                      0x85a45 (size before relaxing)
+ .debug_str     0x00000000000a2f07      0x1d0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
+                                      0x88076 (size before relaxing)
+ .debug_str     0x00000000000a30d7     0x11fe Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+                                      0x932e5 (size before relaxing)
+ .debug_str     0x00000000000a42d5      0x107 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
+                                      0x8679c (size before relaxing)
+ .debug_str     0x00000000000a43dc       0x7f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
+                                      0x857d5 (size before relaxing)
+ .debug_str     0x00000000000a445b       0xf0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
+                                      0x87edb (size before relaxing)
+ .debug_str     0x00000000000a454b      0x118 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
+                                      0x85382 (size before relaxing)
+ .debug_str     0x00000000000a4663       0x65 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf52840.o
                                          0xe5 (size before relaxing)
- .debug_str     0x00000000000a465e       0x67 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf_common.o
+ .debug_str     0x00000000000a46c8       0x67 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ses_startup_nrf_common.o
                                          0xe7 (size before relaxing)
- .debug_str     0x00000000000a46c5      0x392 Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
-                                      0x73393 (size before relaxing)
- .debug_str     0x00000000000a4a57      0xff4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
-                                      0x8e75c (size before relaxing)
- .debug_str     0x00000000000a5a4b      0xce0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
-                                      0x91fa2 (size before relaxing)
- .debug_str     0x00000000000a672b      0x9b2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
-                                      0x90608 (size before relaxing)
- .debug_str     0x00000000000a70dd      0x487 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
-                                      0x8e7e2 (size before relaxing)
- .debug_str     0x00000000000a7564      0x73c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
-                                      0x8dab0 (size before relaxing)
- .debug_str     0x00000000000a7ca0      0x7f8 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
-                                      0x91310 (size before relaxing)
- .debug_str     0x00000000000a8498      0xd04 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
-                                      0x925b9 (size before relaxing)
- .debug_str     0x00000000000a919c      0x27c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
-                                      0x8e910 (size before relaxing)
- .debug_str     0x00000000000a9418      0x35a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
-                                      0x90a5d (size before relaxing)
- .debug_str     0x00000000000a9772      0x3ec Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
-                                      0x8d742 (size before relaxing)
- .debug_str     0x00000000000a9b5e      0x6d2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
-                                      0x91c30 (size before relaxing)
- .debug_str     0x00000000000aa230      0x995 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
-                                      0x920c4 (size before relaxing)
- .debug_str     0x00000000000aabc5     0x16b3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
-                                      0x935be (size before relaxing)
- .debug_str     0x00000000000ac278     0x100a Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
-                                      0x9029a (size before relaxing)
- .debug_str     0x00000000000ad282     0x6bb2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
-                                      0x9567f (size before relaxing)
- .debug_str     0x00000000000b3e34     0x3520 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
-                                      0xa4599 (size before relaxing)
- .debug_str     0x00000000000b7354      0x583 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
-                                      0x8c86f (size before relaxing)
- .debug_str     0x00000000000b78d7      0x5a7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
-                                      0x8f0c8 (size before relaxing)
- .debug_str     0x00000000000b7e7e      0x88c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
-                                      0x8dd47 (size before relaxing)
- .debug_str     0x00000000000b870a      0x68c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
-                                      0x83187 (size before relaxing)
- .debug_str     0x00000000000b8d96      0x7f6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
-                                      0x8f186 (size before relaxing)
- .debug_str     0x00000000000b958c      0x5bd Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
-                                      0x8fceb (size before relaxing)
- .debug_str     0x00000000000b9b49      0x489 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
-                                      0x907e2 (size before relaxing)
- .debug_str     0x00000000000b9fd2      0x51f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
-                                      0x8a76e (size before relaxing)
- .debug_str     0x00000000000ba4f1      0x724 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
-                                      0x8f7da (size before relaxing)
- .debug_str     0x00000000000bac15      0x1af Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
-                                      0x89773 (size before relaxing)
+ .debug_str     0x00000000000a472f      0x392 Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
+                                      0x7338b (size before relaxing)
+ .debug_str     0x00000000000a4ac1      0xff4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
+                                      0x8e754 (size before relaxing)
+ .debug_str     0x00000000000a5ab5      0xce0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
+                                      0x91f9a (size before relaxing)
+ .debug_str     0x00000000000a6795      0x9b2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
+                                      0x90600 (size before relaxing)
+ .debug_str     0x00000000000a7147      0x487 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
+                                      0x8e7da (size before relaxing)
+ .debug_str     0x00000000000a75ce      0x73c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
+                                      0x8daa8 (size before relaxing)
+ .debug_str     0x00000000000a7d0a      0x7f8 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
+                                      0x91308 (size before relaxing)
+ .debug_str     0x00000000000a8502      0xd04 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
+                                      0x925b1 (size before relaxing)
+ .debug_str     0x00000000000a9206      0x27c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
+                                      0x8e908 (size before relaxing)
+ .debug_str     0x00000000000a9482      0x35a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
+                                      0x90a55 (size before relaxing)
+ .debug_str     0x00000000000a97dc      0x3ec Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
+                                      0x8d73a (size before relaxing)
+ .debug_str     0x00000000000a9bc8      0x6d2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
+                                      0x91c28 (size before relaxing)
+ .debug_str     0x00000000000aa29a      0x995 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
+                                      0x920bc (size before relaxing)
+ .debug_str     0x00000000000aac2f     0x16b3 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
+                                      0x935b6 (size before relaxing)
+ .debug_str     0x00000000000ac2e2     0x100a Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
+                                      0x90292 (size before relaxing)
+ .debug_str     0x00000000000ad2ec     0x6bb2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+                                      0x95677 (size before relaxing)
+ .debug_str     0x00000000000b3e9e     0x3518 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+                                      0xa4589 (size before relaxing)
+ .debug_str     0x00000000000b73b6      0x583 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
+                                      0x8c867 (size before relaxing)
+ .debug_str     0x00000000000b7939      0x5a7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
+                                      0x8f0c0 (size before relaxing)
+ .debug_str     0x00000000000b7ee0      0x88c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
+                                      0x8dd3f (size before relaxing)
+ .debug_str     0x00000000000b876c      0x68c Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
+                                      0x8317f (size before relaxing)
+ .debug_str     0x00000000000b8df8      0x7f6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
+                                      0x8f17e (size before relaxing)
+ .debug_str     0x00000000000b95ee      0x5bd Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
+                                      0x8fce3 (size before relaxing)
+ .debug_str     0x00000000000b9bab      0x489 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
+                                      0x907da (size before relaxing)
+ .debug_str     0x00000000000ba034      0x51f Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
+                                      0x8a766 (size before relaxing)
+ .debug_str     0x00000000000ba553      0x724 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
+                                      0x8f7d2 (size before relaxing)
+ .debug_str     0x00000000000bac77      0x1af Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
+                                      0x8976b (size before relaxing)
 
 .debug_ranges   0x0000000000000000     0x6340
  .debug_ranges  0x0000000000000000       0x78 Output/usbd_ble_covid_pca10059_s140 Release/Obj/thumb_crt0.o
@@ -17207,7 +17207,7 @@ OUTPUT(Output/Release/Exe/usbd_ble_covid_pca10059_s140.elf elf32-littlearm)
  .debug_pubtypes
                 0x0000000000009e2c      0x29c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
 
-.debug_macro    0x0000000000000000     0xe13c
+.debug_macro    0x0000000000000000     0xe130
  .debug_macro   0x0000000000000000      0x268 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
  .debug_macro   0x0000000000000268       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
  .debug_macro   0x000000000000028a       0x46 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_log_backend_serial.o
@@ -17268,135 +17268,135 @@ OUTPUT(Output/Release/Exe/usbd_ble_covid_pca10059_s140.elf elf32-littlearm)
  .debug_macro   0x00000000000033ef       0x35 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
  .debug_macro   0x0000000000003424       0x26 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
  .debug_macro   0x000000000000344a       0x78 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error.o
- .debug_macro   0x00000000000034c2      0x292 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
- .debug_macro   0x0000000000003754       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
- .debug_macro   0x0000000000003770      0x11b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
- .debug_macro   0x000000000000388b      0x32f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003bba       0x27 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003be1       0x45 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003c26       0x5b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003c81       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003caf       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
- .debug_macro   0x0000000000003cd7      0x3e5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000040bc       0x73 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000412f       0x30 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000415f       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000416f       0x4c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000041bb      0x215 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000043d0       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000043fe       0x40 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000443e       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x0000000000004454       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x0000000000004476      0x130 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000045a6       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000045c8       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x00000000000045d8       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x0000000000004606       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000461c       0x70 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
- .debug_macro   0x000000000000468c      0x3e1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004a6d      0x12a Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004b97       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004bad       0x3f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004bec       0x3b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004c27       0x11 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000004c38      0x409 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
- .debug_macro   0x0000000000005041      0x3a5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
- .debug_macro   0x00000000000053e6       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
- .debug_macro   0x000000000000540e       0x34 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
- .debug_macro   0x0000000000005442      0x324 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
- .debug_macro   0x0000000000005766      0x34c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
- .debug_macro   0x0000000000005ab2       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
- .debug_macro   0x0000000000005ae0      0x14d Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
- .debug_macro   0x0000000000005c2d      0x31f Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
- .debug_macro   0x0000000000005f4c       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
- .debug_macro   0x0000000000005f68       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
- .debug_macro   0x0000000000005f78      0x158 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
- .debug_macro   0x00000000000060d0      0x27b Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
- .debug_macro   0x000000000000634b      0x1da Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
- .debug_macro   0x0000000000006525      0x17d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
- .debug_macro   0x00000000000066a2       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
- .debug_macro   0x00000000000066c4      0x177 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
- .debug_macro   0x000000000000683b       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
- .debug_macro   0x000000000000687d      0x24a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
- .debug_macro   0x0000000000006ac7      0x178 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
- .debug_macro   0x0000000000006c3f       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
- .debug_macro   0x0000000000006c61      0x1ea Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
- .debug_macro   0x0000000000006e4b      0x216 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
- .debug_macro   0x0000000000007061       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
- .debug_macro   0x000000000000708f       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
- .debug_macro   0x000000000000709f      0x3f7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_macro   0x0000000000007496       0x11 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_macro   0x00000000000074a7       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_macro   0x00000000000074b7       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_macro   0x00000000000074df       0x31 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
- .debug_macro   0x0000000000007510      0x1e0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
- .debug_macro   0x00000000000076f0      0x182 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
- .debug_macro   0x0000000000007872      0x1d6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
- .debug_macro   0x0000000000007a48      0x16c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
- .debug_macro   0x0000000000007bb4       0xb7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
- .debug_macro   0x0000000000007c6b      0x27b Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
- .debug_macro   0x0000000000007ee6       0x9a Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
- .debug_macro   0x0000000000007f80      0x16d Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
- .debug_macro   0x00000000000080ed      0x367 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
- .debug_macro   0x0000000000008454       0x2b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
- .debug_macro   0x000000000000847f       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
- .debug_macro   0x0000000000008495      0x2fc Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
- .debug_macro   0x0000000000008791       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
- .debug_macro   0x00000000000087ad      0x2a4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
- .debug_macro   0x0000000000008a51      0x269 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
- .debug_macro   0x0000000000008cba       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
- .debug_macro   0x0000000000008cfc      0x314 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
- .debug_macro   0x0000000000009010       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
- .debug_macro   0x000000000000902c       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
- .debug_macro   0x000000000000906e      0x34b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
- .debug_macro   0x00000000000093b9       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
- .debug_macro   0x00000000000093d5       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
- .debug_macro   0x00000000000093eb      0x277 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
- .debug_macro   0x0000000000009662      0x300 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
- .debug_macro   0x0000000000009962       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
- .debug_macro   0x000000000000998a      0x285 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
- .debug_macro   0x0000000000009c0f       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
- .debug_macro   0x0000000000009c1f      0x31b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
- .debug_macro   0x0000000000009f3a      0x339 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
- .debug_macro   0x000000000000a273      0x37a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
- .debug_macro   0x000000000000a5ed      0x2e0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
- .debug_macro   0x000000000000a8cd       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
- .debug_macro   0x000000000000a8e9      0x100 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
- .debug_macro   0x000000000000a9e9      0x37c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000ad65       0x46 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000adab       0xb2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000ae5d      0x13a Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000af97      0x204 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000b19b      0x5ad Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000b748       0x8c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000b7d4      0x205 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000b9d9       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000b9f5       0xf4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000bae9       0x3c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000bb25       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
- .debug_macro   0x000000000000bb41      0x6c4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c205       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c227       0x6a Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c291      0x343 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c5d4       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c5f6       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c60c       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c61c       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c63e       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c660       0x34 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c694       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
- .debug_macro   0x000000000000c6a4      0x21e Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
- .debug_macro   0x000000000000c8c2      0x2b5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
- .debug_macro   0x000000000000cb77       0x40 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
- .debug_macro   0x000000000000cbb7      0x291 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
- .debug_macro   0x000000000000ce48      0x1d4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
- .debug_macro   0x000000000000d01c      0x250 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
- .debug_macro   0x000000000000d26c       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
- .debug_macro   0x000000000000d27c      0x280 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
- .debug_macro   0x000000000000d4fc       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
- .debug_macro   0x000000000000d52a       0x70 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
- .debug_macro   0x000000000000d59a      0x2ce Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
- .debug_macro   0x000000000000d868      0x275 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
- .debug_macro   0x000000000000dadd      0x173 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
- .debug_macro   0x000000000000dc50      0x2a0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
- .debug_macro   0x000000000000def0      0x24c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o
+ .debug_macro   0x00000000000034c2      0x286 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
+ .debug_macro   0x0000000000003748       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
+ .debug_macro   0x0000000000003764      0x11b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_error_weak.o
+ .debug_macro   0x000000000000387f      0x32f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003bae       0x27 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003bd5       0x45 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003c1a       0x5b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003c75       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003ca3       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_timer2.o
+ .debug_macro   0x0000000000003ccb      0x3e5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000040b0       0x73 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004123       0x30 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004153       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004163       0x4c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000041af      0x215 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000043c4       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000043f2       0x40 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004432       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004448       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x000000000000446a      0x130 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x000000000000459a       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000045bc       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000045cc       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x00000000000045fa       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004610       0x70 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd.o
+ .debug_macro   0x0000000000004680      0x3e1 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004a61      0x12a Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004b8b       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004ba1       0x3f Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004be0       0x3b Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004c1b       0x11 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000004c2c      0x409 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_cdc_acm.o
+ .debug_macro   0x0000000000005035      0x3a5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
+ .debug_macro   0x00000000000053da       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
+ .debug_macro   0x0000000000005402       0x34 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_core.o
+ .debug_macro   0x0000000000005436      0x324 Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_serial_num.o
+ .debug_macro   0x000000000000575a      0x34c Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
+ .debug_macro   0x0000000000005aa6       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_usbd_string_desc.o
+ .debug_macro   0x0000000000005ad4      0x14d Output/usbd_ble_covid_pca10059_s140 Release/Obj/app_util_platform.o
+ .debug_macro   0x0000000000005c21      0x31f Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
+ .debug_macro   0x0000000000005f40       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
+ .debug_macro   0x0000000000005f5c       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/drv_rtc.o
+ .debug_macro   0x0000000000005f6c      0x158 Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_handler_gcc.o
+ .debug_macro   0x00000000000060c4      0x27b Output/usbd_ble_covid_pca10059_s140 Release/Obj/hardfault_implementation.o
+ .debug_macro   0x000000000000633f      0x1da Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atfifo.o
+ .debug_macro   0x0000000000006519      0x17d Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
+ .debug_macro   0x0000000000006696       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atflags.o
+ .debug_macro   0x00000000000066b8      0x177 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
+ .debug_macro   0x000000000000682f       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_atomic.o
+ .debug_macro   0x0000000000006871      0x24a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_balloc.o
+ .debug_macro   0x0000000000006abb      0x178 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
+ .debug_macro   0x0000000000006c33       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf.o
+ .debug_macro   0x0000000000006c55      0x1ea Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_fprintf_format.o
+ .debug_macro   0x0000000000006e3f      0x216 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
+ .debug_macro   0x0000000000007055       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
+ .debug_macro   0x0000000000007083       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_memobj.o
+ .debug_macro   0x0000000000007093      0x3f7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_macro   0x000000000000748a       0x11 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_macro   0x000000000000749b       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_macro   0x00000000000074ab       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_macro   0x00000000000074d3       0x31 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_pwr_mgmt.o
+ .debug_macro   0x0000000000007504      0x1e0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ringbuf.o
+ .debug_macro   0x00000000000076e4      0x182 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_section_iter.o
+ .debug_macro   0x0000000000007866      0x1d6 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sortlist.o
+ .debug_macro   0x0000000000007a3c      0x16c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_strerror.o
+ .debug_macro   0x0000000000007ba8       0xb7 Output/usbd_ble_covid_pca10059_s140 Release/Obj/system_nrf52840.o
+ .debug_macro   0x0000000000007c5f      0x27b Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
+ .debug_macro   0x0000000000007eda       0x9a Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
+ .debug_macro   0x0000000000007f74      0x16d Output/usbd_ble_covid_pca10059_s140 Release/Obj/boards.o
+ .debug_macro   0x00000000000080e1      0x367 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
+ .debug_macro   0x0000000000008448       0x2b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
+ .debug_macro   0x0000000000008473       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_clock.o
+ .debug_macro   0x0000000000008489      0x2fc Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
+ .debug_macro   0x0000000000008785       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_power.o
+ .debug_macro   0x00000000000087a1      0x2a4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_drv_uart.o
+ .debug_macro   0x0000000000008a45      0x269 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
+ .debug_macro   0x0000000000008cae       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_atomic.o
+ .debug_macro   0x0000000000008cf0      0x314 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
+ .debug_macro   0x0000000000009004       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
+ .debug_macro   0x0000000000009020       0x42 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_clock.o
+ .debug_macro   0x0000000000009062      0x34b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
+ .debug_macro   0x00000000000093ad       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
+ .debug_macro   0x00000000000093c9       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_gpiote.o
+ .debug_macro   0x00000000000093df      0x277 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_power.o
+ .debug_macro   0x0000000000009656      0x300 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
+ .debug_macro   0x0000000000009956       0x28 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_prs.o
+ .debug_macro   0x000000000000997e      0x285 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
+ .debug_macro   0x0000000000009c03       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_systick.o
+ .debug_macro   0x0000000000009c13      0x31b Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uart.o
+ .debug_macro   0x0000000000009f2e      0x339 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_uarte.o
+ .debug_macro   0x000000000000a267      0x37a Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrfx_usbd.o
+ .debug_macro   0x000000000000a5e1      0x2e0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
+ .debug_macro   0x000000000000a8c1       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
+ .debug_macro   0x000000000000a8dd      0x100 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp.o
+ .debug_macro   0x000000000000a9dd      0x37c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000ad59       0x46 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000ad9f       0xb2 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000ae51      0x13a Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000af8b      0x204 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000b18f      0x5ad Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000b73c       0x8c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000b7c8      0x205 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000b9cd       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000b9e9       0xf4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000badd       0x3c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000bb19       0x1c Output/usbd_ble_covid_pca10059_s140 Release/Obj/bsp_btn_ble.o
+ .debug_macro   0x000000000000bb35      0x6c4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c1f9       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c21b       0x6a Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c285      0x343 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c5c8       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c5ea       0x16 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c600       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c610       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c632       0x22 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c654       0x34 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c688       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/main.o
+ .debug_macro   0x000000000000c698      0x21e Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_advdata.o
+ .debug_macro   0x000000000000c8b6      0x2b5 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
+ .debug_macro   0x000000000000cb6b       0x40 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_params.o
+ .debug_macro   0x000000000000cbab      0x291 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_conn_state.o
+ .debug_macro   0x000000000000ce3c      0x1d4 Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_srv_common.o
+ .debug_macro   0x000000000000d010      0x250 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
+ .debug_macro   0x000000000000d260       0x10 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_gatt.o
+ .debug_macro   0x000000000000d270      0x280 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
+ .debug_macro   0x000000000000d4f0       0x2e Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
+ .debug_macro   0x000000000000d51e       0x70 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_ble_scan.o
+ .debug_macro   0x000000000000d58e      0x2ce Output/usbd_ble_covid_pca10059_s140 Release/Obj/ble_nus.o
+ .debug_macro   0x000000000000d85c      0x275 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
+ .debug_macro   0x000000000000dad1      0x173 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh.o
+ .debug_macro   0x000000000000dc44      0x2a0 Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_ble.o
+ .debug_macro   0x000000000000dee4      0x24c Output/usbd_ble_covid_pca10059_s140 Release/Obj/nrf_sdh_soc.o

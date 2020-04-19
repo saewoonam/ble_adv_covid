@@ -41,16 +41,18 @@
 1. nRFConnect on computer to program
 2. Uses SoftDevice 7.0
 3. Uses nRF5 SDK v16
+## Issues
+1. The dongle has no memory to log data, so it sends the data back through usb
+   as a serial device
 ## Progress so far
-1. Copy the folder 'ble_app_covid' that is in the 'nrf52 dongle' folder into the folder 'ble_peripherals' folder that is in the examples folder of the nrf5 SDK 
+1. Copy the folder 'usbd_ble_covid' that is in the 'nrf52 dongle' folder into the folder 'peripherals' folder that is in the examples folder of the nrf5 SDK 
 2. The app compiles in SEGGER IDE.  I didn't configure any of the other projects.  
 3. Find the "ses" folder inside the "s140" folder that is inside the "PCA10059" folder.
-4. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.  It has no crypto, and does not have an RPI yet. 
+4. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.  It has no crypto, and does not have a RPI yet. 
 
 ## Things to do
 1.  Implement capability to change advertising packet every 10 to 15 minutes
-2.  Implement scanner
-3.  Figure out how to log data
-4.  Figure out how to talk back via USB to download logs
+    (i.e. RPI)
+2.  Figure out how to talk back via USB to download logs
 
 SaeWoo Nam, 2020-04-13
