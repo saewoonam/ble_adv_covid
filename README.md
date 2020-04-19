@@ -41,18 +41,31 @@
 1. nRFConnect on computer to program
 2. Uses SoftDevice 7.0
 3. Uses nRF5 SDK v16
+
+## Compiler setup
+1.  Compiles only with the SEGGER IDE so far, (SaeWoo us using osX).
+2.  Look in 'ses' folder in the 'nrf52 dongle/PCA10059' directory
+3.   *Must* set up a global macro to the nRF5 SDK... Go to "Tools" from the menu
+bar, then go to "Options...->Building -> Build -> Global macros".   Must define
+a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2
+4. Now, the project can be built in the git repo, WITHOUT copying to a
+   subdirectory of the nrf5 SDK.
+
 ## Issues
 1. The dongle has no memory to log data, so it sends the data back through usb
    as a serial device
+
 ## Progress so far
-1. Copy the folder 'usbd_ble_covid' that is in the 'nrf52 dongle' folder into the folder 'peripherals' folder that is in the examples folder of the nrf5 SDK 
-2. The app compiles in SEGGER IDE.  I didn't configure any of the other projects.  
-3. Find the "ses" folder inside the "s140" folder that is inside the "PCA10059" folder.
-4. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.  It has no crypto, and does not have a RPI yet. 
+1. The app compiles in SEGGER IDE.  I didn't configure any of the other projects.  
+2. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.
+3. Sends contact packets over usb serial back to computer
 
 ## Things to do
 1.  Implement capability to change advertising packet every 10 to 15 minutes
     (i.e. RPI)
-2.  Figure out how to talk back via USB to download logs
+2.  Crytpo
+3.  Changing RPI
+4.  Write code to log to an add-on flash
+5.  Figure out how to power nrf52 via a battery.
 
-SaeWoo Nam, 2020-04-13
+SaeWoo Nam, started 2020-04-13, last edit 2020-04-19
