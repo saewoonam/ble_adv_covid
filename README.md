@@ -1,4 +1,4 @@
-# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle in progress
+# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon)
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
@@ -67,5 +67,23 @@ a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SD
 3.  Changing RPI
 4.  Write code to log to an add-on flash
 5.  Figure out how to power nrf52 via a battery.
+
+
+#  Particle Argon/Boron
+
+## Requirements
+1. Developed using DeviceOS 1.5.0
+2. Installed "Particle Workbench"
+
+## Issues
+1.  Can't access Flash memory for logging... Need to investigate how
+2.  Need to figure out how to push logging data to the web for logging into a
+    database for data taking / evaluation
+
+## Things to do for testimg
+1. Implement WiFi data logging
+2. For remote testing (no wifi), get flash logging working
+3. Implement scheme to retrieve data from flash memory
+
 
 SaeWoo Nam, started 2020-04-13, last edit 2020-04-19

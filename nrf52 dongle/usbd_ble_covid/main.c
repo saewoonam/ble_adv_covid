@@ -485,13 +485,13 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
               // build message
               bool contact_bool = check_for_service(adv->data.p_data, adv->data.len, contact);
               if (contact_bool) {
-                  // size = sprintf(m_tx_buffer, "%d ", adv->rssi);
+                   size = sprintf(m_tx_buffer, "%d ", adv->rssi);
                   // size = sprintf(m_tx_buffer+size, " id: %02x ", adv->data_id);
-                  /*
+                  // size += sprintf(m_tx_buffer+size, "%d ", contact_bool);    
                   size += sprintf(m_tx_buffer+size, "[%02x:%02x:%02x:%02x:%02x:%02x]",
                           adv->peer_addr.addr[5], adv->peer_addr.addr[4], adv->peer_addr.addr[3],
                           adv->peer_addr.addr[2], adv->peer_addr.addr[1], adv->peer_addr.addr[0]);
-                  */
+                  
 
                   // size += sprintf(m_tx_buffer+size, " contact: %d", contact_bool);
                   // size += sprintf(m_tx_buffer+size, " dlen: %d", adv->data.len);
@@ -499,10 +499,14 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
                   if (adv->data.len>0) {
                     for (uint8_t i=0; i<adv->data.len; i++) {
                       //if (i>0) size+=sprintf(m_tx_buffer+size, "-");
-                      size+= sprintf(m_tx_buffer+size, "%02x", adv->data.p_data[i]);
+                      //size+= sprintf(m_tx_buffer+size, "%02x", adv->data.p_data[i]);
+                      *(m_tx_buffer+size) = adv->data.p_data[i];
+                      size++;
                     }  
                   }
-                  size += sprintf(m_tx_buffer+size, "\n");
+                  
+
+                  //size += sprintf(m_tx_buffer+size, "\n");
               }
 
               ready=0;
