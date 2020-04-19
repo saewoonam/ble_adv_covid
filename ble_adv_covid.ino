@@ -212,8 +212,8 @@ void scan_callback(ble_gap_evt_adv_report_t* report)
 void startAdv(void)
 { 
   uint8_t i=0;
-  rpi[0] = 0xFD;
-  rpi[1] = 0x6F;
+  rpi[1] = 0xFD;
+  rpi[0] = 0x6F;
   for (i=0; i<16; i++) {
     rpi[i+2] = i;
   }  

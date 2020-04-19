@@ -1,0 +1,51 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;Application"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_BLE"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_Libraries"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="718" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="481" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="40" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../scanner.c" selected="0" top="34" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="30" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_ble_covid/scanner.c" useBinaryEdit="0" left="0" path="../../../scanner.h" selected="1" top="29" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="363" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/ble/common/ble_advdata.c" selected="0" top="353" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="usbd_ble_covid_pca10059_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_ble_covid" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
