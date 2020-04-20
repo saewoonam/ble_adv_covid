@@ -56,10 +56,16 @@ a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SD
    as a serial device
 2. Trouble with CDC_ACM interface... Crashes after a while..  Can't figure out
    why.
+
 ## Progress so far
 1. The app compiles in SEGGER IDE.  I didn't configure any of the other projects.  
 2. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.
 3. Sends contact packets over usb serial back to computer
+
+## LED OUTPUTS
+1. Multicolor LED:  Red periodically to indicate advertising (1 per second)
+2. Multicolor Blue:  Inidicate detection of contact via bluetooth
+3. Multicolor Green:  Serial port write or other serial port related stuff
 
 ## Things to do
 1.  Implement capability to change advertising packet every 10 to 15 minutes
