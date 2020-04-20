@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ISO1541DR
+D TEXAS INSTRUMENTS - ISO1541DR - DIGITAL ISOLATOR, 2-CH, 1MBPS, SOIC-8
+F http://www.ti.com/lit/gpn/iso1541
+$ENDCMP
+#
+$CMP PCA9615DP
+D Buffer, ReDriver 2 Channel 400kHz 10-TSSOP
+F http://www.nxp.com/docs/en/data-sheet/PCA9615.pdf
+$ENDCMP
+#
+#End Doc Library
