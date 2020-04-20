@@ -86,6 +86,8 @@ a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SD
 1.  Can't access Flash memory for logging... Need to investigate how
 2.  Need to figure out how to push logging data to the web for logging into a
     database for data taking / evaluation
+## LED output
+1. Blue LED flashes when contact detected
 
 ## Things to do for testimg
 1. Implement WiFi data logging
