@@ -54,7 +54,8 @@ a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SD
 ## Issues
 1. The dongle has no memory to log data, so it sends the data back through usb
    as a serial device
-
+2. Trouble with CDC_ACM interface... Crashes after a while..  Can't figure out
+   why.
 ## Progress so far
 1. The app compiles in SEGGER IDE.  I didn't configure any of the other projects.  
 2. The app should compile and emit a covid tracing advertisement packet that is consistent with Apple/Google bluetooth spec.
