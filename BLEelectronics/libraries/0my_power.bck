@@ -1,0 +1,103 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADP7156ARDZ-3.3-R7
+D LDO Voltage Regulators 3.3/5Vin 1.2A Ultra Low Noise LDO Fixed
+F http://www.mouser.com/ds/2/609/ADP7156-892457.pdf
+$ENDCMP
+#
+$CMP Bnx029-01
+D SMD Block Type EMIFIL, EMI Filter Circuits 6.3V 15A 12.1x9.1mm 15KHz-1GHz:35dB min
+F http://www.murata.com/en-us/api/pdfdownloadapi?cate=&amp;partno=BNX029-01#
+$ENDCMP
+#
+$CMP C_0805_kelvin
+D Unpolarized kelvin capacitor
+K cap capacitor kelvin
+$ENDCMP
+#
+$CMP C_Feedthrough_4terminal
+D Feedthrough capacitor
+K EMI filter feedthrough capacitor
+F ~
+$ENDCMP
+#
+$CMP C_kelvin
+D Unpolarized kelvin capacitor
+K cap capacitor kelvin
+$ENDCMP
+#
+$CMP EMI_Filter_C
+D EMI filter, single capacitor
+K EMI filter feedthrough capacitor
+F http://www.murata.com/~/media/webrenewal/support/library/catalog/products/emc/emifil/c31e.ashx?la=en-gb
+$ENDCMP
+#
+$CMP EMI_Filter_CommonMode
+D EMI 2-inductor common-mode-filter
+K EMI common mode filter
+F ~
+$ENDCMP
+#
+$CMP EMI_Filter_LL
+D EMI 2-inductor-filter
+K EMI filter
+F http://www.murata.com/~/media/webrenewal/support/library/catalog/products/emc/emifil/c30e.ashx?la=en-gb
+$ENDCMP
+#
+$CMP INA226AIDGSR
+D 36-V, Bi-Directional, Ultra-High Accuracy, Low-/High-Side, I2C Out Current/Power Monitor w/ Alert
+F https://componentsearchengine.com/Datasheets/1/INA226AIDGSR.pdf
+$ENDCMP
+#
+$CMP LM27761DSGT
+D Reg. Sw.Capacitor Voltage Inverter WSON8
+F http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=LM27761&amp;&amp;fileType=pdf
+$ENDCMP
+#
+$CMP LM27762DSST
+D Low-Noise Positive- and Negative-Output Charge Pump With Integrated LDO
+F http://www.ti.com/lit/ds/symlink/lm27762.pdf
+$ENDCMP
+#
+$CMP LT3042EMSE#PBF
+D LINEAR TECHNOLOGY - LT3042EMSE#PBF - LDO, ADJ, 0.2A, 0V-15V, MSOP-10
+F http://www.linear.com/docs/46159
+$ENDCMP
+#
+$CMP LT3045EMSE#PBF
+D LINEAR TECHNOLOGY - LT3045EMSE#PBF - LDO, ADJ, 0V TO 15V, 0.5A, DFN-10
+F http://cds.linear.com/docs/en/datasheet/3045f.pdf
+$ENDCMP
+#
+$CMP LT3094IMSE#PBF
+D LDO Voltage Regulators -20V, 500mA Ultralow Noise/PSRR LDO
+F https://componentsearchengine.com/Datasheets/1/LT3094IMSE#PBF.pdf
+$ENDCMP
+#
+$CMP LT3094xMSE
+D 500mA, Adjustable, Ultralow Noise, Ultrahigh PSRR Linear Regulator, MSOP-12
+K linear voltage regulator low-noise
+F https://www.analog.com/media/en/technical-documentation/data-sheets/3045fa.pdf
+$ENDCMP
+#
+$CMP MIC5305-3.3YD5-TR
+D LDO Voltage Regulators 150mA uCap Ultra Low Dropout High PSRR LDO Regulator
+F https://componentsearchengine.com/Datasheets/1/MIC5305-3.3YD5-TR.pdf
+$ENDCMP
+#
+$CMP NFM21PS106B0J3D
+D Murata NFM21PS Series, EMI Filter, 6.3 V dc, 4A 0805 (2012M) SMD, Flat Contact Termination, 2 x 1.25 x 0.85mm
+F https://psearch.en.murata.com/capacitor/product/NFM21PS106B0J3%23.pdf
+$ENDCMP
+#
+$CMP NUF2042
+F DOCUMENTATION
+$ENDCMP
+#
+$CMP TPS7A3001
+D Negative 100mA -30V Linear Regulator, Fixed Output -5V, SO-8
+K Voltage Regulator 100mA Negative
+F http://www.ti.com/lit/ds/symlink/lm79l.pdf
+$ENDCMP
+#
+#End Doc Library

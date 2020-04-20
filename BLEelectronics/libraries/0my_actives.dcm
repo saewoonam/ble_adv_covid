@@ -1,0 +1,194 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 24LC16-TSSOP
+D I2C Serial EEPROM, 16Kb,TSSOP-8
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf
+$ENDCMP
+#
+$CMP AD4895-2
+D Dual High Voltage, Low Noise, Low Distortion,
+K opamp dual low noise low distortion
+$ENDCMP
+#
+$CMP AD5066BRU7
+D , Quad, 16-Bit DAC, SPI Interface, TSSOP-16
+K dac 4ch 8bit spi
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD7304_7305.pdf
+$ENDCMP
+#
+$CMP AD5675RBRUZ
+D Analog Devices AD5676RBRUZ, 8-channel 16 bit DAC, 20-Pin TSSOP
+F http://docs-emea.rs-online.com/webdocs/14b2/0900766b814b2219.pdf
+$ENDCMP
+#
+$CMP AD5676RBRUZ
+D Analog Devices AD5676RBRUZ, 8-channel 16 bit DAC, 20-Pin TSSOP
+F http://docs-emea.rs-online.com/webdocs/14b2/0900766b814b2219.pdf
+$ENDCMP
+#
+$CMP AD8057
+D Low Cost, Single, High Performance Voltage Feedback, 325 MHz Amplifier
+K single opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8057_8058.pdf
+$ENDCMP
+#
+$CMP AD8237
+D Single 40 μA Micropower Instrumentation Amplifier with Zero Crossover Distortion, MSOP-8
+K single instumentation amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8236.pdf
+$ENDCMP
+#
+$CMP AD8250
+D 10 MHz, 20 V/μs, G = 1, 2, 5, 10 iCMOS Programmable Gain Instrumentation Amplifier
+K Programmable Gain Instrumentation Amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8250.pdf
+$ENDCMP
+#
+$CMP AD8421
+D Single Low Power Instrumentation Amplifier, SOIC-8/MSOP-8
+K single instumentation amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8421.pdf
+$ENDCMP
+#
+$CMP AD8422
+D Single High Performance, Low Power, Rail-to-Rail Precision Instrumentation Amplifier, SOIC-8/MSOP-8
+K single instumentation amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8422.pdf
+$ENDCMP
+#
+$CMP AD8429
+D Single Low Noise Instrumentation Amplifier, SOIC-8
+K single instumentation amplifier
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8429.pdf
+$ENDCMP
+#
+$CMP AD8538
+D Precision Micropower, Low Noise CMOS, Rail-to-Rail Input/Output Operational Amplifier, TSOT-23-5
+K single opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8538_8539.pdf
+$ENDCMP
+#
+$CMP ADA4084-1
+D 30 V, Low Noise, Rail-to-Rail Input/Output, Low Power Operational Amplifier
+K single opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/ADA4084-1_4084-2_4084-4.pdf
+$ENDCMP
+#
+$CMP ADA4522-2ARMZ
+D  Dual Low Noise Operational Amplifiers, Rail-to-Rail, Precision Op Amps
+K dual opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/16789fs.pdf
+$ENDCMP
+#
+$CMP ADA4897-2
+D Dual High Voltage, Low Noise, Low Distortion, Unity-Gain Stable, High Speed Op Amp, SOIC-8-1EP
+K opamp dual low noise low distortion
+$ENDCMP
+#
+$CMP ADG602
+D Single SPST Analog Switch, 5-V/3.3-V, normally OFF, 0.9Ohm Ron, SC-70
+K Analog Switch SPST
+F  http://www.ti.com/lit/ds/symlink/ts5a3166.pdf
+$ENDCMP
+#
+$CMP ADS1119-PW
+D Low-power, quad-input, 16-bit analog to digital converter, integrated temperature sensor, SPI interface, TSSOP-16 package
+K adc spi
+F http://www.ti.com/lit/ds/symlink/ads1120.pdf
+$ENDCMP
+#
+$CMP FM24V10
+D I2C Serial EEPROM, 1Mbit 8-SOIC
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf
+$ENDCMP
+#
+$CMP LM7321
+D  Rail-to-RailInput and Output±15-V, High-OutputCurrentand UnlimitedCapacitiveLoad OperationalAmplifier
+K single opamp
+F https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-LM7321MFX-NOPB_C134033.pdf
+$ENDCMP
+#
+$CMP LT1678
+D  Dual Low Noise Operational Amplifiers, Rail-to-Rail, Precision Op Amps
+K dual opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/16789fs.pdf
+$ENDCMP
+#
+$CMP LTC6240HV
+D Single 18MHz, Low Noise, Rail-to-Rail Output, CMOS Op Amps
+K single opamp
+F https://www.analog.com/media/en/technical-documentation/data-sheets/AD8538_8539.pdf
+$ENDCMP
+#
+$CMP LTC6752
+D Single General-Purpose Low-Voltage Comparator, SOT-23-5/SC-70-5
+K single comparator
+F http://www.ti.com/lit/ds/symlink/lmv331.pdf
+$ENDCMP
+#
+$CMP LTC6752-1
+D Single General-Purpose Low-Voltage Comparator, SOT-23-5/SC-70-5
+K single comparator
+F http://www.ti.com/lit/ds/symlink/lmv331.pdf
+$ENDCMP
+#
+$CMP M24M01-DF
+D I2C Serial EEPROM, 256Kb,TSSOP-8
+K I2C Serial EEPROM
+F https://www.st.com/resource/en/datasheet/m24m01-df.pdf
+$ENDCMP
+#
+$CMP MR44V100AMAZAATL
+D I2C Serial FERAM, 1Mbit SOP-8
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf
+$ENDCMP
+#
+$CMP NLAS2750MUTAG
+D Dual SPDT 0.3Ω Bidirectional Analog Switch, TSSOP-10
+K switch analog SPDT
+F http://www.ti.com/lit/ds/symlink/ts3a24159.pdf
+$ENDCMP
+#
+$CMP OPA188xxDBV
+D Zero-Drift, Precision, Low-Noise, Rail-to-Rail Output, 36-V Operational Amplifier, TSOT-23-5
+K single opamp zero-drift
+F http://www.ti.com/lit/ds/symlink/opa188.pdf
+$ENDCMP
+#
+$CMP PCA8550PW,112
+D NXP - PCA8550PW,112 - MULTIPLEXER, SINGLE, 1 CH, TSSOP-16
+F https://componentsearchengine.com/Datasheets/2/PCA8550PW,112.pdf
+$ENDCMP
+#
+$CMP THS4551IDGKT
+D Differential, High-Speed, Op Amp, VSSOP-8
+K differential opamp operational amplifier
+F http://www.ti.com/lit/ds/symlink/ths4551.pdf
+$ENDCMP
+#
+$CMP TS5A22362DGSR
+D Dual SPDT 0.3Ω Bidirectional Analog Switch, TSSOP-10
+K switch analog SPDT
+$ENDCMP
+#
+$CMP TS5A22364DGSR
+D Dual SPDT 0.3Ω Bidirectional Analog Switch, TSSOP-10
+K switch analog SPDT
+F http://www.ti.com/lit/ds/symlink/ts3a24159.pdf
+$ENDCMP
+#
+$CMP TS5A23166DCUR
+D 0.9-Ohm Dual SPST Analog Switch 5-V/3.3-V 2-Channel Analog Switch
+F http://www.ti.com/lit/ds/symlink/ts5a23166.pdf
+$ENDCMP
+#
+$CMP TS5A3167DCKR
+D Single SPST Analog Switch, 5-V/3.3-V, normally OFF, 0.9Ohm Ron, SC-70
+K Analog Switch SPST
+F  http://www.ti.com/lit/ds/symlink/ts5a3166.pdf
+$ENDCMP
+#
+#End Doc Library

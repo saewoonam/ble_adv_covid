@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name AU-Y1006-R)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/AU-Y1006-R.lib)(options "")(descr ""))
+  (lib (name usb_a_plug)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/usb_a_plug.lib)(options "")(descr ""))
+  (lib (name TPD1E10B06DPYR)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/TPD1E10B06DPYR.lib)(options "")(descr ""))
+  (lib (name BAT-HLD-001)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/BAT-HLD-001.lib)(options "")(descr ""))
+  (lib (name LTC4054LES5-4.2_TRPBF)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/LTC4054LES5-4.2_TRPBF.lib)(options "")(descr ""))
+  (lib (name si2307cds)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/si2307cds.lib)(options "")(descr ""))
+)

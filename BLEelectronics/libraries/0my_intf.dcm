@@ -1,0 +1,24 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Conn_Coaxial_SSMCX_SMT
+D coaxial connector SSMCX_SMT
+K SSMCX coaxial connector SMT
+F  ~
+$ENDCMP
+#
+$CMP ISO1541DR
+D TEXAS INSTRUMENTS - ISO1541DR - DIGITAL ISOLATOR, 2-CH, 1MBPS, SOIC-8
+F http://www.ti.com/lit/gpn/iso1541
+$ENDCMP
+#
+$CMP PCA9615DP
+D Buffer, ReDriver 2 Channel 400kHz 10-TSSOP
+F http://www.nxp.com/docs/en/data-sheet/PCA9615.pdf
+$ENDCMP
+#
+$CMP SC18IS602BIPW,112
+D NXP - SC18IS602BIPW,112 - INTERFACE BRIDGE, SPI TO I2C, TSSOP-16
+F http://www.farnell.com/datasheets/1931506.pdf
+$ENDCMP
+#
+#End Doc Library

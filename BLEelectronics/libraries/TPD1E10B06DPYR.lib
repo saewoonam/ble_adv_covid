@@ -1,0 +1,48 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# TPD1E10B06DPYR
+#
+DEF TPD1E10B06DPYR D 0 40 Y N 1 L N
+F0 "D" -300 140 50 H V L BNN
+F1 "TPD1E10B06DPYR" -300 -210 50 H V L BNN
+F2 "DIODFN100X60X45-2N" 0 0 50 H I L BNN
+F3 "TPD1E10B06DPYR" 0 0 50 H I L BNN
+F4 "Manufacturer Recommendation" 0 0 50 H I L BNN
+F5 "None" 0 0 50 H I L BNN
+F6 "Texas Instruments" 0 0 50 H I L BNN
+F7 "XDFN-2 Texas Instruments" 0 0 50 H I L BNN
+F8 "Single Channel ESD in 0402 package with 10pF Capacitance and 6V Breakdown 2-X1SON -40 to 125" 0 0 50 H I L BNN
+F9 "Unavailable" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 10 -300 120 300 120 N
+P 2 0 0 10 300 120 300 0 N
+P 2 0 0 10 300 0 300 -120 N
+P 2 0 0 10 300 -120 -300 -120 N
+P 2 0 0 10 -300 -120 -300 0 N
+P 2 0 0 10 -300 0 -300 120 N
+P 2 0 0 10 -50 70 -50 -70 N
+P 2 0 0 10 -50 -70 -170 0 N
+P 2 0 0 10 -170 0 -50 70 N
+P 2 0 0 10 -200 80 -170 60 N
+P 2 0 0 10 -170 60 -170 0 N
+P 2 0 0 10 -170 0 -170 -60 N
+P 2 0 0 10 -170 -60 -140 -80 N
+P 2 0 0 10 -170 0 -300 0 N
+P 2 0 0 10 50 0 -50 0 N
+P 2 0 0 10 50 -70 50 70 N
+P 2 0 0 10 50 70 170 0 N
+P 2 0 0 10 170 0 50 -70 N
+P 2 0 0 10 200 -80 170 -60 N
+P 2 0 0 10 170 -60 170 0 N
+P 2 0 0 10 170 0 170 60 N
+P 2 0 0 10 170 60 140 80 N
+P 2 0 0 10 170 0 300 0 N
+X 1 1 -400 0 100 R 40 40 0 0 P 
+X 2 2 400 0 100 L 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library

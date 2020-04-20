@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP2221-I_ST
+D USB to I2C Protocol Converter with GPIO
+K USB to I2C
+F http://ww1.microchip.com/downloads/en/DeviceDoc/20005292B.pdf
+$ENDCMP
+#
+#End Doc Library
