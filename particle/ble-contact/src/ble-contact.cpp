@@ -12,7 +12,9 @@
 #include "Particle.h"
 #include "config.h"
 
-void sprintf_buffer(uint8_t *data, uint8_t length);
+void serial(char *buffer);
+void sprintf_buffer(char *buf, uint8_t *data, uint8_t length);
+void blink(uint8_t times);
 void scanResultCallback(const BleScanResult *scanResult, void *context);
 void gap_params_init();
 void advertising_init(void);
@@ -27,7 +29,7 @@ static uint8_t m_enc_advdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];
 // SYSTEM_MODE(MANUAL);
 
 // Enable thread
-// SYSTEM_THREAD(ENABLED);
+SYSTEM_THREAD(ENABLED);
 
 // Stores the most recent data related to the device we're looking for
 int8_t lastRSSI;
@@ -37,22 +39,40 @@ system_tick_t lastSeen = 0;
 String status;
 
 // For logging
+/*
 SerialLogHandler logHandler(115200, LOG_LEVEL_ERROR, {
     { "app", LOG_LEVEL_TRACE }, // enable all app messages
 });
-
+*/
+bool serial_is_off = true;
+void serial(char *buffer)
+{
+  if (digitalRead(PWR)) {  // There is power, send data to serial port
+    if (serial_is_off) {
+      Serial.begin();
+    }
+    Serial.print(buffer);
+  }
+}
 static char m_tx_buffer[64];
 
-void sprintf_buffer(uint8_t *data, uint8_t length) {
+void sprintf_buffer(char *buf, uint8_t *data, uint8_t length) {
   uint8_t size = 0;
   if (length>0) {
     for (uint8_t i=0; i<length; i++) {
       //if (i>0) size+=sprintf(m_tx_buffer+size, "-");
-      size+= sprintf(m_tx_buffer+size, "%02x", data[i]);
+      size+= sprintf(buf+size, "%02x", data[i]);
     }
   }
 }
 
+void blink(uint8_t times) {
+  while(times--) {
+      digitalWrite(D7, HIGH);
+      delay(10);
+      digitalWrite(D7, LOW);
+  }
+}
 void scanResultCallback(const BleScanResult *scanResult, void *context) {
   BleUuid uuids[4];
   int uuidsAvail = scanResult->advertisingData.serviceUUID(uuids,sizeof(uuids)/sizeof(BleUuid));
@@ -63,11 +83,21 @@ void scanResultCallback(const BleScanResult *scanResult, void *context) {
   for(int i = 0; i < uuidsAvail; i++){
     // Print out the UUID we're looking for
     if( uuids[i].shorted() == CONTACT_UUID ) {
+        blink(1);
+        char buffer[128];
         lastSeen = millis();
         lastRSSI = scanResult->rssi;
         // Log.trace("UUID: %x", uuids[i].shorted());
-        Log.trace("RSSI: %d Time: %ld MAC: %02X:%02X:%02X:%02X:%02X:%02X", 
-                  lastRSSI, lastSeen, addr[5], addr[4], addr[3], addr[2], addr[1], addr[0]);
+        sprintf(buffer,"%ld, %d, %02X:%02X:%02X:%02X:%02X:%02X, ", 
+                  lastSeen, lastRSSI, addr[5], addr[4], addr[3], addr[2], addr[1], addr[0]);
+        serial(buffer);
+        uint8_t recv_buffer[31];
+        uint8_t len = scanResult->advertisingData.length();
+        scanResult->advertisingData.get(recv_buffer, len);
+        sprintf_buffer(buffer, recv_buffer, len);
+        serial(buffer);
+        sprintf(buffer, "\n");
+        serial(buffer);
         //Log.trace("RSSI: %ddBm", scanResult->rssi);
         // Stop scanning
         // BLE.stopScanning();
@@ -160,8 +190,9 @@ void advertising_init(void)
     calc_RPI(m_enc_advdata+14);
     size_t adv_len = 14+16;
     advData.set(m_enc_advdata, adv_len);
-    sprintf_buffer(m_enc_advdata, adv_len);
-    Log.info(m_tx_buffer);
+    sprintf_buffer(m_tx_buffer, m_enc_advdata, adv_len);
+    // Log.info(m_tx_buffer);
+    // serial(m_tx_buffer);
 }
 
 void calc_RPI(uint8_t *data) {
@@ -171,10 +202,27 @@ void calc_RPI(uint8_t *data) {
     }  
     data[15]=count++;
 }
-
-
+// usb status
+/*
+char lastMsg[128]; 
+unsigned long lastPublish = 0; 
+void setup() { Serial.begin(); pinMode(PWR, INPUT); pinMode(CHG, INPUT); } 
+void loop() { float voltage = analogRead(BATT) * 0.0011224;}
+*/
 // setup() runs once, when the device is first turned on.
+
 void setup() {
+  pinMode(D7, OUTPUT);
+  pinMode(PWR, INPUT); pinMode(CHG, INPUT);
+  serial_is_off = true;
+  if (digitalRead(PWR)) {  // There is power, send data to serial port
+    if (serial_is_off) {
+      Serial.begin();
+      serial_is_off = false;
+    }    
+  }
+  // Serial.print("In setup\n");
+  //Log.info("serial_is_off %d", serial_is_off);
   // Put initialization like pinMode and begin functions here.
   BLE.setScanTimeout(100);
   gap_params_init();
@@ -184,14 +232,18 @@ void setup() {
 
 // loop() runs over and over again, as quickly as it can execute.
 void loop() {
-  // The core of your code will likely live here.
-  // Scan for devices
-  if( (millis() > lastSeen + RE_CHECK_MS) ){
+  /*
+  if (digitalRead(PWR)==0) {
+    serial_is_off = true;
+  }
+  */
+ if( (millis() > lastSeen + RE_CHECK_MS) ){
       BLE.scan(scanResultCallback, NULL);
   }
   //Log.info("isadvertising: %d", BLE.advertising());
   if (not BLE.advertising()) {
-      Log.info("Check if MAC changed.");
+      // Log.info("Check if MAC changed.");
+      // Indicate MAC changing 
       gap_params_init();
       advertising_init();
       BLE.advertise(&advData);

@@ -16,8 +16,11 @@
   <ProjectSessionItem path="usbd_ble_covid_pca10059_s140"/>
   <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140"/>
   <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;Application"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;Board Definition"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;Board Support"/>
   <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_BLE"/>
-  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_Libraries"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_BLE_Services"/>
+  <ProjectSessionItem path="usbd_ble_covid_pca10059_s140;usbd_ble_covid_pca10059_s140;nRF_Drivers"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -42,10 +45,11 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="718" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="481" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="14" y="40" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../scanner.c" selected="0" top="34" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="30" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_ble_covid/scanner.c" useBinaryEdit="0" left="0" path="../../../scanner.h" selected="1" top="29" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="363" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../components/ble/common/ble_advdata.c" selected="0" top="353" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="64" y="499" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="487" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="169" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/nrf52 dongle/usbd_ble_covid/main.c" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/components/libraries/bsp/bsp.c" selected="0" top="159" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="247" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_cdc_acm_dongle/main.c" selected="0" top="229" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="158" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/nrf52 dongle/usbd_ble_covid/main.c" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/components/libraries/util/sdk_errors.h" selected="0" top="148" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="62" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/nrf52 dongle/usbd_ble_covid/main.c" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/components/boards/boards.c" selected="0" top="55" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="usbd_ble_covid_pca10059_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_ble_covid" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="usbd_ble_covid_pca10059_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_cdc_acm_dongle" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

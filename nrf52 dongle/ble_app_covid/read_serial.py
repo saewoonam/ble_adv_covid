@@ -8,6 +8,7 @@ while True:
         while s.in_waiting:  # Or: while ser.inWaiting():
             print(count, s.readline())
             count = count + 1
+        time.sleep(0.1)
     except Exception as e:
         print(e)
         s.close()
