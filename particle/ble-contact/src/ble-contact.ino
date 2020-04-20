@@ -50,12 +50,12 @@ void scanResultCallback(const BleScanResult *scanResult, void *context) {
   for(int i = 0; i < uuidsAvail; i++){
     // Print out the UUID we're looking for
     if( uuids[i].shorted() == CONTACT_UUID ) {
-        // Log.trace("UUID: %x", uuids[i].shorted());
-        Log.trace("RSSI: %d MAC: %02X:%02X:%02X:%02X:%02X:%02X", 
-                  scanResult->rssi, addr[5], addr[4], addr[3], addr[2], addr[1], addr[0]);
-        //Log.trace("RSSI: %ddBm", scanResult->rssi);
         lastSeen = millis();
         lastRSSI = scanResult->rssi;
+        // Log.trace("UUID: %x", uuids[i].shorted());
+        Log.trace("RSSI: %d Time: %ld MAC: %02X:%02X:%02X:%02X:%02X:%02X", 
+                  lastRSSI, lastSeen, addr[5], addr[4], addr[3], addr[2], addr[1], addr[0]);
+        //Log.trace("RSSI: %ddBm", scanResult->rssi);
         // Stop scanning
         // BLE.stopScanning();
 
@@ -70,9 +70,40 @@ void gap_params_init() {
     memset(&prvt_conf, 0, sizeof(prvt_conf));
     prvt_conf.privacy_mode = BLE_GAP_PRIVACY_MODE_DEVICE_PRIVACY;
     prvt_conf.private_addr_type = BLE_GAP_ADDR_TYPE_RANDOM_PRIVATE_NON_RESOLVABLE ;
-    prvt_conf.private_addr_cycle_s = MAC_ADDR_ROTATE_TIME_S;
+    prvt_conf.private_addr_cycle_s = 0;
     err_code = sd_ble_gap_privacy_set(&prvt_conf);
+    if (err_code !=0) {
+      Log.error("Problem with gap_params_init: %d", err_code);
+    }
 }
+
+
+
+/*
+static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
+{
+    switch (p_ble_evt->header.evt_id)
+    {
+        case BLE_GAP_EVT_CONNECTED:
+            break;
+
+        case BLE_GAP_EVT_DISCONNECTED:
+            break;
+        case BLE_GAP_EVT_ADV_SET_TERMINATED:{
+            Log.info("Advertising terminated");
+        }
+        case BLE_GAP_EVT_ADV_REPORT:
+        {       
+            break;
+        }
+        default:
+            // No implementation needed.
+            break;
+    }
+}
+
+NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
+*/
 
 void advertising_init(void)
 {
@@ -95,6 +126,7 @@ void advertising_init(void)
     BLE.setAdvertisingType(BleAdvertisingEventType::NON_CONNECTABLE_NON_SCANABLE_UNDIRECTED);
     BleAddress defaultAddr = BLE.address();
     BLE.address().type(BleAddressType::RANDOM_PRIVATE_NON_RESOLVABLE);
+    BLE.setAdvertisingTimeout(2000);
     int8_t txPower;
     txPower = BLE.txPower(&txPower);
     m_enc_advdata[0] = 0x2;  // Set TX_POWER
@@ -120,17 +152,19 @@ void advertising_init(void)
 }
 
 void calc_RPI(uint8_t *data) {
+    static uint8_t count=0;
     for(uint8_t i=0; i<16; i++) {
       data[i] = i;
     }  
+    data[15]=count++;
 }
 
 
 // setup() runs once, when the device is first turned on.
 void setup() {
   // Put initialization like pinMode and begin functions here.
-  gap_params_init();
   BLE.setScanTimeout(100);
+  gap_params_init();
   advertising_init();
   BLE.advertise(&advData);
 }
@@ -142,7 +176,13 @@ void loop() {
   if( (millis() > lastSeen + RE_CHECK_MS) ){
       BLE.scan(scanResultCallback, NULL);
   }
-  Log.info("isadvertising: %d", BLE.advertising());
+  //Log.info("isadvertising: %d", BLE.advertising());
+  if (not BLE.advertising()) {
+      Log.info("Check if MAC changed.");
+      gap_params_init();
+      advertising_init();
+      BLE.advertise(&advData);
+  }
   BleAdvertisingData tempdata;
-  Log.info("advertise size: %d ", BLE.getAdvertisingData(&tempdata));
+  //Log.info("advertise size: %d ", BLE.getAdvertisingData(&tempdata));
 }

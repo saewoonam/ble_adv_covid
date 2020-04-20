@@ -1,4 +1,4 @@
-/Users/nams/Documents/projects/covid/particle/ble-contact/target/1.5.0/argon//obj/./src/user_export.o: \
+/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/particle/ble-contact/target/1.5.0/argon//obj/./src/user_export.o: \
  src/user_export.c \
  ../../../modules/shared/nRF52840/inc/user_part_export.c \
  ../../../modules/shared/nRF52840/inc/module_user_init.h \
