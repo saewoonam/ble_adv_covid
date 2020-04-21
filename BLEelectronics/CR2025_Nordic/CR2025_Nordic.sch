@@ -67,7 +67,7 @@ F 3 "" H 2850 2500 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Power_Management:LTC4412xS6 U3
+L CR2025_Nordic-rescue:LTC4412xS6-Power_Management U3
 U 1 1 5E9DE63A
 P 2400 5550
 F 0 "U3" H 2400 6131 50  0000 C CNN
@@ -668,7 +668,7 @@ F 3 "" H 6500 1700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L MCU_Module:Nordic_nRF52840_breakout A1
+L CR2025_Nordic-rescue:Nordic_nRF52840_breakout-MCU_Module A1
 U 1 1 5EA6E901
 P 5900 1950
 F 0 "A1" H 5900 2767 50  0000 C CNN

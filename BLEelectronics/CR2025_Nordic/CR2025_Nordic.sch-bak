@@ -673,7 +673,7 @@ U 1 1 5EA6E901
 P 5900 1950
 F 0 "A1" H 5900 2767 50  0000 C CNN
 F 1 "Nordic_nRF52840_breakout" H 5900 2676 50  0000 C CNN
-F 2 "Module:Nordic_nRF52840_breakout" H 5900 2700 50  0001 C CNN
+F 2 "Module:Adafruit_HUZZAH_ESP8266_breakout" H 5900 2700 50  0001 C CNN
 F 3 "https://www.adafruit.com/product/2471" H 6200 2650 50  0001 C CNN
 	1    5900 1950
 	1    0    0    -1  
