@@ -1,4 +1,4 @@
-/Users/nams/Documents/projects/covid/particle/ble-contact/target/1.5.0/argon//obj/./src/module_info.o: \
+/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/particle/ble-contact/target/1.5.0/argon//obj/./src/module_info.o: \
  src/module_info.c ../../../dynalib/inc/module_info.inc \
  ../../../dynalib/inc/module_info.h ../../../services/inc/static_assert.h \
  /Users/nams/.particle/toolchains/gcc-arm/5.3.1/arm-none-eabi/include/assert.h \

@@ -3,7 +3,11 @@
     "C_Cpp.default.configurationProvider": "particle.particle-vscode-core",
     "cortex-debug.openocdPath": "${command:particle.getDebuggerOpenocdPath}",
     "files.associations": {
-        "*.ino": "cpp"
+        "*.ino": "cpp",
+        "__hash_table": "cpp",
+        "initializer_list": "cpp",
+        "iterator": "cpp",
+        "unordered_map": "cpp"
     },
     "particle.targetPlatform": "argon",
     "particle.targetDevice": "nams-argon1"

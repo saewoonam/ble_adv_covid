@@ -88,11 +88,12 @@
 #include "app_usbd_serial_num.h"
 
 #define LED_BLE_NUS_CONN (BSP_BOARD_LED_0)
-#define LED_BLE_NUS_RX   (BSP_BOARD_LED_1)
+#define LED_BLE_ADV      (BSP_BOARD_LED_1)
 #define LED_CDC_ACM_CONN (BSP_BOARD_LED_2)
-#define LED_CDC_ACM_RX   (BSP_BOARD_LED_3)
+#define LED_CONTACT      (BSP_BOARD_LED_3)
 
 #define LED_BLINK_INTERVAL 800
+#define LED_BLINK_ADV_INTERVAL 1000
 
 APP_TIMER_DEF(m_blink_ble);
 APP_TIMER_DEF(m_blink_cdc);
@@ -105,6 +106,22 @@ APP_TIMER_DEF(m_blink_cdc);
 void blink_handler(void * p_context)
 {
     bsp_board_led_invert((uint32_t) p_context);
+}
+void blink_flash_handler(void * p_context)
+{
+    bsp_board_led_on((uint32_t) p_context);
+    nrf_delay_ms(100);
+    bsp_board_led_off((uint32_t) p_context);
+}
+void blink(uint8_t times, uint32_t led)
+{
+    while(times--)
+    {
+        bsp_board_led_on(led);
+        nrf_delay_ms(20);
+        bsp_board_led_off(led);
+        nrf_delay_ms(20);
+    }
 }
 
 #define ENDLINE_STRING "\r\n"
@@ -130,10 +147,10 @@ APP_USBD_CDC_ACM_GLOBAL_DEF(m_app_cdc_acm,
                             CDC_ACM_COMM_EPIN,
                             CDC_ACM_DATA_EPIN,
                             CDC_ACM_DATA_EPOUT,
-                            APP_USBD_CDC_COMM_PROTOCOL_AT_V250);
+                            APP_USBD_CDC_COMM_PROTOCOL_NONE);  //AT_V250
 
 static char m_rx_buffer[1];
-static char m_tx_buffer[NRF_DRV_USBD_EPSIZE];
+static char m_tx_buffer[2*NRF_DRV_USBD_EPSIZE];
 static bool m_send_flag = 0;
 
 // USB_CDC_ACM DEFINES END
@@ -189,16 +206,10 @@ static ble_gap_adv_data_t m_adv_data =
     }
 };
 
-//static uint16_t   m_conn_handle          = BLE_CONN_HANDLE_INVALID;                 /**< Handle of the current connection. */
-//static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;            /**< Maximum length of data (in bytes) that can be transmitted to the peer by the Nordic UART service module. */
-//static ble_uuid_t m_adv_uuids[]          =                                          /**< Universally unique service identifier. */
-//{
-//    {BLE_UUID_NUS_SERVICE, NUS_SERVICE_UUID_TYPE}
-//};
-//static char m_nus_data_array[BLE_NUS_MAX_DATA_LEN];
-
 uint8_t ready = 1;
 uint8_t cdc_open = 0;
+static bool m_usb_connected = false;
+
 
 // BLE DEFINES END
 
@@ -224,10 +235,10 @@ static void timers_init(void)
 {
     ret_code_t err_code = app_timer_init();
     APP_ERROR_CHECK(err_code);
-    err_code = app_timer_create(&m_blink_ble, APP_TIMER_MODE_REPEATED, blink_handler);
+    err_code = app_timer_create(&m_blink_ble, APP_TIMER_MODE_REPEATED, blink_flash_handler);
     APP_ERROR_CHECK(err_code);
-    err_code = app_timer_create(&m_blink_cdc, APP_TIMER_MODE_REPEATED, blink_handler);
-    APP_ERROR_CHECK(err_code);
+    //err_code = app_timer_create(&m_blink_cdc, APP_TIMER_MODE_REPEATED, blink_flash);
+    //APP_ERROR_CHECK(err_code);
 }
 
 /**
@@ -244,86 +255,11 @@ static void gap_params_init(void)
     memset(&prvt_conf, 0, sizeof(prvt_conf));
     prvt_conf.privacy_mode = BLE_GAP_PRIVACY_MODE_DEVICE_PRIVACY;
     prvt_conf.private_addr_type = BLE_GAP_ADDR_TYPE_RANDOM_PRIVATE_NON_RESOLVABLE ;
-    prvt_conf.private_addr_cycle_s = 30;
+    prvt_conf.private_addr_cycle_s = 0;  // Will call this everytime to change address
     err_code = sd_ble_gap_privacy_set(&prvt_conf);
     APP_ERROR_CHECK(err_code);
 }
 
-
-
-/**
- * @brief Function for handling the data from the Nordic UART Service.
- *
- * @details This function processes the data received from the Nordic UART BLE Service and sends
- *          it to the USBD CDC ACM module.
- *
- * @param[in] p_evt Nordic UART Service event.
- */
-/*
-static void nus_data_handler(ble_nus_evt_t * p_evt)
-{
-
-    if (p_evt->type == BLE_NUS_EVT_RX_DATA)
-    {
-        bsp_board_led_invert(LED_BLE_NUS_RX);
-        NRF_LOG_DEBUG("Received data from BLE NUS. Writing data on CDC ACM.");
-        NRF_LOG_HEXDUMP_DEBUG(p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
-        memcpy(m_nus_data_array, p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
-
-        // Add endline characters
-        uint16_t length = p_evt->params.rx_data.length;
-        if (length + sizeof(ENDLINE_STRING) < BLE_NUS_MAX_DATA_LEN)
-        {
-            memcpy(m_nus_data_array + length, ENDLINE_STRING, sizeof(ENDLINE_STRING));
-            length += sizeof(ENDLINE_STRING);
-        }
-
-        // Send data through CDC ACM
-        ret_code_t ret = app_usbd_cdc_acm_write(&m_app_cdc_acm,
-                                                m_nus_data_array,
-                                                length);
-        if(ret != NRF_SUCCESS)
-        {
-            NRF_LOG_INFO("CDC ACM unavailable, data received: %s", m_nus_data_array);
-        }
-    }
-
-}
-*/
-
-/**
- * @brief Function for handling errors from the Connection Parameters module.
- *
- * @param[in] nrf_error  Error code containing information about what went wrong.
- */
-static void conn_params_error_handler(uint32_t nrf_error)
-{
-    APP_ERROR_HANDLER(nrf_error);
-}
-
-
-/** @brief Function for initializing the Connection Parameters module. */
-/*
-static void conn_params_init(void)
-{
-    uint32_t               err_code;
-    ble_conn_params_init_t cp_init;
-
-    memset(&cp_init, 0, sizeof(cp_init));
-
-    cp_init.p_conn_params                  = NULL;
-    cp_init.first_conn_params_update_delay = FIRST_CONN_PARAMS_UPDATE_DELAY;
-    cp_init.next_conn_params_update_delay  = NEXT_CONN_PARAMS_UPDATE_DELAY;
-    cp_init.max_conn_params_update_count   = MAX_CONN_PARAMS_UPDATE_COUNT;
-    cp_init.start_on_notify_cccd_handle    = BLE_GATT_HANDLE_INVALID;
-    cp_init.disconnect_on_fail             = true;
-    cp_init.evt_handler                    = NULL;
-    cp_init.error_handler                  = conn_params_error_handler;
-
-    err_code = ble_conn_params_init(&cp_init);
-    APP_ERROR_CHECK(err_code);
-}
-*/
 
 /**
  * @brief Function for putting the chip into sleep mode.
@@ -355,34 +291,13 @@ static void advertising_start(void)
 
     //err_code = bsp_indication_set(BSP_INDICATE_ADVERTISING);
     //APP_ERROR_CHECK(err_code);
-}
+    ret_code_t ret = app_timer_start(m_blink_ble,
+                                 APP_TIMER_TICKS(LED_BLINK_ADV_INTERVAL),
+                                 (void *) LED_BLE_ADV);
+    APP_ERROR_CHECK(ret);
+    
 
-/**
- * @brief Function for handling advertising events.
- *
- * @details This function is called for advertising events which are passed to the application.
- *
- * @param[in] ble_adv_evt  Advertising event.
- */
-static void on_adv_evt(ble_adv_evt_t ble_adv_evt)
-{
-    uint32_t err_code;
 
-    switch (ble_adv_evt)
-    {
-        case BLE_ADV_EVT_FAST:
-            err_code = app_timer_start(m_blink_ble,
-                                       APP_TIMER_TICKS(LED_BLINK_INTERVAL),
-                                       (void *) LED_BLE_NUS_CONN);
-            APP_ERROR_CHECK(err_code);
-            break;
-        case BLE_ADV_EVT_IDLE:
-            NRF_LOG_INFO("Advertising timeout, restarting.")
-            advertising_start();
-            break;
-        default:
-            break;
-    }
 }
 
 NRF_BLE_SCAN_DEF(m_scan);  
@@ -431,12 +346,6 @@ static void scan_init(void)
 
 int frame_counter=0;
 
-/**
- * @brief Function for handling BLE events.
- *
- * @param[in]   p_ble_evt   Bluetooth stack event.
- * @param[in]   p_context   Unused.
- */
 static int check_for_service(uint8_t *data, uint8_t length, uint8_t *uuid)
 {
     uint8_t *ptr;
@@ -462,8 +371,97 @@ static int check_for_service(uint8_t *data, uint8_t length, uint8_t *uuid)
     return result;
 }
 
-uint8_t contact[2] = {0x6F, 0xFD};
+/**
+ * @brief Function for handling events from the BSP module.
+ *
+ * @param[in]   event   Event generated by button press.
+ */
+void bsp_event_handler(bsp_event_t event)
+{
+    uint32_t err_code;
+    switch (event)
+    {
+        case BSP_EVENT_SLEEP:
+            sleep_mode_enter();
+            break;
 
+        case BSP_EVENT_DISCONNECT: /*
+            err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
+            if (err_code != NRF_ERROR_INVALID_STATE)
+            {
+                APP_ERROR_CHECK(err_code);
+            } */
+            break;
+
+        case BSP_EVENT_WHITELIST_OFF:
+            break;
+
+        default:
+            break;
+    }
+}
+
+void calc_RPI(uint8_t *data) {
+    static uint8_t count=0;
+    for(uint8_t i=0; i<16; i++) {
+      data[i] = i;
+    }  
+    data[15]=count++;
+}
+
+static void advertising_init(void)
+{
+    uint32_t      err_code;
+    ble_advdata_t advdata;
+    uint8_t       flags = BLE_GAP_ADV_FLAG_BR_EDR_NOT_SUPPORTED;
+    
+    flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
+    
+
+    // Initialize advertising parameters (used when starting advertising).
+    memset(&m_adv_params, 0, sizeof(m_adv_params));
+
+    m_adv_params.properties.type = BLE_GAP_ADV_TYPE_NONCONNECTABLE_NONSCANNABLE_UNDIRECTED;
+    m_adv_params.p_peer_addr     = NULL;    // Undirected advertisement.
+    m_adv_params.filter_policy   = BLE_GAP_ADV_FP_ANY;
+    m_adv_params.interval        = NON_CONNECTABLE_ADV_INTERVAL;
+    m_adv_params.duration        = 2000;    //   Change this time randomly...
+
+    m_adv_data.adv_data.p_data[0] = 0x2;  // Set TX_POWER
+    m_adv_data.adv_data.p_data[1] = 0xA;
+    m_adv_data.adv_data.p_data[2] = 0x04;  //SET tx power... need to change this
+    m_adv_data.adv_data.p_data[3] = 0x02;  // SET Flags
+    m_adv_data.adv_data.p_data[4] = 0x01;
+    m_adv_data.adv_data.p_data[5] = 0x06;
+    m_adv_data.adv_data.p_data[6] = 0x03;  // Set contact UUID
+    m_adv_data.adv_data.p_data[7] = 0x03;
+    m_adv_data.adv_data.p_data[8] = 0x6F;
+    m_adv_data.adv_data.p_data[9] = 0xFD;
+    m_adv_data.adv_data.p_data[10] = 0x13;
+    m_adv_data.adv_data.p_data[11] = 0x16;
+    m_adv_data.adv_data.p_data[12] = 0x6F;
+    m_adv_data.adv_data.p_data[13] = 0xFD;
+    calc_RPI(m_adv_data.adv_data.p_data+14);
+    /*
+    for(uint8_t i=0; i<16; i++) {
+      m_adv_data.adv_data.p_data[14+i] = i;
+    } 
+    */
+    m_adv_data.adv_data.len = 14+16;
+
+    //m_adv_handle = BLE_GAP_ADV_SET_HANDLE_NOT_SET;
+
+    err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
+    APP_ERROR_CHECK(err_code);
+}
+
+/**
+ * @brief Function for handling BLE events.
+ *
+ * @param[in]   p_ble_evt   Bluetooth stack event.
+ * @param[in]   p_context   Unused.
+ */
+uint8_t contact[2] = {0x6F, 0xFD};
 static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 {
     uint32_t err_code;
@@ -477,25 +475,32 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_DISCONNECTED:
             break;
 
+        case BLE_GAP_EVT_ADV_SET_TERMINATED:{
+            // Calculate new rpi
+            ret_code_t ret = app_timer_stop(m_blink_ble);
+            APP_ERROR_CHECK(ret);
+            advertising_init();
+            advertising_start();
+
+        }
         case BLE_GAP_EVT_ADV_REPORT:
         {       
             ble_gap_evt_adv_report_t const* adv = &p_ble_evt->evt.gap_evt.params.adv_report;
-            if (cdc_open) {  // Only send stuff if serial port is open
-              while (ready==0) {nrfx_coredep_delay_us(1000);} // wait until previous TX is done
-              // build message
-              bool contact_bool = check_for_service(adv->data.p_data, adv->data.len, contact);
-              if (contact_bool) {
-                   size = sprintf(m_tx_buffer, "%d ", adv->rssi);
-                  // size = sprintf(m_tx_buffer+size, " id: %02x ", adv->data_id);
-                  // size += sprintf(m_tx_buffer+size, "%d ", contact_bool);    
+            bool contact_bool = check_for_service(adv->data.p_data, adv->data.len, contact);
+            if (contact_bool) {
+                blink(1, LED_CONTACT);                
+                if (cdc_open && m_usb_connected) {  // Only send stuff if serial port is open
+                  // while (ready==0) {nrfx_coredep_delay_us(1000);} // wait until previous TX is done
+                  // timetag does not work
+                  //unsigned long timetag;
+                  // nrfx_systick_get(&timetag);
+                  // build message
+                  size = sprintf(m_tx_buffer, "%d ", adv->rssi);
+                  //size += sprintf(m_tx_buffer+size, "%ld ", timetag); 
                   size += sprintf(m_tx_buffer+size, "[%02x:%02x:%02x:%02x:%02x:%02x]",
                           adv->peer_addr.addr[5], adv->peer_addr.addr[4], adv->peer_addr.addr[3],
                           adv->peer_addr.addr[2], adv->peer_addr.addr[1], adv->peer_addr.addr[0]);
-                  
-
-                  // size += sprintf(m_tx_buffer+size, " contact: %d", contact_bool);
                   // size += sprintf(m_tx_buffer+size, " dlen: %d", adv->data.len);
-                  
                   if (adv->data.len>0) {
                     for (uint8_t i=0; i<adv->data.len; i++) {
                       //if (i>0) size+=sprintf(m_tx_buffer+size, "-");
@@ -504,17 +509,11 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
                       size++;
                     }  
                   }
-                  
-
-                  //size += sprintf(m_tx_buffer+size, "\n");
-              }
-
-              ready=0;
-              err_code = app_usbd_cdc_acm_write(&m_app_cdc_acm, m_tx_buffer, size);
-              APP_ERROR_CHECK(err_code);
-              //size = sprintf(m_tx_buffer, " rss: %df\r\n", evt_report->rssi);
-              //err_code = app_usbd_cdc_acm_write(&m_app_cdc_acm, m_tx_buffer, size);
-              //APP_ERROR_CHECK(err_code);
+                  size += sprintf(m_tx_buffer+size, "\n");
+                  ready=0;
+                  err_code = app_usbd_cdc_acm_write(&m_app_cdc_acm, m_tx_buffer, size);
+                  APP_ERROR_CHECK(err_code);
+                }
             }
             break;
         }
@@ -549,78 +548,6 @@ static void ble_stack_init(void)
 
     // Register a handler for BLE events.
     NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
-}
-
-/**
- * @brief Function for handling events from the BSP module.
- *
- * @param[in]   event   Event generated by button press.
- */
-void bsp_event_handler(bsp_event_t event)
-{
-    uint32_t err_code;
-    switch (event)
-    {
-        case BSP_EVENT_SLEEP:
-            sleep_mode_enter();
-            break;
-
-        case BSP_EVENT_DISCONNECT: /*
-            err_code = sd_ble_gap_disconnect(m_conn_handle, BLE_HCI_REMOTE_USER_TERMINATED_CONNECTION);
-            if (err_code != NRF_ERROR_INVALID_STATE)
-            {
-                APP_ERROR_CHECK(err_code);
-            } */
-            break;
-
-        case BSP_EVENT_WHITELIST_OFF:
-            break;
-
-        default:
-            break;
-    }
-}
-
-static void advertising_init(void)
-{
-    uint32_t      err_code;
-    ble_advdata_t advdata;
-    uint8_t       flags = BLE_GAP_ADV_FLAG_BR_EDR_NOT_SUPPORTED;
-    
-    flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
-    
-
-    // Initialize advertising parameters (used when starting advertising).
-    memset(&m_adv_params, 0, sizeof(m_adv_params));
-
-    m_adv_params.properties.type = BLE_GAP_ADV_TYPE_NONCONNECTABLE_NONSCANNABLE_UNDIRECTED;
-    m_adv_params.p_peer_addr     = NULL;    // Undirected advertisement.
-    m_adv_params.filter_policy   = BLE_GAP_ADV_FP_ANY;
-    m_adv_params.interval        = NON_CONNECTABLE_ADV_INTERVAL;
-    m_adv_params.duration        = 0;       // Never time out.
-
-    m_adv_data.adv_data.p_data[0] = 0x2;  // Set TX_POWER
-    m_adv_data.adv_data.p_data[1] = 0xA;
-    m_adv_data.adv_data.p_data[2] = 0x04;  //SET tx power... need to change this
-    m_adv_data.adv_data.p_data[3] = 0x02;  // SET Flags
-    m_adv_data.adv_data.p_data[4] = 0x01;
-    m_adv_data.adv_data.p_data[5] = 0x06;
-    m_adv_data.adv_data.p_data[6] = 0x03;  // Set contact UUID
-    m_adv_data.adv_data.p_data[7] = 0x03;
-    m_adv_data.adv_data.p_data[8] = 0x6F;
-    m_adv_data.adv_data.p_data[9] = 0xFD;
-    m_adv_data.adv_data.p_data[10] = 0x13;
-    m_adv_data.adv_data.p_data[11] = 0x16;
-    m_adv_data.adv_data.p_data[12] = 0x6F;
-    m_adv_data.adv_data.p_data[13] = 0xFD;
-    for(uint8_t i=0; i<16; i++) {
-      m_adv_data.adv_data.p_data[14+i] = i;
-    }  
-    m_adv_data.adv_data.len = 14+16;
-
-    
-    err_code = sd_ble_gap_adv_set_configure(&m_adv_handle, &m_adv_data, &m_adv_params);
-    APP_ERROR_CHECK(err_code);
 }
 
 
@@ -663,8 +590,6 @@ static void idle_state_handle(void)
 
 
 // USB CODE START
-static bool m_usb_connected = false;
-
 
 /** @brief User event handler @ref app_usbd_cdc_acm_user_ev_handler_t */
 static void cdc_acm_user_ev_handler(app_usbd_class_inst_t const * p_inst,
@@ -681,9 +606,10 @@ static void cdc_acm_user_ev_handler(app_usbd_class_inst_t const * p_inst,
                                                    m_cdc_data_array,
                                                    1);
             UNUSED_VARIABLE(ret);
-            ret = app_timer_stop(m_blink_cdc);
-            APP_ERROR_CHECK(ret);
-            bsp_board_led_on(LED_CDC_ACM_CONN);
+            // ret = app_timer_stop(m_blink_cdc);
+            // APP_ERROR_CHECK(ret);
+            // bsp_board_led_on(LED_CDC_ACM_CONN);
+            blink(5, LED_CDC_ACM_CONN);
             NRF_LOG_INFO("CDC ACM port opened");
             cdc_open = 1;
             break;
@@ -692,16 +618,18 @@ static void cdc_acm_user_ev_handler(app_usbd_class_inst_t const * p_inst,
         case APP_USBD_CDC_ACM_USER_EVT_PORT_CLOSE:
             NRF_LOG_INFO("CDC ACM port closed");
             if (m_usb_connected)
-            {
+            {/*
                 ret_code_t ret = app_timer_start(m_blink_cdc,
                                                  APP_TIMER_TICKS(LED_BLINK_INTERVAL),
                                                  (void *) LED_CDC_ACM_CONN);
-                APP_ERROR_CHECK(ret);
+                APP_ERROR_CHECK(ret);*/
+                blink(5, LED_CDC_ACM_CONN);
             }
             break;
 
         case APP_USBD_CDC_ACM_USER_EVT_TX_DONE:
             ready=1;
+            blink(3, LED_CDC_ACM_CONN);
             break;
 
         case APP_USBD_CDC_ACM_USER_EVT_RX_DONE:
@@ -757,10 +685,13 @@ static void usbd_user_ev_handler(app_usbd_event_type_t event)
         case APP_USBD_EVT_POWER_READY:
         {
             NRF_LOG_INFO("USB ready");
+            /*
             ret_code_t err_code = app_timer_start(m_blink_cdc,
                                                   APP_TIMER_TICKS(LED_BLINK_INTERVAL),
                                                   (void *) LED_CDC_ACM_CONN);
             APP_ERROR_CHECK(err_code);
+            */
+            blink(10, LED_CDC_ACM_CONN);
             m_usb_connected = true;
             app_usbd_start();
         }
@@ -783,6 +714,7 @@ int main(void)
     // Initialize.
     log_init();
     timers_init();
+    // nrfx_systick_init();
 
     buttons_leds_init();
 

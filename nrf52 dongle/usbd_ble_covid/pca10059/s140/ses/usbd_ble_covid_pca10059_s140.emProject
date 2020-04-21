@@ -133,6 +133,7 @@
       <file file_name="$(sdk)/components/softdevice/common/nrf_sdh_ble.c" />
       <file file_name="$(sdk)/components/softdevice/common/nrf_sdh_soc.c" />
     </folder>
+    <file file_name="../../../../../../../nrf5/nRF5SDK160098a08e2/modules/nrfx/hal/nrf_systick.h" />
   </project>
   <configuration
     Name="Release"

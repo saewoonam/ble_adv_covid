@@ -1,4 +1,4 @@
-/Users/nams/Documents/projects/covid/particle/ble-contact/target/1.5.0/argon//obj/./src/newlib_stubs.o: \
+/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/particle/ble-contact/target/1.5.0/argon//obj/./src/newlib_stubs.o: \
  src/newlib_stubs.cpp \
  ../../../modules/shared/nRF52840/inc/user-part/newlib_stubs.inc \
  /Users/nams/.particle/toolchains/gcc-arm/5.3.1/arm-none-eabi/include/sys/types.h \
