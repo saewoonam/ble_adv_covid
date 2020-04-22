@@ -11,7 +11,6 @@
  */
 #include "Particle.h"
 #include "config.h"
-
 void serial(char *buffer);
 void sprintf_buffer(char *buf, uint8_t *data, uint8_t length);
 void blink(uint8_t times);
@@ -21,7 +20,9 @@ void advertising_init(void);
 void calc_RPI(uint8_t *data);
 void setup();
 void loop();
-#line 10 "/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/particle/ble-contact/src/ble-contact.ino"
+#line 9 "/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/particle/ble-contact/src/ble-contact.ino"
+extern int post(char *);
+
 BleAdvertisingData advData;
 static uint8_t m_enc_advdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];
 
@@ -85,18 +86,22 @@ void scanResultCallback(const BleScanResult *scanResult, void *context) {
     if( uuids[i].shorted() == CONTACT_UUID ) {
         blink(1);
         char buffer[128];
+        char buffer2[64];
         lastSeen = millis();
         lastRSSI = scanResult->rssi;
         // Log.trace("UUID: %x", uuids[i].shorted());
-        sprintf(buffer,"%ld, %d, %02X:%02X:%02X:%02X:%02X:%02X, ", 
-                  lastSeen, lastRSSI, addr[5], addr[4], addr[3], addr[2], addr[1], addr[0]);
-        serial(buffer);
         uint8_t recv_buffer[31];
         uint8_t len = scanResult->advertisingData.length();
         scanResult->advertisingData.get(recv_buffer, len);
-        sprintf_buffer(buffer, recv_buffer, len);
-        serial(buffer);
-        sprintf(buffer, "\n");
+        sprintf_buffer(buffer2, recv_buffer, len);
+        sprintf(buffer,"%ld, %d, %02X:%02X:%02X:%02X:%02X:%02X, %s", 
+                  lastSeen, lastRSSI, 
+                  addr[5], addr[4], addr[3], addr[2], addr[1], addr[0],
+                  buffer2);
+        int l = strlen(buffer);
+        post(buffer);
+        buffer[l] = '\n';
+        buffer[l+1] = 0;
         serial(buffer);
         //Log.trace("RSSI: %ddBm", scanResult->rssi);
         // Stop scanning
@@ -169,6 +174,7 @@ void advertising_init(void)
     BLE.setAdvertisingType(BleAdvertisingEventType::NON_CONNECTABLE_NON_SCANABLE_UNDIRECTED);
     BleAddress defaultAddr = BLE.address();
     BLE.address().type(BleAddressType::RANDOM_PRIVATE_NON_RESOLVABLE);
+    BLE.setAdvertisingInterval(250);
     BLE.setAdvertisingTimeout(2000);
     int8_t txPower;
     txPower = BLE.txPower(&txPower);
@@ -221,10 +227,8 @@ void setup() {
       serial_is_off = false;
     }    
   }
-  // Serial.print("In setup\n");
-  //Log.info("serial_is_off %d", serial_is_off);
-  // Put initialization like pinMode and begin functions here.
-  BLE.setScanTimeout(100);
+
+  BLE.setScanTimeout(500);
   gap_params_init();
   advertising_init();
   BLE.advertise(&advData);
@@ -237,9 +241,11 @@ void loop() {
     serial_is_off = true;
   }
   */
- if( (millis() > lastSeen + RE_CHECK_MS) ){
-      BLE.scan(scanResultCallback, NULL);
-  }
+//  if( (millis() > lastSeen + RE_CHECK_MS) ){
+//       BLE.scan(scanResultCallback, NULL);
+//   }
+  BLE.scan(scanResultCallback, NULL);
+  Serial.println("Finished Scan");
   //Log.info("isadvertising: %d", BLE.advertising());
   if (not BLE.advertising()) {
       // Log.info("Check if MAC changed.");
