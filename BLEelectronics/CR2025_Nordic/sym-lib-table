@@ -6,4 +6,7 @@
   (lib (name LTC4054LES5-4.2_TRPBF)(type Legacy)(uri ${KIPRJMOD}/../libraries/LTC4054LES5-4.2_TRPBF.lib)(options "")(descr ""))
   (lib (name si2307cds)(type Legacy)(uri ${KIPRJMOD}/../libraries/si2307cds.lib)(options "")(descr ""))
   (lib (name CR2025_Nordic-rescue)(type Legacy)(uri ${KIPRJMOD}/CR2025_Nordic-rescue.lib)(options "")(descr ""))
+  (lib (name nordic_nrf52840_breakout)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/nordic_nrf52840_breakout.lib)(options "")(descr ""))
+  (lib (name ltc4412xs6)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/ltc4412xs6.lib)(options "")(descr ""))
+  (lib (name mx25R6435FM2IL)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/mx25R6435FM2IL.lib)(options "")(descr ""))
 )
