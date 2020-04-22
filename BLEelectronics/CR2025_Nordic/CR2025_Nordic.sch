@@ -67,10 +67,10 @@ F 3 "" H 2850 2500 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L CR2025_Nordic-rescue:LTC4412xS6-Power_Management U3
+L ltc4412xs6:LTC4412xS6 IC1
 U 1 1 5E9DE63A
 P 2400 5550
-F 0 "U3" H 2400 6131 50  0000 C CNN
+F 0 "IC1" H 2400 6131 50  0000 C CNN
 F 1 "LTC4412xS6" H 2400 6040 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:TSOT-23-6" H 3050 5200 50  0001 C CNN
 F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf" H 4500 5350 50  0001 C CNN
@@ -85,10 +85,10 @@ F 10 "-" H -3000 3050 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L LTC4054LES5-4.2_TRPBF:LTC4054LES5-4.2#TRPBF U4
+L LTC4054LES5-4.2_TRPBF:LTC4054LES5-4.2#TRPBF IC4
 U 1 1 5E9DF23D
 P 9450 2150
-F 0 "U4" H 9250 2650 50  0000 C CNN
+F 0 "IC4" H 9250 2650 50  0000 C CNN
 F 1 "LTC4054LES5-4.2#TRPBF" H 9450 1650 50  0000 C CNN
 F 2 "0my_footprints:LTC4054LES5-4.2_TRPBF" H 9450 2150 50  0001 L BNN
 F 3 "http://www.linear.com/docs/2068" H 9450 2150 50  0001 L BNN
@@ -171,19 +171,19 @@ $EndComp
 $Comp
 L Device:D_Schottky D3
 U 1 1 5E9EFF12
-P 3150 4450
-F 0 "D3" H 3150 4666 50  0000 C CNN
-F 1 "D_Schottky" H 3150 4575 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-123F" H 3150 4450 50  0001 C CNN
-F 3 "https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf" H 3150 4450 50  0001 C CNN
-F 4 "SL14PL-TP" H 3150 4450 50  0001 C CNN "MPN"
-F 5 "Micro Commercial Co" H 3150 4450 50  0001 C CNN "MFR"
-F 6 "SL14PL-TPMSCT-ND" H -3000 3200 50  0001 C CNN "DPN"
-F 7 "-" H -3000 3200 50  0001 C CNN "LCSCPN"
-F 8 "-" H -3000 3200 50  0001 C CNN "SPR"
-F 9 "-" H -3000 3200 50  0001 C CNN "SPN"
-F 10 "-" H -3000 3200 50  0001 C CNN "SIM"
-	1    3150 4450
+P 4050 4450
+F 0 "D3" H 4050 4666 50  0000 C CNN
+F 1 "D_Schottky" H 4050 4575 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 4050 4450 50  0001 C CNN
+F 3 "https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf" H 4050 4450 50  0001 C CNN
+F 4 "SL14PL-TP" H 4050 4450 50  0001 C CNN "MPN"
+F 5 "Micro Commercial Co" H 4050 4450 50  0001 C CNN "MFR"
+F 6 "SL14PL-TPMSCT-ND" H -2100 3200 50  0001 C CNN "DPN"
+F 7 "-" H -2100 3200 50  0001 C CNN "LCSCPN"
+F 8 "-" H -2100 3200 50  0001 C CNN "SPR"
+F 9 "-" H -2100 3200 50  0001 C CNN "SPN"
+F 10 "-" H -2100 3200 50  0001 C CNN "SIM"
+	1    4050 4450
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -241,9 +241,9 @@ F 0 "R6" H 10370 2396 50  0000 L CNN
 F 1 "1.69K" H 10370 2305 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10230 2350 50  0001 C CNN
 F 3 "~" H 10300 2350 50  0001 C CNN
-F 4 "-" H 50  -50 50  0001 C CNN "MFR"
-F 5 "-" H 50  -50 50  0001 C CNN "MPN"
-F 6 "-" H 50  -50 50  0001 C CNN "DPN"
+F 4 "Yageo" H 50  -50 50  0001 C CNN "MFR"
+F 5 "RC0201FR-071K69L" H 50  -50 50  0001 C CNN "MPN"
+F 6 "YAG2487CT-ND" H 50  -50 50  0001 C CNN "DPN"
 F 7 "-" H 50  -50 50  0001 C CNN "LCSCPN"
 F 8 "-" H 50  -50 50  0001 C CNN "SPR"
 F 9 "-" H 50  -50 50  0001 C CNN "SPN"
@@ -298,111 +298,6 @@ F 3 "" H 10150 2500 50  0001 C CNN
 	1    10150 2500
 	1    0    0    -1  
 $EndComp
-Text Label 6500 1500 0    50   ~ 0
-5Vusb
-Text Notes 1700 1350 0    50   ~ 0
-20mm diam. coin cell holder
-Text Label 1400 4800 0    50   ~ 0
-3V
-Text Label 1400 4450 0    50   ~ 0
-5Vusb
-Text Label 9450 1150 0    50   ~ 0
-5Vusb
-Text Label 10600 2000 0    50   ~ 0
-3V
-Text Notes 8400 2900 0    50   ~ 0
-Coin cell charger circuit
-Text Notes 1200 6350 0    50   ~ 0
-Power source selection logic
-Text Notes 1150 2900 0    50   ~ 0
-CR2032/CR2025 Coin Cell holder \nand ESD/Surge protection
-Text Label 2850 1550 0    50   ~ 0
-3V
-Text Notes 8350 5250 0    50   ~ 0
-SPI interface flash memory PLACE HOLDER
-Wire Wire Line
-	2250 2350 1750 2350
-Wire Wire Line
-	1750 2350 1750 2250
-Wire Wire Line
-	2250 1550 1850 1550
-Wire Wire Line
-	1850 1550 1850 1700
-Wire Wire Line
-	1650 1700 1850 1700
-Wire Wire Line
-	2250 2350 2850 2350
-Wire Wire Line
-	2850 2350 2850 2500
-Wire Wire Line
-	3150 5100 3150 5550
-Wire Wire Line
-	3150 5550 2800 5550
-Wire Wire Line
-	2000 5550 2000 5700
-Wire Wire Line
-	2000 5400 1600 5400
-Wire Wire Line
-	1600 5400 1600 4800
-Wire Wire Line
-	1600 4800 1400 4800
-Wire Wire Line
-	2800 5400 2900 5400
-Wire Wire Line
-	2900 5400 2900 4450
-Wire Wire Line
-	2900 4450 3000 4450
-Wire Wire Line
-	2000 5700 1950 5700
-Wire Wire Line
-	1650 5700 1600 5700
-Wire Wire Line
-	9450 1450 8800 1450
-Wire Wire Line
-	10050 2200 10300 2200
-Wire Wire Line
-	10050 2450 10050 2500
-Wire Wire Line
-	10050 2500 10150 2500
-Wire Wire Line
-	10050 2000 10300 2000
-Wire Wire Line
-	10150 2500 10300 2500
-Wire Notes Line
-	1050 3000 3550 3000
-Wire Notes Line
-	3550 3000 3550 900 
-Wire Notes Line
-	3550 900  1050 900 
-Wire Notes Line
-	1050 900  1050 3000
-Wire Notes Line
-	7850 3000 7850 900 
-Wire Notes Line
-	7850 900  3900 900 
-Wire Notes Line
-	8250 3000 10800 3000
-Wire Wire Line
-	9450 1650 9450 1450
-Wire Notes Line
-	10800 3000 10800 900 
-Wire Notes Line
-	10800 900  8250 900 
-Wire Notes Line
-	8250 900  8250 3000
-Wire Wire Line
-	2250 1550 2850 1550
-Connection ~ 1850 1700
-Connection ~ 2250 2350
-Connection ~ 1600 5400
-Connection ~ 2000 5700
-Connection ~ 1600 5700
-Connection ~ 10150 2500
-Connection ~ 9450 1450
-Connection ~ 2250 1550
-NoConn ~ 8850 2300
-Connection ~ 2900 4450
-Connection ~ 1600 4800
 $Comp
 L TPD1E10B06DPYR:TPD1E10B06DPYR D1
 U 1 1 5E9C4738
@@ -427,13 +322,6 @@ F 16 "-" H -1250 0   50  0001 C CNN "SIM"
 	1    1900 4050
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	1600 4800 2950 4800
-Connection ~ 1900 4450
-Wire Wire Line
-	1900 4450 1400 4450
-Wire Wire Line
-	1900 4450 2900 4450
 $Comp
 L power:GND #PWR02
 U 1 1 5EA2FE2A
@@ -482,9 +370,9 @@ F 0 "R4" H 4770 5546 50  0000 L CNN
 F 1 "560K" H 4770 5455 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4630 5500 50  0001 C CNN
 F 3 "~" H 4700 5500 50  0001 C CNN
-F 4 "-" H -2150 3050 50  0001 C CNN "MFR"
-F 5 "-" H -2150 3050 50  0001 C CNN "MPN"
-F 6 "-" H -2150 3050 50  0001 C CNN "DPN"
+F 4 "Yageo" H -2150 3050 50  0001 C CNN "MFR"
+F 5 "RC0201FR-07560KL" H -2150 3050 50  0001 C CNN "MPN"
+F 6 "RC0201FR-071K69L" H -2150 3050 50  0001 C CNN "DPN"
 F 7 "-" H -2150 3050 50  0001 C CNN "LCSCPN"
 F 8 "-" H -2150 3050 50  0001 C CNN "SPR"
 F 9 "-" H -2150 3050 50  0001 C CNN "SPN"
@@ -528,20 +416,6 @@ F 10 "-" H -2150 3050 50  0001 C CNN "SIM"
 	1    4450 4800
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4850 4800 4700 4800
-Wire Wire Line
-	4700 5650 4700 5700
-Wire Wire Line
-	4850 4800 5450 4800
-Wire Wire Line
-	4600 4450 4700 4450
-Wire Wire Line
-	4700 4800 4600 4800
-Connection ~ 4700 4800
-Connection ~ 4850 4800
-Text Label 5450 4800 0    50   ~ 0
-VDD_3V
 $Comp
 L si2307cds:Si2307CDS Q1
 U 1 1 5E9CEE32
@@ -563,99 +437,68 @@ $EndComp
 $Comp
 L Regulator_Linear:LP5907MFX-3.3 U1
 U 1 1 5EA3D589
-P 3850 4350
-F 0 "U1" H 3850 4717 50  0000 C CNN
-F 1 "LP5907MFX-3.3" H 3850 4626 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3850 4700 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lp5907.pdf" H 3850 4850 50  0001 C CNN
-	1    3850 4350
+P 3450 4350
+F 0 "U1" H 3450 4717 50  0000 C CNN
+F 1 "LP5907MFX-3.3" H 3450 4626 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3450 4700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lp5907.pdf" H 3450 4850 50  0001 C CNN
+F 4 "Texas Instruments" H -400 0   50  0001 C CNN "MFR"
+F 5 "LP5907MFX-3.3" H -400 0   50  0001 C CNN "MPN"
+F 6 "296-38557-1-ND" H -400 0   50  0001 C CNN "DPN"
+F 7 "-" H -400 0   50  0001 C CNN "LCSCPN"
+F 8 "LCSC" H -400 0   50  0001 C CNN "SPR"
+F 9 "C143028" H -400 0   50  0001 C CNN "SPN"
+F 10 "-" H -400 0   50  0001 C CNN "SIM"
+	1    3450 4350
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	3550 4350 3500 4350
-Wire Wire Line
-	3500 4350 3500 4450
-Connection ~ 3500 4450
-Wire Wire Line
-	3500 4450 3550 4450
 $Comp
 L power:GND #PWR07
 U 1 1 5EA4312B
-P 3850 3800
-F 0 "#PWR07" H 3850 3550 50  0001 C CNN
-F 1 "GND" H 3855 3627 50  0000 C CNN
-F 2 "" H 3850 3800 50  0001 C CNN
-F 3 "" H 3850 3800 50  0001 C CNN
-	1    3850 3800
+P 3450 3800
+F 0 "#PWR07" H 3450 3550 50  0001 C CNN
+F 1 "GND" H 3455 3627 50  0000 C CNN
+F 2 "" H 3450 3800 50  0001 C CNN
+F 3 "" H 3450 3800 50  0001 C CNN
+	1    3450 3800
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:C C4
 U 1 1 5EA4DCA4
-P 3400 3950
-F 0 "C4" H 3515 3996 50  0000 L CNN
-F 1 "1uF" H 3515 3905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3438 3800 50  0001 C CNN
-F 3 "~" H 3400 3950 50  0001 C CNN
-F 4 "Samsung" H -5350 2300 50  0001 C CNN "MFR"
-F 5 "CL10B105KA8NNNC" H -5350 2300 50  0001 C CNN "MPN"
-F 6 "587-2786-6-ND" H -5350 2300 50  0001 C CNN "DPN"
-F 7 "-" H -5350 2300 50  0001 C CNN "LCSCPN"
-F 8 "-" H -5350 2300 50  0001 C CNN "SPR"
-F 9 "-" H -5350 2300 50  0001 C CNN "SPN"
-F 10 "-" H -5350 2300 50  0001 C CNN "SIM"
-	1    3400 3950
+P 3000 3950
+F 0 "C4" H 3115 3996 50  0000 L CNN
+F 1 "1uF" H 3115 3905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3038 3800 50  0001 C CNN
+F 3 "~" H 3000 3950 50  0001 C CNN
+F 4 "Samsung" H -5750 2300 50  0001 C CNN "MFR"
+F 5 "CL10B105KA8NNNC" H -5750 2300 50  0001 C CNN "MPN"
+F 6 "587-2786-6-ND" H -5750 2300 50  0001 C CNN "DPN"
+F 7 "-" H -5750 2300 50  0001 C CNN "LCSCPN"
+F 8 "-" H -5750 2300 50  0001 C CNN "SPR"
+F 9 "-" H -5750 2300 50  0001 C CNN "SPN"
+F 10 "-" H -5750 2300 50  0001 C CNN "SIM"
+	1    3000 3950
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C5
 U 1 1 5EA4EF46
-P 4200 3950
-F 0 "C5" H 4315 3996 50  0000 L CNN
-F 1 "1uF" H 4315 3905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4238 3800 50  0001 C CNN
-F 3 "~" H 4200 3950 50  0001 C CNN
-F 4 "Samsung" H -4550 2300 50  0001 C CNN "MFR"
-F 5 "CL10B105KA8NNNC" H -4550 2300 50  0001 C CNN "MPN"
-F 6 "587-2786-6-ND" H -4550 2300 50  0001 C CNN "DPN"
-F 7 "-" H -4550 2300 50  0001 C CNN "LCSCPN"
-F 8 "-" H -4550 2300 50  0001 C CNN "SPR"
-F 9 "-" H -4550 2300 50  0001 C CNN "SPN"
-F 10 "-" H -4550 2300 50  0001 C CNN "SIM"
-	1    4200 3950
+P 3800 3950
+F 0 "C5" H 3915 3996 50  0000 L CNN
+F 1 "1uF" H 3915 3905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3838 3800 50  0001 C CNN
+F 3 "~" H 3800 3950 50  0001 C CNN
+F 4 "Samsung" H -4950 2300 50  0001 C CNN "MFR"
+F 5 "CL10B105KA8NNNC" H -4950 2300 50  0001 C CNN "MPN"
+F 6 "587-2786-6-ND" H -4950 2300 50  0001 C CNN "DPN"
+F 7 "-" H -4950 2300 50  0001 C CNN "LCSCPN"
+F 8 "-" H -4950 2300 50  0001 C CNN "SPR"
+F 9 "-" H -4950 2300 50  0001 C CNN "SPN"
+F 10 "-" H -4950 2300 50  0001 C CNN "SIM"
+	1    3800 3950
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3300 4450 3400 4450
-Wire Wire Line
-	3400 4450 3400 4100
-Connection ~ 3400 4450
-Wire Wire Line
-	3400 4450 3500 4450
-Wire Wire Line
-	4150 4450 4200 4450
-Wire Wire Line
-	4200 4450 4200 4100
-Wire Wire Line
-	3400 3800 3850 3800
-Connection ~ 3850 3800
-Wire Wire Line
-	3850 3800 4200 3800
-Wire Wire Line
-	4700 4800 4700 5350
-Wire Wire Line
-	4700 4450 4700 4800
-Wire Wire Line
-	3350 4800 4300 4800
-Wire Wire Line
-	2800 5700 4700 5700
-Connection ~ 4200 4450
-Wire Wire Line
-	4200 4450 4300 4450
-Wire Notes Line
-	3900 900  3900 3000
-Wire Notes Line
-	3900 3000 7850 3000
 $Comp
 L power:GND #PWR09
 U 1 1 5EA74258
@@ -668,13 +511,20 @@ F 3 "" H 6500 1700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CR2025_Nordic-rescue:Nordic_nRF52840_breakout-MCU_Module A1
+L nordic_nrf52840_breakout:Nordic_nRF52840_breakout J1
 U 1 1 5EA6E901
 P 5900 1950
-F 0 "A1" H 5900 2767 50  0000 C CNN
-F 1 "Nordic_nRF52840_breakout" H 5900 2676 50  0000 C CNN
-F 2 "Module:Adafruit_HUZZAH_ESP8266_breakout" H 5900 2700 50  0001 C CNN
-F 3 "https://www.adafruit.com/product/2471" H 6200 2650 50  0001 C CNN
+F 0 "J1" H 6250 2700 50  0000 C CNN
+F 1 "Nordic_nRF52840_breakout" H 5900 2850 50  0000 C CNN
+F 2 "0my_footprints:Nordic_nRF52840_FeatherHeader" H 5900 2700 50  0001 C CNN
+F 3 "https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fpin.html&cp=3_0_0_6_0_0&anchor=aqfn73" H 6200 2650 50  0001 C CNN
+F 4 "Nordic Semiconductor ASA" H 0   0   50  0001 C CNN "MFR"
+F 5 "NRF52840-DONGLE" H 0   0   50  0001 C CNN "MPN"
+F 6 "1490-1073-ND" H 0   0   50  0001 C CNN "DPN"
+F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPR"
+F 9 "-" H 0   0   50  0001 C CNN "SPN"
+F 10 "-" H 0   0   50  0001 C CNN "SIM"
 	1    5900 1950
 	1    0    0    -1  
 $EndComp
@@ -700,23 +550,286 @@ F 3 "" H 5300 2400 50  0001 C CNN
 	1    5300 2400
 	0    1    1    0   
 $EndComp
-NoConn ~ 5300 1500
-NoConn ~ 5300 1600
-NoConn ~ 5300 1700
-NoConn ~ 5300 1800
-NoConn ~ 5300 1900
-NoConn ~ 5300 2000
-NoConn ~ 5300 2100
-NoConn ~ 5300 2200
-NoConn ~ 5300 2300
-NoConn ~ 6500 2300
-NoConn ~ 6500 2200
-NoConn ~ 6500 2100
-NoConn ~ 6500 2000
-NoConn ~ 6500 1900
-NoConn ~ 6500 1800
+$Comp
+L power:GND #PWR011
+U 1 1 5EA9F122
+P 8750 4300
+F 0 "#PWR011" H 8750 4050 50  0001 C CNN
+F 1 "GND" H 8755 4127 50  0000 C CNN
+F 2 "" H 8750 4300 50  0001 C CNN
+F 3 "" H 8750 4300 50  0001 C CNN
+	1    8750 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Timer_RTC:PCF8523T IC2
+U 1 1 5E9F84DB
+P 7450 4150
+F 0 "IC2" H 7800 4600 50  0000 L CNN
+F 1 "PCF8523T" H 7700 4500 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8250 3800 50  0001 C CNN
+F 3 "https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf" H 7450 4150 50  0001 C CNN
+F 4 "NXP USA Inc." H 300 50  50  0001 C CNN "MFR"
+F 5 "PCF8523T/1,118" H 300 50  50  0001 C CNN "MPN"
+F 6 "568-5306-1-ND" H 300 50  50  0001 C CNN "DPN"
+F 7 "-" H 300 50  50  0001 C CNN "LCSCPN"
+F 8 "-" H 300 50  50  0001 C CNN "SPR"
+F 9 "-" H 300 50  50  0001 C CNN "SPN"
+F 10 "-" H 300 50  50  0001 C CNN "SIM"
+	1    7450 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L mx25R6435FM2IL:MX25R6435FM2IL0 IC3
+U 1 1 5E9F9A1A
+P 8750 4000
+F 0 "IC3" H 9600 4350 60  0000 C CNN
+F 1 "MX25R6435FM2IL0" H 9600 4200 60  0000 C CNN
+F 2 "0my_footprints:MX25R6435FM2IL0" H 10050 4240 60  0001 C CNN
+F 3 "http://www.macronix.com/Lists/Datasheet/Attachments/7428/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf" H 8750 4000 60  0001 C CNN
+F 4 "Macronix" H 0   0   50  0001 C CNN "MFR"
+F 5 "MX25R6435FM2IL0" H 0   0   50  0001 C CNN "MPN"
+F 6 "1092-1200-ND" H 0   0   50  0001 C CNN "DPN"
+F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPR"
+F 9 "-" H 0   0   50  0001 C CNN "SPN"
+F 10 "-" H 0   0   50  0001 C CNN "SIM"
+	1    8750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5EA0EA9A
+P 7450 4550
+F 0 "#PWR0101" H 7450 4300 50  0001 C CNN
+F 1 "GND" H 7455 4377 50  0000 C CNN
+F 2 "" H 7450 4550 50  0001 C CNN
+F 3 "" H 7450 4550 50  0001 C CNN
+	1    7450 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP2
+U 1 1 5EA3130D
+P 6700 2200
+F 0 "JP2" H 6950 2300 50  0000 C CNN
+F 1 "Jumper_2_Open" H 7000 2250 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6700 2200 50  0001 C CNN
+F 3 "~" H 6700 2200 50  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "DPN"
+F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPR"
+F 9 "-" H 0   0   50  0001 C CNN "SPN"
+F 10 "-" H 0   0   50  0001 C CNN "SIM"
+	1    6700 2200
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5EA074F4
+P 6800 3800
+F 0 "R9" H 6870 3846 50  0000 L CNN
+F 1 "4.7K" H 6870 3755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6730 3800 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6800 3800 50  0001 C CNN
+F 4 "Yageo" H 350 50  50  0001 C CNN "MFR"
+F 5 "RC0603FR-074K7L" H 350 50  50  0001 C CNN "MPN"
+F 6 "311-4.70KHRCT-ND" H 350 50  50  0001 C CNN "DPN"
+F 7 "-" H 350 50  50  0001 C CNN "LCSCPN"
+F 8 "-" H 350 50  50  0001 C CNN "SPR"
+F 9 "-" H 350 50  50  0001 C CNN "SPN"
+F 10 "-" H 350 50  50  0001 C CNN "SIM"
+	1    6800 3800
+	1    0    0    -1  
+$EndComp
+Text Label 6500 1500 0    50   ~ 0
+5Vusb
+Text Notes 1200 1450 0    50   ~ 0
+20mm diam. coin cell holder
+Text Label 1400 4800 0    50   ~ 0
+3V
+Text Label 1400 4450 0    50   ~ 0
+5Vusb
+Text Label 9450 1150 0    50   ~ 0
+5Vusb
+Text Label 10600 2000 0    50   ~ 0
+3V
+Text Notes 8400 2900 0    50   ~ 0
+Coin cell charger circuit
+Text Notes 1200 6350 0    50   ~ 0
+Power source selection logic
+Text Notes 1150 2900 0    50   ~ 0
+CR2032/CR2025 Coin Cell holder \nand ESD/Surge protection
+Text Label 2850 1550 0    50   ~ 0
+3V
+Text Notes 8550 5100 0    50   ~ 0
+SPI interface flash memory with SPI
+Text Label 5450 4800 0    50   ~ 0
+VDD_3V
 Text Label 6500 1600 0    50   ~ 0
 VDD_3V
+Text Label 10400 4000 0    50   ~ 0
+VDD_3V
+Text Label 7550 3750 1    50   ~ 0
+VDD_3V
+Text Notes 6250 5100 0    50   ~ 0
+Real time clock module with i2c interface
+Text Notes 4050 2900 0    50   ~ 0
+GPIO not marked for any other function or low frequency include P0.13,15,17,20,22, 24
+Text Label 6400 3950 2    50   ~ 0
+SCL
+Text Label 6400 4050 2    50   ~ 0
+SDA
+Text Label 8750 4100 2    50   ~ 0
+SO
+Text Label 10400 4100 0    50   ~ 0
+RESET
+Text Label 8750 4000 2    50   ~ 0
+CS
+Text Label 5300 1600 2    50   ~ 0
+SO
+Text Label 5300 1500 2    50   ~ 0
+CS
+Text Label 5300 1800 2    50   ~ 0
+SI
+Text Label 6900 2100 0    50   ~ 0
+RESET
+Text Label 5300 1700 2    50   ~ 0
+SCLK
+Text Label 5300 2000 2    50   ~ 0
+SCL
+Text Label 5300 1900 2    50   ~ 0
+SDA
+Text Notes 4050 2750 0    50   ~ 0
+P1.13 is a low frequency GPIO (<10kHz)
+Text Label 6900 2200 0    50   ~ 0
+WP
+Text Label 8750 4200 2    50   ~ 0
+WP
+Wire Wire Line
+	2250 2350 1750 2350
+Wire Wire Line
+	1750 2350 1750 2250
+Wire Wire Line
+	2250 1550 1850 1550
+Wire Wire Line
+	1850 1550 1850 1700
+Wire Wire Line
+	1650 1700 1850 1700
+Wire Wire Line
+	2250 2350 2850 2350
+Wire Wire Line
+	2850 2350 2850 2500
+Wire Wire Line
+	3150 5100 3150 5550
+Wire Wire Line
+	3150 5550 2800 5550
+Wire Wire Line
+	2000 5550 2000 5700
+Wire Wire Line
+	2000 5400 1600 5400
+Wire Wire Line
+	1600 5400 1600 4800
+Wire Wire Line
+	1600 4800 1400 4800
+Wire Wire Line
+	2800 5400 2900 5400
+Wire Wire Line
+	2900 5400 2900 4450
+Wire Wire Line
+	4200 4450 4300 4450
+Wire Wire Line
+	2000 5700 1950 5700
+Wire Wire Line
+	1650 5700 1600 5700
+Wire Wire Line
+	9450 1450 8800 1450
+Wire Wire Line
+	10050 2200 10300 2200
+Wire Wire Line
+	10050 2450 10050 2500
+Wire Wire Line
+	10050 2500 10150 2500
+Wire Wire Line
+	10050 2000 10300 2000
+Wire Wire Line
+	10150 2500 10300 2500
+Wire Notes Line
+	1050 3000 3550 3000
+Wire Notes Line
+	3550 3000 3550 900 
+Wire Notes Line
+	3550 900  1050 900 
+Wire Notes Line
+	1050 900  1050 3000
+Wire Notes Line
+	7850 3000 7850 900 
+Wire Notes Line
+	7850 900  3900 900 
+Wire Notes Line
+	8250 3000 10800 3000
+Wire Wire Line
+	9450 1650 9450 1450
+Wire Notes Line
+	10800 3000 10800 900 
+Wire Notes Line
+	10800 900  8250 900 
+Wire Notes Line
+	8250 900  8250 3000
+Wire Wire Line
+	2250 1550 2850 1550
+Wire Wire Line
+	1600 4800 2950 4800
+Wire Wire Line
+	1900 4450 1400 4450
+Wire Wire Line
+	1900 4450 2900 4450
+Wire Wire Line
+	4850 4800 4700 4800
+Wire Wire Line
+	4700 5650 4700 5700
+Wire Wire Line
+	4850 4800 5450 4800
+Wire Wire Line
+	4600 4450 4700 4450
+Wire Wire Line
+	4700 4800 4600 4800
+Wire Wire Line
+	3150 4350 3100 4350
+Wire Wire Line
+	3100 4350 3100 4450
+Wire Wire Line
+	3100 4450 3150 4450
+Wire Wire Line
+	2900 4450 3000 4450
+Wire Wire Line
+	3000 4450 3000 4100
+Wire Wire Line
+	3000 4450 3100 4450
+Wire Wire Line
+	3750 4450 3800 4450
+Wire Wire Line
+	3800 4450 3800 4100
+Wire Wire Line
+	3000 3800 3450 3800
+Wire Wire Line
+	3450 3800 3800 3800
+Wire Wire Line
+	4700 4800 4700 5350
+Wire Wire Line
+	4700 4450 4700 4800
+Wire Wire Line
+	3350 4800 4300 4800
+Wire Wire Line
+	2800 5700 4700 5700
+Wire Wire Line
+	3800 4450 3900 4450
+Wire Notes Line
+	3900 900  3900 3000
+Wire Notes Line
+	3900 3000 7850 3000
 Wire Notes Line
 	1050 3250 5850 3250
 Wire Notes Line
@@ -726,48 +839,136 @@ Wire Notes Line
 Wire Notes Line
 	1050 6450 1050 3250
 Wire Notes Line
-	8250 5350 10800 5350
+	6150 3250 8150 3250
 Wire Notes Line
-	10800 5350 10800 3250
+	8150 3250 8150 5200
 Wire Notes Line
-	10800 3250 8250 3250
+	8150 5200 6150 5200
 Wire Notes Line
-	8250 3250 8250 5350
+	6150 5200 6150 3250
+Wire Notes Line
+	8450 3250 8450 5200
+Wire Notes Line
+	8450 5200 10800 5200
+Wire Notes Line
+	10800 5200 10800 3250
+Wire Notes Line
+	10800 3250 8450 3250
+Connection ~ 1850 1700
+Connection ~ 2250 2350
+Connection ~ 1600 5400
+Connection ~ 2000 5700
+Connection ~ 1600 5700
+Connection ~ 10150 2500
+Connection ~ 9450 1450
+Connection ~ 2250 1550
+Connection ~ 1600 4800
+Connection ~ 1900 4450
+Connection ~ 4700 4800
+Connection ~ 4850 4800
+Connection ~ 3100 4450
+Connection ~ 3000 4450
+Connection ~ 3450 3800
+Connection ~ 3800 4450
+NoConn ~ 8850 2300
+NoConn ~ 5300 2100
+NoConn ~ 5300 2200
+NoConn ~ 5300 2300
+NoConn ~ 6500 2300
+NoConn ~ 6500 2000
+NoConn ~ 6500 1900
+NoConn ~ 6500 1800
+NoConn ~ 7950 4150
+NoConn ~ 6950 4350
+NoConn ~ 6950 4250
+NoConn ~ 7350 3750
 $Comp
-L Memory_Flash:AT25SF081-XMHD-X U5
-U 1 1 5EA2E8E6
-P 9550 4150
-F 0 "U5" H 10100 3850 50  0000 L CNN
-F 1 "MX25R6435FM2IL0" H 9700 3700 50  0000 L CNN
-F 2 "Package_SO:TSSOP-8_4.4x3mm_P0.65mm" H 9550 3550 50  0001 C CNN
-F 3 "https://www.adestotech.com/wp-content/uploads/DS-AT25SF081_045.pdf" H 9550 4150 50  0001 C CNN
-F 4 "Macronix" H 900 -1800 50  0001 C CNN "MFR"
-F 5 "MX25R6435FM2IL0" H 900 -1800 50  0001 C CNN "MPN"
-F 6 "1092-1200-ND" H 900 -1800 50  0001 C CNN "DPN"
-F 7 "-" H 900 -1800 50  0001 C CNN "LCSCPN"
-F 8 "-" H 900 -1800 50  0001 C CNN "SPR"
-F 9 "-" H 900 -1800 50  0001 C CNN "SPN"
-F 10 "-" H 900 -1800 50  0001 C CNN "SIM"
-	1    9550 4150
+L Device:R R8
+U 1 1 5EA0D031
+P 6500 3900
+F 0 "R8" H 6570 3946 50  0000 L CNN
+F 1 "4.7K" H 6570 3855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6430 3900 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6500 3900 50  0001 C CNN
+F 4 "Yageo" H 50  150 50  0001 C CNN "MFR"
+F 5 "RC0603FR-074K7L" H 50  150 50  0001 C CNN "MPN"
+F 6 "311-4.70KHRCT-ND" H 50  150 50  0001 C CNN "DPN"
+F 7 "-" H 50  150 50  0001 C CNN "LCSCPN"
+F 8 "-" H 50  150 50  0001 C CNN "SPR"
+F 9 "-" H 50  150 50  0001 C CNN "SPN"
+F 10 "-" H 50  150 50  0001 C CNN "SIM"
+	1    6500 3900
 	1    0    0    -1  
 $EndComp
-Text Label 9550 3650 0    50   ~ 0
+Wire Wire Line
+	6950 3950 6800 3950
+Wire Wire Line
+	6800 3950 6400 3950
+Connection ~ 6800 3950
+Wire Wire Line
+	6500 4050 6400 4050
+Wire Wire Line
+	6500 4050 6950 4050
+Connection ~ 6500 4050
+Text Notes 4000 1700 0    50   ~ 0
+Confirm no pull-up/down\nresistors for SPI protocol
+Wire Wire Line
+	6500 3750 6500 3650
+Wire Wire Line
+	6500 3650 6650 3650
+Wire Wire Line
+	6650 3650 6650 3550
+Connection ~ 6650 3650
+Wire Wire Line
+	6650 3650 6800 3650
+Text Label 6650 3550 0    50   ~ 0
 VDD_3V
+Text Notes 3250 5100 0    50   ~ 0
+MOSFET is top risk component. \nNo single MOSFET in datasheet.
+Text Notes 2600 1950 0    50   ~ 0
+TVS diode for ESD
+Text Notes 2100 4000 0    50   ~ 0
+TVS diode \nfor ESD\nprotection
+Text Notes 6250 4600 0    50   ~ 0
+Confirm no connect\noscillator IO
+NoConn ~ 5800 1150
+NoConn ~ 5950 1150
+Connection ~ 2900 4450
+Wire Wire Line
+	3450 4050 3450 3800
+Text Label 10400 4200 0    50   ~ 0
+SCLK
+Text Label 10400 4300 0    50   ~ 0
+SI
+Text Notes 10150 1750 0    50   ~ 0
+Do we need a \nSchottky Diode \nhere?
 $Comp
-L power:GND #PWR011
-U 1 1 5EA9F122
-P 9550 4650
-F 0 "#PWR011" H 9550 4400 50  0001 C CNN
-F 1 "GND" H 9555 4477 50  0000 C CNN
-F 2 "" H 9550 4650 50  0001 C CNN
-F 3 "" H 9550 4650 50  0001 C CNN
-	1    9550 4650
+L Mechanical:MountingHole H1
+U 1 1 5EA39936
+P 2000 7050
+F 0 "H1" H 2100 7096 50  0000 L CNN
+F 1 "MountingHole" H 2100 7005 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_Pad" H 2000 7050 50  0001 C CNN
+F 3 "~" H 2000 7050 50  0001 C CNN
+	1    2000 7050
 	1    0    0    -1  
 $EndComp
-NoConn ~ 10150 3950
-NoConn ~ 8950 3950
-NoConn ~ 8950 4050
-NoConn ~ 8950 4150
-NoConn ~ 8950 4250
-NoConn ~ 8950 4350
+$Comp
+L Jumper:Jumper_2_Open JP1
+U 1 1 5EA28DFE
+P 6700 2100
+F 0 "JP1" H 6900 2200 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6700 2244 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6700 2100 50  0001 C CNN
+F 3 "~" H 6700 2100 50  0001 C CNN
+F 4 "-" H 0   0   50  0001 C CNN "MFR"
+F 5 "-" H 0   0   50  0001 C CNN "MPN"
+F 6 "-" H 0   0   50  0001 C CNN "DPN"
+F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   0   50  0001 C CNN "SPR"
+F 9 "-" H 0   0   50  0001 C CNN "SPN"
+F 10 "-" H 0   0   50  0001 C CNN "SIM"
+	1    6700 2100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

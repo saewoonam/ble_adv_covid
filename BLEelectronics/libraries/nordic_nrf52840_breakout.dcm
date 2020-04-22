@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Nordic_nRF52840_breakout
+D BLE Bluetooth dongle
+K BLE Bluetooth microcontroller
+F https://www.adafruit.com/product/2471
+$ENDCMP
+#
+#End Doc Library

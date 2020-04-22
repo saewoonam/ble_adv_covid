@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTC4412xS6
+D Low Loss PowerPath Controller, TSOT-23-6
+K ideal-diode or-ing
+F https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf
+$ENDCMP
+#
+#End Doc Library
