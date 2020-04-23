@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name 0my_footprints)(type KiCad)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/0my_footprints.pretty)(options "")(descr ""))
+  (lib (name 0my_footprints)(type KiCad)(uri ${KIPRJMOD}/../libraries/0my_footprints.pretty)(options "")(descr ""))
 )
