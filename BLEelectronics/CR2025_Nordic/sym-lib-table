@@ -11,4 +11,5 @@
   (lib (name mx25R6435FM2IL)(type Legacy)(uri ${KIPRJMOD}/../libraries/mx25R6435FM2IL.lib)(options "")(descr ""))
   (lib (name si7336adp)(type Legacy)(uri ${KIPRJMOD}/../libraries/si7336adp.lib)(options "")(descr ""))
   (lib (name Si7463DP)(type Legacy)(uri ${KIPRJMOD}/../libraries/Si7463DP.lib)(options "")(descr ""))
+  (lib (name ESD401DPYR)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/ESD401DPYR.lib)(options "")(descr ""))
 )

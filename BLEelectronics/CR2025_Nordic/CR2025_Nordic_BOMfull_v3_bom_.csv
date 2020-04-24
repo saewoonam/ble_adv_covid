@@ -1,0 +1,36 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,LCSCPN,MPN,MFR,SPN,DPN,SPR,SIM,Field8,Field9,Field6,Field7,Field4,Field5
+1,Unpolarized capacitor,C,C1 C2,0.1uF,C_0603_1608Metric_Pad1.05x0.95mm_HandSolder,2,~,-,CC0603KRX7R9BB104,Yageo,-,311-1344-2-ND,-,-,,,,,,
+2,Unpolarized capacitor,C,C3 C4 C5,1uF,C_0603_1608Metric_Pad1.05x0.95mm_HandSolder,3,~,-,CL10B105KA8NNNC,Samsung,-,587-2786-6-ND,-,-,,,,,,
+3,Schottky diode,D_Schottky,D3 D4,D_Schottky,D_SOD-123F,2,https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf,-,SL14PL-TP,Micro Commercial Co,-,SL14PL-TPMSCT-ND,-,-,,,,,,
+4,,TPD1E10B06DPYR,D1 D2,TPD1E10B06DPYR,DIODFN100X60X45-2N,2,http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e10b06,-,TPD1E10B06DPYR,Texas Instruments,-,296-30406-1-ND,-,-,Single Channel ESD in 0402 package with 10pF Capacitance and 6V Breakdown 2-X1SON -40 to 125,Unavailable,Texas Instruments,XDFN-2 Texas Instruments,Manufacturer Recommendation,None
+5,,LTC4054LES5-4.2#TRPBF,IC4,LTC4054LES5-4.2#TRPBF,LTC4054LES5-4.2_TRPBF,1,http://www.linear.com/docs/2068,-,LTC4054LES5-4.2#TRPBF,Linear Technology/Analog Devices,-,LTC4054LES5-4.2#TRPBFCT-ND,-,-,,,,,Linear Technology,
+6,,LTC4412xS6-ltc4412xs6,IC1,LTC4412xS6,TSOT-23-6,1,https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf,-,LTC4412ES6#TRPBF,Linear Technology/Analog Devices,-,LTC4412ES6#TRPBFCT-ND,-,-,,,,,,
+7,,MX25R6435FM2IL0-mx25R6435FM2IL,IC3,MX25R6435FM2IL0,MX25R6435FM2IL0,1,"http://www.macronix.com/Lists/Datasheet/Attachments/7428/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf",-,MX25R6435FM2IL0,Macronix,-,1092-1200-ND,-,-,,,,,,
+8,"Realtime Clock/Calendar I2C Interface, SOIC-8",PCF8523T,IC2,PCF8523T,SOIC-8_3.9x4.9mm_P1.27mm,1,https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf,-,"PCF8523T/1,118",NXP USA Inc.,-,568-5306-1-ND,-,-,,,,,,
+9,"Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x01_Female,J4,Conn_01x01_Female,PinHeader_1x01_P2.54mm_Vertical,1,~,,,,,,,,,,,,,
+10,,Nordic_nRF52840_breakout-nordic_nrf52840_breakout,J1,Nordic_nRF52840_breakout,Nordic_nRF52840_FeatherHeader,1,https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fpin.html&cp=3_0_0_6_0_0&anchor=aqfn73,-,NRF52840-DONGLE,Nordic Semiconductor ASA,-,1490-1073-ND,-,-,,,,,,
+11,"Jumper, 2-pole, open",Jumper_2_Open,JP1 JP2 JP3 JP4,Jumper_2_Open,SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,4,~,-,-,-,-,-,-,-,,,,,,
+12,"-3.5A Id, -30V Vds, P-Channel MOSFET, SOT-23",Si2307CDS,Q1,Si2307CDS,SOT-23,1,http://www.vishay.com/docs/68768/si2307cds.pdf,-,SI2307CDS-T1-GE3,Vishay Siliconix,-,SI2307CDS-T1-GE3CT-ND,-,-,,,,,,
+13,"11A Id, 40V Vdss, 9.2mOhm Ron, PowerPAK-8",Si7463DP,Q2,Si7463DP,PowerPAK_SO-8_Single,1,http://www.vishay.com/docs/72440/si7463dp.pdf,,,,,,,,,,,,,
+14,Resistor,R,R1 R2 R3 R5 R7,0,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,5,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf,-,RC0603JR-070RL,Yageo,-,311-0.0GRCT-ND,-,-,,,,,,
+15,Resistor,R,R6,1.69K,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,1,~,-,RC0201FR-071K69L,Yageo,-,YAG2487CT-ND,-,-,,,,,,
+16,Resistor,R,R8 R9,4.7K,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf,-,RC0603FR-074K7L,Yageo,-,311-4.70KHRCT-ND,-,-,,,,,,
+17,Resistor,R,R4,560K,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,1,~,-,RC0201FR-07560KL,Yageo,-,RC0201FR-071K69L,-,-,,,,,,
+18,,BAT-HLD-001,U2,BAT-HLD-001,BAT-HLD-001,1,https://linxtechnologies.com/wp/wp-content/uploads/catalog-battery-holders.pdf,-,BAT-HLD-001,Linx Technologies Inc.,-,BAT-HLD-001-ND,-,-,,,,,,
+19,"250-mA Ultra-Low-Noise Low-IQ LDO, 3.3V, SOT-23",LP5907MFX-3.3,U1,LP5907MFX-3.3,SOT-23-5,1,http://www.ti.com/lit/ds/symlink/lp5907.pdf,-,LP5907MFX-3.3,Texas Instruments,C143028,296-38557-1-ND,LCSC,-,,,,,,
+
+
+
+
+
+Component Groups:,19
+Component Count:,32
+Fitted Components:,32
+Number of PCBs:,1
+Total components:,32
+Schematic Version:,
+Schematic Date:,
+PCB Variant:,default
+BoM Date:,2020-04-24 9:55:52 AM
+Schematic Source:,C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic\CR2025_Nordic.sch
+KiCad Version:,Eeschema (5.1.5)-3
