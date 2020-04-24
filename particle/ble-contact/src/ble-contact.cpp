@@ -113,6 +113,8 @@ void scanResultCallback(const BleScanResult *scanResult, void *context) {
 }
 
 void gap_params_init() {
+}
+/*
     unsigned int err_code;
     ble_gap_privacy_params_t prvt_conf;
     memset(&prvt_conf, 0, sizeof(prvt_conf));
@@ -124,35 +126,7 @@ void gap_params_init() {
       Log.error("Problem with gap_params_init: %d", err_code);
     }
 }
-
-
-
-/*
-static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
-{
-    switch (p_ble_evt->header.evt_id)
-    {
-        case BLE_GAP_EVT_CONNECTED:
-            break;
-
-        case BLE_GAP_EVT_DISCONNECTED:
-            break;
-        case BLE_GAP_EVT_ADV_SET_TERMINATED:{
-            Log.info("Advertising terminated");
-        }
-        case BLE_GAP_EVT_ADV_REPORT:
-        {       
-            break;
-        }
-        default:
-            // No implementation needed.
-            break;
-    }
-}
-
-NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
 */
-
 void advertising_init(void)
 {
     // uint32_t      err_code;
@@ -173,7 +147,8 @@ void advertising_init(void)
     */
     BLE.setAdvertisingType(BleAdvertisingEventType::NON_CONNECTABLE_NON_SCANABLE_UNDIRECTED);
     BleAddress defaultAddr = BLE.address();
-    BLE.address().type(BleAddressType::RANDOM_PRIVATE_NON_RESOLVABLE);
+    BLE.address().type(BleAddressType::PUBLIC);
+    // BLE.address().type(BleAddressType::RANDOM_PRIVATE_NON_RESOLVABLE);
     BLE.setAdvertisingInterval(250);
     BLE.setAdvertisingTimeout(2000);
     int8_t txPower;
@@ -228,7 +203,7 @@ void setup() {
     }    
   }
 
-  BLE.setScanTimeout(500);
+  BLE.setScanTimeout(250);
   gap_params_init();
   advertising_init();
   BLE.advertise(&advData);

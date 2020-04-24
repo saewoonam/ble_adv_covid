@@ -45,7 +45,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="64" y="499" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="487" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="669" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="654" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="169" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/nrf52 dongle/usbd_ble_covid/main.c" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/components/libraries/bsp/bsp.c" selected="0" top="159" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="247" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/examples/peripheral/usbd_cdc_acm_dongle/main.c" selected="0" top="229" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="158" useTextEdit="1" openedFrom="/Users/nams/Documents/projects/covid/adafruit/ble_adv_covid/nrf52 dongle/usbd_ble_covid/main.c" useBinaryEdit="0" left="0" path="../../../../../../../nrf5/nRF5SDK160098a08e2/components/libraries/util/sdk_errors.h" selected="0" top="148" codecName="Default"/>

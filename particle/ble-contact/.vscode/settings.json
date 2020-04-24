@@ -10,5 +10,5 @@
         "unordered_map": "cpp"
     },
     "particle.targetPlatform": "argon",
-    "particle.targetDevice": "nams-argon1"
+    "particle.targetDevice": "nams-argon2"
 }

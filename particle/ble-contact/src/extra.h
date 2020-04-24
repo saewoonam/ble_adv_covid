@@ -449,5 +449,30 @@ typedef struct
                                                       that is scannable. */
 } ble_gap_adv_data_t_sdk;
 
-
 #endif //CONFIG_H
+
+/*
+static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
+{
+    switch (p_ble_evt->header.evt_id)
+    {
+        case BLE_GAP_EVT_CONNECTED:
+            break;
+
+        case BLE_GAP_EVT_DISCONNECTED:
+            break;
+        case BLE_GAP_EVT_ADV_SET_TERMINATED:{
+            Log.info("Advertising terminated");
+        }
+        case BLE_GAP_EVT_ADV_REPORT:
+        {       
+            break;
+        }
+        default:
+            // No implementation needed.
+            break;
+    }
+}
+
+NRF_SDH_BLE_OBSERVER(m_ble_observer, APP_BLE_OBSERVER_PRIO, ble_evt_handler, NULL);
+*/
