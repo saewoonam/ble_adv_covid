@@ -28,5 +28,8 @@
 #define FLAGS   0
 #endif
 
-extern void led(void);
+extern struct device *led0_dev;
+extern void led_init(void);
+extern void blink_led(struct device *led_dev, u8_t blink);
+
 #endif

@@ -28,6 +28,7 @@
 #include <drivers/uart.h>
 #include <zephyr.h>
 #include <sys/ring_buffer.h>
+#include <string.h>
 
 #include <usb/usb_device.h>
 #include <logging/log.h>
@@ -46,62 +47,77 @@ u8_t ring_buffer[RING_BUF_SIZE];
 
 // globals for usbserial
 struct ring_buf ringbuf;
+struct ring_buf inringbuf;
+struct ring_buf outringbuf;
 struct device *dev;
 
-struct device *led_dev;
+struct device *led0_dev;
+struct device *led1_dev;
 bool led_is_on = true;
-void led1_init(void)
-{
-    int ret;
+bool usb_error = false;
+bool cdc_open = false;
+bool show_raw = false;
+// globals for bt
+bool bt_started = true;
+bool start_adv = false;
 
-    led_dev = device_get_binding(LED0);
-    if (led_dev == NULL) {
-        return;
-    }
+void usb_printf(char *format, ...) {
+    va_list arg;
+    va_start(arg, format);
+    int len;
+    static char print_buffer[4096];
 
-    ret = gpio_pin_configure(led_dev, PIN, GPIO_OUTPUT_ACTIVE | FLAGS);
-    if (ret < 0) {
-        return;
-    }
-    gpio_pin_set(led_dev, PIN, 0 );
-
-}
-void led1(u8_t blink) {
-    while(blink--) {
-        gpio_pin_set(led_dev, PIN, 1);
-        k_msleep(10);
-        gpio_pin_set(led_dev, PIN, 0);
-    }
+    len = vsnprintf(print_buffer, 4096,format, arg);
+    va_end(arg);
+    if (cdc_open) {
+        int num_written = 0;
+        while (len - num_written > 0) {
+        unsigned int key = irq_lock();
+        num_written +=
+          ring_buf_put(&outringbuf,
+                       (print_buffer + num_written),
+                       (len - num_written));
+        irq_unlock(key);
+        uart_irq_tx_enable(dev);
+        }
+    } else {printk("cdc_open is false: %s\n", print_buffer);}
 }
 
 static void interrupt_handler(struct device *dev)
 {
-    while (uart_irq_update(dev) && uart_irq_is_pending(dev)) {
+    // while (uart_irq_update(dev) && uart_irq_is_pending(dev)) {
+    // while (uart_irq_update(dev) && uart_irq_is_pending(dev) && (usb_error==0)) {
+    LOG_INF("uart_interrupt: %d, %d", uart_irq_update(dev), uart_irq_is_pending(dev));
+    while (uart_irq_update(dev) && uart_irq_is_pending(dev) && (usb_error==0)) {
         if (uart_irq_rx_ready(dev)) {
+            LOG_INF("Read from uart");
             int recv_len, rb_len;
             u8_t buffer[64];
-            size_t len = MIN(ring_buf_space_get(&ringbuf),
+            size_t len = MIN(ring_buf_space_get(&inringbuf),
                      sizeof(buffer));
-
+            unsigned int key = irq_lock();
             recv_len = uart_fifo_read(dev, buffer, len);
+            irq_unlock(key);
 
-            rb_len = ring_buf_put(&ringbuf, buffer, recv_len);
+            rb_len = ring_buf_put(&inringbuf, buffer, recv_len);
             if (rb_len < recv_len) {
                 LOG_ERR("Drop %u bytes", recv_len - rb_len);
+                usb_error = true;
             }
 
-            LOG_DBG("tty fifo -> ringbuf %d bytes", rb_len);
-
-            uart_irq_tx_enable(dev);
+            LOG_INF("tty fifo -> inringbuf %d bytes", rb_len);
+            //  Don't echo to tx
+            //  uart_irq_tx_enable(dev);
         }
 
         if (uart_irq_tx_ready(dev)) {
+            LOG_INF("Write to uart");
             u8_t buffer[64];
             int rb_len, send_len;
 
-            rb_len = ring_buf_get(&ringbuf, buffer, sizeof(buffer));
+            rb_len = ring_buf_get(&outringbuf, buffer, sizeof(buffer));
             if (!rb_len) {
-                LOG_DBG("Ring buffer empty, disable TX IRQ");
+                LOG_INF("Ring buffer empty, disable TX IRQ");
                 uart_irq_tx_disable(dev);
                 continue;
             }
@@ -109,54 +125,98 @@ static void interrupt_handler(struct device *dev)
             send_len = uart_fifo_fill(dev, buffer, rb_len);
             if (send_len < rb_len) {
                 LOG_ERR("Drop %d bytes", rb_len - send_len);
+                usb_error = true;
             }
 
-            LOG_DBG("ringbuf -> tty fifo %d bytes", send_len);
+            LOG_INF("outringbuf -> tty fifo %d bytes", send_len);
         }
     }
 }
 
-void usb_printf(char *format, ...) {
-
-  va_list arg;
-  va_start(arg, format);
-  int len;
-  static char print_buffer[4096];
-
-  len = vsnprintf(print_buffer, 4096,format, arg);
-  va_end(arg);
-
-  int num_written = 0;
-  while (len - num_written > 0) {
-    unsigned int key = irq_lock();
-    num_written +=
-      // ring_buf_put(&out_ringbuf,
-      ring_buf_put(&ringbuf,
-                   (print_buffer + num_written),
-                   (len - num_written));
-    irq_unlock(key);
-    uart_irq_tx_enable(dev);
-  }
-}
+bool first_time = true;
+extern void usbcdc_wait_dtr(void);
+extern void cdc_init(void);
+extern void usb_init(void);
 
 static void usb_status_cb(enum usb_dc_status_code status, const u8_t *param)
 {
-    led1(10);
+    LOG_INF("cb status: %u, first_time: %d", status, first_time);
+
+    blink_led(led0_dev, 1);
     switch (status) {
-    case USB_DC_CONFIGURED:
-        break;
-    case USB_DC_SOF:
-        break;
-    default:
-        LOG_DBG("status %u unhandled", status);
-        break;
+        case USB_DC_ERROR:
+            break;
+        case USB_DC_RESET:
+            {
+            // LOG_INF("USB_DC_RESET\n");
+            if(first_time) {
+                LOG_INF("first time\n");
+                first_time = false;
+            }
+            }
+        case USB_DC_CONNECTED:
+            {
+            // printk("USB_DC_CONNECTED\n");
+            if(first_time) {
+                printk("first time\n");
+                // usbcdc_wait_dtr();
+                first_time = false;
+            }
+
+            }
+        case USB_DC_CONFIGURED:
+            //printk("CONIFGURED AND CDC OPEN set\n");
+            cdc_open = true;
+            break;
+        case USB_DC_DISCONNECTED:
+            {
+            // printk("USB_DC_DISCONNECTED\n");
+            cdc_open = false;
+            // printk("CDC CLOSED\n");
+            if (usb_error) {
+                printk("Do RESET\n");
+                usb_error = false;
+                sys_arch_reboot(0);
+                //  Reset is not enough
+
+                // usb_dc_reset();
+                /* 
+                usb_dc_ep_flush(0x81);
+                usb_dc_ep_flush(0x03);
+                usb_dc_ep_flush(0x01);
+                usb_dc_ep_flush(0x82);
+                usb_dc_ep_disable(0x81);
+                usb_dc_ep_disable(0x01);
+                usb_dc_ep_disable(0x82);
+                LOG_INF("Try to disable");
+                usb_disable();
+                usb_enable(usb_status_cb);
+                */
+                /*
+                usb_dc_ep_clear_stall(0x81);
+                usb_dc_ep_clear_stall(0x03);
+                usb_dc_ep_clear_stall(0x82);
+                */
+                /*
+                usb_disable();
+                */
+            }
+            }
+        case USB_DC_SUSPEND:
+            // printk("USB_DC_SUSPEND\n");
+            break;
+        case USB_DC_RESUME:
+            // printk("USB_DC_RESUME\n");
+            break;
+        case USB_DC_SOF:
+            break;
+        default:
+            LOG_INF("status %u unhandled", status);
+            break;
     }
 }
-
-void usbcdc_init(void)   // void main(void)
+void usb_init(void)   // void main(void)
 {
-    // struct device *dev;
-    u32_t baudrate, dtr = 0U;
     int ret;
 
     ret = usb_enable(usb_status_cb);
@@ -164,29 +224,37 @@ void usbcdc_init(void)   // void main(void)
         LOG_ERR("Failed to enable USB");
         return;
     }
-
-
+    LOG_INF("enabled usb");
+}
+void cdc_init(void) {
+    // struct device *dev;
     dev = device_get_binding("CDC_ACM_0");
     if (!dev) {
         LOG_ERR("CDC ACM device not found");
         return;
     }
+    LOG_INF("create cdc device");
+}
 
-    ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
+void dtr_init(void) {
+    u32_t dtr = 0U;
 
-    LOG_INF("Wait for DTR");
-
+    LOG_INF("Wait for DTR in usbcdc_init");
     while (true) {
         uart_line_ctrl_get(dev, UART_LINE_CTRL_DTR, &dtr);
         if (dtr) {
             break;
         } else {
-            /* Give CPU resources to low priority threads. */
+            // Give CPU resources to low priority threads. 
             k_sleep(K_MSEC(100));
         }
     }
-
     LOG_INF("DTR set");
+}
+
+void uart_init(){
+    int ret;
+    u32_t baudrate;
 
     /* They are optional, we use them to test the interrupt endpoint */
     ret = uart_line_ctrl_set(dev, UART_LINE_CTRL_DCD, 1);
@@ -214,28 +282,10 @@ void usbcdc_init(void)   // void main(void)
     /* Enable rx interrupts */
     uart_irq_rx_enable(dev);
 }
-/*
-static u8_t adv_header[] = { 0x02, 0x0A, 0x04,
-                             0x02, 0x01, 0x06,
-                             0x03, 0x03, 0x6F, 0xFD,
-                             0x13, 0x16, 0x6F, 0xFD
-};
-*/
+
 u8_t *rpi;
 
-/*
-static void add_rpi(u8_t *data) {
-    for (u8_t i=0; i<16; i++) {
-        data[i] = 15-i;
-    }
-}
-
-static void build_adv(void) {
-    memcpy(adv, adv_header, 14);
-}
-*/
-// static const struct bt_data ad[] = {
-struct bt_data ad[] = {
+struct bt_data encounter_ad[] = {
     BT_DATA_BYTES(BT_DATA_FLAGS, BT_LE_AD_NO_BREDR),
     BT_DATA_BYTES(BT_DATA_TX_POWER, 0),
     BT_DATA_BYTES(BT_DATA_UUID16_ALL, 0x6F, 0xFD),
@@ -270,33 +320,21 @@ static void scan_cb(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     }
     bt_data_parse(buf, data_cb, uuid16);
     if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
-        usb_printf("%ld, %d, %s\n", timestamp, rssi, buffer);
-        // usb_printf("%02x %02x\n", uuid16[0], uuid16[1]);
+        char addr_string[BT_ADDR_LE_STR_LEN];
+        bt_addr_le_to_str(addr, addr_string, sizeof(addr_string));
+        if (show_raw && cdc_open) {
+            usb_printf("%u, %d, %s, %s\n", timestamp, rssi, addr_string, buffer);
+        }
+        /*
+        char log_buffer[128];
+        sprintf(log_buffer, "%u, %d\n", timestamp, rssi);
+        printk("%s", log_buffer);
+        */
     }
 }
-
-/*
-K_THREAD_DEFINE(blink1_id, STACKSIZE, led1, NULL, NULL, NULL,
-        PRIORITY, 0, 0);
-*/
-void main(void){
-    struct bt_le_scan_param scan_param = {
-        .type       = BT_HCI_LE_SCAN_PASSIVE,
-        .options    = BT_LE_SCAN_OPT_NONE,
-        .interval   = 0x0010,
-        .window     = 0x0010,
-    };
+void bt_init(void) {
     int err;
-    led1_init();
-    // Try to start usb cdc interface
-
-    // Need to program an interrupt system around the usb
-    // If it detects USB, then to do an init... 
-    // Right now, have to open usbserial to proceed with BT part afterwards
-    usbcdc_init();
-
-    // printk("Starting Scanner/Advertiser Demo\n");
-    usb_printf("Starting Scanner/Advertiser Demo\n");
+    printk("Starting Scanner/Advertiser Demo\n");
 
     /* Initialize the Bluetooth Subsystem */
     err = bt_enable(NULL);
@@ -304,44 +342,113 @@ void main(void){
         printk("Bluetooth init failed (err %d)\n", err);
         return;
     }
-    rpi = ad[3].data+2;
+    bt_started = true;
+    printk("Bluetooth initialized\n");
+}
+void rpi_init(void) {
+    rpi = encounter_ad[3].data+2; // 4th item in array of messages is RPI
     rpi[15] = 0xC0;
     rpi[14] = 0x19;
     rpi[13] = 0;
     rpi[12] = 0;
+}
+void bt_adv (void) {
+    while (!start_adv) {
+        printk("BT not started\n");
+        k_sleep(K_MSEC(1000));
+    } 
+    printk("Trying to start advertising\n");
+    rpi_init();
+    u32_t round=0;
+    k_sleep(K_MSEC(400));
 
-    printk("Bluetooth initialized\n");
-
-    err = bt_le_scan_start(&scan_param, scan_cb);
+    /* Start advertising */
+    /*
+     *
+     *  We will move start into the loop to change the address repeatably
+     *  For now, outside the loop so that it is easier to debug and use in BT
+     *  tests
+     *
+     */
+    int err = bt_le_adv_start(BT_LE_ADV_NCONN, encounter_ad,
+                            ARRAY_SIZE(encounter_ad), NULL, 0);
     if (err) {
-        printk("Starting scanning failed (err %d)\n", err);
+        printk("Advertising failed to start (err %d)\n", err);
         return;
     }
-    u32_t round=0;
-    do {
-        k_sleep(K_MSEC(400));
-        // led1();
 
-        /* Start advertising */
-        // err = bt_le_adv_start(BT_LE_ADV_NCONN, adv, 30,
-        err = bt_le_adv_start(BT_LE_ADV_NCONN, ad, ARRAY_SIZE(ad),
-                      NULL, 0);
-        if (err) {
-            printk("Advertising failed to start (err %d)\n", err);
-            return;
-        }
+    do {
 
         k_sleep(K_MSEC(4000));
 
         memcpy(rpi, &round, 4);  // try to copy round to lowest 4 bytes of rpi
         round++;
-        err = bt_le_adv_stop();
+        err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
+        /*  Will not use update... but stop in version that randomized MAC */
+        // err = bt_le_adv_stop();
         if (err) {
             printk("Advertising failed to stop (err %d)\n", err);
             return;
         }
-
+        printk("Update rpi\n");
     } while (1);
 }
 
+void start_scan(void) {
+    //  Start Scan
+    struct bt_le_scan_param scan_param = {
+        .type       = BT_HCI_LE_SCAN_PASSIVE,
+        .options    = BT_LE_SCAN_OPT_NONE,
+        .interval   = 0x0010,
+        .window     = 0x0010,
+    };
+    int err = bt_le_scan_start(&scan_param, scan_cb);
+    if (err) {
+        printk("Starting scanning failed (err %d)\n", err);
+        return;
+    } else {
+        printk("Scan started\n");
+    }
+
+}
+
+/*
+K_THREAD_DEFINE(bt_adv_id, STACKSIZE, bt_adv, NULL, NULL, NULL,
+            3, 0, 0);
+*/
+void main(void){
+    // ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
+    ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
+    ring_buf_init(&outringbuf, sizeof(out_ring_buffer), out_ring_buffer);
+    led_init();
+    bt_init();
+    
+    cdc_init();
+    usb_init();
+    // start_adv = true;
+    dtr_init();
+    uart_init();
+
+    start_scan();
+    u8_t c, idx;
+
+    while (true) {
+        while(ring_buf_get(&inringbuf, &c, 1)){
+            switch (c) {
+                case 'g':
+                    LOG_INF("got g");
+                    break;
+                case 'c':
+                    LOG_INF("got c");
+                    break;
+                case 'r':
+                    LOG_INF("got r");
+                    show_raw = !show_raw ;
+                    break;
+            }
+        }
+        k_sleep(K_MSEC(500));
+
+    }
+}
 
