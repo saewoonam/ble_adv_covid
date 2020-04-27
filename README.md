@@ -2,6 +2,18 @@
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
+#  Zephyr Development
+##  Works with Nordic Devices
+##  Look in zephyr/covid2 folder
+##  Issues
+1.  Does not implement latest Apple/Google protocol
+2.  Understands single character commands over serial port
+    * 'r':  Toggles on/off streaming raw scans results to serial port
+    * 'g':  Eventually will be used to fetch data from memory
+    *  'c':  Eventually will clear memory
+##  Trying to understand how to migrate to other boards
+
+
 #  Adafruit notes
 
 ##  Implementation notes:
@@ -35,7 +47,6 @@
 3. These files are modified so that the advertising data which contains the rotating proximity identifier can be changed easily.  The modified files are in the subdirectory modified_files in the repo
   
 ## Tested with Arduino 1.18.12, nRF52 library 0.19
-
 #  nRF52840 dongle
 ## Requirements
 1. nRFConnect on computer to program
