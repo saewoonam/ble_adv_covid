@@ -1,7 +1,20 @@
 # Copyright (c) 2019 Nordic Semiconductor ASA
 # SPDX-License-Identifier: Apache-2.0
+#
+mainmenu "littlefs sample"
 
+config SEGGER_SYSTEMVIEW
+    select RTT_CONSOLE
+
+config APP_WIPE_STORAGE
+	bool "Option to clear the flash area before mounting"
+	help
+	  Use this to force an existing file system to be created.
+
+config USB_DEVICE_VID
+    hex "0xC019"
 config USB_DEVICE_PID
-	default USB_PID_CDC_ACM_SAMPLE
+    hex "0xC019"
+#    default USB_PID_CDC_ACM_SAMPLE
 
 source "Kconfig.zephyr"
