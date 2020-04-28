@@ -328,12 +328,13 @@ u8_t *rpi;
 
 struct bt_data encounter_ad[] = {
     BT_DATA_BYTES(BT_DATA_FLAGS, BT_LE_AD_NO_BREDR),
-    BT_DATA_BYTES(BT_DATA_TX_POWER, 0),
+    // BT_DATA_BYTES(BT_DATA_TX_POWER, 0),
     BT_DATA_BYTES(BT_DATA_UUID16_ALL, 0x6F, 0xFD),
     BT_DATA_BYTES(BT_DATA_SVC_DATA16,
             0x6F, 0xFD,
             0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0)
+            0,0,0,0,0,0,0,0,
+            0x04, 0x3, 0x2, 0x1)
             };
 static bool data_cb(struct bt_data *data, void *user_data)
 {
@@ -390,12 +391,34 @@ void bt_init(void) {
     printk("Bluetooth initialized\n");
 }
 void rpi_init(void) {
+    /*
     rpi = encounter_ad[3].data+2; // 4th item in array of messages is RPI
     rpi[15] = 0xC0;
     rpi[14] = 0x19;
     rpi[13] = 0;
     rpi[12] = 0;
+    */
+    rpi = encounter_ad[2].data+2; // 3rd item in array of messages is RPI
+    rpi[19] = 0xC0;
+    rpi[18] = 0x19;
+    rpi[17] = 0;
+    rpi[16] = 0;
 }
+
+void rpi_update(void) {
+    static u32_t round = 0;
+    // Original google/apple spec
+    // memcpy(rpi, &round, 4);  // try to copy round to lowest 4 bytes of rpi
+    // New google/apple spec
+    memcpy(rpi+4, &round, 4);  // try to copy round to lowest 4 bytes of rpi
+    round++;
+    rpi[0] = 0x00;
+    rpi[1] = 0x00;
+    rpi[2] = 0x00;
+    rpi[3] = 0x40;
+    
+}
+
 void bt_adv (void) {
     while (!start_adv) {
         printk("BT not started\n");
@@ -403,7 +426,7 @@ void bt_adv (void) {
     } 
     printk("Trying to start advertising\n");
     rpi_init();
-    u32_t round=0;
+    // u32_t round=0;
     k_sleep(K_MSEC(400));
 
     /* Start advertising */
@@ -414,6 +437,7 @@ void bt_adv (void) {
      *  tests
      *
      */
+    rpi_update();
     int err = bt_le_adv_start(BT_LE_ADV_NCONN, encounter_ad,
                             ARRAY_SIZE(encounter_ad), NULL, 0);
     if (err) {
@@ -423,10 +447,9 @@ void bt_adv (void) {
 
     do {
 
-        k_sleep(K_MSEC(40000));
+        k_sleep(K_MSEC(4000));
 
-        memcpy(rpi, &round, 4);  // try to copy round to lowest 4 bytes of rpi
-        round++;
+        rpi_update();
         err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
         /*  Will not use update... but stop in version that randomized MAC */
         // err = bt_le_adv_stop();
