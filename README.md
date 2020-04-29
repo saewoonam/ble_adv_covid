@@ -4,6 +4,15 @@
 
 #  Moving to Zephyr Development to make code management easier
 ##  Nordic Devices, nrf52840 Dongle or nRF52840DK
+##  Look in zephyr/bt_cdc folder
+##  Issues
+1.  This works... does not implement anything to flash memory
+2.  Stripped out all "helper" code from covid2 code to eliminate memory leak
+    between the BT scan and the CDC
+3.  Needs to be stress tested...
+4.  Also seems to solve the usb disconnect problem...   It recovers when usb is
+    disconnected... Also needs to be stress tested.
+5.  Does implement the latest protocol
 ##  Look in zephyr/covid2 folder
 ##  Issues
 1.  Does not implement latest Apple/Google protocol
