@@ -2,11 +2,13 @@
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
-#  Zephyr Development
-##  Works with Nordic Devices
+#  Moving to Zephyr Development to make code management easier
+##  Nordic Devices, nrf52840 Dongle or nRF52840DK
 ##  Look in zephyr/covid2 folder
 ##  Issues
 1.  Does not implement latest Apple/Google protocol
+2.  BT and CDC are not playing well together.
+3.  Device crashes if USB disconnects during serial port transmission
 2.  Understands single character commands over serial port
     * 'r':  Toggles on/off streaming raw scans results to serial port
     * 'g':  Eventually will be used to fetch data from memory
