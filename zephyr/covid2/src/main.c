@@ -44,6 +44,7 @@
 #include <fs/littlefs.h>
 #include <storage/flash_map.h>
 
+#define RPI_PERIOD 10000 // mSec
 /* Matches LFS_NAME_MAX */
 #define MAX_PATH_LEN 255
 
@@ -59,6 +60,15 @@ static struct fs_mount_t lfs_storage_mnt = {
 struct fs_mount_t *mp = &lfs_storage_mnt;
 struct fs_file_t encounter_file;
 extern void flash_close();
+
+struct led led2 = {
+    .gpio_dev_name = DT_ALIAS_LED1_GPIOS_CONTROLLER,
+    .gpio_pin_name = DT_ALIAS_LED1_LABEL,
+    .gpio_pin = DT_ALIAS_LED1_GPIOS_PIN,
+    .gpio_flags = GPIO_OUTPUT | DT_ALIAS_LED1_GPIOS_FLAGS,
+    .dev = NULL
+};
+
 
 extern void sys_arch_reboot(int);
 
@@ -81,7 +91,9 @@ bool led_is_on = true;
 bool usb_error = false;
 bool cdc_open = false;
 bool show_raw = false;
+// globals for flash
 bool write_flash = false;
+bool flash_full = false;
 // globals for bt
 bool bt_started = true;
 bool start_adv = false;
@@ -112,14 +124,26 @@ void flash_printf(char *format, ...) {
     va_list arg;
     va_start(arg, format);
     int len;
-    static char print_buffer[4096];
+    char print_buffer[4096];
+
 
     len = vsnprintf(print_buffer, 4096,format, arg);
     va_end(arg);
     if (write_flash) {
-        int rc = fs_write(&encounter_file, print_buffer, len);
-        rc = fs_sync(&encounter_file);
-        LOG_INF("write scan measurement, len: %d, sync rc: %d", len, rc);
+        int prev_pos = fs_tell(&encounter_file);
+        int len_written = fs_write(&encounter_file, print_buffer, len);
+        int curr_pos = fs_tell(&encounter_file);
+        flash(&led2);
+        int rc = fs_sync(&encounter_file);
+        if (len_written < 0) {
+            printk("ERROR in writing\n");
+        } else if (len_written < len) {
+            printk("curr_pos: %d, prev_pos: %d, delta: %d, len: %d Flash full\n",
+                    curr_pos, prev_pos, curr_pos-prev_pos, len);
+            flash_full = true;
+            blink(&led2, 20);
+        }
+        // printk("len_written: %d\n", len_written);
     }
 }
 
@@ -182,7 +206,7 @@ static void usb_status_cb(enum usb_dc_status_code status, const u8_t *param)
 {
     LOG_INF("cb status: %u, first_time: %d", status, first_time);
 
-    blink_led(led0_dev, 1);
+    led0_blink(led0_dev, 1);
     switch (status) {
         case USB_DC_ERROR:
             break;
@@ -214,7 +238,7 @@ static void usb_status_cb(enum usb_dc_status_code status, const u8_t *param)
             cdc_open = false;
             // printk("CDC CLOSED\n");
             if (usb_error) {
-                printk("Do RESET\n");
+                printk("Do REBOOT\n");
                 usb_error = false;
                 flash_close();
                 sys_arch_reboot(0);
@@ -352,6 +376,7 @@ static void scan_cb(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             struct net_buf_simple *buf)
 {
     char buffer[60];
+    char line[1024];
     u8_t uuid16[2]={0, 0};
     u8_t size = 0;
 
@@ -362,10 +387,12 @@ static void scan_cb(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     }
     bt_data_parse(buf, data_cb, uuid16);
     if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
+        flash(&led2);
         char addr_string[BT_ADDR_LE_STR_LEN];
         bt_addr_le_to_str(addr, addr_string, sizeof(addr_string));
         if (write_flash) {
-            flash_printf("%12u, %3d, %s, %s\n", timestamp, rssi, addr_string, buffer);
+            sprintf(line, "%12u, %3d, %s, %s\n", timestamp, rssi, addr_string, buffer);
+            printk("line len: %d\n", strlen(line));
         }
         if (show_raw && cdc_open) {
             usb_printf("%12u, %3d, %s, %s\n", timestamp, rssi, addr_string, buffer);
@@ -385,6 +412,7 @@ void bt_init(void) {
     err = bt_enable(NULL);
     if (err) {
         printk("Bluetooth init failed (err %d)\n", err);
+        blink(&led2, 1);
         return;
     }
     bt_started = true;
@@ -447,7 +475,7 @@ void bt_adv (void) {
 
     do {
 
-        k_sleep(K_MSEC(4000));
+        k_sleep(K_MSEC(RPI_PERIOD));
 
         rpi_update();
         err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
@@ -479,9 +507,10 @@ void start_scan(void) {
 
 }
 
-
+/*
 K_THREAD_DEFINE(bt_adv_id, STACKSIZE, bt_adv, NULL, NULL, NULL,
             3, 0, 0);
+*/
 
 /*   init_flash
  *
@@ -696,31 +725,34 @@ void clear_encounter(void) {
         return;
     }
     write_flash = true;
+    flash_full = false;
 }
 
-void main_flash(void){
-    int rc;
-    rc = flash_init();
-    LOG_INF("init rc: %d\n", rc);
-    flash_close();
-}
 void main(void){
-    // ring_buf_init(&ringbuf, sizeof(ring_buffer), ring_buffer);
+    
     ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
     ring_buf_init(&outringbuf, sizeof(out_ring_buffer), out_ring_buffer);
+    /*
     int rc = flash_init();
-    
+
     if (rc<0) {
         printk("Can't initialize flash\n");
     }
+    */
     
-    led_init();
+    led0_init();
+    led0_blink(led0_dev, 3);
     bt_init();
-
-    cdc_init();
-    usb_init();
+    // led_init(&led2);
+    // blink(&led2, 3);
     start_adv = true;
     start_scan();
+
+    // usb_init();
+    // cdc_init();
+
+}
+void stuff(void){
 
     dtr_init();
     uart_init();
@@ -737,8 +769,11 @@ void main(void){
                     break;
                     }
                 case 'c':  // Clear flash memory
+                    {
                     LOG_INF("got c");
+                    clear_encounter();
                     break;
+                    }
                 case 'r':  // Show data on USB_SERIAL PORT
                     LOG_INF("got r");
                     show_raw = !show_raw ;

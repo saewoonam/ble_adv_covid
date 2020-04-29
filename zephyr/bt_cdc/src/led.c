@@ -1,29 +1,5 @@
 #include "led.h"
 
-void led0_init(void)
-{
-    int ret;
-
-    led0_dev = device_get_binding(LED0);
-    if (led0_dev == NULL) {
-        return;
-    }
-    ret = gpio_pin_configure(led0_dev, PIN0, GPIO_OUTPUT_ACTIVE | FLAGS0);
-    if (ret < 0) {
-        return;
-    }
-    gpio_pin_set(led0_dev, PIN0, 0 );
-}
-
-void led0_blink(struct device *led_dev, u8_t blink) {
-    while(blink--) {
-        gpio_pin_set(led_dev, PIN0, 1);
-        k_msleep(200);
-        gpio_pin_set(led_dev, PIN0, 0);
-        k_msleep(200);
-    }
-}
-
 void led_init(struct led *led) {
     int ret;
     led->dev = device_get_binding(led->gpio_dev_name);
