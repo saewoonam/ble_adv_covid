@@ -1,4 +1,10 @@
 .. _usb_cdc-acm:
+Encounter tracing
+#####################################
+
+Built from USB CDC ACM sample application by adding bluetooth code from SCAN_ADV and filesystem code from the LITTLEFS example
+
+
 
 USB CDC ACM Sample Application
 ####################################
