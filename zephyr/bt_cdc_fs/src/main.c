@@ -97,6 +97,11 @@ void usb_init(void) {
     }
 }
 
+u8_t flash_buffer[4096];
+int total_written=0;
+int total_cache=0;
+#define CHUNK 4000
+
 K_THREAD_DEFINE(bt_adv_id, STACKSIZE, bt_adv, NULL, NULL, NULL,
             3, 0, 0);
 
@@ -185,7 +190,6 @@ void dtr_init(void) {
 }
 
 void clear_encounter(void) {
-    struct fs_file_t file;
     int rc;
     char fname[MAX_PATH_LEN];
     bool pause = write_flash;
@@ -195,18 +199,143 @@ void clear_encounter(void) {
 
     //
     snprintf(fname, sizeof(fname), "%s/encounters", mp->mnt_point);
-    rc = fs_close(&file);
+    rc = fs_close(&encounter_file);
     printk("close rc: %d\n", rc);
     rc = fs_unlink(fname);
     printk("unlink rc: %d\n", rc);
 
-    rc = fs_open(&file, fname);
+    rc = fs_open(&encounter_file, fname);
     if (rc < 0) {
         printk("FAIL: open %s: %d\n", fname, rc);
         return;
     }
     write_flash = pause;
     flash_full = false;
+}
+
+void got_g(void) {
+    struct fs_file_t file;
+    char line[1024];
+    char fname[MAX_PATH_LEN];
+    int rc;
+    memset(line, 0, 1024);
+
+    snprintf(fname, sizeof(fname), "%s/encounters", mp->mnt_point);
+
+    rc = fs_open(&file, fname);
+    if (rc < 0) {
+        printk("FAIL: open %s: %d\n", fname, rc);
+        return;
+    }
+    printk("Opened file rc: %d\n", rc);
+    while((rc = fs_read(&file, line, LINE_LENGTH))) {
+        // printk("Read file rc: %d:%s", rc, line);
+        line[rc] = 0;
+        // usb_printf("%s", line);
+        unsigned int key = irq_lock();
+        int out_len = ring_buf_put(&outringbuf, line, rc);
+        irq_unlock(key);
+        if (out_len < rc) {
+            printk("Problem writing to uart/cdc\n");
+        }
+        // printk("out_len: %d\n", out_len);
+        uart_irq_tx_enable(cdc_dev);
+    }
+    rc = fs_close(&file);
+    printk("Close file rc: %d\n", rc);
+}
+
+void flash_store(void) {
+    int space;
+    int total_len = 0;
+    int len_written;
+
+
+    space = ring_buf_space_get(&flashringbuf);
+    if (write_flash) {
+        printk("Space: %d, total_written: %d, total_cache: %d\n", 
+                space, total_written, total_cache);
+    } 
+    if (space < (8191-CHUNK)) {
+        flash(&led4);
+        do {
+            total_len += ring_buf_get(&flashringbuf, flash_buffer, CHUNK);
+        } while (total_len<CHUNK);
+        len_written = fs_write(&encounter_file, flash_buffer, CHUNK);
+        fs_sync(&encounter_file);
+        total_written += len_written;
+        printk("Space: %d, total_written: %d, total_cache: %d\n", 
+                space, total_written, total_cache);
+        if (len_written < CHUNK) {
+            printk("Disk full???\n");
+        }
+    }
+}
+
+void parse_command(char c) {
+    int total_len, len_written;
+            switch (c) {
+                case 'g':  // Get all data from FLASH
+                    {
+                    printk("got g\n");
+                    got_g();
+                    break;
+                    }
+                case 'c':  // Clear flash memory
+                    {
+                    printk("got c\n");
+                    clear_encounter();
+                    // clear variable keeping track of what is written
+                    total_written = 0;
+                    total_cache = 0;
+                    printk("done clear\n");
+                    break;
+                    }
+                case 'k':  // Show data on printk/debugger
+                    printk("got k\n");
+                    show_kernel = !show_kernel ;
+                    break;
+                case 'r':  // Show data on USB_SERIAL PORT
+                    printk("got r\n");
+                    show_raw = !show_raw ;
+                    break;
+                case 'l':  // list files to debugger
+                    {
+                    printk("got l\n");
+                    ls();
+                    break;
+                    }
+                case 'w':  // Write data to flash
+                    printk("got w\n");
+                    write_flash = true ;
+                    break;
+                case 's':  // Stop write data to flash
+                    {
+                    printk("got s\n");
+                    write_flash = false;
+                    // Need to wait to finish all writes to ringbuffer
+                    k_sleep(K_MSEC(200));
+                    // Need to dump everything in flash_buffer to flash
+                    total_len = ring_buf_get(&flashringbuf, flash_buffer, 4096);
+                    while (total_len>0){
+                        len_written = fs_write(&encounter_file,
+                                flash_buffer, total_len);
+                        fs_sync(&encounter_file);
+                        total_len = ring_buf_get(&flashringbuf, flash_buffer, 4096);
+                        total_written += len_written;
+                    }
+                    printk("total_written:  %d, total_cache: %d\n",
+                            total_written, total_cache);
+                    encounter_info();
+
+                    break;
+                    }
+                default:
+                    {
+                    printk("got %c, not defined\n", c);
+                    break;
+                    }
+            }
 }
 
 void main(void)
@@ -237,56 +366,12 @@ void main(void)
     dtr_init();
     cdc_open=true;
     u8_t c;
-    int counter = 0;
 
     while (true) {
         while(ring_buf_get(&inringbuf, &c, 1)){
-            switch (c) {
-                case 'g':  // Get all data from FLASH
-                    {
-                    printk("got g\n");
-                    // got_g();
-                    break;
-                    }
-                case 'c':  // Clear flash memory
-                    {
-                    printk("got c\n");
-                    clear_encounter();
-                    printk("done clear\n");
-                    break;
-                    }
-                case 'k':  // Show data on printk/debugger
-                    printk("got k\n");
-                    show_kernel = !show_kernel ;
-                    break;
-                case 'r':  // Show data on USB_SERIAL PORT
-                    printk("got r\n");
-                    show_raw = !show_raw ;
-                    break;
-                case 'l':  // list files to debugger
-                    {
-                    printk("got l\n");
-                    ls();
-                    break;
-                    }
-                case 'w':  // Write data to flash
-                    printk("got w\n");
-                    write_flash = true ;
-                    break;
-                case 's':  // Stop write data to flash
-                    {
-                    printk("got s\n");
-                    write_flash = false;
-                    encounter_info();
-                    break;
-                    }
-                default:
-                    {
-                    printk("got %c, not defined\n", c);
-                    break;
-                    }
-            }
+            parse_command(c);
         }
+        flash_store();
         k_sleep(K_MSEC(200));
 
     }

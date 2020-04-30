@@ -30,6 +30,7 @@ extern struct device *cdc_dev;
 extern struct ring_buf outringbuf;
 extern struct ring_buf flashringbuf;
 extern struct fs_file_t encounter_file;
+extern int total_cache;
 
 void bt_init(void) {
     int err;
@@ -198,11 +199,10 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         }
         
         if (write_flash) {  // write to flash
-            unsigned int key = irq_lock();
             int out_len = ring_buf_put(&flashringbuf, line, line_len);
-            printk("ring space: %d\n", ring_buf_space_get(&flashringbuf));
-            printk("ring capacity: %d\n", ring_buf_capacity_get(&flashringbuf));
-            irq_unlock(key);
+            total_cache += out_len;
+            // printk("ring space: %d\n", ring_buf_space_get(&flashringbuf));
+            // printk("ring capacity: %d\n", ring_buf_capacity_get(&flashringbuf));
 
             /*
             unsigned int key = irq_lock();
