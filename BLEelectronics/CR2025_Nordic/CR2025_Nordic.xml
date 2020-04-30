@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic\CR2025_Nordic.sch</source>
-    <date>2020-04-24 9:55:52 AM</date>
+    <date>2020-04-30 3:45:23 PM</date>
     <tool>Eeschema (5.1.5)-3</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -19,29 +19,6 @@
     </sheet>
   </design>
   <components>
-    <comp ref="D2">
-      <value>TPD1E10B06DPYR</value>
-      <footprint>DIODFN100X60X45-2N</footprint>
-      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e10b06</datasheet>
-      <fields>
-        <field name="DPN">296-30406-1-ND</field>
-        <field name="Field4">Manufacturer Recommendation</field>
-        <field name="Field5">None</field>
-        <field name="Field6">Texas Instruments</field>
-        <field name="Field7">XDFN-2 Texas Instruments</field>
-        <field name="Field8">Single Channel ESD in 0402 package with 10pF Capacitance and 6V Breakdown 2-X1SON -40 to 125</field>
-        <field name="Field9">Unavailable</field>
-        <field name="LCSCPN">-</field>
-        <field name="MFR">Texas Instruments</field>
-        <field name="MPN">TPD1E10B06DPYR</field>
-        <field name="SIM">-</field>
-        <field name="SPN">-</field>
-        <field name="SPR">-</field>
-      </fields>
-      <libsource lib="TPD1E10B06DPYR" part="TPD1E10B06DPYR" description=""/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5E9C6764</tstamp>
-    </comp>
     <comp ref="U2">
       <value>BAT-HLD-001</value>
       <footprint>0my_footprints:BAT-HLD-001</footprint>
@@ -114,12 +91,12 @@
     <comp ref="C3">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>~</datasheet>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
       <fields>
-        <field name="DPN">587-2786-6-ND</field>
+        <field name="DPN">1276-1862-1-ND</field>
         <field name="LCSCPN">-</field>
         <field name="MFR">Samsung</field>
-        <field name="MPN">CL10B105KA8NNNC</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
         <field name="SIM">-</field>
         <field name="SPN">-</field>
         <field name="SPR">-</field>
@@ -251,6 +228,15 @@
       <value>MountingHole</value>
       <footprint>MountingHole:MountingHole_2.2mm_M2_Pad</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5EA39936</tstamp>
@@ -374,29 +360,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5E9EFF12</tstamp>
     </comp>
-    <comp ref="D1">
-      <value>TPD1E10B06DPYR</value>
-      <footprint>DIODFN100X60X45-2N</footprint>
-      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e10b06</datasheet>
-      <fields>
-        <field name="DPN">296-30406-1-ND</field>
-        <field name="Field4">Manufacturer Recommendation</field>
-        <field name="Field5">None</field>
-        <field name="Field6">Texas Instruments</field>
-        <field name="Field7">XDFN-2 Texas Instruments</field>
-        <field name="Field8">Single Channel ESD in 0402 package with 10pF Capacitance and 6V Breakdown 2-X1SON -40 to 125</field>
-        <field name="Field9">Unavailable</field>
-        <field name="LCSCPN">-</field>
-        <field name="MFR">Texas Instruments</field>
-        <field name="MPN">TPD1E10B06DPYR</field>
-        <field name="SIM">-</field>
-        <field name="SPN">-</field>
-        <field name="SPR">-</field>
-      </fields>
-      <libsource lib="TPD1E10B06DPYR" part="TPD1E10B06DPYR" description=""/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>5E9C4738</tstamp>
-    </comp>
     <comp ref="R2">
       <value>0</value>
       <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
@@ -434,12 +397,12 @@
     <comp ref="C4">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>~</datasheet>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
       <fields>
-        <field name="DPN">587-2786-6-ND</field>
+        <field name="DPN">1276-1862-1-ND</field>
         <field name="LCSCPN">-</field>
         <field name="MFR">Samsung</field>
-        <field name="MPN">CL10B105KA8NNNC</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
         <field name="SIM">-</field>
         <field name="SPN">-</field>
         <field name="SPR">-</field>
@@ -451,12 +414,12 @@
     <comp ref="C5">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>~</datasheet>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
       <fields>
-        <field name="DPN">587-2786-6-ND</field>
+        <field name="DPN">1276-1862-1-ND</field>
         <field name="LCSCPN">-</field>
         <field name="MFR">Samsung</field>
-        <field name="MPN">CL10B105KA8NNNC</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
         <field name="SIM">-</field>
         <field name="SPN">-</field>
         <field name="SPR">-</field>
@@ -520,6 +483,15 @@
       <value>Conn_01x01_Female</value>
       <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
       <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
       <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5EA8C546</tstamp>
@@ -528,6 +500,15 @@
       <value>Si7463DP</value>
       <footprint>Package_SO:PowerPAK_SO-8_Single</footprint>
       <datasheet>http://www.vishay.com/docs/72440/si7463dp.pdf</datasheet>
+      <fields>
+        <field name="DPN">SI7463DP-T1-GE3</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Vishay Siliconix</field>
+        <field name="MPN">SI7463DP-T1-GE3</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
       <libsource lib="Si7463DP" part="Si7463DP" description="11A Id, 40V Vdss, 9.2mOhm Ron, PowerPAK-8"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5EAE0222</tstamp>
@@ -599,6 +580,40 @@
       <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5EA4C3C0</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>ESD401</value>
+      <footprint>0my_footprints:ESD401DPYR</footprint>
+      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401</datasheet>
+      <fields>
+        <field name="DPN">296-47160-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MPN">ESD401DPYR</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="ESD401DPYR" part="ESD401DPYR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA48F38</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>ESD401</value>
+      <footprint>0my_footprints:ESD401DPYR</footprint>
+      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401</datasheet>
+      <fields>
+        <field name="DPN">296-47160-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MPN">ESD401DPYR</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="ESD401DPYR" part="ESD401DPYR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA4E7E7</tstamp>
     </comp>
   </components>
   <libparts>
@@ -754,6 +769,20 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="ESD401DPYR" part="ESD401DPYR">
+      <footprints>
+        <fp>DPY0002A</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESD401DPYR</field>
+        <field name="Footprint">DPY0002A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+      </pins>
+    </libpart>
     <libpart lib="Jumper" part="Jumper_2_Open">
       <description>Jumper, 2-pole, open</description>
       <docs>~</docs>
@@ -869,24 +898,6 @@
         <pin num="5" name="D" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="TPD1E10B06DPYR" part="TPD1E10B06DPYR">
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">TPD1E10B06DPYR</field>
-        <field name="Footprint">DIODFN100X60X45-2N</field>
-        <field name="Datasheet">TPD1E10B06DPYR</field>
-        <field name="Field4">Manufacturer Recommendation</field>
-        <field name="Field5">None</field>
-        <field name="Field6">Texas Instruments</field>
-        <field name="Field7">XDFN-2 Texas Instruments</field>
-        <field name="Field8">Single Channel ESD in 0402 package with 10pF Capacitance and 6V Breakdown 2-X1SON -40 to 125</field>
-        <field name="Field9">Unavailable</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="passive"/>
-        <pin num="2" name="2" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Timer_RTC" part="PCF8523T">
       <description>Realtime Clock/Calendar I2C Interface, SOIC-8</description>
       <docs>https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf</docs>
@@ -953,6 +964,9 @@
     <library logical="Device">
       <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
     </library>
+    <library logical="ESD401DPYR">
+      <uri>C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/ESD401DPYR.lib</uri>
+    </library>
     <library logical="Jumper">
       <uri>C:\Program Files\KiCad\share\kicad\library/Jumper.lib</uri>
     </library>
@@ -968,9 +982,6 @@
     <library logical="Si7463DP">
       <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/Si7463DP.lib</uri>
     </library>
-    <library logical="TPD1E10B06DPYR">
-      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/TPD1E10B06DPYR.lib</uri>
-    </library>
     <library logical="Timer_RTC">
       <uri>C:\Program Files\KiCad\share\kicad\library/Timer_RTC.lib</uri>
     </library>
@@ -979,195 +990,195 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(C5-Pad2)">
-      <node ref="D3" pin="2"/>
-      <node ref="U1" pin="5"/>
-      <node ref="C5" pin="2"/>
-    </net>
-    <net code="2" name="/CS">
-      <node ref="IC3" pin="1"/>
-      <node ref="J1" pin="1"/>
-    </net>
-    <net code="3" name="/SI">
-      <node ref="IC3" pin="5"/>
-      <node ref="J1" pin="5"/>
-    </net>
-    <net code="4" name="/SCLK">
-      <node ref="IC3" pin="6"/>
-      <node ref="J1" pin="3"/>
-    </net>
-    <net code="5" name="Net-(J1-Pad22)">
-      <node ref="J1" pin="22"/>
-    </net>
-    <net code="6" name="Net-(J1-Pad21)">
-      <node ref="J1" pin="21"/>
-    </net>
-    <net code="7" name="/SO">
-      <node ref="IC3" pin="2"/>
-      <node ref="J1" pin="2"/>
-    </net>
-    <net code="8" name="Net-(J1-Pad17)">
-      <node ref="J1" pin="17"/>
-    </net>
-    <net code="9" name="Net-(J1-Pad16)">
-      <node ref="J1" pin="16"/>
-    </net>
-    <net code="10" name="Net-(J1-Pad15)">
-      <node ref="J1" pin="15"/>
-    </net>
-    <net code="11" name="/RESET">
-      <node ref="IC3" pin="7"/>
-      <node ref="J1" pin="14"/>
-    </net>
-    <net code="12" name="Net-(J1-Pad13)">
-      <node ref="J1" pin="13"/>
-    </net>
-    <net code="13" name="Net-(J1-Pad12)">
-      <node ref="J1" pin="12"/>
-    </net>
-    <net code="14" name="Net-(IC1-Pad4)">
+    <net code="1" name="Net-(IC1-Pad4)">
       <node ref="IC1" pin="4"/>
       <node ref="R4" pin="2"/>
     </net>
-    <net code="15" name="GND">
-      <node ref="IC4" pin="2"/>
-      <node ref="D2" pin="1"/>
-      <node ref="C3" pin="2"/>
-      <node ref="IC2" pin="4"/>
-      <node ref="IC3" pin="4"/>
-      <node ref="IC1" pin="2"/>
-      <node ref="R1" pin="2"/>
-      <node ref="C2" pin="2"/>
-      <node ref="C1" pin="2"/>
-      <node ref="J1" pin="10"/>
-      <node ref="R6" pin="2"/>
-      <node ref="U2" pin="2"/>
-      <node ref="C5" pin="1"/>
-      <node ref="J1" pin="18"/>
-      <node ref="D1" pin="2"/>
-      <node ref="J1" pin="11"/>
-      <node ref="U1" pin="2"/>
-      <node ref="C4" pin="1"/>
+    <net code="2" name="Net-(JP3-Pad2)">
+      <node ref="JP4" pin="2"/>
+      <node ref="Q1" pin="2"/>
+      <node ref="JP3" pin="2"/>
+      <node ref="R3" pin="2"/>
     </net>
-    <net code="16" name="/VDD_3V">
-      <node ref="R9" pin="1"/>
-      <node ref="R8" pin="1"/>
-      <node ref="IC2" pin="3"/>
-      <node ref="IC3" pin="8"/>
-      <node ref="C2" pin="1"/>
-      <node ref="R4" pin="1"/>
-      <node ref="R3" pin="1"/>
-      <node ref="J1" pin="19"/>
-      <node ref="R2" pin="1"/>
-    </net>
-    <net code="17" name="Net-(D3-Pad1)">
-      <node ref="R2" pin="2"/>
-      <node ref="D3" pin="1"/>
-    </net>
-    <net code="18" name="Net-(U1-Pad4)">
-      <node ref="U1" pin="4"/>
-    </net>
-    <net code="19" name="Net-(IC1-Pad5)">
-      <node ref="JP2" pin="1"/>
-      <node ref="IC1" pin="5"/>
-      <node ref="Q1" pin="1"/>
-    </net>
-    <net code="20" name="Net-(JP4-Pad1)">
-      <node ref="Q2" pin="3"/>
-      <node ref="Q2" pin="2"/>
-      <node ref="Q2" pin="1"/>
-      <node ref="JP4" pin="1"/>
-    </net>
-    <net code="21" name="Net-(JP1-Pad1)">
-      <node ref="Q2" pin="5"/>
-      <node ref="JP1" pin="1"/>
-    </net>
-    <net code="22" name="Net-(JP2-Pad2)">
-      <node ref="Q2" pin="4"/>
-      <node ref="JP2" pin="2"/>
-    </net>
-    <net code="23" name="/5Vusb">
-      <node ref="R5" pin="1"/>
-      <node ref="C4" pin="2"/>
-      <node ref="U1" pin="3"/>
-      <node ref="U1" pin="1"/>
-      <node ref="J1" pin="20"/>
-      <node ref="IC1" pin="6"/>
-      <node ref="D1" pin="1"/>
-    </net>
-    <net code="24" name="Net-(IC2-Pad7)">
-      <node ref="IC2" pin="7"/>
-      <node ref="J4" pin="1"/>
-    </net>
-    <net code="25" name="Net-(D4-Pad2)">
-      <node ref="IC4" pin="3"/>
+    <net code="3" name="Net-(D4-Pad2)">
       <node ref="D4" pin="2"/>
+      <node ref="IC4" pin="3"/>
     </net>
-    <net code="26" name="Net-(D4-Pad1)">
+    <net code="4" name="Net-(D4-Pad1)">
       <node ref="D4" pin="1"/>
       <node ref="R7" pin="2"/>
     </net>
-    <net code="27" name="Net-(JP3-Pad2)">
-      <node ref="JP4" pin="2"/>
-      <node ref="JP3" pin="2"/>
-      <node ref="Q1" pin="2"/>
-      <node ref="R3" pin="2"/>
+    <net code="5" name="Net-(C3-Pad1)">
+      <node ref="R5" pin="2"/>
+      <node ref="IC4" pin="4"/>
+      <node ref="C3" pin="1"/>
     </net>
-    <net code="28" name="/3V">
-      <node ref="JP3" pin="1"/>
-      <node ref="D2" pin="2"/>
-      <node ref="U2" pin="1"/>
-      <node ref="Q1" pin="3"/>
-      <node ref="C1" pin="1"/>
-      <node ref="IC1" pin="1"/>
-      <node ref="JP1" pin="2"/>
-      <node ref="U2" pin="3"/>
+    <net code="6" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2"/>
+      <node ref="U1" pin="5"/>
+      <node ref="D3" pin="2"/>
+    </net>
+    <net code="7" name="/3V">
       <node ref="R7" pin="1"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="JP1" pin="2"/>
+      <node ref="U3" pin="2"/>
+      <node ref="Q1" pin="3"/>
+      <node ref="U2" pin="1"/>
+      <node ref="JP3" pin="1"/>
+      <node ref="U2" pin="3"/>
     </net>
-    <net code="29" name="Net-(J1-Pad8)">
-      <node ref="J1" pin="8"/>
+    <net code="8" name="Net-(IC4-Pad5)">
+      <node ref="R6" pin="1"/>
+      <node ref="IC4" pin="5"/>
     </net>
-    <net code="30" name="Net-(J1-Pad9)">
+    <net code="9" name="Net-(J1-Pad17)">
+      <node ref="J1" pin="17"/>
+    </net>
+    <net code="10" name="Net-(J1-Pad16)">
+      <node ref="J1" pin="16"/>
+    </net>
+    <net code="11" name="Net-(J1-Pad15)">
+      <node ref="J1" pin="15"/>
+    </net>
+    <net code="12" name="Net-(J1-Pad12)">
+      <node ref="J1" pin="12"/>
+    </net>
+    <net code="13" name="Net-(J1-Pad9)">
       <node ref="J1" pin="9"/>
     </net>
-    <net code="31" name="/WP">
-      <node ref="J1" pin="4"/>
-      <node ref="IC3" pin="3"/>
+    <net code="14" name="Net-(IC4-Pad1)">
+      <node ref="IC4" pin="1"/>
     </net>
-    <net code="32" name="Net-(IC2-Pad8)">
+    <net code="15" name="Net-(IC2-Pad2)">
+      <node ref="IC2" pin="2"/>
+    </net>
+    <net code="16" name="Net-(IC1-Pad5)">
+      <node ref="JP2" pin="1"/>
+      <node ref="Q1" pin="1"/>
+      <node ref="IC1" pin="5"/>
+    </net>
+    <net code="17" name="/5Vusb">
+      <node ref="J1" pin="20"/>
+      <node ref="R5" pin="1"/>
+      <node ref="IC1" pin="6"/>
+      <node ref="C4" pin="2"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U1" pin="3"/>
+      <node ref="U4" pin="1"/>
+    </net>
+    <net code="18" name="Net-(J1-Pad8)">
+      <node ref="J1" pin="8"/>
+    </net>
+    <net code="19" name="Net-(J1-Pad13)">
+      <node ref="J1" pin="13"/>
+    </net>
+    <net code="20" name="Net-(J1-Pad22)">
+      <node ref="J1" pin="22"/>
+    </net>
+    <net code="21" name="Net-(J1-Pad21)">
+      <node ref="J1" pin="21"/>
+    </net>
+    <net code="22" name="Net-(IC2-Pad8)">
       <node ref="IC2" pin="8"/>
     </net>
-    <net code="33" name="Net-(IC2-Pad2)">
-      <node ref="IC2" pin="2"/>
+    <net code="23" name="Net-(IC2-Pad1)">
+      <node ref="IC2" pin="1"/>
+    </net>
+    <net code="24" name="Net-(JP2-Pad2)">
+      <node ref="JP2" pin="2"/>
+      <node ref="Q2" pin="4"/>
+    </net>
+    <net code="25" name="Net-(JP4-Pad1)">
+      <node ref="JP4" pin="1"/>
+      <node ref="Q2" pin="1"/>
+      <node ref="Q2" pin="2"/>
+      <node ref="Q2" pin="3"/>
+    </net>
+    <net code="26" name="Net-(JP1-Pad1)">
+      <node ref="Q2" pin="5"/>
+      <node ref="JP1" pin="1"/>
+    </net>
+    <net code="27" name="Net-(D3-Pad1)">
+      <node ref="D3" pin="1"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="28" name="GND">
+      <node ref="IC4" pin="2"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C3" pin="2"/>
+      <node ref="U1" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="U3" pin="1"/>
+      <node ref="U2" pin="2"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="C5" pin="1"/>
+      <node ref="J1" pin="11"/>
+      <node ref="IC3" pin="4"/>
+      <node ref="J1" pin="10"/>
+      <node ref="J1" pin="18"/>
+      <node ref="U4" pin="2"/>
+      <node ref="IC2" pin="4"/>
+      <node ref="C1" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C2" pin="2"/>
+    </net>
+    <net code="29" name="/RESET">
+      <node ref="J1" pin="14"/>
+      <node ref="IC3" pin="7"/>
+    </net>
+    <net code="30" name="/SO">
+      <node ref="J1" pin="2"/>
+      <node ref="IC3" pin="2"/>
+    </net>
+    <net code="31" name="Net-(IC2-Pad7)">
+      <node ref="IC2" pin="7"/>
+      <node ref="J4" pin="1"/>
+    </net>
+    <net code="32" name="Net-(IC1-Pad3)">
+      <node ref="R1" pin="1"/>
+      <node ref="IC1" pin="3"/>
+    </net>
+    <net code="33" name="/VDD_3V">
+      <node ref="R2" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="R4" pin="1"/>
+      <node ref="J1" pin="19"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R8" pin="1"/>
+      <node ref="IC3" pin="8"/>
+      <node ref="R9" pin="1"/>
+      <node ref="IC2" pin="3"/>
     </net>
     <net code="34" name="/SCL">
       <node ref="R9" pin="2"/>
-      <node ref="J1" pin="7"/>
       <node ref="IC2" pin="6"/>
+      <node ref="J1" pin="7"/>
     </net>
-    <net code="35" name="Net-(IC4-Pad5)">
-      <node ref="IC4" pin="5"/>
-      <node ref="R6" pin="1"/>
-    </net>
-    <net code="36" name="Net-(IC4-Pad1)">
-      <node ref="IC4" pin="1"/>
-    </net>
-    <net code="37" name="Net-(C3-Pad1)">
-      <node ref="C3" pin="1"/>
-      <node ref="R5" pin="2"/>
-      <node ref="IC4" pin="4"/>
-    </net>
-    <net code="38" name="Net-(IC2-Pad1)">
-      <node ref="IC2" pin="1"/>
-    </net>
-    <net code="39" name="/SDA">
-      <node ref="J1" pin="6"/>
-      <node ref="R8" pin="2"/>
+    <net code="35" name="/SDA">
       <node ref="IC2" pin="5"/>
+      <node ref="R8" pin="2"/>
+      <node ref="J1" pin="6"/>
     </net>
-    <net code="40" name="Net-(IC1-Pad3)">
-      <node ref="R1" pin="1"/>
-      <node ref="IC1" pin="3"/>
+    <net code="36" name="/SI">
+      <node ref="J1" pin="5"/>
+      <node ref="IC3" pin="5"/>
+    </net>
+    <net code="37" name="/WP">
+      <node ref="J1" pin="4"/>
+      <node ref="IC3" pin="3"/>
+    </net>
+    <net code="38" name="/SCLK">
+      <node ref="IC3" pin="6"/>
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="39" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="40" name="/CS">
+      <node ref="J1" pin="1"/>
+      <node ref="IC3" pin="1"/>
     </net>
   </nets>
 </export>

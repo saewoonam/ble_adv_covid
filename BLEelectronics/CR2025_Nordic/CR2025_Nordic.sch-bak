@@ -741,10 +741,10 @@ F 3 "" H 2350 3750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L ESD401DPYR:ESD401DPYR U?
+L ESD401DPYR:ESD401DPYR U3
 U 1 1 5EA48F38
 P 2200 2000
-F 0 "U?" V 2253 1871 60  0000 R CNN
+F 0 "U3" V 2253 1871 60  0000 R CNN
 F 1 "ESD401" V 2147 1871 60  0000 R CNN
 F 2 "0my_footprints:ESD401DPYR" H 2200 1940 60  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 2094 1871 60  0001 R CNN
@@ -815,7 +815,7 @@ WP
 Text Label 8750 4200 2    50   ~ 0
 WP
 Text Notes 4000 1700 0    50   ~ 0
-Confirm no pull-up/down\nresistors for SPI protocol
+Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
 Text Label 6650 3550 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0
@@ -1049,10 +1049,10 @@ NoConn ~ 5950 1150
 NoConn ~ 6500 2200
 NoConn ~ 5300 2200
 $Comp
-L ESD401DPYR:ESD401DPYR U?
+L ESD401DPYR:ESD401DPYR U4
 U 1 1 5EA4E7E7
 P 2350 4050
-F 0 "U?" V 2403 3921 60  0000 R CNN
+F 0 "U4" V 2403 3921 60  0000 R CNN
 F 1 "ESD401" V 2297 3921 60  0000 R CNN
 F 2 "0my_footprints:ESD401DPYR" H 2350 3990 60  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 2244 3921 60  0001 R CNN
@@ -1079,4 +1079,6 @@ Wire Wire Line
 Connection ~ 2200 1700
 Wire Wire Line
 	2200 1700 2850 1700
+Text Notes 3950 2750 0    50   ~ 0
+CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
 $EndSCHEMATC
