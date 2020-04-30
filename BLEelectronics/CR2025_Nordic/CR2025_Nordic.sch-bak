@@ -538,10 +538,10 @@ P 3450 3850
 F 0 "C4" H 3565 3896 50  0000 L CNN
 F 1 "1uF" H 3565 3805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3488 3700 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp" H 3450 3850 50  0001 C CNN
-F 4 "Samsung" H -5300 2200 50  0001 C CNN "MFR"
-F 5 "CL10A105KO5LNNC" H -5300 2200 50  0001 C CNN "MPN"
-F 6 "1276-1862-1-ND" H -5300 2200 50  0001 C CNN "DPN"
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf?ref_disty=digikey" H 3450 3850 50  0001 C CNN
+F 4 "TDK Corporation" H -5300 2200 50  0001 C CNN "MFR"
+F 5 "C1608X5R1C105K080AA" H -5300 2200 50  0001 C CNN "MPN"
+F 6 "445-1416-1-ND" H -5300 2200 50  0001 C CNN "DPN"
 F 7 "-" H -5300 2200 50  0001 C CNN "LCSCPN"
 F 8 "-" H -5300 2200 50  0001 C CNN "SPR"
 F 9 "-" H -5300 2200 50  0001 C CNN "SPN"
@@ -556,10 +556,10 @@ P 4250 3850
 F 0 "C5" H 4365 3896 50  0000 L CNN
 F 1 "1uF" H 4365 3805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4288 3700 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp" H 4250 3850 50  0001 C CNN
-F 4 "Samsung" H -4500 2200 50  0001 C CNN "MFR"
-F 5 "CL10A105KO5LNNC" H -4500 2200 50  0001 C CNN "MPN"
-F 6 "1276-1862-1-ND" H -4500 2200 50  0001 C CNN "DPN"
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf?ref_disty=digikey" H 4250 3850 50  0001 C CNN
+F 4 "TDK Corporation" H -4500 2200 50  0001 C CNN "MFR"
+F 5 "C1608X5R1C105K080AA" H -4500 2200 50  0001 C CNN "MPN"
+F 6 "445-1416-1-ND" H -4500 2200 50  0001 C CNN "DPN"
 F 7 "-" H -4500 2200 50  0001 C CNN "LCSCPN"
 F 8 "-" H -4500 2200 50  0001 C CNN "SPR"
 F 9 "-" H -4500 2200 50  0001 C CNN "SPN"
