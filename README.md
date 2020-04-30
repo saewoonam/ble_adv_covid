@@ -4,6 +4,21 @@
 
 #  Moving to Zephyr Development to make code management easier
 ##  Nordic Devices, nrf52840 Dongle or nRF52840DK
+##  Code in zephyr/bt_cdc_fs
+##  This version seems to get bt, usb-serial (CDC), and flash memory working together
+##
+1.  Works to advertise and scan, encounter BT signals
+2.  Logs data to external flash memory when requested via usb serial
+3.  Dumps logged data from flash memory to usb serial port when requested
+4.  Following commands implemented via usb serial
+    * 'r':  Toggles on/off streaming raw scans results to serial port
+    * 'g':  Get data from flash memory and send over serial port
+    * 'c':  Clear flash memory
+    * 'k':  Toggles on/off stream of  raw ecounter packets to the debugger port
+    * 'l':  List files on flash memory to debugger
+    * 'w':  Start writing encounter packets to the flash memory
+    * 's':  Stop writing encounter packets to the flash memory
+
 ##  Look in zephyr/bt_cdc folder
 ##  Issues
 1.  This works... does not implement anything to flash memory
@@ -18,10 +33,6 @@
 1.  Does not implement latest Apple/Google protocol
 2.  BT and CDC are not playing well together.
 3.  Device crashes if USB disconnects during serial port transmission
-2.  Understands single character commands over serial port
-    * 'r':  Toggles on/off streaming raw scans results to serial port
-    * 'g':  Eventually will be used to fetch data from memory
-    *  'c':  Eventually will clear memory
 ##  Trying to understand how to migrate to other boards
 
 
