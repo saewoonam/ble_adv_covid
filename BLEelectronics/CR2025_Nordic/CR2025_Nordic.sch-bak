@@ -640,96 +640,6 @@ F 10 "-" H 0   0   50  0001 C CNN "SIM"
 	0    1    1    0   
 $EndComp
 $Comp
-L Si7463DP:Si7463DP Q2
-U 1 1 5EAE0222
-P 4050 5650
-F 0 "Q2" V 4450 5650 50  0000 C CNN
-F 1 "Si7463DP" V 4350 5650 50  0000 C CNN
-F 2 "Package_SO:PowerPAK_SO-8_Single" H 4300 5575 50  0001 L CIN
-F 3 "http://www.vishay.com/docs/72440/si7463dp.pdf" H 4050 5650 50  0001 L CNN
-F 4 "Vishay Siliconix" H 0   0   50  0001 C CNN "MFR"
-F 5 "SI7463DP-T1-GE3" H 0   0   50  0001 C CNN "MPN"
-F 6 "SI7463DP-T1-GE3" H 0   0   50  0001 C CNN "DPN"
-F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPR"
-F 9 "-" H 0   0   50  0001 C CNN "SPN"
-F 10 "-" H 0   0   50  0001 C CNN "SIM"
-	1    4050 5650
-	0    1    -1   0   
-$EndComp
-$Comp
-L si2307cds:Si2307CDS Q1
-U 1 1 5E9CEE32
-P 3600 5200
-F 0 "Q1" V 3950 5150 50  0000 L CNN
-F 1 "Si2307CDS" V 3850 4950 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3800 5125 50  0001 L CIN
-F 3 "http://www.vishay.com/docs/68768/si2307cds.pdf" H 3600 5200 50  0001 L CNN
-F 4 "Vishay Siliconix" H -2550 3350 50  0001 C CNN "MFR"
-F 5 "SI2307CDS-T1-GE3" H -2550 3350 50  0001 C CNN "MPN"
-F 6 "SI2307CDS-T1-GE3CT-ND" H -2550 3350 50  0001 C CNN "DPN"
-F 7 "-" H -2550 3350 50  0001 C CNN "LCSCPN"
-F 8 "-" H -2550 3350 50  0001 C CNN "SPR"
-F 9 "-" H -2550 3350 50  0001 C CNN "SPN"
-F 10 "-" H -2550 3350 50  0001 C CNN "SIM"
-	1    3600 5200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Jumper:Jumper_2_Open JP2
-U 1 1 5EA1D258
-P 3800 5850
-F 0 "JP2" H 3800 6000 50  0000 C CNN
-F 1 "Jumper_2_Open" H 3800 5994 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3800 5850 50  0001 C CNN
-F 3 "~" H 3800 5850 50  0001 C CNN
-F 4 "-" H -2900 3750 50  0001 C CNN "MFR"
-F 5 "-" H -2900 3750 50  0001 C CNN "MPN"
-F 6 "-" H -2900 3750 50  0001 C CNN "DPN"
-F 7 "-" H -2900 3750 50  0001 C CNN "LCSCPN"
-F 8 "-" H -2900 3750 50  0001 C CNN "SPR"
-F 9 "-" H -2900 3750 50  0001 C CNN "SPN"
-F 10 "-" H -2900 3750 50  0001 C CNN "SIM"
-	1    3800 5850
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:Jumper_2_Open JP1
-U 1 1 5EA32B98
-P 3200 5300
-F 0 "JP1" H 3200 5450 50  0000 C CNN
-F 1 "Jumper_2_Open" H 3200 5444 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3200 5300 50  0001 C CNN
-F 3 "~" H 3200 5300 50  0001 C CNN
-F 4 "-" H -3500 3200 50  0001 C CNN "MFR"
-F 5 "-" H -3500 3200 50  0001 C CNN "MPN"
-F 6 "-" H -3500 3200 50  0001 C CNN "DPN"
-F 7 "-" H -3500 3200 50  0001 C CNN "LCSCPN"
-F 8 "-" H -3500 3200 50  0001 C CNN "SPR"
-F 9 "-" H -3500 3200 50  0001 C CNN "SPN"
-F 10 "-" H -3500 3200 50  0001 C CNN "SIM"
-	1    3200 5300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Jumper:Jumper_2_Open JP4
-U 1 1 5EA4C3C0
-P 4700 5300
-F 0 "JP4" H 4700 5450 50  0000 C CNN
-F 1 "Jumper_2_Open" H 4700 5444 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4700 5300 50  0001 C CNN
-F 3 "~" H 4700 5300 50  0001 C CNN
-F 4 "-" H -2000 3200 50  0001 C CNN "MFR"
-F 5 "-" H -2000 3200 50  0001 C CNN "MPN"
-F 6 "-" H -2000 3200 50  0001 C CNN "DPN"
-F 7 "-" H -2000 3200 50  0001 C CNN "LCSCPN"
-F 8 "-" H -2000 3200 50  0001 C CNN "SPR"
-F 9 "-" H -2000 3200 50  0001 C CNN "SPN"
-F 10 "-" H -2000 3200 50  0001 C CNN "SIM"
-	1    4700 5300
-	0    -1   -1   0   
-$EndComp
-$Comp
 L power:GND #PWR02
 U 1 1 5EA2FE2A
 P 2350 3750
@@ -985,21 +895,7 @@ Wire Notes Line
 Wire Wire Line
 	2850 5850 3600 5850
 Wire Wire Line
-	3200 5100 3400 5100
-Wire Wire Line
-	1600 5100 3200 5100
-Wire Wire Line
 	3800 5100 4700 5100
-Wire Wire Line
-	3600 5400 3600 5850
-Wire Wire Line
-	3200 5500 3850 5500
-Wire Wire Line
-	4250 5500 4700 5500
-Wire Wire Line
-	4050 5750 4050 5850
-Wire Wire Line
-	4050 5850 4000 5850
 Wire Wire Line
 	2900 4350 3450 4350
 Wire Wire Line
@@ -1028,9 +924,7 @@ Connection ~ 4250 4350
 Connection ~ 1750 6000
 Connection ~ 1600 5100
 Connection ~ 3600 5850
-Connection ~ 3200 5100
 Connection ~ 4700 5100
-Connection ~ 3400 5100
 Connection ~ 2900 4350
 Connection ~ 5150 6000
 Connection ~ 1600 5700
@@ -1081,4 +975,27 @@ Wire Wire Line
 	2200 1700 2850 1700
 Text Notes 3950 2750 0    50   ~ 0
 CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+Connection ~ 3400 5100
+Wire Wire Line
+	3600 5400 3600 5850
+$Comp
+L si2307cds:Si2307CDS Q1
+U 1 1 5E9CEE32
+P 3600 5200
+F 0 "Q1" V 3950 5150 50  0000 L CNN
+F 1 "Si2307CDS" V 3850 4950 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3800 5125 50  0001 L CIN
+F 3 "http://www.vishay.com/docs/68768/si2307cds.pdf" H 3600 5200 50  0001 L CNN
+F 4 "Vishay Siliconix" H -2550 3350 50  0001 C CNN "MFR"
+F 5 "SI2307CDS-T1-GE3" H -2550 3350 50  0001 C CNN "MPN"
+F 6 "SI2307CDS-T1-GE3CT-ND" H -2550 3350 50  0001 C CNN "DPN"
+F 7 "-" H -2550 3350 50  0001 C CNN "LCSCPN"
+F 8 "-" H -2550 3350 50  0001 C CNN "SPR"
+F 9 "-" H -2550 3350 50  0001 C CNN "SPN"
+F 10 "-" H -2550 3350 50  0001 C CNN "SIM"
+	1    3600 5200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1600 5100 3400 5100
 $EndSCHEMATC

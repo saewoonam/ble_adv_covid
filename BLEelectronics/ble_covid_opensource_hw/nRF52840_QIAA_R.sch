@@ -380,21 +380,19 @@ Text Label 5500 7300 0    50   ~ 0
 D+
 NoConn ~ 2900 6600
 NoConn ~ 2900 6700
-Text Label 5500 7000 0    50   ~ 0
-RESET
-Text Label 5500 4200 0    50   ~ 0
+Text Label 5500 4400 0    50   ~ 0
 WP
 Text Label 5500 4600 0    50   ~ 0
 SDA
-Text Label 5500 5500 0    50   ~ 0
-SCL
-Text Label 5500 4000 0    50   ~ 0
-SCLK
-Text Label 5500 4400 0    50   ~ 0
-SI
-Text Label 5500 3600 0    50   ~ 0
-CS
 Text Label 5500 3800 0    50   ~ 0
+SCL
+Text Label 5500 4100 0    50   ~ 0
+SCLK
+Text Label 5500 4200 0    50   ~ 0
+SI
+Text Label 5500 4000 0    50   ~ 0
+CS
+Text Label 5500 4300 0    50   ~ 0
 SO
 $Comp
 L power:GND #PWR016
@@ -468,9 +466,7 @@ Connection ~ 1800 5000
 NoConn ~ 5500 3200
 NoConn ~ 5500 3300
 NoConn ~ 5500 3000
-NoConn ~ 5500 3100
 NoConn ~ 5500 3400
-NoConn ~ 5500 3500
 NoConn ~ 5500 3700
 NoConn ~ 5500 3900
 NoConn ~ 5500 4800
@@ -483,14 +479,8 @@ Wire Wire Line
 	2900 6500 2500 6500
 Text Label 2500 6500 0    50   ~ 0
 RESET
-Text Label 5500 4100 0    50   ~ 0
-RESET
-Text Label 5500 4300 0    50   ~ 0
-RESET
 Text Label 5500 4500 0    50   ~ 0
-RESET
-Text Label 5500 4700 0    50   ~ 0
-RESET
+SIO3
 Text Label 2800 3350 0    50   ~ 0
 VSS_PA
 Wire Wire Line
@@ -578,19 +568,6 @@ F 3 "" H 5950 1950 50  0001 C CNN
 	1    5950 1950
 	0    -1   -1   0   
 $EndComp
-$Comp
-L MCU_Nordic:nRF52840 U6
-U 1 1 5EC0DD0A
-P 4200 4800
-AR Path="/5EA608FF/5EC0DD0A" Ref="U6"  Part="1" 
-AR Path="/5EC0DD0A" Ref="U?"  Part="1" 
-F 0 "U6" H 4150 4650 50  0000 C CNN
-F 1 "nRF52840" H 4150 4550 50  0000 C CNN
-F 2 "Package_DFN_QFN:Nordic_AQFN-73-1EP_7x7mm_P0.5mm" H 4200 1900 50  0001 C CNN
-F 3 "http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/chips/nrf52840.html" H 3550 6700 50  0001 C CNN
-	1    4200 4800
-	1    0    0    -1  
-$EndComp
 Text Label 5900 2100 0    50   ~ 0
 VSS
 Wire Wire Line
@@ -610,49 +587,47 @@ Wire Wire Line
 $Comp
 L Device:C C?
 U 1 1 5EC5C964
-P 6450 2300
+P 7200 2300
 AR Path="/5EC5C964" Ref="C?"  Part="1" 
 AR Path="/5EA608FF/5EC5C964" Ref="C21"  Part="1" 
-F 0 "C21" V 6702 2300 50  0000 C CNN
-F 1 "12pF" V 6611 2300 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6488 2150 50  0001 C CNN
-F 3 "~" H 6450 2300 50  0001 C CNN
-	1    6450 2300
+F 0 "C21" V 7452 2300 50  0000 C CNN
+F 1 "12pF" V 7361 2300 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7238 2150 50  0001 C CNN
+F 3 "~" H 7200 2300 50  0001 C CNN
+	1    7200 2300
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR024
 U 1 1 5EC5C96A
-P 6600 2850
+P 7350 2850
 AR Path="/5EA608FF/5EC5C96A" Ref="#PWR024"  Part="1" 
 AR Path="/5EC5C96A" Ref="#PWR?"  Part="1" 
-F 0 "#PWR024" H 6600 2600 50  0001 C CNN
-F 1 "GND" V 6605 2722 50  0000 R CNN
-F 2 "" H 6600 2850 50  0001 C CNN
-F 3 "" H 6600 2850 50  0001 C CNN
-	1    6600 2850
+F 0 "#PWR024" H 7350 2600 50  0001 C CNN
+F 1 "GND" V 7355 2722 50  0000 R CNN
+F 2 "" H 7350 2850 50  0001 C CNN
+F 3 "" H 7350 2850 50  0001 C CNN
+	1    7350 2850
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 5EC5C970
-P 6450 2700
+P 7200 2700
 AR Path="/5EC5C970" Ref="C?"  Part="1" 
 AR Path="/5EA608FF/5EC5C970" Ref="C22"  Part="1" 
-F 0 "C22" V 6702 2700 50  0000 C CNN
-F 1 "12pF" V 6611 2700 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6488 2550 50  0001 C CNN
-F 3 "~" H 6450 2700 50  0001 C CNN
-	1    6450 2700
+F 0 "C22" V 7452 2700 50  0000 C CNN
+F 1 "12pF" V 7361 2700 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7238 2550 50  0001 C CNN
+F 3 "~" H 7200 2700 50  0001 C CNN
+	1    7200 2700
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6600 2850 6600 2700
+	7350 2850 7350 2700
 Wire Wire Line
-	6600 2700 6600 2300
-Wire Wire Line
-	5500 2300 6300 2300
-Connection ~ 6600 2700
+	7350 2700 7350 2300
+Connection ~ 7350 2700
 Wire Wire Line
 	5500 2400 6300 2400
 Wire Wire Line
@@ -694,15 +669,12 @@ NoConn ~ 5500 2500
 NoConn ~ 5500 2600
 NoConn ~ 5500 2700
 NoConn ~ 5500 2800
-NoConn ~ 5500 2900
 NoConn ~ 5500 5600
 NoConn ~ 5500 5700
 NoConn ~ 5500 5800
 NoConn ~ 5500 5900
 NoConn ~ 5500 6000
-NoConn ~ 5500 6100
 NoConn ~ 5500 6200
-NoConn ~ 5500 6400
 NoConn ~ 5500 6300
 NoConn ~ 5500 6500
 NoConn ~ 5500 6600
@@ -763,4 +735,157 @@ Wire Wire Line
 	2100 4600 2550 4600
 Wire Wire Line
 	2100 5000 2550 5000
+Text Notes 6100 4450 0    50   ~ 0
+P1.15 is a low frequency GPIO (<10kHz)
+Text Notes 6100 4850 0    50   ~ 0
+Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
+Text Notes 6100 5000 0    50   ~ 0
+GPIO not marked for any other function or low frequency include P0.13, 15, 17, 20, 22, 24, P1.00
+Text Notes 6100 4300 0    50   ~ 0
+CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+NoConn ~ 5500 3600
+NoConn ~ 5500 4700
+NoConn ~ 5500 5500
+$Comp
+L MCU_Nordic:nRF52840 U6
+U 1 1 5EC0DD0A
+P 4200 4800
+AR Path="/5EA608FF/5EC0DD0A" Ref="U6"  Part="1" 
+AR Path="/5EC0DD0A" Ref="U?"  Part="1" 
+F 0 "U6" H 4150 4650 50  0000 C CNN
+F 1 "nRF52840" H 4150 4550 50  0000 C CNN
+F 2 "Package_DFN_QFN:Nordic_AQFN-73-1EP_7x7mm_P0.5mm" H 4200 1900 50  0001 C CNN
+F 3 "http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.nrf52/dita/nrf52/chips/nrf52840.html" H 3550 6700 50  0001 C CNN
+	1    4200 4800
+	1    0    0    -1  
+$EndComp
+Text Label 5500 3500 0    50   ~ 0
+LED2_B
+Text Label 5500 6400 0    50   ~ 0
+LED2_G
+Text Label 5500 3100 0    50   ~ 0
+LED2_R
+Text Label 5500 2900 0    50   ~ 0
+LED1
+NoConn ~ 5500 7000
+Wire Wire Line
+	5500 6100 6000 6100
+Text Label 6000 6100 0    50   ~ 0
+SW1
+Text Notes 6600 6150 0    50   ~ 0
+P1.06 are active low, they don't have an internal pullup resistor. \nThe switch must be configured to have a 10k pull-up resstor. \nWhen the button is active the pin is connected to ground. \nDetails from Dongle User Guide pg 13
+$Comp
+L Device:R R2
+U 1 1 5EAA0A31
+P 9500 850
+F 0 "R2" V 9293 850 50  0000 C CNN
+F 1 "220" V 9384 850 50  0000 C CNN
+F 2 "" V 9430 850 50  0001 C CNN
+F 3 "~" H 9500 850 50  0001 C CNN
+	1    9500 850 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5EAAF1B1
+P 10100 850
+F 0 "D1" H 10093 1066 50  0000 C CNN
+F 1 "LED" H 10093 975 50  0000 C CNN
+F 2 "" H 10100 850 50  0001 C CNN
+F 3 "~" H 10100 850 50  0001 C CNN
+	1    10100 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9950 850  9650 850 
+Wire Wire Line
+	10250 850  10400 850 
+Text Label 10400 1150 0    50   ~ 0
+VDD_3V
+Wire Wire Line
+	10400 1450 10300 1450
+Wire Wire Line
+	10400 850  10400 1450
+Wire Wire Line
+	9800 1750 9650 1750
+Wire Wire Line
+	9800 1650 9800 1750
+Wire Wire Line
+	9900 1650 9800 1650
+Wire Wire Line
+	9650 1450 9900 1450
+Wire Wire Line
+	9800 1150 9650 1150
+Wire Wire Line
+	9800 1250 9800 1150
+Wire Wire Line
+	9900 1250 9800 1250
+$Comp
+L Device:LED_ABRG D2
+U 1 1 5EAAE258
+P 10100 1450
+F 0 "D2" H 10100 1947 50  0000 C CNN
+F 1 "LED_ABRG" H 10100 1856 50  0000 C CNN
+F 2 "" H 10100 1450 50  0001 C CNN
+F 3 "~" H 10100 1450 50  0001 C CNN
+	1    10100 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1750 9350 1750
+Wire Wire Line
+	8950 1450 9350 1450
+Wire Wire Line
+	8950 1150 9350 1150
+$Comp
+L Device:R R12
+U 1 1 5EAA3DB3
+P 9500 1750
+F 0 "R12" V 9293 1750 50  0000 C CNN
+F 1 "390" V 9384 1750 50  0000 C CNN
+F 2 "" V 9430 1750 50  0001 C CNN
+F 3 "~" H 9500 1750 50  0001 C CNN
+	1    9500 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R11
+U 1 1 5EAA2AE0
+P 9500 1450
+F 0 "R11" V 9293 1450 50  0000 C CNN
+F 1 "2k2" V 9384 1450 50  0000 C CNN
+F 2 "" V 9430 1450 50  0001 C CNN
+F 3 "~" H 9500 1450 50  0001 C CNN
+	1    9500 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5EAA19A0
+P 9500 1150
+F 0 "R3" V 9293 1150 50  0000 C CNN
+F 1 "1k2" V 9384 1150 50  0000 C CNN
+F 2 "" V 9430 1150 50  0001 C CNN
+F 3 "~" H 9500 1150 50  0001 C CNN
+	1    9500 1150
+	0    1    1    0   
+$EndComp
+Text Notes 8950 2050 0    50   ~ 0
+LEDs are active low, which means that writing a logical \nzero '0' to the output pin will illuminate the LED.\nLED footprint and component TBD. Resistor footprint?
+Text Label 8950 1750 0    50   ~ 0
+LED2_G
+Text Label 8950 1150 0    50   ~ 0
+LED2_R
+Text Label 8950 1450 0    50   ~ 0
+LED2_B
+Wire Wire Line
+	8950 850  9350 850 
+Text Label 8950 850  0    50   ~ 0
+LED1
+Wire Wire Line
+	5500 2300 7050 2300
+Wire Wire Line
+	6300 2700 7050 2700
+Text Notes 6450 2550 0    50   ~ 0
+Low Freq XTAL
 $EndSCHEMATC
