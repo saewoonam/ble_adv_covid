@@ -1,0 +1,18 @@
+(module C&K_PTS810 (layer F.Cu) (tedit 4289BEAB)
+  (attr smd)
+  (fp_text reference SW1 (at 0 0) (layer F.SilkS) hide
+    (effects (font (size 1.524 1.524) (thickness 0.05)))
+  )
+  (fp_text value "Tactile Switch, SPNO, SMD, 260gf, 4.2x3.2x2.5mm" (at 0 0) (layer F.SilkS)
+    (effects (font (size 1.524 1.524) (thickness 0.05)))
+  )
+  (pad 2 smd rect (at -1.07499 2.075 270) (size 1.05 0.65) (layers F.Cu F.Paste F.Mask))
+  (pad 2 smd rect (at -1.07499 -2.075 270) (size 1.05 0.65) (layers F.Cu F.Paste F.Mask))
+  (pad 0 smd rect (at 1.075 2.075 270) (size 1.05 0.65) (layers F.Cu F.Paste F.Mask))
+  (pad 1 smd rect (at 1.075 -2.075 270) (size 1.05 0.65) (layers F.Cu F.Paste F.Mask))
+  (model ./wrlshp/14CBD493-F4CA.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
+  )
+)
