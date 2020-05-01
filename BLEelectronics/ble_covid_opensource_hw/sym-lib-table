@@ -12,4 +12,6 @@
   (lib (name Si7463DP)(type Legacy)(uri ${KIPRJMOD}/../libraries/Si7463DP.lib)(options "")(descr ""))
   (lib (name ESD401DPYR)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/ESD401DPYR.lib)(options "")(descr ""))
   (lib (name NRF52840-QIAA-R)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/NRF52840-QIAA-R.lib)(options "")(descr ""))
+  (lib (name LED_APHF1608SEEQBDZGKC)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/LED_APHF1608SEEQBDZGKC.lib)(options "")(descr ""))
+  (lib (name sw_nomallyopen)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/sw_nomallyopen.lib)(options "")(descr ""))
 )
