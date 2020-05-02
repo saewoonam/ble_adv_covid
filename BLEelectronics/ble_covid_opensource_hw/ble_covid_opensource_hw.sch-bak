@@ -1119,4 +1119,8 @@ SDA
 Wire Wire Line
 	2150 5800 1850 5800
 Connection ~ 1850 5800
+Text Notes 6150 1800 0    50   ~ 0
+The schematics include an optional series resistor on the USB supply for improved immunity to\ntransient overvoltage during VBUS connection. Using the series resistor is recommended for new\ndesigns. Value 4R7 (4.5ohms?) from pae 585
+Text Notes 6150 1950 0    50   ~ 0
+Note: There is no reverse voltage protection on the power connections. (pg 14 Dongle guide)
 $EndSCHEMATC
