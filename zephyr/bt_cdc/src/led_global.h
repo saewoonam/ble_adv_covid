@@ -13,7 +13,7 @@ struct led led2 = {
     .gpio_flags = GPIO_OUTPUT | DT_ALIAS_LED1_GPIOS_FLAGS,
     .dev = NULL
 };
-
+/*
 struct led led3 = {
     .gpio_dev_name = DT_ALIAS_LED2_GPIOS_CONTROLLER,
     .gpio_pin_name = DT_ALIAS_LED2_LABEL,
@@ -29,4 +29,4 @@ struct led led4 = {
     .gpio_flags = GPIO_OUTPUT | DT_ALIAS_LED3_GPIOS_FLAGS,
     .dev = NULL
 };
-
+*/
