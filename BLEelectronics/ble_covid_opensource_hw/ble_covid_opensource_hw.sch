@@ -574,8 +574,6 @@ Connection ~ 3150 5100
 Wire Wire Line
 	3150 5100 1700 5100
 Wire Wire Line
-	2100 4350 3000 4350
-Wire Wire Line
 	3000 4350 3200 4350
 Connection ~ 3000 4350
 Wire Wire Line
@@ -815,20 +813,9 @@ F 10 "-" H -4750 2200 50  0001 C CNN "SIM"
 	1    4000 3850
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR02
-U 1 1 5EA2FE2A
-P 2100 4950
-F 0 "#PWR02" H 2100 4700 50  0001 C CNN
-F 1 "GND" H 2250 4900 50  0000 C CNN
-F 2 "" H 2100 4950 50  0001 C CNN
-F 3 "" H 2100 4950 50  0001 C CNN
-	1    2100 4950
-	1    0    0    -1  
-$EndComp
 Text Label 1600 4350 0    50   ~ 0
 5Vusb
-Text Notes 2300 4800 0    50   ~ 0
+Text Notes 7000 2500 2    50   ~ 0
 TVS diode \nfor ESD\nprotection
 Wire Wire Line
 	4600 5750 4600 5800
@@ -860,33 +847,12 @@ Wire Wire Line
 	1700 5500 2150 5500
 Wire Wire Line
 	1700 5800 1850 5800
-Wire Wire Line
-	1600 4350 2100 4350
 Connection ~ 3300 4350
 Connection ~ 3200 4350
 Connection ~ 4000 4350
 Connection ~ 1700 5800
-$Comp
-L ESD401DPYR:ESD401DPYR U3
-U 1 1 5EA4E7E7
-P 2100 4650
-F 0 "U3" V 2153 4521 60  0000 R CNN
-F 1 "ESD401" V 2047 4521 60  0000 R CNN
-F 2 "0my_footprints:ESD401DPYR" H 2100 4590 60  0001 C CNN
-F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 1994 4521 60  0001 R CNN
-F 4 "Texas Instruments" H -250 2650 50  0001 C CNN "MFR"
-F 5 "ESD401DPYR" H -250 2650 50  0001 C CNN "MPN"
-F 6 "296-47160-1-ND" H -250 2650 50  0001 C CNN "DPN"
-F 7 "-" H -250 2650 50  0001 C CNN "LCSCPN"
-F 8 "-" H -250 2650 50  0001 C CNN "SPR"
-F 9 "-" H -250 2650 50  0001 C CNN "SPN"
-F 10 "-" H -250 2650 50  0001 C CNN "SIM"
-	1    2100 4650
-	0    1    1    0   
-$EndComp
-Connection ~ 2100 4350
 Wire Wire Line
-	7100 3300 6800 3300
+	7100 3300 6900 3300
 Wire Notes Line
 	8450 6450 8450 4750
 Wire Notes Line
@@ -1123,4 +1089,38 @@ Text Notes 6150 1800 0    50   ~ 0
 The schematics include an optional series resistor on the USB supply for improved immunity to\ntransient overvoltage during VBUS connection. Using the series resistor is recommended for new\ndesigns. Value 4R7 (4.5ohms?) from pae 585
 Text Notes 6150 1950 0    50   ~ 0
 Note: There is no reverse voltage protection on the power connections. (pg 14 Dongle guide)
+$Comp
+L ESD401DPYR:ESD401DPYR U3
+U 1 1 5EA4E7E7
+P 6900 3000
+F 0 "U3" V 7000 3250 60  0000 R CNN
+F 1 "ESD401" V 7100 3400 60  0000 R CNN
+F 2 "0my_footprints:ESD401DPYR" H 6900 2940 60  0001 C CNN
+F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 6794 2871 60  0001 R CNN
+F 4 "Texas Instruments" H 4550 1000 50  0001 C CNN "MFR"
+F 5 "ESD401DPYR" H 4550 1000 50  0001 C CNN "MPN"
+F 6 "296-47160-1-ND" H 4550 1000 50  0001 C CNN "DPN"
+F 7 "-" H 4550 1000 50  0001 C CNN "LCSCPN"
+F 8 "-" H 4550 1000 50  0001 C CNN "SPR"
+F 9 "-" H 4550 1000 50  0001 C CNN "SPN"
+F 10 "-" H 4550 1000 50  0001 C CNN "SIM"
+	1    6900 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5EA2FE2A
+P 6900 2700
+F 0 "#PWR02" H 6900 2450 50  0001 C CNN
+F 1 "GND" H 7050 2650 50  0000 C CNN
+F 2 "" H 6900 2700 50  0001 C CNN
+F 3 "" H 6900 2700 50  0001 C CNN
+	1    6900 2700
+	-1   0    0    1   
+$EndComp
+Connection ~ 6900 3300
+Wire Wire Line
+	6900 3300 6800 3300
+Wire Wire Line
+	1600 4350 3000 4350
 $EndSCHEMATC
