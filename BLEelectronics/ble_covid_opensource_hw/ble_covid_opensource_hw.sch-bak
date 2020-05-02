@@ -150,7 +150,7 @@ U 1 1 5EA08150
 P 5400 1950
 F 0 "R4" V 5193 1950 50  0000 C CNN
 F 1 "0" V 5284 1950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5330 1950 50  0001 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 5330 1950 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 5400 1950 50  0001 C CNN
 F 4 "RC0603JR-070RL" V 5400 1950 50  0001 C CNN "MPN"
 F 5 "Yageo" V 5400 1950 50  0001 C CNN "MFR"
@@ -322,24 +322,6 @@ F 10 "-" H -1100 700 50  0001 C CNN "SIM"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x01_Female J2
-U 1 1 5EA8C546
-P 7950 5800
-F 0 "J2" V 7842 5848 50  0000 L CNN
-F 1 "Conn_01x01_Female" H 7978 5735 50  0001 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 7950 5800 50  0001 C CNN
-F 3 "~" H 7950 5800 50  0001 C CNN
-F 4 "-" H 0   1450 50  0001 C CNN "MFR"
-F 5 "-" H 0   1450 50  0001 C CNN "MPN"
-F 6 "-" H 0   1450 50  0001 C CNN "DPN"
-F 7 "-" H 0   1450 50  0001 C CNN "LCSCPN"
-F 8 "-" H 0   1450 50  0001 C CNN "SPR"
-F 9 "-" H 0   1450 50  0001 C CNN "SPN"
-F 10 "-" H 0   1450 50  0001 C CNN "SIM"
-	1    7950 5800
-	0    1    1    0   
-$EndComp
-$Comp
 L ESD401DPYR:ESD401DPYR U2
 U 1 1 5EA48F38
 P 2000 1900
@@ -361,13 +343,11 @@ Text Notes 1300 1350 0    50   ~ 0
 20mm diam. coin cell holder
 Text Label 4250 1100 0    50   ~ 0
 5Vusb
-Text Label 5550 1950 0    50   ~ 0
-3V
 Text Notes 3450 2900 0    50   ~ 0
 Coin cell charger circuit
 Text Notes 1150 2900 0    50   ~ 0
 CR2032/CR2025 Coin Cell holder \nand ESD/Surge protection
-Text Label 2400 1600 0    50   ~ 0
+Text Label 2350 1600 0    50   ~ 0
 3V
 Text Notes 8550 6350 0    50   ~ 0
 SPI interface flash memory with SPI
@@ -1123,4 +1103,7 @@ Wire Wire Line
 	6900 3300 6800 3300
 Wire Wire Line
 	1600 4350 3000 4350
+NoConn ~ 7950 5600
+Text Label 5550 1950 0    50   ~ 0
+3V
 $EndSCHEMATC
