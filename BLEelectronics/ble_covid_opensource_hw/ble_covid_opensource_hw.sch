@@ -82,19 +82,19 @@ $EndComp
 $Comp
 L Mechanical:Fiducial FID2
 U 1 1 5E9C7A0B
-P 1200 7250
-F 0 "FID2" H 1285 7296 50  0000 L CNN
-F 1 "Fiducial" H 1285 7205 50  0000 L CNN
-F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 1200 7250 50  0001 C CNN
-F 3 "~" H 1200 7250 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "DPN"
-F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPR"
-F 9 "-" H 0   0   50  0001 C CNN "SPN"
-F 10 "-" H 0   0   50  0001 C CNN "SIM"
-	1    1200 7250
+P 1200 7200
+F 0 "FID2" H 1285 7246 50  0000 L CNN
+F 1 "Fiducial" H 1285 7155 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 1200 7200 50  0001 C CNN
+F 3 "~" H 1200 7200 50  0001 C CNN
+F 4 "-" H 0   -50 50  0001 C CNN "MFR"
+F 5 "-" H 0   -50 50  0001 C CNN "MPN"
+F 6 "-" H 0   -50 50  0001 C CNN "DPN"
+F 7 "-" H 0   -50 50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   -50 50  0001 C CNN "SPR"
+F 9 "-" H 0   -50 50  0001 C CNN "SPN"
+F 10 "-" H 0   -50 50  0001 C CNN "SIM"
+	1    1200 7200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -364,7 +364,7 @@ SDA
 Text Label 8750 5500 2    50   ~ 0
 SO
 Text Label 10400 5500 0    50   ~ 0
-RESET
+SIO3
 Text Label 8750 5400 2    50   ~ 0
 CS
 Text Label 8750 5600 2    50   ~ 0
@@ -1052,8 +1052,6 @@ Text Label 9550 3400 2    50   ~ 0
 WP
 Text Label 9550 4150 2    50   ~ 0
 VDD_3V
-Text Label 9550 3550 2    50   ~ 0
-RESET
 Text Label 9550 2950 2    50   ~ 0
 SCLK
 Text Label 9550 3100 2    50   ~ 0
@@ -1106,4 +1104,24 @@ Wire Wire Line
 NoConn ~ 7950 5600
 Text Label 5550 1950 0    50   ~ 0
 3V
+$Comp
+L Mechanical:Fiducial FID3
+U 1 1 5EAF7822
+P 1200 7500
+F 0 "FID3" H 1285 7546 50  0000 L CNN
+F 1 "Fiducial" H 1285 7455 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1mm" H 1200 7500 50  0001 C CNN
+F 3 "~" H 1200 7500 50  0001 C CNN
+F 4 "-" H 0   250 50  0001 C CNN "MFR"
+F 5 "-" H 0   250 50  0001 C CNN "MPN"
+F 6 "-" H 0   250 50  0001 C CNN "DPN"
+F 7 "-" H 0   250 50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   250 50  0001 C CNN "SPR"
+F 9 "-" H 0   250 50  0001 C CNN "SPN"
+F 10 "-" H 0   250 50  0001 C CNN "SIM"
+	1    1200 7500
+	1    0    0    -1  
+$EndComp
+Text Label 9550 3550 2    50   ~ 0
+SIO3
 $EndSCHEMATC

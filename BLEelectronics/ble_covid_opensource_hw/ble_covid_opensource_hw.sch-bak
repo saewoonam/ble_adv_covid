@@ -291,7 +291,7 @@ U 1 1 5EA39936
 P 2000 7050
 F 0 "H1" H 2100 7096 50  0000 L CNN
 F 1 "MountingHole" H 2100 7005 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_Pad" H 2000 7050 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" H 2000 7050 50  0001 C CNN
 F 3 "~" H 2000 7050 50  0001 C CNN
 F 4 "-" H 0   0   50  0001 C CNN "MFR"
 F 5 "-" H 0   0   50  0001 C CNN "MPN"
