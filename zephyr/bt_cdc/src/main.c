@@ -159,13 +159,13 @@ void main(void)
     // int err;
     led_init(&led1);
     led_init(&led2);
-    led_init(&led3);
-    led_init(&led4);
+    // led_init(&led3);
+    // led_init(&led4);
     for (int i=0; i<5; i++){
         flash(&led1);
         flash(&led2);
-        flash(&led3);
-        flash(&led4);
+        //flash(&led3);
+        //flash(&led4);
     }
     // printk("Starting Scanner/Advertiser Demo\n");
     ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
@@ -200,7 +200,11 @@ void main(void)
                     }
                 case 'r':  // Show data on USB_SERIAL PORT
                     printk("got r\n");
-                    show_raw = !show_raw ;
+                    show_raw = true ;
+                    break;
+                case 'z':  // Show data on USB_SERIAL PORT
+                    printk("got z\n");
+                    show_raw = false ;
                     break;
                 case 'l':  // list files to debugger
                     {

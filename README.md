@@ -1,4 +1,4 @@
-# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon)
+# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon), Sparkfun Pro nRF52840 mini
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
@@ -69,14 +69,15 @@
 3. These files are modified so that the advertising data which contains the rotating proximity identifier can be changed easily.  The modified files are in the subdirectory modified_files in the repo
   
 ## Tested with Arduino 1.18.12, nRF52 library 0.19
-#  nRF52840 dongle
+
+#  nRF52840 dongle with nRF5 SDK
 ## Requirements
 1. nRFConnect on computer to program
 2. Uses SoftDevice 7.0
 3. Uses nRF5 SDK v16
 
 ## Compiler setup
-1.  Compiles only with the SEGGER IDE so far, (SaeWoo us using osX).
+1.  Compiles only with the SEGGER IDE so far, (SaeWoo is using osX).
 2.  Look in 'ses' folder in the 'nrf52 dongle/PCA10059' directory
 3.   *Must* set up a global macro to the nRF5 SDK... Go to "Tools" from the menu
 bar, then go to "Options...->Building -> Build -> Global macros".   Must define
@@ -128,4 +129,14 @@ a 'sdk' macro.  For SaeWoo, sdk=/Users/nams/Documents/projects/covid/nrf5/nRF5SD
 3. Implement scheme to retrieve data from flash memory
 
 
+# Sparkfun pro nRF52840 mini
+## Requirements
+1.  nRF5 Nordic SDK
+2.  gnu gcc toolchain, follow sparkfun instructions for setting up
+
+##  Issues
+1.  Only implemented advertising
+
+## LED output
+1.  Blink when advertising
 SaeWoo Nam, started 2020-04-13, last edit 2020-04-19

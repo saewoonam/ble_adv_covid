@@ -24,11 +24,15 @@ extern bool show_raw;
 extern struct bt_le_scan_param scan_param ;
 extern struct device *cdc_dev;
 extern struct ring_buf outringbuf;
-
+#define BT_LE_ADV_NCONN2 BT_LE_ADV_PARAM(4, BT_GAP_ADV_FAST_INT_MIN_2, \
+                                        BT_GAP_ADV_FAST_INT_MAX_2, NULL)
 void bt_init(void) {
     int err;
     printk("Starting Scanner/Advertiser Demo\n");
-
+    bt_addr_le_t static_addr;
+    static_addr.a.val[5]= 0xF;
+    static_addr.type = 1;
+    bt_set_id_addr(&static_addr);
     /* Initialize the Bluetooth Subsystem */
     err = bt_enable(NULL);
     if (err) {
@@ -73,8 +77,8 @@ void bt_adv (void) {
      *
      */
     rpi_update(tcn);
-    int err = bt_le_adv_start(BT_LE_ADV_NCONN, encounter_ad,
-                            ARRAY_SIZE(encounter_ad), NULL, 0);
+    int err = bt_le_adv_start(BT_LE_ADV_NCONN2, encounter_ad,
+                              ARRAY_SIZE(encounter_ad), NULL, 0);
     if (err) {
         printk("Advertising failed to start (err %d)\n", err);
         return;
@@ -156,24 +160,24 @@ static bool data_cb_local(struct bt_data *data, void *user_data)
 static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             struct net_buf_simple *buf)
 {
-    flash(&led2);
+    // flash(&led2);
     u8_t uuid16[2] = {0, 0};
     u32_t timestamp = k_uptime_get_32();
+    char rpi_string[64];
+    int size = 0;
+    for(u8_t i=0; i<buf->len; i++) {
+        size += sprintf(rpi_string+size, "%02X", buf->data[i]);
+    }
 
     bt_data_parse(buf, data_cb_local, uuid16);
     if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
-        flash(&led3);
-        char rpi_string[60];
+        flash(&led2);
         char addr_string[20];
-        int size = 0;
-        for(u8_t i=0; i<buf->len; i++) {
-            size += sprintf(rpi_string+size, "%02X", buf->data[i]);
-        }
         size = 0;
         for(u8_t i=0; i<5; i++) {
-            size += sprintf(addr_string+size, "%02X:", addr->a.val[i]);
+            size += sprintf(addr_string+size, "%02X:", addr->a.val[5-i]);
         }
-        size += sprintf(addr_string+size, "%02X", addr->a.val[5]);
+        size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
         char line[128];
         int line_len = sprintf(line, "%12d, %3d, %s, %s\n",
                         timestamp, rssi, addr_string, rpi_string);

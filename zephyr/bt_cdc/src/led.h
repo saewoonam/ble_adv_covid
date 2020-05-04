@@ -16,8 +16,8 @@ struct led {
 #endif
 extern struct led led1;
 extern struct led led2;
-extern struct led led3;
-extern struct led led4;
+// extern struct led led3;
+// extern struct led led4;
 extern void led_init(struct led *led);
 extern void blink(struct led *led, uint8_t blink);
 extern void flash(struct led *led);

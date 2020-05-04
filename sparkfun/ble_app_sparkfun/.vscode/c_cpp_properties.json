@@ -1,0 +1,59 @@
+{
+    "env": {
+        "nrfSDK": "/Users/nams/Documents/projects/covid/nrf5/nRF5SDK160098a08e2"
+    },
+
+    "configurations": [
+        {
+            "name": "ARMGCC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${nrfSDK}/components/**",
+                "${nrfSDK}/components",
+                "${nrfSDK}/components/libraries/experimental_memobj",
+                "${nrfSDK}/components/libraries/experimental_section_vars",
+                "${nrfSDK}/modules/nrfx/mdk",
+                "${nrfSDK}/modules/nrfx/hal",
+                "${nrfSDK}/components/libraries/balloc",
+                "${nrfSDK}/components/libraries/experimental_log",
+                "${nrfSDK}/components/libraries/experimental_log/src",
+                "${nrfSDK}/components/libraries/delay",
+                "${nrfSDK}/integration/nrfx",
+                "${nrfSDK}/components/libraries/bsp",
+                "${nrfSDK}/components/drivers_nrf/nrf_soc_nosd",
+                "${nrfSDK}/components/libraries/strerror",
+                "${nrfSDK}/components/boards",
+                "${nrfSDK}/components/toolchain/cmsis/include",
+                "${nrfSDK}/modules/nrfx",
+                "${nrfSDK}/components/libraries/util",
+                "${nrfSDK}/components/libraries/fifo",
+                "${nrfSDK}/components/libraries/uart",
+                "${nrfSDK}/integration/nrfx/legacy",
+                "${nrfSDK}/components/libraries/delay",
+				"${nrfSDK}/modules/nrfx/drivers/include",
+				"${nrfSDK}/components/ble/ble_services/ble_tps" ,
+				"${nrfSDK}/components/nfc/ndef/parser/message",
+				"${nrfSDK}/components/ble/ble_services/ble_dis",
+				"${nrfSDK}/components/nfc/ndef/uri",
+				"${nrfSDK}/components/ble/nrf_ble_gatt",
+				"${nrfSDK}/components/ble/nrf_ble_qwr"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "BOARD_SPARKFUN_NRF52840_MINI",
+                "BSP_DEFINES_ONLY",
+                "CONFIG_GPIO_AS_PINRESET",
+                "FLOAT_ABI_HARD",
+                "NRF52840_XXAA",
+                "DCONFIG_NFCT_PINS_AS_GPIOS"
+            ],
+            "compilerPath": "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\7 2018-q2-update\\bin\\arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
