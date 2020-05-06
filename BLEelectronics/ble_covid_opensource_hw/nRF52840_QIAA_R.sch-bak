@@ -261,10 +261,6 @@ F 3 "~" H 2700 3100 50  0001 C CNN
 	1    2700 3100
 	0    -1   -1   0   
 $EndComp
-Text Label 6000 7300 2    50   ~ 0
-D-
-Text Label 6000 7400 2    50   ~ 0
-D+
 $Comp
 L power:GND #PWR021
 U 1 1 5EC0DC98
@@ -804,19 +800,19 @@ Text Notes 7250 1550 0    50   ~ 0
 Note: There is no reverse voltage protection on the power connections. (pg 14 Dongle guide)
 Text HLabel 6000 5600 2    50   Input ~ 0
 SCL
-Text HLabel 6000 3700 2    50   Input ~ 0
-CS
-Text HLabel 6000 4100 2    50   Input ~ 0
-SCLK
-Text HLabel 6000 4500 2    50   Input ~ 0
-SI
 Text HLabel 6000 3900 2    50   Input ~ 0
-SO
+CS
 Text HLabel 6000 4300 2    50   Input ~ 0
-WP
-Text HLabel 6000 7100 2    50   Input ~ 0
-SIO3
+SCLK
 Text HLabel 6000 4700 2    50   Input ~ 0
+SI
+Text HLabel 6000 4100 2    50   Input ~ 0
+SO
+Text HLabel 6000 4500 2    50   Input ~ 0
+WP
+Text HLabel 6000 3700 2    50   Input ~ 0
+SIO3
+Text HLabel 6000 7100 2    50   Input ~ 0
 SDA
 Text Label 1250 6850 0    50   ~ 0
 VDD_3V
@@ -1300,4 +1296,8 @@ Wire Wire Line
 Wire Wire Line
 	5950 4900 6000 4900
 Connection ~ 5800 4800
+Text HLabel 6000 7400 2    50   Input ~ 0
+D+
+Text HLabel 6000 7300 2    50   Input ~ 0
+D-
 $EndSCHEMATC

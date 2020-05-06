@@ -238,19 +238,19 @@ $EndComp
 $Comp
 L Timer_RTC:PCF8523T IC2
 U 1 1 5E9F84DB
-P 7450 4150
-F 0 "IC2" H 7800 4600 50  0000 L CNN
-F 1 "PCF8523T" H 7700 4500 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8250 3800 50  0001 C CNN
-F 3 "https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf" H 7450 4150 50  0001 C CNN
-F 4 "NXP USA Inc." H 300 50  50  0001 C CNN "MFR"
-F 5 "PCF8523T/1,118" H 300 50  50  0001 C CNN "MPN"
-F 6 "568-5306-1-ND" H 300 50  50  0001 C CNN "DPN"
-F 7 "-" H 300 50  50  0001 C CNN "LCSCPN"
-F 8 "-" H 300 50  50  0001 C CNN "SPR"
-F 9 "-" H 300 50  50  0001 C CNN "SPN"
-F 10 "-" H 300 50  50  0001 C CNN "SIM"
-	1    7450 4150
+P 7450 4250
+F 0 "IC2" H 7800 4700 50  0000 L CNN
+F 1 "PCF8523T" H 7700 4600 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8250 3900 50  0001 C CNN
+F 3 "https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf" H 7450 4250 50  0001 C CNN
+F 4 "NXP USA Inc." H 300 150 50  0001 C CNN "MFR"
+F 5 "PCF8523T/1,118" H 300 150 50  0001 C CNN "MPN"
+F 6 "568-5306-1-ND" H 300 150 50  0001 C CNN "DPN"
+F 7 "-" H 300 150 50  0001 C CNN "LCSCPN"
+F 8 "-" H 300 150 50  0001 C CNN "SPR"
+F 9 "-" H 300 150 50  0001 C CNN "SPN"
+F 10 "-" H 300 150 50  0001 C CNN "SIM"
+	1    7450 4250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -274,48 +274,48 @@ $EndComp
 $Comp
 L power:GND #PWR0101
 U 1 1 5EA0EA9A
-P 7450 4550
-F 0 "#PWR0101" H 7450 4300 50  0001 C CNN
-F 1 "GND" H 7455 4377 50  0000 C CNN
-F 2 "" H 7450 4550 50  0001 C CNN
-F 3 "" H 7450 4550 50  0001 C CNN
-	1    7450 4550
+P 7450 4650
+F 0 "#PWR0101" H 7450 4400 50  0001 C CNN
+F 1 "GND" H 7455 4477 50  0000 C CNN
+F 2 "" H 7450 4650 50  0001 C CNN
+F 3 "" H 7450 4650 50  0001 C CNN
+	1    7450 4650
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R9
 U 1 1 5EA074F4
-P 6800 3800
-F 0 "R9" H 6870 3846 50  0000 L CNN
-F 1 "10K" H 6870 3755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6730 3800 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6800 3800 50  0001 C CNN
-F 4 "Yageo" H 350 50  50  0001 C CNN "MFR"
-F 5 "RC0603JR-0710KL" H 350 50  50  0001 C CNN "MPN"
-F 6 "311-10KGRCT-ND" H 350 50  50  0001 C CNN "DPN"
-F 7 "-" H 350 50  50  0001 C CNN "LCSCPN"
-F 8 "-" H 350 50  50  0001 C CNN "SPR"
-F 9 "-" H 350 50  50  0001 C CNN "SPN"
-F 10 "-" H 350 50  50  0001 C CNN "SIM"
-	1    6800 3800
+P 6800 3900
+F 0 "R9" H 6870 3946 50  0000 L CNN
+F 1 "10K" H 6870 3855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6730 3900 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6800 3900 50  0001 C CNN
+F 4 "Yageo" H 350 150 50  0001 C CNN "MFR"
+F 5 "RC0603JR-0710KL" H 350 150 50  0001 C CNN "MPN"
+F 6 "311-10KGRCT-ND" H 350 150 50  0001 C CNN "DPN"
+F 7 "-" H 350 150 50  0001 C CNN "LCSCPN"
+F 8 "-" H 350 150 50  0001 C CNN "SPR"
+F 9 "-" H 350 150 50  0001 C CNN "SPN"
+F 10 "-" H 350 150 50  0001 C CNN "SIM"
+	1    6800 3900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R8
 U 1 1 5EA0D031
-P 6500 3900
-F 0 "R8" H 6570 3946 50  0000 L CNN
-F 1 "10K" H 6570 3855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6430 3900 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6500 3900 50  0001 C CNN
-F 4 "Yageo" H 50  150 50  0001 C CNN "MFR"
-F 5 "RC0603JR-0710KL" H 50  150 50  0001 C CNN "MPN"
-F 6 "311-10KGRCT-ND" H 50  150 50  0001 C CNN "DPN"
-F 7 "-" H 50  150 50  0001 C CNN "LCSCPN"
-F 8 "-" H 50  150 50  0001 C CNN "SPR"
-F 9 "-" H 50  150 50  0001 C CNN "SPN"
-F 10 "-" H 50  150 50  0001 C CNN "SIM"
-	1    6500 3900
+P 6500 4000
+F 0 "R8" H 6570 4046 50  0000 L CNN
+F 1 "10K" H 6570 3955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6430 4000 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6500 4000 50  0001 C CNN
+F 4 "Yageo" H 50  250 50  0001 C CNN "MFR"
+F 5 "RC0603JR-0710KL" H 50  250 50  0001 C CNN "MPN"
+F 6 "311-10KGRCT-ND" H 50  250 50  0001 C CNN "DPN"
+F 7 "-" H 50  250 50  0001 C CNN "LCSCPN"
+F 8 "-" H 50  250 50  0001 C CNN "SPR"
+F 9 "-" H 50  250 50  0001 C CNN "SPN"
+F 10 "-" H 50  250 50  0001 C CNN "SIM"
+	1    6500 4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -624,19 +624,19 @@ $EndComp
 $Comp
 L Connector:Conn_01x01_Female J4
 U 1 1 5EA8C546
-P 7950 4350
-F 0 "J4" V 7842 4398 50  0000 L CNN
-F 1 "Conn_01x01_Female" H 7978 4285 50  0001 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 7950 4350 50  0001 C CNN
-F 3 "~" H 7950 4350 50  0001 C CNN
-F 4 "-" H 0   0   50  0001 C CNN "MFR"
-F 5 "-" H 0   0   50  0001 C CNN "MPN"
-F 6 "-" H 0   0   50  0001 C CNN "DPN"
-F 7 "-" H 0   0   50  0001 C CNN "LCSCPN"
-F 8 "-" H 0   0   50  0001 C CNN "SPR"
-F 9 "-" H 0   0   50  0001 C CNN "SPN"
-F 10 "-" H 0   0   50  0001 C CNN "SIM"
-	1    7950 4350
+P 7950 4450
+F 0 "J4" V 7842 4498 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 7978 4385 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 7950 4450 50  0001 C CNN
+F 3 "~" H 7950 4450 50  0001 C CNN
+F 4 "-" H 0   100 50  0001 C CNN "MFR"
+F 5 "-" H 0   100 50  0001 C CNN "MPN"
+F 6 "-" H 0   100 50  0001 C CNN "DPN"
+F 7 "-" H 0   100 50  0001 C CNN "LCSCPN"
+F 8 "-" H 0   100 50  0001 C CNN "SPR"
+F 9 "-" H 0   100 50  0001 C CNN "SPN"
+F 10 "-" H 0   100 50  0001 C CNN "SIM"
+	1    7950 4450
 	0    1    1    0   
 $EndComp
 $Comp
@@ -690,15 +690,15 @@ Text Label 6500 1600 0    50   ~ 0
 VDD_3V
 Text Label 10400 4000 0    50   ~ 0
 VDD_3V
-Text Label 7550 3750 1    50   ~ 0
+Text Label 7350 3850 1    50   ~ 0
 VDD_3V
 Text Notes 6250 5100 0    50   ~ 0
 Real time clock module with i2c interface
 Text Notes 3950 2950 0    50   ~ 0
 GPIO not marked for any other function or low frequency include P0.13, 15, 17, 20, 22, 24, P1.00
-Text Label 6400 3950 2    50   ~ 0
-SCL
 Text Label 6400 4050 2    50   ~ 0
+SCL
+Text Label 6400 4150 2    50   ~ 0
 SDA
 Text Label 8750 4100 2    50   ~ 0
 SO
@@ -714,10 +714,6 @@ Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
 SCLK
-Text Label 5300 2100 2    50   ~ 0
-SCL
-Text Label 5300 2000 2    50   ~ 0
-SDA
 Text Notes 3950 2850 0    50   ~ 0
 P1.15 is a low frequency GPIO (<10kHz)
 Text Label 5300 1800 2    50   ~ 0
@@ -726,12 +722,12 @@ Text Label 8750 4200 2    50   ~ 0
 WP
 Text Notes 4000 1700 0    50   ~ 0
 Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
-Text Label 6650 3550 0    50   ~ 0
+Text Label 6650 3650 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0
 TVS diode for ESD
-Text Notes 6250 4600 0    50   ~ 0
-Confirm no connect\noscillator IO
+Text Notes 6250 4750 0    50   ~ 0
+Need an external crystal
 Text Label 10400 4200 0    50   ~ 0
 SCLK
 Text Label 10400 4300 0    50   ~ 0
@@ -746,7 +742,7 @@ Text Label 1850 4350 0    50   ~ 0
 5Vusb
 Text Notes 2550 3900 0    50   ~ 0
 TVS diode \nfor ESD\nprotection
-Text Label 6500 2100 0    50   ~ 0
+Text Label 5300 2000 2    50   ~ 0
 RESET
 Wire Wire Line
 	1650 1700 1850 1700
@@ -809,21 +805,21 @@ Wire Notes Line
 Wire Notes Line
 	10800 3250 8450 3250
 Wire Wire Line
-	6950 3950 6800 3950
+	6950 4050 6800 4050
 Wire Wire Line
-	6800 3950 6400 3950
+	6800 4050 6400 4050
 Wire Wire Line
-	6500 4050 6400 4050
+	6500 4150 6400 4150
 Wire Wire Line
-	6500 4050 6950 4050
+	6500 4150 6950 4150
 Wire Wire Line
-	6500 3750 6500 3650
+	6500 3850 6500 3750
 Wire Wire Line
-	6500 3650 6650 3650
+	6500 3750 6650 3750
 Wire Wire Line
-	6650 3650 6650 3550
+	6650 3750 6650 3650
 Wire Wire Line
-	6650 3650 6800 3650
+	6650 3750 6800 3750
 Wire Notes Line
 	1050 3250 5850 3250
 Wire Wire Line
@@ -913,9 +909,9 @@ Wire Wire Line
 Connection ~ 1850 1700
 Connection ~ 9900 2450
 Connection ~ 9200 1400
-Connection ~ 6800 3950
-Connection ~ 6500 4050
-Connection ~ 6650 3650
+Connection ~ 6800 4050
+Connection ~ 6500 4150
+Connection ~ 6650 3750
 Connection ~ 5150 5100
 Connection ~ 3550 4350
 Connection ~ 3450 4350
@@ -935,9 +931,6 @@ NoConn ~ 6500 2300
 NoConn ~ 6500 2000
 NoConn ~ 6500 1900
 NoConn ~ 6500 1800
-NoConn ~ 6950 4350
-NoConn ~ 6950 4250
-NoConn ~ 7350 3750
 NoConn ~ 5800 1150
 NoConn ~ 5950 1150
 NoConn ~ 6500 2200
@@ -998,4 +991,35 @@ F 10 "-" H -2550 3350 50  0001 C CNN "SIM"
 $EndComp
 Wire Wire Line
 	1600 5100 3400 5100
+NoConn ~ 7550 3850
+Text Notes 6700 3450 0    50   ~ 0
+VDD powers chip. VBat is for time \nkeeping backup with switching logic.
+$Comp
+L Device:Crystal X1
+U 1 1 5EB305AF
+P 6350 4400
+F 0 "X1" V 6304 4531 50  0000 L CNN
+F 1 "32.768KHZ" V 6395 4531 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm" H 6350 4400 50  0001 C CNN
+F 3 "https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/CM7V-T1A_Low-ESR.pdf" H 6350 4400 50  0001 C CNN
+F 4 "Micro Crystal AG" V 6350 4400 50  0001 C CNN "MFR"
+F 5 "CM7VT1A-LOWESR-32.768KHZ-12.5PF-20-TA-QC" V 6350 4400 50  0001 C CNN "MPN"
+F 6 "2195-CM7VT1ALOWESR32.768KHZ12.5PF20TAQCCT-ND" V 6350 4400 50  0001 C CNN "DPN"
+	1    6350 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6950 4450 6950 4550
+Wire Wire Line
+	6950 4550 6350 4550
+Wire Wire Line
+	6950 4350 6750 4350
+Wire Wire Line
+	6750 4350 6750 4250
+Wire Wire Line
+	6750 4250 6350 4250
+Text Label 5300 2100 2    50   ~ 0
+SCL
+Text Label 6500 2100 0    50   ~ 0
+SDA
 $EndSCHEMATC
