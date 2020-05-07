@@ -1,4 +1,4 @@
-80765596143267
+95059895085561
 0my_footprints
 6R3X14W104MV4T
 
@@ -42,6 +42,13 @@ Connector
 27
 27
 0my_footprints
+83614-9014
+83614-9012
+Connector
+0
+27
+27
+0my_footprints
 543630389
 54363-0389-1
 Connector
@@ -63,12 +70,26 @@ BAT-HLD-001
 3
 3
 0my_footprints
+BAT-HLD-001_smallerGND
+
+
+0
+4
+4
+0my_footprints
 BNX025H01B
 BNX025H01B
 Filter
 0
 6
 6
+0my_footprints
+C&K_PTS810
+
+
+0
+4
+3
 0my_footprints
 CAP_NFM18PS105R0J3D
 0603 (1608 Metric)
@@ -98,6 +119,13 @@ ESD401DPYR
 2
 2
 0my_footprints
+EVQP7A_J_B_K
+
+
+0
+4
+2
+0my_footprints
 Fiducial_0.5mm_Mask1.5mm_hole
 Circular Fiducial, 0.5mm bare copper, 1.5mm soldermask opening
 fiducial
@@ -118,6 +146,13 @@ KF40-boltclamp
 0
 6
 6
+0my_footprints
+LED_APHF1608SEEQBDZGKC
+
+
+0
+4
+4
 0my_footprints
 LT1611CS5-TRMPBF
 
@@ -153,6 +188,20 @@ SOT-343 SC-70-4
 0
 4
 4
+0my_footprints
+MH0-80
+
+
+0
+1
+1
+0my_footprints
+MH2-56
+
+
+0
+1
+1
 0my_footprints
 MX25R6435FM2IL0
 
@@ -280,6 +329,13 @@ solder jumper open
 5
 3
 0my_footprints
+TC2050-IDC-NLFP
+
+
+0
+10
+10
+0my_footprints
 U3V70x
 
 
@@ -314,6 +370,13 @@ kf25-boltclamp
 0
 6
 6
+0my_footprints
+nRF52840_QIAA_R
+
+
+0
+74
+74
 0my_footprints
 pad_2mm_2mm
 
