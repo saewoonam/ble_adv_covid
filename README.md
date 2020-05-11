@@ -1,8 +1,8 @@
-# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon), Sparkfun Pro nRF52840 mini, and our custom open source hardware we are developing
+# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for BBC microbit, Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon), Sparkfun Pro nRF52840 mini, and our custom open source hardware we are developing
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
-#  Moving to Zephyr Development to make code management easier
+#  Latest codes works using Zephyr Development environment
 ##  Nordic Devices, nrf52840 Dongle or nRF52840DK
 ##  Code in zephyr/bt_cdc_fs
 ##  This version seems to get bt, usb-serial (CDC), and flash memory working together
@@ -19,7 +19,7 @@
     * 'w':  Start writing encounter packets to the flash memory
     * 's':  Stop writing encounter packets to the flash memory
 
-##  Look in zephyr/bt_cdc folder
+##  For older code look in zephyr/bt_cdc folder
 ##  Issues
 1.  This works... does not implement anything to flash memory
 2.  Stripped out all "helper" code from covid2 code to eliminate memory leak
@@ -28,12 +28,20 @@
 4.  Also seems to solve the usb disconnect problem...   It recovers when usb is
     disconnected... Also needs to be stress tested.
 5.  Does implement the latest protocol
-##  Look in zephyr/covid2 folder
+
+
+##  Old version in zephyr/covid2 folder
 ##  Issues
 1.  Does not implement latest Apple/Google protocol
 2.  BT and CDC are not playing well together.
 3.  Device crashes if USB disconnects during serial port transmission
-##  Trying to understand how to migrate to other boards
+
+#  BBC:Microbit
+##  This works and advertises the accelerometer and compass readings instead of a RPI in the google/apple protocol
+## Code
+    *  Latest version in ubit/zephyr/all_no_fs
+    *  Other versions with bt, accelerometer, compass separately in other folders
+    *  Look at README in all_no_fs folder to access data from scanning
 
 
 #  Adafruit notes
