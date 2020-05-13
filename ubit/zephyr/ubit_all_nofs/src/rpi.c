@@ -27,10 +27,9 @@ static int fetch_mag(struct device *sensor, int8_t *out){
         uint8_t status=0;
         // float x, y, z;
         uint8_t address = 0x1e;  // i2c address
-        int16_t *values;
+        int16_t *values = (int16_t *) out;
         int16_t temp;
 
-        values = out;
         rc = i2c_reg_read_byte(sensor, address, STATUS_REG_M, &status);
         rc = i2c_burst_read(sensor, address, OUTX_L_REG_M, out, 6);
         //  Swap and negate x & y per 
@@ -49,8 +48,8 @@ static int fetch_mag(struct device *sensor, int8_t *out){
 static int fetch_acc(struct device *sensor, int8_t *out) {
         int rc = 0;
         // float x, y, z;
-        uint16_t address = 0x19;
-        int16_t *values;
+        // uint16_t address = 0x19;
+        int16_t *values = (int16_t *) out;
         int16_t temp=0;
 
         rc = i2c_reg_read_byte(sensor, 0x19, OUT_X_L_A, out);
