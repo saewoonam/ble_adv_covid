@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic\CR2025_Nordic.sch</source>
+    <date>2020-04-30 3:45:23 PM</date>
+    <tool>Eeschema (5.1.5)-3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>CR2025_Nordic.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U2">
+      <value>BAT-HLD-001</value>
+      <footprint>0my_footprints:BAT-HLD-001</footprint>
+      <datasheet>https://linxtechnologies.com/wp/wp-content/uploads/catalog-battery-holders.pdf</datasheet>
+      <fields>
+        <field name="DPN">BAT-HLD-001-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Linx Technologies Inc.</field>
+        <field name="MPN">BAT-HLD-001</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="BAT-HLD-001" part="BAT-HLD-001" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9C706C</tstamp>
+    </comp>
+    <comp ref="IC4">
+      <value>LTC4054LES5-4.2#TRPBF</value>
+      <footprint>0my_footprints:LTC4054LES5-4.2_TRPBF</footprint>
+      <datasheet>http://www.linear.com/docs/2068</datasheet>
+      <fields>
+        <field name="DPN">LTC4054LES5-4.2#TRPBFCT-ND</field>
+        <field name="Field4">Linear Technology</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Linear Technology/Analog Devices</field>
+        <field name="MPN">LTC4054LES5-4.2#TRPBF</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="LTC4054LES5-4.2_TRPBF" part="LTC4054LES5-4.2#TRPBF" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9DF23D</tstamp>
+    </comp>
+    <comp ref="FID1">
+      <value>Fiducial</value>
+      <footprint>Fiducial:Fiducial_0.5mm_Mask1mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9C7124</tstamp>
+    </comp>
+    <comp ref="FID2">
+      <value>Fiducial</value>
+      <footprint>Fiducial:Fiducial_0.5mm_Mask1mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9C7A0B</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
+      <fields>
+        <field name="DPN">1276-1862-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Samsung</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA027B7</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>1.69K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">YAG2487CT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0201FR-071K69L</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA04301</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-0.0GRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603JR-070RL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA08150</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-0.0GRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603JR-070RL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA09643</tstamp>
+    </comp>
+    <comp ref="IC2">
+      <value>PCF8523T</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf</datasheet>
+      <fields>
+        <field name="DPN">568-5306-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">NXP USA Inc.</field>
+        <field name="MPN">PCF8523T/1,118</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Timer_RTC" part="PCF8523T" description="Realtime Clock/Calendar I2C Interface, SOIC-8"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9F84DB</tstamp>
+    </comp>
+    <comp ref="IC3">
+      <value>MX25R6435FM2IL0</value>
+      <footprint>0my_footprints:MX25R6435FM2IL0</footprint>
+      <datasheet>http://www.macronix.com/Lists/Datasheet/Attachments/7428/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf</datasheet>
+      <fields>
+        <field name="DPN">1092-1200-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Macronix</field>
+        <field name="MPN">MX25R6435FM2IL0</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="CR2025_Nordic-rescue" part="MX25R6435FM2IL0-mx25R6435FM2IL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9F9A1A</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>4.7K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-4.70KHRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603FR-074K7L</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA074F4</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>4.7K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-4.70KHRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603FR-074K7L</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA0D031</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_2.2mm_M2_Pad</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA39936</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>LTC4412xS6</value>
+      <footprint>Package_TO_SOT_SMD:TSOT-23-6</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf</datasheet>
+      <fields>
+        <field name="DPN">LTC4412ES6#TRPBFCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Linear Technology/Analog Devices</field>
+        <field name="MPN">LTC4412ES6#TRPBF</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="CR2025_Nordic-rescue" part="LTC4412xS6-ltc4412xs6" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9DE63A</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">311-1344-2-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9D65E7</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-0.0GRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603JR-070RL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9FCC69</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">311-1344-2-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">CC0603KRX7R9BB104</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9D2D00</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>560K</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">RC0201FR-071K69L</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0201FR-07560KL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9D42B2</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-0.0GRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603JR-070RL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9F9456</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>D_Schottky</value>
+      <footprint>Diode_SMD:D_SOD-123F</footprint>
+      <datasheet>https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf</datasheet>
+      <fields>
+        <field name="DPN">SL14PL-TPMSCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Micro Commercial Co</field>
+        <field name="MPN">SL14PL-TP</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9EFF12</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf</datasheet>
+      <fields>
+        <field name="DPN">311-0.0GRCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Yageo</field>
+        <field name="MPN">RC0603JR-070RL</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9F603B</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>LP5907MFX-3.3</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lp5907.pdf</datasheet>
+      <fields>
+        <field name="DPN">296-38557-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MPN">LP5907MFX-3.3</field>
+        <field name="SIM">-</field>
+        <field name="SPN">C143028</field>
+        <field name="SPR">LCSC</field>
+      </fields>
+      <libsource lib="Regulator_Linear" part="LP5907MFX-3.3" description="250-mA Ultra-Low-Noise Low-IQ LDO, 3.3V, SOT-23"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA3D589</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
+      <fields>
+        <field name="DPN">1276-1862-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Samsung</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA4DCA4</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>http://www.samsungsem.com/kr/support/product-search/mlcc/CL10A105KO5LNNC.jsp</datasheet>
+      <fields>
+        <field name="DPN">1276-1862-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Samsung</field>
+        <field name="MPN">CL10A105KO5LNNC</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA4EF46</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Nordic_nRF52840_breakout</value>
+      <footprint>0my_footprints:Nordic_nRF52840_FeatherHeader</footprint>
+      <datasheet>https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf52840%2Fpin.html&amp;cp=3_0_0_6_0_0&amp;anchor=aqfn73</datasheet>
+      <fields>
+        <field name="DPN">1490-1073-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Nordic Semiconductor ASA</field>
+        <field name="MPN">NRF52840-DONGLE</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="CR2025_Nordic-rescue" part="Nordic_nRF52840_breakout-nordic_nrf52840_breakout" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA6E901</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>D_Schottky</value>
+      <footprint>Diode_SMD:D_SOD-123F</footprint>
+      <datasheet>https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf</datasheet>
+      <fields>
+        <field name="DPN">SL14PL-TPMSCT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Micro Commercial Co</field>
+        <field name="MPN">SL14PL-TP</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA54A0B</tstamp>
+    </comp>
+    <comp ref="JP3">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA10100</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA8C546</tstamp>
+    </comp>
+    <comp ref="Q2">
+      <value>Si7463DP</value>
+      <footprint>Package_SO:PowerPAK_SO-8_Single</footprint>
+      <datasheet>http://www.vishay.com/docs/72440/si7463dp.pdf</datasheet>
+      <fields>
+        <field name="DPN">SI7463DP-T1-GE3</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Vishay Siliconix</field>
+        <field name="MPN">SI7463DP-T1-GE3</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Si7463DP" part="Si7463DP" description="11A Id, 40V Vdss, 9.2mOhm Ron, PowerPAK-8"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EAE0222</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>Si2307CDS</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>http://www.vishay.com/docs/68768/si2307cds.pdf</datasheet>
+      <fields>
+        <field name="DPN">SI2307CDS-T1-GE3CT-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Vishay Siliconix</field>
+        <field name="MPN">SI2307CDS-T1-GE3</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="si2307cds" part="Si2307CDS" description="-3.5A Id, -30V Vds, P-Channel MOSFET, SOT-23"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E9CEE32</tstamp>
+    </comp>
+    <comp ref="JP2">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA1D258</tstamp>
+    </comp>
+    <comp ref="JP1">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA32B98</tstamp>
+    </comp>
+    <comp ref="JP4">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="DPN">-</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">-</field>
+        <field name="MPN">-</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA4C3C0</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>ESD401</value>
+      <footprint>0my_footprints:ESD401DPYR</footprint>
+      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401</datasheet>
+      <fields>
+        <field name="DPN">296-47160-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MPN">ESD401DPYR</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="ESD401DPYR" part="ESD401DPYR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA48F38</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>ESD401</value>
+      <footprint>0my_footprints:ESD401DPYR</footprint>
+      <datasheet>http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401</datasheet>
+      <fields>
+        <field name="DPN">296-47160-1-ND</field>
+        <field name="LCSCPN">-</field>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MPN">ESD401DPYR</field>
+        <field name="SIM">-</field>
+        <field name="SPN">-</field>
+        <field name="SPR">-</field>
+      </fields>
+      <libsource lib="ESD401DPYR" part="ESD401DPYR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EA4E7E7</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="BAT-HLD-001" part="BAT-HLD-001">
+      <footprints>
+        <fp>LINX_BATT_HLDR</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BAT-HLD-001</field>
+        <field name="Footprint">LINX_BATT_HLDR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+        <pin num="3" name="3" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="CR2025_Nordic-rescue" part="LTC4412xS6-ltc4412xs6">
+      <footprints>
+        <fp>TSOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LTC4412xS6-ltc4412xs6</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TSOT-23-6</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="CTL" type="input"/>
+        <pin num="4" name="STAT" type="openCol"/>
+        <pin num="5" name="GATE" type="output"/>
+        <pin num="6" name="SENSE" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="CR2025_Nordic-rescue" part="MX25R6435FM2IL0-mx25R6435FM2IL">
+      <footprints>
+        <fp>SOP_8L_200</fp>
+        <fp>SOP_8L_200-M</fp>
+        <fp>SOP_8L_200-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MX25R6435FM2IL0-mx25R6435FM2IL</field>
+        <field name="Footprint">SOP_8L_200</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CS#" type="input"/>
+        <pin num="2" name="SO/SIO1" type="BiDi"/>
+        <pin num="3" name="WP#/SIO2" type="BiDi"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="SI/SIO0" type="BiDi"/>
+        <pin num="6" name="SCLK" type="input"/>
+        <pin num="7" name="RESET#/SIO3" type="BiDi"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="CR2025_Nordic-rescue" part="Nordic_nRF52840_breakout-nordic_nrf52840_breakout">
+      <footprints>
+        <fp>Adafruit*HUZZAH*ESP8266*breakout*</fp>
+        <fp>Adafruit*HUZZAH*ESP8266*breakout*WithMountingHoles*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">A</field>
+        <field name="Value">Nordic_nRF52840_breakout-nordic_nrf52840_breakout</field>
+        <field name="Footprint">Module:Nordic_nRF52840_breakout</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P0.13" type="BiDi"/>
+        <pin num="2" name="P0.15" type="BiDi"/>
+        <pin num="3" name="P0.17" type="BiDi"/>
+        <pin num="4" name="P0.20" type="BiDi"/>
+        <pin num="5" name="P0.22" type="BiDi"/>
+        <pin num="6" name="P0.24" type="BiDi"/>
+        <pin num="7" name="P1.00" type="BiDi"/>
+        <pin num="8" name="P0.09" type="BiDi"/>
+        <pin num="9" name="P0.10" type="BiDi"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="GND" type="power_in"/>
+        <pin num="12" name="P1.10" type="BiDi"/>
+        <pin num="13" name="P1.13" type="power_out"/>
+        <pin num="14" name="P1.15" type="BiDi"/>
+        <pin num="15" name="P.02" type="BiDi"/>
+        <pin num="16" name="P0.29" type="BiDi"/>
+        <pin num="17" name="P0.31" type="BiDi"/>
+        <pin num="18" name="GND" type="power_in"/>
+        <pin num="19" name="VDD_nRF" type="power_in"/>
+        <pin num="20" name="VBUS" type="power_out"/>
+        <pin num="21" name="SWDIO" type="BiDi"/>
+        <pin num="22" name="SWDCLK" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x01_Female">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01_Female</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Schottky">
+      <description>Schottky diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ESD401DPYR" part="ESD401DPYR">
+      <footprints>
+        <fp>DPY0002A</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESD401DPYR</field>
+        <field name="Footprint">DPY0002A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="Jumper_2_Open">
+      <description>Jumper, 2-pole, open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SolderJumper*Open*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_2_Open</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="LTC4054LES5-4.2_TRPBF" part="LTC4054LES5-4.2#TRPBF">
+      <docs>IPC-7351B</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LTC4054LES5-4.2#TRPBF</field>
+        <field name="Footprint">SOT95P280X100-5N</field>
+        <field name="Datasheet">IPC-7351B</field>
+        <field name="Field4">Linear Technology</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~CHRG~" type="output"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="BAT" type="output"/>
+        <pin num="4" name="VCC" type="power_in"/>
+        <pin num="5" name="PROG" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="Fiducial">
+      <description>Fiducial Marker</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Fiducial*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">FID</field>
+        <field name="Value">Fiducial</field>
+      </fields>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="LP5907MFX-1.2">
+      <aliases>
+        <alias>LP5907MFX-1.5</alias>
+        <alias>LP5907MFX-1.8</alias>
+        <alias>LP5907MFX-2.5</alias>
+        <alias>LP5907MFX-2.8</alias>
+        <alias>LP5907MFX-2.85</alias>
+        <alias>LP5907MFX-2.9</alias>
+        <alias>LP5907MFX-3.0</alias>
+        <alias>LP5907MFX-3.1</alias>
+        <alias>LP5907MFX-3.2</alias>
+        <alias>LP5907MFX-3.3</alias>
+        <alias>LP5907MFX-4.5</alias>
+        <alias>NCP718xSN120</alias>
+        <alias>NCP718xSN150</alias>
+        <alias>NCP718xSN180</alias>
+        <alias>NCP718xSN250</alias>
+        <alias>NCP718xSN300</alias>
+        <alias>NCP718xSN330</alias>
+        <alias>NCP718xSN500</alias>
+      </aliases>
+      <description>250-mA Ultra-Low-Noise Low-IQ LDO, 1.2V, SOT-23</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lp5907.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LP5907MFX-1.2</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="NC" type="NotConnected"/>
+        <pin num="5" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Si7463DP" part="Si7463DP">
+      <aliases>
+        <alias>Si7450DP</alias>
+      </aliases>
+      <description>11A Id, 40V Vdss, 9.2mOhm Ron, PowerPAK-8</description>
+      <docs>http://www.vishay.com/docs/72440/si7463dp.pdf</docs>
+      <footprints>
+        <fp>PowerPAK*SO*Single*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Si7463DP</field>
+        <field name="Footprint">Package_SO:PowerPAK_SO-8_Single</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="passive"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+        <pin num="4" name="G" type="input"/>
+        <pin num="5" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Timer_RTC" part="PCF8523T">
+      <description>Realtime Clock/Calendar I2C Interface, SOIC-8</description>
+      <docs>https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PCF8523T</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OSCI" type="input"/>
+        <pin num="2" name="OSCO" type="output"/>
+        <pin num="3" name="VBAT" type="power_in"/>
+        <pin num="4" name="VSS" type="power_in"/>
+        <pin num="5" name="SDA" type="BiDi"/>
+        <pin num="6" name="SCL" type="input"/>
+        <pin num="7" name="~INT1~/CLKOUT" type="openCol"/>
+        <pin num="8" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="si2307cds" part="Si2307CDS">
+      <aliases>
+        <alias>VP0610T_copy</alias>
+        <alias>BSS84_copy</alias>
+        <alias>NTR2101P_copy</alias>
+        <alias>BSS83P_copy</alias>
+        <alias>Si2319CDS_copy</alias>
+        <alias>IRLML6402_copy</alias>
+        <alias>DMG2301L_copy</alias>
+        <alias>AO3401A_copy</alias>
+        <alias>IRLML9301_copy</alias>
+        <alias>IRLML5203_copy</alias>
+        <alias>Si2371EDS_copy</alias>
+      </aliases>
+      <description>-3.5A Id, -30V Vds, P-Channel MOSFET, SOT-23</description>
+      <docs>http://www.vishay.com/docs/68768/si2307cds.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Si2307CDS</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="BAT-HLD-001">
+      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/BAT-HLD-001.lib</uri>
+    </library>
+    <library logical="CR2025_Nordic-rescue">
+      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/CR2025_Nordic-rescue.lib</uri>
+    </library>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="ESD401DPYR">
+      <uri>C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/ESD401DPYR.lib</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Jumper.lib</uri>
+    </library>
+    <library logical="LTC4054LES5-4.2_TRPBF">
+      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/LTC4054LES5-4.2_TRPBF.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Mechanical.lib</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Regulator_Linear.lib</uri>
+    </library>
+    <library logical="Si7463DP">
+      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/Si7463DP.lib</uri>
+    </library>
+    <library logical="Timer_RTC">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Timer_RTC.lib</uri>
+    </library>
+    <library logical="si2307cds">
+      <uri>C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\CR2025_Nordic/../libraries/si2307cds.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(IC1-Pad4)">
+      <node ref="IC1" pin="4"/>
+      <node ref="R4" pin="2"/>
+    </net>
+    <net code="2" name="Net-(JP3-Pad2)">
+      <node ref="JP4" pin="2"/>
+      <node ref="Q1" pin="2"/>
+      <node ref="JP3" pin="2"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="3" name="Net-(D4-Pad2)">
+      <node ref="D4" pin="2"/>
+      <node ref="IC4" pin="3"/>
+    </net>
+    <net code="4" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1"/>
+      <node ref="R7" pin="2"/>
+    </net>
+    <net code="5" name="Net-(C3-Pad1)">
+      <node ref="R5" pin="2"/>
+      <node ref="IC4" pin="4"/>
+      <node ref="C3" pin="1"/>
+    </net>
+    <net code="6" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2"/>
+      <node ref="U1" pin="5"/>
+      <node ref="D3" pin="2"/>
+    </net>
+    <net code="7" name="/3V">
+      <node ref="R7" pin="1"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="JP1" pin="2"/>
+      <node ref="U3" pin="2"/>
+      <node ref="Q1" pin="3"/>
+      <node ref="U2" pin="1"/>
+      <node ref="JP3" pin="1"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="8" name="Net-(IC4-Pad5)">
+      <node ref="R6" pin="1"/>
+      <node ref="IC4" pin="5"/>
+    </net>
+    <net code="9" name="Net-(J1-Pad17)">
+      <node ref="J1" pin="17"/>
+    </net>
+    <net code="10" name="Net-(J1-Pad16)">
+      <node ref="J1" pin="16"/>
+    </net>
+    <net code="11" name="Net-(J1-Pad15)">
+      <node ref="J1" pin="15"/>
+    </net>
+    <net code="12" name="Net-(J1-Pad12)">
+      <node ref="J1" pin="12"/>
+    </net>
+    <net code="13" name="Net-(J1-Pad9)">
+      <node ref="J1" pin="9"/>
+    </net>
+    <net code="14" name="Net-(IC4-Pad1)">
+      <node ref="IC4" pin="1"/>
+    </net>
+    <net code="15" name="Net-(IC2-Pad2)">
+      <node ref="IC2" pin="2"/>
+    </net>
+    <net code="16" name="Net-(IC1-Pad5)">
+      <node ref="JP2" pin="1"/>
+      <node ref="Q1" pin="1"/>
+      <node ref="IC1" pin="5"/>
+    </net>
+    <net code="17" name="/5Vusb">
+      <node ref="J1" pin="20"/>
+      <node ref="R5" pin="1"/>
+      <node ref="IC1" pin="6"/>
+      <node ref="C4" pin="2"/>
+      <node ref="U1" pin="1"/>
+      <node ref="U1" pin="3"/>
+      <node ref="U4" pin="1"/>
+    </net>
+    <net code="18" name="Net-(J1-Pad8)">
+      <node ref="J1" pin="8"/>
+    </net>
+    <net code="19" name="Net-(J1-Pad13)">
+      <node ref="J1" pin="13"/>
+    </net>
+    <net code="20" name="Net-(J1-Pad22)">
+      <node ref="J1" pin="22"/>
+    </net>
+    <net code="21" name="Net-(J1-Pad21)">
+      <node ref="J1" pin="21"/>
+    </net>
+    <net code="22" name="Net-(IC2-Pad8)">
+      <node ref="IC2" pin="8"/>
+    </net>
+    <net code="23" name="Net-(IC2-Pad1)">
+      <node ref="IC2" pin="1"/>
+    </net>
+    <net code="24" name="Net-(JP2-Pad2)">
+      <node ref="JP2" pin="2"/>
+      <node ref="Q2" pin="4"/>
+    </net>
+    <net code="25" name="Net-(JP4-Pad1)">
+      <node ref="JP4" pin="1"/>
+      <node ref="Q2" pin="1"/>
+      <node ref="Q2" pin="2"/>
+      <node ref="Q2" pin="3"/>
+    </net>
+    <net code="26" name="Net-(JP1-Pad1)">
+      <node ref="Q2" pin="5"/>
+      <node ref="JP1" pin="1"/>
+    </net>
+    <net code="27" name="Net-(D3-Pad1)">
+      <node ref="D3" pin="1"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="28" name="GND">
+      <node ref="IC4" pin="2"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C3" pin="2"/>
+      <node ref="U1" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="U3" pin="1"/>
+      <node ref="U2" pin="2"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="C5" pin="1"/>
+      <node ref="J1" pin="11"/>
+      <node ref="IC3" pin="4"/>
+      <node ref="J1" pin="10"/>
+      <node ref="J1" pin="18"/>
+      <node ref="U4" pin="2"/>
+      <node ref="IC2" pin="4"/>
+      <node ref="C1" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C2" pin="2"/>
+    </net>
+    <net code="29" name="/RESET">
+      <node ref="J1" pin="14"/>
+      <node ref="IC3" pin="7"/>
+    </net>
+    <net code="30" name="/SO">
+      <node ref="J1" pin="2"/>
+      <node ref="IC3" pin="2"/>
+    </net>
+    <net code="31" name="Net-(IC2-Pad7)">
+      <node ref="IC2" pin="7"/>
+      <node ref="J4" pin="1"/>
+    </net>
+    <net code="32" name="Net-(IC1-Pad3)">
+      <node ref="R1" pin="1"/>
+      <node ref="IC1" pin="3"/>
+    </net>
+    <net code="33" name="/VDD_3V">
+      <node ref="R2" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="R4" pin="1"/>
+      <node ref="J1" pin="19"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R8" pin="1"/>
+      <node ref="IC3" pin="8"/>
+      <node ref="R9" pin="1"/>
+      <node ref="IC2" pin="3"/>
+    </net>
+    <net code="34" name="/SCL">
+      <node ref="R9" pin="2"/>
+      <node ref="IC2" pin="6"/>
+      <node ref="J1" pin="7"/>
+    </net>
+    <net code="35" name="/SDA">
+      <node ref="IC2" pin="5"/>
+      <node ref="R8" pin="2"/>
+      <node ref="J1" pin="6"/>
+    </net>
+    <net code="36" name="/SI">
+      <node ref="J1" pin="5"/>
+      <node ref="IC3" pin="5"/>
+    </net>
+    <net code="37" name="/WP">
+      <node ref="J1" pin="4"/>
+      <node ref="IC3" pin="3"/>
+    </net>
+    <net code="38" name="/SCLK">
+      <node ref="IC3" pin="6"/>
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="39" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="40" name="/CS">
+      <node ref="J1" pin="1"/>
+      <node ref="IC3" pin="1"/>
+    </net>
+  </nets>
+</export>
