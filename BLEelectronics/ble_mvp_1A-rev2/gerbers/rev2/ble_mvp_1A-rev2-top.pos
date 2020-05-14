@@ -1,0 +1,23 @@
+### Module positions - created on 2020-05-14 10:30:34 AM ###
+### Printed by Pcbnew version kicad (5.1.5)-3
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val              Package                                           PosX       PosY       Rot  Side
+C1        0.1uF            C_0603_1608Metric_Pad1.05x0.95mm_HandSolder   131.0005   -83.3341    0.0000  top
+C2        1uF              C_0603_1608Metric_Pad1.05x0.95mm_HandSolder   135.0645   -80.7941   90.0000  top
+C3        1uF              C_0603_1608Metric_Pad1.05x0.95mm_HandSolder   135.2347   -84.4136   90.0000  top
+C4        0.1uF            C_0603_1608Metric_Pad1.05x0.95mm_HandSolder   139.3063   -84.8073   90.0000  top
+D1        D_Schottky       D_SOD-123F                                    137.2616   -85.8368   90.0000  top
+D2        ESD401           ESD401DPYR                                    131.5212   -78.3811  180.0000  top
+D3        ESD401           ESD401DPYR                                    138.3284   -78.6333  180.0000  top
+IC1       LTC4412xS6       TSOT-23-6                                     131.9149   -80.8068    0.0000  top
+IC2       PCF8523T         SOIC-8_3.9x4.9mm_P1.27mm                      134.7876   -97.1906    0.0000  top
+IC3       MX25R6435FM2IL0  MX25R6435FM2IL0                               135.0874   -91.2157    0.0000  top
+Q1        Si2307CDS        SOT-23                                        130.9497   -85.8868  180.0000  top
+R1        560K             R_0603_1608Metric_Pad1.05x0.95mm_HandSolder   133.6853   -84.4492   90.0000  top
+R2        10K              R_0603_1608Metric_Pad1.05x0.95mm_HandSolder   139.3495   -95.4532   90.0000  top
+R3        10K              R_0603_1608Metric_Pad1.05x0.95mm_HandSolder   139.3342   -98.8619  270.0000  top
+U1        BAT-HLD-001      BAT-HLD-001                                   156.8044   -90.5713    0.0000  top
+U4        LP5907MFX-3.3    SOT-23-5                                      137.8814   -81.0352  270.0000  top
+X1        32.768KHZ        Crystal_SMD_3215-2Pin_3.2x1.5mm               129.8245   -96.4794   90.0000  top
+## End

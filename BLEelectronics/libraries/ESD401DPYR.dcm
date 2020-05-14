@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ESD401DPYR
+D TVS DIODE 5.5V 24V 2X1SON
+K ESD protection, TVS
+$ENDCMP
+#
+#End Doc Library
