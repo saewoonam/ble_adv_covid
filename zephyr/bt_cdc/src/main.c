@@ -22,6 +22,7 @@
 #include <usb/usb_device.h>
 #include <drivers/uart.h>
 
+#include <time.h>
 bool bt_started=false;
 bool start_adv=false;
 bool cdc_open=false;
@@ -37,8 +38,8 @@ extern void bt_adv(void);
 struct bt_le_scan_param scan_param = {
     .type       = BT_HCI_LE_SCAN_PASSIVE,
     .options    = BT_LE_SCAN_OPT_NONE,
-    .interval   = 0x0010,
-    .window     = 0x0010,
+    .interval   = 0x1000,
+    .window     = 0x0200,
 };
 
 #define RING_BUF_SIZE 1024
@@ -159,13 +160,23 @@ void main(void)
     // int err;
     led_init(&led1);
     led_init(&led2);
-    // led_init(&led3);
-    // led_init(&led4);
+    led_init(&led3);
+    led_init(&led4);
     for (int i=0; i<5; i++){
         flash(&led1);
+        k_sleep(K_MSEC(200));
+    }
+    for (int i=0; i<5; i++){
         flash(&led2);
-        //flash(&led3);
-        //flash(&led4);
+        k_sleep(K_MSEC(200));
+    }
+    for (int i=0; i<5; i++){
+        flash(&led3);
+        k_sleep(K_MSEC(200));
+    }
+    for (int i=0; i<5; i++){
+        flash(&led4);
+        k_sleep(K_MSEC(200));
     }
     // printk("Starting Scanner/Advertiser Demo\n");
     ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
@@ -182,6 +193,7 @@ void main(void)
     cdc_open=true;
     u8_t c;
     int counter = 0;
+    uint32_t realtime=0;
 
     while (true) {
         while(ring_buf_get(&inringbuf, &c, 1)){
@@ -233,6 +245,40 @@ void main(void)
                     // encounter_info();
                     break;
                     }
+                case 't':  // Stop write data to flash
+                    {
+                    printk("got t\n");
+                    int len = 0;
+                    char buffer[64];
+                    uint32_t timestamp = k_uptime_get_32();
+                    uint8_t *temp = (uint8_t *) &realtime;
+                    //  Have to get 1 byte at a time...
+                    do {
+                        len += ring_buf_get(&inringbuf, temp+len, 1);
+                        /*
+                        sprintf(buffer, "%d\n", len);
+                        ring_buf_put(&outringbuf, buffer, strlen(buffer));
+                        uart_irq_tx_enable(cdc_dev);
+                        k_sleep(K_MSEC(2000));
+                        */
+                    } while (len < 4);
+                    len=sprintf(buffer, "%u, %u\n", realtime, timestamp);
+                    unsigned int key = irq_lock();
+                    ring_buf_put(&outringbuf, buffer, len);
+                    irq_unlock(key);
+                    uart_irq_tx_enable(cdc_dev);
+                    struct tm ts;
+                    time_t rawtime = (const time_t) 0;
+                    ts = *gmtime(&rawtime);
+                    len = sprintf(buffer, "Day: %d Month: %d Year: %d\n",
+                                    ts.tm_mday, ts.tm_mon, ts.tm_year);
+                    key = irq_lock();
+                    ring_buf_put(&outringbuf, buffer, strlen(buffer));
+                    irq_unlock(key);
+                    uart_irq_tx_enable(cdc_dev);
+ 
+                    break;
+                    }
                 default:
                     {
                     printk("got %c, not defined\n", c);
@@ -240,7 +286,7 @@ void main(void)
                     }
             }
         }
-        k_sleep(K_MSEC(200));
+        k_sleep(K_MSEC(2000));
 
     }
 }
