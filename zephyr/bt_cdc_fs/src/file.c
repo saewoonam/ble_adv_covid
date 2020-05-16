@@ -3,6 +3,8 @@
 #include <fs/littlefs.h>
 #include <storage/flash_map.h>
 #include <stdio.h>
+#include <sys/ring_buffer.h>
+#include <drivers/uart.h>
 
 #define MAX_PATH_LEN 255
 
@@ -10,6 +12,10 @@ extern struct fs_mount_t *mp;
 extern struct fs_file_t encounter_file;
 extern bool flash_full;
 extern bool write_flash;
+extern struct device *cdc_dev;
+extern struct ring_buf outringbuf;
+
+extern void uart_printf(char *format, ...);
 
 void flash_close();
 
@@ -132,6 +138,8 @@ int flash_init(void) {
 void ls(void) {
     struct fs_dir_t dir = { 0 };
     int rc;
+    char line[64];
+    int line_len;
 
     rc = fs_opendir(&dir, mp->mnt_point);
     printk("%s opendir: %d\n", mp->mnt_point, rc);
@@ -147,10 +155,15 @@ void ls(void) {
             printk("End of files\n");
             break;
         }
-        printk("  %c %u %s\n",
-               (ent.type == FS_DIR_ENTRY_FILE) ? 'F' : 'D',
-               ent.size,
-               ent.name);
+        line_len = sprintf(line, "  %c %u %s\n",
+                (ent.type == FS_DIR_ENTRY_FILE) ? 'F' : 'D',
+                ent.size,
+                ent.name);
+        printk("%s", line);
+        unsigned int key = irq_lock();
+        int out_len = ring_buf_put(&outringbuf, line, line_len);
+        irq_unlock(key);
+        uart_irq_tx_enable(cdc_dev);
     }
 
     (void)fs_closedir(&dir);

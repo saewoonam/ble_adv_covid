@@ -23,6 +23,7 @@ extern bool start_adv;
 extern bool cdc_open;
 extern bool write_flash;
 extern bool flash_full;
+extern bool show_binary;
 extern bool show_raw;
 extern bool show_kernel;
 extern struct bt_le_scan_param scan_param ;
@@ -31,6 +32,9 @@ extern struct ring_buf outringbuf;
 extern struct ring_buf flashringbuf;
 extern struct fs_file_t encounter_file;
 extern int total_cache;
+
+#define BT_LE_ADV_NCONN2 BT_LE_ADV_PARAM(4, BT_GAP_ADV_FAST_INT_MIN_2, \
+                                        BT_GAP_ADV_FAST_INT_MAX_2, NULL)
 
 void bt_init(void) {
     int err;
@@ -80,7 +84,7 @@ void bt_adv (void) {
      *
      */
     rpi_update(tcn);
-    int err = bt_le_adv_start(BT_LE_ADV_NCONN, encounter_ad,
+    int err = bt_le_adv_start(BT_LE_ADV_NCONN2, encounter_ad,
                             ARRAY_SIZE(encounter_ad), NULL, 0);
     if (err) {
         printk("Advertising failed to start (err %d)\n", err);
@@ -89,8 +93,10 @@ void bt_adv (void) {
 
     do {
         blink(&led1,1);
+        if (write_flash) {
+            blink(&led2,1);
+        }
         k_sleep(K_MSEC(RPI_PERIOD));
-
         rpi_update(tcn);
         err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
         /*  Will not use update... but stop in version that randomized MAC */
@@ -163,44 +169,61 @@ static bool data_cb_local(struct bt_data *data, void *user_data)
 static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             struct net_buf_simple *buf)
 {
-    flash(&led2);
+    // flash(&led2);
     u8_t uuid16[2] = {0, 0};
     u32_t timestamp = k_uptime_get_32();
-        char rpi_string[64];
-
-        int size = 0;
-        for(u8_t i=0; i<buf->len; i++) {
-            size += sprintf(rpi_string+size, "%02X", buf->data[i]);
-        }
+    uint8_t raw_event[32];
+    char rpi_string[64];
+    int size = 0;
+    for(u8_t i=0; i<buf->len; i++) {
+        size += sprintf(rpi_string+size, "%02X", buf->data[i]);
+    }
 
     bt_data_parse(buf, data_cb_local, uuid16);
     if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
-        flash(&led3);
+        flash(&led2);
         char addr_string[20];
-        size = 0;
-        // reverse the order b/c BT is little-endian
-        for(u8_t i=0; i<5; i++) {
-            size += sprintf(addr_string+size, "%02X:", addr->a.val[5-i]);
-        }
-        size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
-        char line[128];
-        int line_len = sprintf(line, "%13d, %3d, %s, %s\n",
-                        timestamp, rssi, addr_string, rpi_string);
-        
-        if (show_kernel) {  // This puts it on the debugger
-            printk("%s", line);
-        }
-        if (cdc_open&&show_raw) {  // This puts it on the debugger
+        memcpy(raw_event,(uint8_t *) &timestamp, 4);
+        memcpy(raw_event+4, addr->a.val, 6);
+        raw_event[10] = 0xFF;
+        raw_event[11] = rssi;
+        memcpy(raw_event+12, buf->data+6, 20);  // skip 0x6FFD patterns
+        if (show_binary) {
             unsigned int key = irq_lock();
-            int out_len = ring_buf_put(&outringbuf, line, line_len);
+            ring_buf_put(&outringbuf, raw_event, 32);
             irq_unlock(key);
-            // printk("out_len: %d\n", out_len);
-            uart_irq_tx_enable(cdc_dev);
-        }
-        
-        if (write_flash) {  // write to flash
-            int out_len = ring_buf_put(&flashringbuf, line, line_len);
-            total_cache += out_len;
+            if (write_flash) {  // write to flash
+                int out_len = ring_buf_put(&flashringbuf, raw_event, 32);
+                total_cache += out_len;
+            }
+        } else {
+            size = 0;
+            // reverse the order b/c BT is little-endian
+            for(u8_t i=0; i<5; i++) {
+                size += sprintf(addr_string+size, "%02X:", addr->a.val[5-i]);
+            }
+            size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
+            char line[128];
+            int line_len = sprintf(line, "%11d, %3d, %s, %s\n",
+                            timestamp, rssi, addr_string, rpi_string);
+            
+            if (show_kernel) {  // This puts it on the debugger
+                printk("%s", line);
+            }
+            if (cdc_open&&show_raw) {  // This puts it on the debugger
+                unsigned int key = irq_lock();
+                int out_len = ring_buf_put(&outringbuf, line, line_len);
+                irq_unlock(key);
+                // printk("out_len: %d\n", out_len);
+                uart_irq_tx_enable(cdc_dev);
+                key=irq_lock();
+                out_len = ring_buf_put(&outringbuf, raw_event, 32);
+                irq_unlock(key);
+            }
+            if (write_flash) {  // write to flash
+                int out_len = ring_buf_put(&flashringbuf, line, line_len);
+                total_cache += out_len;
+            }
             // printk("ring space: %d\n", ring_buf_space_get(&flashringbuf));
             // printk("ring capacity: %d\n", ring_buf_capacity_get(&flashringbuf));
 

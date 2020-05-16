@@ -22,6 +22,7 @@
 #include <usb/usb_device.h>
 #include <drivers/uart.h>
 
+#include <time.h>
 // includes for files
 #include <fs/fs.h>
 #include <fs/littlefs.h>
@@ -33,19 +34,22 @@ bool cdc_open=false;
 bool write_flash=false;
 bool flash_full=false;
 bool show_raw=false;
+bool show_binary=false;
 bool show_kernel=false;
 bool usb_error=false;
 
+extern void button_init(void);
 extern void bt_init(void);
 extern void start_scan(void);
+extern void stop_scan(void);
 extern void bt_adv(void);
 #define STACKSIZE 1024
 
 struct bt_le_scan_param scan_param = {
     .type       = BT_HCI_LE_SCAN_PASSIVE,
     .options    = BT_LE_SCAN_OPT_NONE,
-    .interval   = 0x0100,
-    .window     = 0x0100,
+    .interval   = 0x1000,
+    .window     = 0x0200,
 };
 
 #define RING_BUF_SIZE 1024
@@ -58,6 +62,7 @@ struct ring_buf inringbuf;
 struct ring_buf outringbuf;
 struct ring_buf flashringbuf;
 
+struct device *button_dev;
 
 #define MAX_PATH_LEN 255
 
@@ -100,7 +105,7 @@ void usb_init(void) {
 u8_t flash_buffer[4096];
 int total_written=0;
 int total_cache=0;
-#define CHUNK 4000
+// #define CHUNK 4000
 
 K_THREAD_DEFINE(bt_adv_id, STACKSIZE, bt_adv, NULL, NULL, NULL,
             3, 0, 0);
@@ -201,6 +206,7 @@ void clear_encounter(void) {
     snprintf(fname, sizeof(fname), "%s/encounters", mp->mnt_point);
     rc = fs_close(&encounter_file);
     printk("close rc: %d\n", rc);
+    // delete file with "unlink"
     rc = fs_unlink(fname);
     printk("unlink rc: %d\n", rc);
 
@@ -213,11 +219,74 @@ void clear_encounter(void) {
     flash_full = false;
 }
 
+void uart_print(char *buffer, int len){
+    unsigned int key = irq_lock();
+    ring_buf_put(&outringbuf, buffer, len);
+    irq_unlock(key);
+    uart_irq_tx_enable(cdc_dev);
+}
+
+void uart_printf(char *format, ...) {
+
+    va_list arg;
+    va_start(arg, format);
+    int len;
+    static char buffer[64];
+
+    len = vsnprintf(buffer, 64,format, arg);
+
+    unsigned int key = irq_lock();
+    ring_buf_put(&outringbuf, buffer, len);
+    irq_unlock(key);
+    uart_irq_tx_enable(cdc_dev);
+}
+
+void write_time (uint32_t local, uint32_t rawtime) {
+    int rc;
+    char fname[MAX_PATH_LEN];
+    struct fs_file_t time_file;
+
+    snprintf(fname, sizeof(fname), "%s/timeinfo", mp->mnt_point);
+
+    rc = fs_open(&time_file, fname);
+    if (rc < 0) {
+        uart_printf("FAIL: open %s: %d\n", fname, rc);
+        return;
+    }
+
+    //     rc = fs_read(&file, &boot_count, sizeof(boot_count));
+    //     printk("%s read count %u: %d\n", fname, boot_count, rc);
+
+    rc = fs_write(&time_file, &local, sizeof(local));
+    rc = fs_write(&time_file, &rawtime, sizeof(rawtime));
+    rc = fs_close(&time_file);
+}
+
+void read_time(uint32_t *local, uint32_t *rawtime) {
+    int rc;
+    char fname[MAX_PATH_LEN];
+    struct fs_file_t time_file;
+
+    snprintf(fname, sizeof(fname), "%s/timeinfo", mp->mnt_point);
+
+    rc = fs_open(&time_file, fname);
+    if (rc < 0) {
+        uart_printf("FAIL: open %s: %d\n", fname, rc);
+        return;
+    }
+
+    rc = fs_read(&time_file, local, 4);
+    rc = fs_read(&time_file, rawtime, 4);
+    rc = fs_close(&time_file);
+
+}
+
 void got_g(void) {
     struct fs_file_t file;
     char line[1024];
     char fname[MAX_PATH_LEN];
     int rc;
+    int total_bytes = 0;
     memset(line, 0, 1024);
 
     snprintf(fname, sizeof(fname), "%s/encounters", mp->mnt_point);
@@ -240,27 +309,84 @@ void got_g(void) {
         }
         // printk("out_len: %d\n", out_len);
         uart_irq_tx_enable(cdc_dev);
+        total_bytes += out_len;
     }
     rc = fs_close(&file);
     printk("Close file rc: %d\n", rc);
+    rc = sprintf(line, "total_bytes: %d\n", total_bytes);
+    uart_print(line, rc);
+}
+
+void cleanup_cache(void) {
+    int total_len;
+    // unsigned int key;
+    char buffer[64];
+    int len;
+    int record_length, number_of_events;
+    if (show_binary) {
+        record_length = 32;
+    } else {
+        record_length = 100;
+    }
+
+    total_len = ring_buf_get(&flashringbuf, flash_buffer, 4096);
+
+    // len = sprintf(buffer, "total_written:  %d, total_cache: %d left: %d\n",
+    //         total_written, total_cache, total_len);
+    // uart_print(buffer, len);
+
+    ring_buf_reset(&flashringbuf);
+
+    number_of_events = total_len / record_length;
+    total_len = number_of_events * record_length; 
+
+    // len = sprintf(buffer, "len to write to file: %d\n", total_len);
+    // uart_print(buffer, len);
+
+    int len_written = fs_write(&encounter_file, flash_buffer, total_len);
+    fs_sync(&encounter_file);
+    total_written += len_written;
+
+    len = sprintf(buffer, "cleanup cache total_written:  %d, total_cache: %d\n",
+            total_written, total_cache);
+    uart_print(buffer, len);
 }
 
 void flash_store(void) {
     int space;
     int total_len = 0;
     int len_written;
+    int CHUNK = 0;
 
+    if (show_binary) {
+        CHUNK = 2048;
+    } else {
+        CHUNK = 4000;
+    }
 
     space = ring_buf_space_get(&flashringbuf);
-    if (write_flash) {
+    if (!write_flash) {
+        if (space<8191) {
+            cleanup_cache();
+        }
+    } else {
+        char buffer[64];
+        int len = sprintf(buffer, "flash_store: total_written:  %d, total_cache: %d\n",
+                total_written, total_cache);
+        uart_print(buffer, len);
+        /*
         printk("Space: %d, total_written: %d, total_cache: %d\n", 
                 space, total_written, total_cache);
+                */
     } 
     if (space < (8191-CHUNK)) {
         flash(&led4);
+        /*
         do {
             total_len += ring_buf_get(&flashringbuf, flash_buffer, CHUNK);
         } while (total_len<CHUNK);
+        */
+        total_len += ring_buf_get(&flashringbuf, flash_buffer, CHUNK);
         len_written = fs_write(&encounter_file, flash_buffer, CHUNK);
         fs_sync(&encounter_file);
         total_written += len_written;
@@ -273,8 +399,40 @@ void flash_store(void) {
 }
 
 void parse_command(char c) {
-    int total_len, len_written;
+    uint32_t realtime=0;
+    // int total_len, len_written;
             switch (c) {
+                case 'y':  // start_scan
+                    {
+                    start_scan();
+                    /*
+                    uart_printf("interval %u, window: %u\n", 
+                            scan_param.interval, scan_param.window);
+                    */
+                    break;
+                    }
+                case 'x':  // stop_scan
+                    {
+                    stop_scan();
+                    break;
+                    }
+                case 'v': // change scan params
+                    {
+                    uint16_t interval, window;
+                    int len = 0;
+                    do {
+                        len += ring_buf_get(&inringbuf, (uint8_t *)&(interval)+len, 1);
+                    } while (len < 2);
+                    len =0;
+                    do {
+                        len += ring_buf_get(&inringbuf, (uint8_t *)&(window)+len, 1);
+                    } while (len < 2);
+
+                    // uart_printf("interval %u, window: %u\n", interval, window);
+                    scan_param.interval = interval;
+                    scan_param.window = window;
+                    break;
+                    }
                 case 'g':  // Get all data from FLASH
                     {
                     printk("got g\n");
@@ -297,7 +455,11 @@ void parse_command(char c) {
                     break;
                 case 'r':  // Show data on USB_SERIAL PORT
                     printk("got r\n");
-                    show_raw = !show_raw ;
+                    show_raw = true ;
+                    break;
+                case 'z':  // Show data on USB_SERIAL PORT
+                    printk("got z\n");
+                    show_raw = false ;
                     break;
                 case 'l':  // list files to debugger
                     {
@@ -313,21 +475,62 @@ void parse_command(char c) {
                     {
                     printk("got s\n");
                     write_flash = false;
-                    // Need to wait to finish all writes to ringbuffer
-                    k_sleep(K_MSEC(200));
-                    // Need to dump everything in flash_buffer to flash
-                    total_len = ring_buf_get(&flashringbuf, flash_buffer, 4096);
-                    while (total_len>0){
-                        len_written = fs_write(&encounter_file,
-                                flash_buffer, total_len);
-                        fs_sync(&encounter_file);
-                        total_len = ring_buf_get(&flashringbuf, flash_buffer, 4096);
-                        total_written += len_written;
-                    }
-                    printk("total_written:  %d, total_cache: %d\n",
-                            total_written, total_cache);
-                    encounter_info();
+                    cleanup_cache();
+                    // encounter_info();
 
+                    break;
+                    }
+                case 'f': // get info about flash and cache
+                    {
+                    char buffer[64];
+                    int len = sprintf(buffer, "total_written:  %d, total_cache: %d\n",
+                            total_written, total_cache);
+                    uart_print(buffer, len);
+                    break;
+                    }
+                case 'b':  // output data as binary
+                    printk("got b\n");
+                    show_binary = true ;
+                    break;
+                case 'n':  // output data as text
+                    printk("got n\n");
+                    show_binary = false ;
+                    break;
+                case 'u':  // get timestamp
+                    {
+                    uint32_t local, human;
+                    read_time(&local, &human); 
+                    uart_printf("%u, %u\n", local, human);
+                    // printk("got u\n");
+                    break;
+                    }
+                case 't':  // get timestamp
+                    {
+                    printk("got t\n");
+                    int len = 0;
+                    // char buffer[64];
+                    uint32_t timestamp = k_uptime_get_32();
+                    uint8_t *temp = (uint8_t *) &realtime;
+                    //  Have to get 1 byte at a time...
+                    do {
+                        len += ring_buf_get(&inringbuf, temp+len, 1);
+                    } while (len < 4);
+
+                    // len=sprintf(buffer, "%u, %u\n", realtime, timestamp);
+                    // uart_print(buffer, len);
+                    write_time(timestamp, realtime);
+
+                    /*
+                    struct tm ts;
+                    time_t rawtime = (const time_t) realtime;
+                    ts = *gmtime(&rawtime);
+                    len = sprintf(buffer, "Day: %d Month: %d Year: %d\n",
+                                    ts.tm_mday, ts.tm_mon, ts.tm_year);
+                    uart_print(buffer, len);
+                    uint32_t a, b;
+                    read_time(&a, &b); 
+                    uart_printf("%u, %u\n", a, b);
+                    */
                     break;
                     }
                 default:
@@ -351,15 +554,21 @@ void main(void)
         flash(&led3);
         flash(&led4);
     }
+    button_init();
     // printk("Starting Scanner/Advertiser Demo\n");
     ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
     ring_buf_init(&outringbuf, sizeof(out_ring_buffer), out_ring_buffer);
     ring_buf_init(&flashringbuf, sizeof(flash_ring_buffer), flash_ring_buffer);
     flash_init();
+    for (int i=0; i<5; i++){
+        flash(&led1);
+    }
     // printk("Bluetooth initialized\n");
     bt_init();
     start_adv = true;
+    // There is a thread that runs the bt_adv
     // bt_adv();
+    //
     start_scan();
     cdc_init();
     usb_init();
@@ -372,7 +581,7 @@ void main(void)
             parse_command(c);
         }
         flash_store();
-        k_sleep(K_MSEC(200));
+        k_sleep(K_MSEC(2000));
 
     }
 }
