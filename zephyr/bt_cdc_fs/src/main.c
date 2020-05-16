@@ -370,10 +370,11 @@ void flash_store(void) {
             cleanup_cache();
         }
     } else {
-        char buffer[64];
-        int len = sprintf(buffer, "flash_store: total_written:  %d, total_cache: %d\n",
-                total_written, total_cache);
-        uart_print(buffer, len);
+        ;
+        /* char buffer[64]; */
+        /* int len = sprintf(buffer, "flash_store: total_written:  %d, total_cache: %d\n", */
+        /*         total_written, total_cache); */
+        /* uart_print(buffer, len); */
         /*
         printk("Space: %d, total_written: %d, total_cache: %d\n", 
                 space, total_written, total_cache);
