@@ -1,0 +1,28 @@
+Component,Description,Part,References,Value,Footprint,PCBside,Quantity Per PCB,Datasheet,MPN,MFR,DPN
+1,Unpolarized capacitor,C,C1 C2,0.1uF,C_0603_1608Metric_Pad1.05x0.95mm_HandSolder,top,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,CC0603KRX7R9BB104,Yageo,311-1344-2-ND
+2,Unpolarized capacitor,C,C4 C5,1uF,C_0603_1608Metric_Pad1.05x0.95mm_HandSolder,top,2,https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf?ref_disty=digikey,C1608X5R1C105K080AA,TDK Corporation,445-1416-1-ND
+3,Schottky diode,D_Schottky,D3,D_Schottky,D_SOD-123F,top,1,https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf,SL14PL-TP,Micro Commercial Co,SL14PL-TPMSCT-ND
+4,TVS DIODE 5.5V 24V 2X1SON,ESD401DPYR,"U3,U4",ESD401,ESD401DPYR,top,2,http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401,ESD401DPYR,Texas Instruments,296-47160-1-ND
+5,"Low Loss PowerPath Controller, TSOT-23-6",LTC4412xS6,IC1,LTC4412xS6,TSOT-23-6,top,1,https://www.analog.com/media/en/technical-documentation/data-sheets/4412fb.pdf,LTC4412ES6#TRPBF,Linear Technology/Analog Devices,LTC4412ES6#TRPBFCT-ND
+6,IC FLASH 64M SPI 80MHZ 8SOP,MX25R6435FM2IL0,IC3,MX25R6435FM2IL0,MX25R6435FM2IL0,top,1,"http://www.macronix.com/Lists/Datasheet/Attachments/7428/MX25R6435F,%20Wide%20Range,%2064Mb,%20v1.4.pdf",MX25R6435FM2IL0,Macronix,1092-1200-ND
+7,IC RTC CLK/CALENDAR I2C 8-SOIC,PCF8523T-Timer_RTC,IC2,PCF8523T,SOIC-8_3.9x4.9mm_P1.27mm,top,1,https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf,"PCF8523T/1,118",NXP USA Inc.,568-5306-1-ND
+8,CONN HEADER VERT 10POS 2.54MM,CONN HEADER VERT 10POS 2.54MM,"J1a, J1b",CONN HEADER VERT 10POS 2.54MM,PinHeader_1x10_P2.54mm_Vertical,top,2,http://www.adam-tech.com/downloader.php?p=PH1-XX-UA.pdf,PH1-10-UA,Adam Tech,2057-PH1-10-UA-ND
+9,"-3.5A Id, -30V Vds, P-Channel MOSFET, SOT-23",Si2307CDS,Q1,Si2307CDS,SOT-23,top,1,http://www.vishay.com/docs/68768/si2307cds.pdf,SI2307CDS-T1-GE3,Vishay Siliconix,SI2307CDS-T1-GE3CT-ND
+10,Resistor,R,R8 R9,10K,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,top,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf,RC0603JR-0710KL,Yageo,311-10KGRCT-ND
+11,Resistor,R,R4,560K,R_0603_1608Metric_Pad1.05x0.95mm_HandSolder,top,1,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf,RC0201FR-07560KL,Yageo,RC0201FR-071K69L
+12,Coin cell battery holder for dia. 20mm 2032 or 2025,BAT-HLD-001,U2,BAT-HLD-001,BAT-HLD-001,top,1,https://linxtechnologies.com/wp/wp-content/uploads/catalog-battery-holders.pdf,BAT-HLD-001,Linx Technologies Inc.,BAT-HLD-001-ND
+13,"250-mA Ultra-Low-Noise Low-IQ LDO, 3.3V, SOT-23",LP5907MFX-3.3,U1,LP5907MFX-3.3,SOT-23-5,top,1,http://www.ti.com/lit/ds/symlink/lp5907.pdf,LP5907MFX-3.3,Texas Instruments,296-38557-1-ND
+14,Two pin crystal,Crystal,X1,32.768KHZ,Crystal_SMD_3215-2Pin_3.2x1.5mm,top,1,https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/CM7V-T1A_Low-ESR.pdf,CM7VT1A-LOWESR-32.768KHZ-12.5PF-20-TA-QC,Micro Crystal AG,2195-CM7VT1ALOWESR32.768KHZ12.5PF20TAQCCT-ND
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Component Groups:,14,,,,,,,,,,
+Component Count:,19,,,,,,,,,,
+Fitted Components:,19,,,,,,,,,,
+Number of PCBs:,1,,,,,,,,,,
+Total components:,19,,,,,,,,,,
+BoM Date:,2020-05-14 10:30:56 AM,,,,,,,,,,
+Schematic Source:,C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\ble_mvp_1A-rev2\ble_mvp_1A-rev2.sch,,,,,,,,,,
+KiCad Version:,Eeschema (5.1.5)-3,,,,,,,,,,
