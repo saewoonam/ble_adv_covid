@@ -26,6 +26,8 @@ extern struct bt_le_scan_param scan_param ;
 extern struct device *uart_dev;
 extern struct mb_display *disp;
 
+extern uint8_t saewoo_hack[2];
+
 /*
   #define BT_LE_ADV_NCONN2 BT_LE_ADV_PARAM(4, BT_GAP_ADV_FAST_INT_MIN_2, \
                                         BT_GAP_ADV_FAST_INT_MAX_2, NULL)
@@ -202,8 +204,8 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         }
         size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
         char line[128];
-        sprintf(line, "%12d, %3d, %s, %s\n",
-                timestamp, rssi, addr_string, rpi_string);
+        sprintf(line, "%12d, %3d, %2d, %2d, %s, %s\n",
+                timestamp, rssi, saewoo_hack[0]+37, saewoo_hack[1], addr_string, rpi_string);
         if (show_raw) {  // This puts it on the debugger
             size = strlen(line);
             uart_write(uart_dev, line, size);

@@ -44,6 +44,7 @@ struct bt_le_scan_param scan_param = {
     .window     = 0x0010,
 };
 
+uint8_t saewoo_hack[2] = {0xDE, 0xAD};
 struct device *button_dev;
 extern void uart_print(struct device *dev, char *buffer);
 
