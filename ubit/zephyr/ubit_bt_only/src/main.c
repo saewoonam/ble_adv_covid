@@ -14,11 +14,16 @@
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/hci.h>
 
+#include <zephyr.h>
+#include <device.h>
+#include <drivers/uart.h>
+
 bool bt_started=false;
 bool start_adv=false;
 bool cdc_open=false;
 bool write_flash=false;
-bool show_raw=false;
+bool show_raw=true;
+struct device *uart_dev;
 
 extern void bt_init(void);
 extern void start_scan(void);
@@ -30,6 +35,7 @@ struct bt_le_scan_param scan_param = {
     .interval   = 0x0010,
     .window     = 0x0010,
 };
+uint8_t saewoo_hack[2];
 
 void main(void)
 {
@@ -45,8 +51,17 @@ void main(void)
         flash(&led3);
         flash(&led4);
     }
-    // printk("Starting Scanner/Advertiser Demo\n");
     */
+    struct uart_config cfg;
+    int rc;
+    // Setup output to usb-serial port on computer
+    uart_dev = device_get_binding("UART_0");
+    // Change baud rate to 9600 per DAP_link notes
+    // https://tech.microbit.org/software/daplink-interface/
+    rc = uart_config_get(uart_dev, &cfg);
+    cfg.baudrate = 9600;
+    rc = uart_configure(uart_dev, &cfg);
+    // Start BT
     bt_init();
     start_adv = true;
     // printk("Bluetooth initialized\n");
