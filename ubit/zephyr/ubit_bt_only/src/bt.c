@@ -7,6 +7,9 @@
 #include <bluetooth/hci.h>
 #include <stdio.h>
 
+#include <drivers/uart.h>
+
+
 #define RPI_PERIOD 10000  // mSec
 
 extern void rpi_init(u8_t *rpi);
@@ -19,9 +22,21 @@ extern bool cdc_open;
 extern bool write_flash;
 extern bool show_raw;
 extern struct bt_le_scan_param scan_param ;
+extern struct device *uart_dev;
+extern uint8_t saewoo_hack[2];
 
 #define BT_LE_ADV_NCONN2 BT_LE_ADV_PARAM(4, BT_GAP_ADV_FAST_INT_MIN_2, \
                                         BT_GAP_ADV_FAST_INT_MAX_2, NULL)
+
+void uart_write(struct device *dev, uint8_t *buffer, uint8_t length) {
+    for(int i=0; i<length; i++) {
+            uart_poll_out(dev, buffer[i]);
+    }
+}
+
+void uart_print(struct device *dev, char *buffer) {
+        uart_write(dev, buffer, strlen(buffer));
+}
 
 void bt_init(void) {
     int err;
@@ -76,20 +91,43 @@ void bt_adv (void) {
         printk("Advertising failed to start (err %d)\n", err);
         return;
     }
-
+    u32_t now, old;
+    old = k_uptime_get_32();
+    char c;
+    int rc=0;
     do {
+        now = k_uptime_get_32();
         // blink(&led1,1);
-        k_sleep(K_MSEC(RPI_PERIOD));
-
-        rpi_update(tcn);
-        err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
-        /*  Will not use update... but stop in version that randomized MAC */
-        // err = bt_le_adv_stop();
-        if (err) {
-            printk("Advertising failed to stop (err %d)\n", err);
-            return;
+        // k_sleep(K_MSEC(RPI_PERIOD));
+        
+        if ((now-old) > RPI_PERIOD) { 
+            rpi_update(tcn);
+            err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
+            /*  Will not use update... but stop in version that randomized MAC */
+            /*
+            // err = bt_le_adv_stop();
+            if (err) {
+                printk("Advertising failed to stop (err %d)\n", err);
+                return;
+            }
+            */
+            old = now;
+            uart_print(uart_dev, "Update rpi\n");
         }
-        printk("Update rpi\n");
+        rc = uart_poll_in(uart_dev, &c);
+        if (rc==0) {
+            switch (c)
+            {
+                case 'r':
+                    show_raw = true;
+                    break;
+                case 'z':
+                    show_raw = false;
+                    break;
+                default:
+                    break;
+            }
+        }
     } while (1);
 }
 
@@ -113,26 +151,28 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     // flash(&led2);
     u8_t uuid16[2] = {0, 0};
     u32_t timestamp = k_uptime_get_32();
+    char rpi_string[64];
 
+    int size = 0;
+    for(u8_t i=0; i<buf->len; i++) {
+        size += sprintf(rpi_string+size, "%02X", buf->data[i]);
+    }
     bt_data_parse(buf, data_cb_local, uuid16);
     if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
         // flash(&led3);
-        char rpi_string[60];
         char addr_string[20];
-        int size = 0;
-        for(u8_t i=0; i<buf->len; i++) {
-            size += sprintf(rpi_string+size, "%02X", buf->data[i]);
-        }
         size = 0;
         for(u8_t i=0; i<5; i++) {
-            size += sprintf(addr_string+size, "%02X:", addr->a.val[i]);
+            size += sprintf(addr_string+size, "%02X:", addr->a.val[5-i]);
         }
-        size += sprintf(addr_string+size, "%02X", addr->a.val[5]);
+        size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
         char line[128];
-        sprintf(line, "%12d, %3d, %s, %s\n",
-                timestamp, rssi, addr_string, rpi_string);
+        sprintf(line, "%12d, %3d, %s, %s, %d, %d\n",
+                timestamp, rssi, addr_string, rpi_string, saewoo_hack[0], saewoo_hack[1]);
         if (show_raw) {  // This puts it on the debugger
-            printk("%s", line);
+            size = strlen(line);
+            uart_write(uart_dev, line, size);
+            // printk("%s", line);
         }
     }
 }
