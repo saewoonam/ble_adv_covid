@@ -19,16 +19,16 @@ U 5EA608FF
 F0 "nRF52840_QIAA_R" 50
 F1 "nRF52840_QIAA_R.sch" 50
 F2 "SCL" I L 9550 2400 50 
-F3 "CS" I L 9550 2800 50 
-F4 "SCLK" I L 9550 2950 50 
-F5 "SI" I L 9550 3100 50 
-F6 "SO" I L 9550 3250 50 
-F7 "WP" I L 9550 3400 50 
-F8 "SIO3" I L 9550 3550 50 
-F9 "SDA" I L 9550 2550 50 
-F10 "VDD_3V" I L 9550 4150 50 
-F11 "D+" I L 9550 4300 50 
-F12 "D-" I L 9550 4450 50 
+F3 "SCLK" I L 9550 2950 50 
+F4 "SI" I L 9550 3100 50 
+F5 "SO" I L 9550 3250 50 
+F6 "SDA" I L 9550 2550 50 
+F7 "VDD_3V" I L 9550 4150 50 
+F8 "D+" I L 9550 4300 50 
+F9 "D-" I L 9550 4450 50 
+F10 "~CS" I L 9550 2800 50 
+F11 "~WP" I L 9550 3400 50 
+F12 "~RESET~SIO3" I L 9550 3550 50 
 $EndSheet
 $Comp
 L BAT-HLD-001:BAT-HLD-001 U1
@@ -783,11 +783,11 @@ SDA
 Text Label 8750 5500 2    50   ~ 0
 SO
 Text Label 10400 5500 0    50   ~ 0
-SIO3
+flash~RESET~
 Text Label 8750 5400 2    50   ~ 0
-CS
+~CS~
 Text Label 8750 5600 2    50   ~ 0
-WP
+~WP~
 Text Label 6650 5050 0    50   ~ 0
 VDD_3V
 Text Notes 1550 2350 0    50   ~ 0
@@ -829,9 +829,9 @@ Switched to TVS diode PRTR5V0U2X,215
 Text Label 9550 3250 2    50   ~ 0
 SO
 Text Label 9550 2800 2    50   ~ 0
-CS
+~CS~
 Text Label 9550 3400 2    50   ~ 0
-WP
+~WP
 Text Label 9550 4150 2    50   ~ 0
 VDD_3V
 Text Label 9550 2950 2    50   ~ 0
@@ -849,7 +849,7 @@ Note: There is no reverse voltage protection on the power connections. (pg 14 Do
 Text Label 5450 1950 0    50   ~ 0
 3V
 Text Label 9550 3550 2    50   ~ 0
-SIO3
+flash~RESET~
 Text Notes 6200 1050 0    50   ~ 0
 Q: Do we change the ESD to be the same as the dongle? PRTR5V0U2X
 Text Notes 6700 4950 0    50   ~ 0
@@ -1108,4 +1108,6 @@ F 10 "-" H -5150 -100 50  0001 C CNN "SIM"
 	1    3600 1550
 	1    0    0    -1  
 $EndComp
+Text Notes 8550 6250 0    50   ~ 0
+NB: ~CS~ ~WP~ ~RESET~ use inverted logic
 $EndSCHEMATC

@@ -19,16 +19,16 @@ U 5EA608FF
 F0 "nRF52840_QIAA_R" 50
 F1 "nRF52840_QIAA_R.sch" 50
 F2 "SCL" I L 9550 2400 50 
-F3 "CS" I L 9550 2800 50 
-F4 "SCLK" I L 9550 2950 50 
-F5 "SI" I L 9550 3100 50 
-F6 "SO" I L 9550 3250 50 
-F7 "WP" I L 9550 3400 50 
-F8 "SIO3" I L 9550 3550 50 
-F9 "SDA" I L 9550 2550 50 
-F10 "VDD_3V" I L 9550 4150 50 
-F11 "D+" I L 9550 4300 50 
-F12 "D-" I L 9550 4450 50 
+F3 "SCLK" I L 9550 2950 50 
+F4 "SI" I L 9550 3100 50 
+F5 "SO" I L 9550 3250 50 
+F6 "SDA" I L 9550 2550 50 
+F7 "VDD_3V" I L 9550 4150 50 
+F8 "D+" I L 9550 4300 50 
+F9 "D-" I L 9550 4450 50 
+F10 "~CS" I L 9550 2800 50 
+F11 "~WP" I L 9550 3400 50 
+F12 "~RESET~SIO3" I L 9550 3550 50 
 $EndSheet
 $Comp
 L BAT-HLD-001:BAT-HLD-001 U1
@@ -76,24 +76,6 @@ F 9 "-" H -5150 -100 50  0001 C CNN "SPR"
 F 10 "-" H -5150 -100 50  0001 C CNN "SPN"
 F 11 "-" H -5150 -100 50  0001 C CNN "SIM"
 	1    4250 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5EA027B7
-P 3600 1550
-F 0 "C3" H 3715 1596 50  0000 L CNN
-F 1 "1uF" H 3715 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3638 1400 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X5R_4V-to-50V_25.pdf" H 3600 1550 50  0001 C CNN
-F 4 "Yageo" H -5150 -100 50  0001 C CNN "MFR"
-F 5 "CC0603KRX5R7BB105" H -5150 -100 50  0001 C CNN "MPN"
-F 6 "311-1444-1-ND" H -5150 -100 50  0001 C CNN "DPN"
-F 7 "-" H -5150 -100 50  0001 C CNN "LCSCPN"
-F 8 "-" H -5150 -100 50  0001 C CNN "SPR"
-F 9 "-" H -5150 -100 50  0001 C CNN "SPN"
-F 10 "-" H -5150 -100 50  0001 C CNN "SIM"
-	1    3600 1550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -801,11 +783,11 @@ SDA
 Text Label 8750 5500 2    50   ~ 0
 SO
 Text Label 10400 5500 0    50   ~ 0
-SIO3
+flash~RESET~
 Text Label 8750 5400 2    50   ~ 0
-CS
+~CS~
 Text Label 8750 5600 2    50   ~ 0
-WP
+~WP~
 Text Label 6650 5050 0    50   ~ 0
 VDD_3V
 Text Notes 1550 2350 0    50   ~ 0
@@ -847,9 +829,9 @@ Switched to TVS diode PRTR5V0U2X,215
 Text Label 9550 3250 2    50   ~ 0
 SO
 Text Label 9550 2800 2    50   ~ 0
-CS
+~CS~
 Text Label 9550 3400 2    50   ~ 0
-WP
+~WP
 Text Label 9550 4150 2    50   ~ 0
 VDD_3V
 Text Label 9550 2950 2    50   ~ 0
@@ -867,7 +849,7 @@ Note: There is no reverse voltage protection on the power connections. (pg 14 Do
 Text Label 5450 1950 0    50   ~ 0
 3V
 Text Label 9550 3550 2    50   ~ 0
-SIO3
+flash~RESET~
 Text Notes 6200 1050 0    50   ~ 0
 Q: Do we change the ESD to be the same as the dongle? PRTR5V0U2X
 Text Notes 6700 4950 0    50   ~ 0
@@ -1108,4 +1090,24 @@ NoConn ~ 3650 2250
 NoConn ~ 6800 3700
 NoConn ~ 7950 5650
 NoConn ~ 7550 5250
+$Comp
+L Device:C C3
+U 1 1 5ECCA1F8
+P 3600 1550
+F 0 "C3" H 3715 1596 50  0000 L CNN
+F 1 "1uF" H 3715 1505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3638 1400 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/CL05A105KO5NNNC_Spec_5-2-19.pdf" H 3600 1550 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H -5150 -100 50  0001 C CNN "MFR"
+F 5 "CL05A105KO5NNNC" H -5150 -100 50  0001 C CNN "MPN"
+F 6 "1276-1067-2-ND" H -5150 -100 50  0001 C CNN "DPN"
+F 7 "-" H -5150 -100 50  0001 C CNN "LCSCPN"
+F 8 "-" H -5150 -100 50  0001 C CNN "SPR"
+F 9 "-" H -5150 -100 50  0001 C CNN "SPN"
+F 10 "-" H -5150 -100 50  0001 C CNN "SIM"
+	1    3600 1550
+	1    0    0    -1  
+$EndComp
+Text Notes 8550 6250 0    50   ~ 0
+NB: CS# WP# RESET# use inverted logic
 $EndSCHEMATC

@@ -1094,7 +1094,7 @@ P1.15 is a low frequency GPIO (<10kHz)
 Text Notes 6400 4750 0    50   ~ 0
 GPIO not marked for any other \nfunction or low frequency include \nP0.13, 15, 17, 20, 22, 24, P1.00
 Text Notes 6400 4300 0    50   ~ 0
-CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+~CS~ - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\n~WP~ - P0.22\nSIO3/HOLD/~RESET~ (pin7) - P0.23\nPinouts from development board schematic\n
 Text Label 6000 3600 2    50   ~ 0
 LED2_B
 Text Label 6000 6500 2    50   ~ 0
@@ -1154,7 +1154,7 @@ Note: There is no reverse voltage protection on the power connections. (pg 14 Do
 Text HLabel 6000 5600 2    50   Input ~ 0
 SCL
 Text HLabel 6000 3900 2    50   Input ~ 0
-CS
+~CS
 Text HLabel 6000 4300 2    50   Input ~ 0
 SCLK
 Text HLabel 6000 4700 2    50   Input ~ 0
@@ -1162,9 +1162,9 @@ SI
 Text HLabel 6000 4100 2    50   Input ~ 0
 SO
 Text HLabel 6000 4500 2    50   Input ~ 0
-WP
+~WP
 Text HLabel 6000 3700 2    50   Input ~ 0
-SIO3
+~RESET~SIO3
 Text HLabel 6000 7100 2    50   Input ~ 0
 SDA
 Text Label 1250 6850 0    50   ~ 0
