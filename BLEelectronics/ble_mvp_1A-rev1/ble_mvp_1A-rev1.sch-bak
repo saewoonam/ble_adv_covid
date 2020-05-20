@@ -644,8 +644,6 @@ Text Label 5300 1800 2    50   ~ 0
 WP
 Text Label 8750 4200 2    50   ~ 0
 WP
-Text Notes 4000 1700 0    50   ~ 0
-Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
 Text Label 6650 3650 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0

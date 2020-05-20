@@ -476,13 +476,13 @@ SDA
 Text Label 8750 4500 2    50   ~ 0
 SO
 Text Label 10400 4500 0    50   ~ 0
-RESET
+~RESET~
 Text Label 8750 4400 2    50   ~ 0
-CS#
+~CS~
 Text Label 5300 1600 2    50   ~ 0
 SO
 Text Label 5300 1500 2    50   ~ 0
-CS#
+~CS~
 Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
@@ -490,9 +490,9 @@ SCLK
 Text Notes 3950 2950 0    50   ~ 0
 P1.15 is recommended for low frequency GPIO (<10kHz) due to\nproximity to the Antenna. Only used for pinging the RTC on startup.
 Text Label 5300 1800 2    50   ~ 0
-WP
+~WP~
 Text Label 8750 4600 2    50   ~ 0
-WP
+~WP~
 Text Label 6650 4050 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0
@@ -512,9 +512,9 @@ Text Label 1850 4750 0    50   ~ 0
 Text Notes 2550 4300 0    50   ~ 0
 TVS diode \nfor ESD\nprotection
 Text Label 5300 2000 2    50   ~ 0
-RESET
+~RESET~
 Text Notes 3950 2750 0    50   ~ 0
-CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+~CS~ - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\n~WP~ - P0.22\n~RESET~ (SIO3 - pin7) - P0.23\nPinouts from development board schematic\n
 Text Notes 6700 3850 0    50   ~ 0
 VDD powers chip. VBat is for time \nkeeping backup with switching logic.
 Text Label 5300 2100 2    50   ~ 0
@@ -733,5 +733,5 @@ Connection ~ 4550 5500
 Wire Wire Line
 	4550 5500 5150 5500
 Text Notes 8550 5350 0    50   ~ 0
-NB: CS# uses inverted logic
+NB: ~CS~ ~WP~ ~RESET~ use inverted logic
 $EndSCHEMATC

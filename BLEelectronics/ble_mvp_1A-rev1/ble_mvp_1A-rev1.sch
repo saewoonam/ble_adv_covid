@@ -627,13 +627,13 @@ SDA
 Text Label 8750 4100 2    50   ~ 0
 SO
 Text Label 10400 4100 0    50   ~ 0
-RESET
+~RESET~
 Text Label 8750 4000 2    50   ~ 0
-CS#
+~CS~
 Text Label 5300 1600 2    50   ~ 0
 SO
 Text Label 5300 1500 2    50   ~ 0
-CS#
+~CS~
 Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
@@ -641,9 +641,9 @@ SCLK
 Text Notes 3950 2850 0    50   ~ 0
 P1.15 is a low frequency GPIO (<10kHz)
 Text Label 5300 1800 2    50   ~ 0
-WP
+~WP~
 Text Label 8750 4200 2    50   ~ 0
-WP
+~WP~
 Text Label 6650 3650 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0
@@ -663,9 +663,9 @@ Text Label 1850 4350 0    50   ~ 0
 Text Notes 2550 3900 0    50   ~ 0
 TVS diode \nfor ESD\nprotection
 Text Label 5300 2000 2    50   ~ 0
-RESET
+~RESET~
 Text Notes 3950 2750 0    50   ~ 0
-CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+~CS~ - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\n~WP~ - P0.22\n~RESET~ (SIO3 - pin7) - P0.23\nPinouts from development board schematic\n
 Text Notes 6700 3450 0    50   ~ 0
 VDD powers chip. VBat is for time \nkeeping backup with switching logic.
 Text Label 5300 2100 2    50   ~ 0
@@ -896,5 +896,5 @@ NoConn ~ 7550 3850
 NoConn ~ 8650 2350
 NoConn ~ 7950 4250
 Text Notes 8550 4950 0    50   ~ 0
-NB: CS# uses inverted logic
+NB: ~CS~ ~WP~ ~RESET~ use inverted logic
 $EndSCHEMATC
