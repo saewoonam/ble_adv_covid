@@ -1531,11 +1531,14 @@ NoConn ~ 5750 6400
 NoConn ~ 5750 6600
 NoConn ~ 5750 6700
 NoConn ~ 5750 6800
-NoConn ~ 5750 6900
 NoConn ~ 5750 7000
 NoConn ~ 5750 3700
 NoConn ~ 9850 5850
 NoConn ~ 10350 5850
 NoConn ~ 10350 5750
 NoConn ~ 3150 6900
+Wire Wire Line
+	6000 6900 5750 6900
+Text HLabel 6000 6900 2    50   Input ~ 0
+~INT1~
 $EndSCHEMATC
