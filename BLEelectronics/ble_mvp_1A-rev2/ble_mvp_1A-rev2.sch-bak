@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L BAT-HLD-001:BAT-HLD-001 U2
+L BAT-HLD-001:BAT-HLD-001 U1
 U 1 1 5E9C706C
 P 1650 1700
-F 0 "U2" H 1925 1903 60  0000 C CNN
+F 0 "U1" H 1925 1903 60  0000 C CNN
 F 1 "BAT-HLD-001" H 1925 1797 60  0000 C CNN
 F 2 "0my_footprints:BAT-HLD-001" H 1934 1358 60  0001 C CNN
 F 3 "https://linxtechnologies.com/wp/wp-content/uploads/catalog-battery-holders.pdf" H 1650 1700 60  0001 C CNN
@@ -32,10 +32,10 @@ F 10 "-" H 0   0   50  0001 C CNN "SIM"
 	0    -1   1    0   
 $EndComp
 $Comp
-L power:GND #PWR01
+L power:GND #PWR03
 U 1 1 5E9D6756
 P 2850 2450
-F 0 "#PWR01" H 2850 2200 50  0001 C CNN
+F 0 "#PWR03" H 2850 2200 50  0001 C CNN
 F 1 "GND" H 2855 2277 50  0000 C CNN
 F 2 "" H 2850 2450 50  0001 C CNN
 F 3 "" H 2850 2450 50  0001 C CNN
@@ -43,10 +43,10 @@ F 3 "" H 2850 2450 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR09
+L power:GND #PWR07
 U 1 1 5EA74258
 P 6500 1700
-F 0 "#PWR09" H 6500 1450 50  0001 C CNN
+F 0 "#PWR07" H 6500 1450 50  0001 C CNN
 F 1 "GND" V 6505 1572 50  0000 R CNN
 F 2 "" H 6500 1700 50  0001 C CNN
 F 3 "" H 6500 1700 50  0001 C CNN
@@ -54,10 +54,10 @@ F 3 "" H 6500 1700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR010
+L power:GND #PWR08
 U 1 1 5EA75FDA
 P 6500 2400
-F 0 "#PWR010" H 6500 2150 50  0001 C CNN
+F 0 "#PWR08" H 6500 2150 50  0001 C CNN
 F 1 "GND" V 6505 2272 50  0000 R CNN
 F 2 "" H 6500 2400 50  0001 C CNN
 F 3 "" H 6500 2400 50  0001 C CNN
@@ -65,10 +65,10 @@ F 3 "" H 6500 2400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR08
+L power:GND #PWR05
 U 1 1 5EA772EE
 P 5300 2400
-F 0 "#PWR08" H 5300 2150 50  0001 C CNN
+F 0 "#PWR05" H 5300 2150 50  0001 C CNN
 F 1 "GND" V 5305 2272 50  0000 R CNN
 F 2 "" H 5300 2400 50  0001 C CNN
 F 3 "" H 5300 2400 50  0001 C CNN
@@ -112,10 +112,10 @@ F 10 "-" H 0   400 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0101
+L power:GND #PWR09
 U 1 1 5EA0EA9A
 P 7450 5050
-F 0 "#PWR0101" H 7450 4800 50  0001 C CNN
+F 0 "#PWR09" H 7450 4800 50  0001 C CNN
 F 1 "GND" H 7455 4877 50  0000 C CNN
 F 2 "" H 7450 5050 50  0001 C CNN
 F 3 "" H 7450 5050 50  0001 C CNN
@@ -123,10 +123,10 @@ F 3 "" H 7450 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R9
+L Device:R R3
 U 1 1 5EA074F4
 P 6800 4300
-F 0 "R9" H 6870 4346 50  0000 L CNN
+F 0 "R3" H 6870 4346 50  0000 L CNN
 F 1 "10K" H 6870 4255 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6730 4300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6800 4300 50  0001 C CNN
@@ -141,10 +141,10 @@ F 10 "-" H 350 550 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R8
+L Device:R R2
 U 1 1 5EA0D031
 P 6500 4400
-F 0 "R8" H 6570 4446 50  0000 L CNN
+F 0 "R2" H 6570 4446 50  0000 L CNN
 F 1 "10K" H 6570 4355 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6430 4400 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 6500 4400 50  0001 C CNN
@@ -195,10 +195,10 @@ F 10 "-" H -3000 3750 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR03
+L power:GND #PWR01
 U 1 1 5E9D9BC8
 P 1600 6400
-F 0 "#PWR03" H 1600 6150 50  0001 C CNN
+F 0 "#PWR01" H 1600 6150 50  0001 C CNN
 F 1 "GND" H 1605 6227 50  0000 C CNN
 F 2 "" H 1600 6400 50  0001 C CNN
 F 3 "" H 1600 6400 50  0001 C CNN
@@ -206,10 +206,10 @@ F 3 "" H 1600 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C2
+L Device:C C4
 U 1 1 5E9D2D00
 P 5300 5650
-F 0 "C2" H 5415 5696 50  0000 L CNN
+F 0 "C4" H 5415 5696 50  0000 L CNN
 F 1 "0.1uF" H 5415 5605 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5338 5500 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 5300 5650 50  0001 C CNN
@@ -224,10 +224,10 @@ F 10 "-" H -1700 3750 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR04
+L power:GND #PWR06
 U 1 1 5E9D3A19
 P 5300 5800
-F 0 "#PWR04" H 5300 5550 50  0001 C CNN
+F 0 "#PWR06" H 5300 5550 50  0001 C CNN
 F 1 "GND" H 5305 5627 50  0000 C CNN
 F 2 "" H 5300 5800 50  0001 C CNN
 F 3 "" H 5300 5800 50  0001 C CNN
@@ -235,10 +235,10 @@ F 3 "" H 5300 5800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R4
+L Device:R R1
 U 1 1 5E9D42B2
 P 5150 6200
-F 0 "R4" H 5220 6246 50  0000 L CNN
+F 0 "R1" H 5220 6246 50  0000 L CNN
 F 1 "560K" H 5220 6155 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5080 6200 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_10.pdf" H 5150 6200 50  0001 C CNN
@@ -253,10 +253,10 @@ F 10 "-" H -1700 3750 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D_Schottky D3
+L Device:D_Schottky D1
 U 1 1 5E9EFF12
 P 4500 4750
-F 0 "D3" H 4500 4966 50  0000 C CNN
+F 0 "D1" H 4500 4966 50  0000 C CNN
 F 1 "D_Schottky" H 4500 4875 50  0000 C CNN
 F 2 "Diode_SMD:D_SOD-123F" H 4500 4750 50  0001 C CNN
 F 3 "https://www.mccsemi.com/pdf/Products/SL14PL-SL110PL(SOD-123FL)-B.pdf" H 4500 4750 50  0001 C CNN
@@ -271,10 +271,10 @@ F 10 "-" H -1650 3500 50  0001 C CNN "SIM"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Regulator_Linear:LP5907MFX-3.3 U1
+L Regulator_Linear:LP5907MFX-3.3 U4
 U 1 1 5EA3D589
 P 3900 4650
-F 0 "U1" H 3900 5017 50  0000 C CNN
+F 0 "U4" H 3900 5017 50  0000 C CNN
 F 1 "LP5907MFX-3.3" H 3900 4926 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3900 5000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lp5907.pdf" H 3900 5150 50  0001 C CNN
@@ -289,10 +289,10 @@ F 10 "-" H 50  300 50  0001 C CNN "SIM"
 	1    0    0    1   
 $EndComp
 $Comp
-L power:GND #PWR07
+L power:GND #PWR04
 U 1 1 5EA4312B
 P 3900 4100
-F 0 "#PWR07" H 3900 3850 50  0001 C CNN
+F 0 "#PWR04" H 3900 3850 50  0001 C CNN
 F 1 "GND" H 3905 3927 50  0000 C CNN
 F 2 "" H 3900 4100 50  0001 C CNN
 F 3 "" H 3900 4100 50  0001 C CNN
@@ -300,10 +300,10 @@ F 3 "" H 3900 4100 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C4
+L Device:C C2
 U 1 1 5EA4DCA4
 P 3450 4250
-F 0 "C4" H 3565 4296 50  0000 L CNN
+F 0 "C2" H 3565 4296 50  0000 L CNN
 F 1 "1uF" H 3565 4205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3488 4100 50  0001 C CNN
 F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf?ref_disty=digikey" H 3450 4250 50  0001 C CNN
@@ -318,10 +318,10 @@ F 10 "-" H -5300 2600 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C5
+L Device:C C3
 U 1 1 5EA4EF46
 P 4250 4250
-F 0 "C5" H 4365 4296 50  0000 L CNN
+F 0 "C3" H 4365 4296 50  0000 L CNN
 F 1 "1uF" H 4365 4205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4288 4100 50  0001 C CNN
 F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf?ref_disty=digikey" H 4250 4250 50  0001 C CNN
@@ -365,10 +365,10 @@ F 3 "" H 2350 4150 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L ESD401DPYR:ESD401DPYR U3
+L ESD401DPYR:ESD401DPYR D2
 U 1 1 5EA48F38
 P 2200 2000
-F 0 "U3" V 2253 1871 60  0000 R CNN
+F 0 "D2" V 2253 1871 60  0000 R CNN
 F 1 "ESD401" V 2147 1871 60  0000 R CNN
 F 2 "0my_footprints:ESD401DPYR" H 2200 1940 60  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 2094 1871 60  0001 R CNN
@@ -383,10 +383,10 @@ F 10 "-" H -150 0   50  0001 C CNN "SIM"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L ESD401DPYR:ESD401DPYR U4
+L ESD401DPYR:ESD401DPYR D3
 U 1 1 5EA4E7E7
 P 2350 4450
-F 0 "U4" V 2403 4321 60  0000 R CNN
+F 0 "D3" V 2403 4321 60  0000 R CNN
 F 1 "ESD401" V 2297 4321 60  0000 R CNN
 F 2 "0my_footprints:ESD401DPYR" H 2350 4390 60  0001 C CNN
 F 3 "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fesd401" V 2244 4321 60  0001 R CNN
@@ -437,10 +437,10 @@ F 10 "-" H 0   400 50  0001 C CNN "SIM"
 	0    1    1    0   
 $EndComp
 $Comp
-L power:GND #PWR011
+L power:GND #PWR010
 U 1 1 5EA9F122
 P 8750 4700
-F 0 "#PWR011" H 8750 4450 50  0001 C CNN
+F 0 "#PWR010" H 8750 4450 50  0001 C CNN
 F 1 "GND" H 8755 4527 50  0000 C CNN
 F 2 "" H 8750 4700 50  0001 C CNN
 F 3 "" H 8750 4700 50  0001 C CNN
@@ -478,11 +478,11 @@ SO
 Text Label 10400 4500 0    50   ~ 0
 RESET
 Text Label 8750 4400 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1600 2    50   ~ 0
 SO
 Text Label 5300 1500 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
@@ -493,7 +493,7 @@ Text Label 5300 1800 2    50   ~ 0
 WP
 Text Label 8750 4600 2    50   ~ 0
 WP
-Text Notes 4000 1700 0    50   ~ 0
+Text Notes 4000 1900 0    50   ~ 0
 Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
 Text Label 6650 4050 0    50   ~ 0
 VDD_3V
@@ -714,10 +714,10 @@ Wire Wire Line
 Wire Wire Line
 	3400 5150 3950 5150
 $Comp
-L Jumper:Jumper_2_Open JP3
+L Jumper:Jumper_2_Open JP1
 U 1 1 5EA10100
 P 4150 5150
-F 0 "JP3" H 4350 5250 50  0000 C CNN
+F 0 "JP1" H 4350 5250 50  0000 C CNN
 F 1 "Jumper_2_Open" H 4150 5294 50  0001 C CNN
 F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4150 5150 50  0001 C CNN
 F 3 "~" H 4150 5150 50  0001 C CNN
@@ -734,4 +734,6 @@ $EndComp
 Connection ~ 4550 5500
 Wire Wire Line
 	4550 5500 5150 5500
+Text Notes 4000 1500 0    50   ~ 0
+NB: CS# uses inverted logic
 $EndSCHEMATC

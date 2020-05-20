@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:CR2025_Nordic-cache
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -630,11 +629,11 @@ SO
 Text Label 10400 4100 0    50   ~ 0
 RESET
 Text Label 8750 4000 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1600 2    50   ~ 0
 SO
 Text Label 5300 1500 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
@@ -898,4 +897,6 @@ NoConn ~ 5300 2200
 NoConn ~ 7550 3850
 NoConn ~ 8650 2350
 NoConn ~ 7950 4250
+Text Notes 8550 4950 0    50   ~ 0
+NB: CS# uses inverted logic
 $EndSCHEMATC

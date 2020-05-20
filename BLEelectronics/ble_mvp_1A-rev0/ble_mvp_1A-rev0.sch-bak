@@ -1081,4 +1081,6 @@ Wire Wire Line
 	2200 1700 2850 1700
 Text Notes 3950 2750 0    50   ~ 0
 CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+Text Notes 8550 4950 0    50   ~ 0
+NB: CS# uses inverted logic
 $EndSCHEMATC

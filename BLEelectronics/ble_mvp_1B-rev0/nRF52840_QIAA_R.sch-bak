@@ -1154,7 +1154,7 @@ Note: There is no reverse voltage protection on the power connections. (pg 14 Do
 Text HLabel 6000 5600 2    50   Input ~ 0
 SCL
 Text HLabel 6000 3900 2    50   Input ~ 0
-CS
+CS#
 Text HLabel 6000 4300 2    50   Input ~ 0
 SCLK
 Text HLabel 6000 4700 2    50   Input ~ 0

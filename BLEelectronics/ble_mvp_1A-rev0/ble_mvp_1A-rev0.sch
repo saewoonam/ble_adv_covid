@@ -795,11 +795,11 @@ SO
 Text Label 10400 4100 0    50   ~ 0
 RESET
 Text Label 8750 4000 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1600 2    50   ~ 0
 SO
 Text Label 5300 1500 2    50   ~ 0
-CS
+CS#
 Text Label 5300 1900 2    50   ~ 0
 SI
 Text Label 5300 1700 2    50   ~ 0
@@ -814,8 +814,6 @@ Text Label 5300 1800 2    50   ~ 0
 WP
 Text Label 8750 4200 2    50   ~ 0
 WP
-Text Notes 4000 1700 0    50   ~ 0
-Confirmed no pull-up/down\nresistors for SPI protocol\nAdd 100nF cap between \nGND and VCC
 Text Label 6650 3550 0    50   ~ 0
 VDD_3V
 Text Notes 2600 1950 0    50   ~ 0
@@ -1081,4 +1079,6 @@ Wire Wire Line
 	2200 1700 2850 1700
 Text Notes 3950 2750 0    50   ~ 0
 CS - P0.17\nCLK - P0.19\nSI - P0.20\nSO - P0.21\nWP - P0.22\nSIO3/HOLD/RESET(pin7) - P0.23\nPinouts from development board schematic\n
+Text Notes 8550 4950 0    50   ~ 0
+NB: CS# uses inverted logic
 $EndSCHEMATC
