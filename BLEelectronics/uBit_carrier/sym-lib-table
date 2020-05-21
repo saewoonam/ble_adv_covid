@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name lib_microbit_connector)(type Legacy)(uri ${KIPRJMOD}/../libraries/lib_microbit_connector.lib)(options "")(descr ""))
+)
