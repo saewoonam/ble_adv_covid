@@ -29,6 +29,7 @@ F9 "D-" I L 9550 4450 50
 F10 "~CS" I L 9550 2800 50 
 F11 "~WP" I L 9550 3400 50 
 F12 "~RESET~SIO3" I L 9550 3550 50 
+F13 "~INT1~" I L 9550 2250 50 
 $EndSheet
 $Comp
 L BAT-HLD-001:BAT-HLD-001 U1
@@ -774,7 +775,7 @@ Text Label 10400 5400 0    50   ~ 0
 VDD_3V
 Text Label 7350 5250 1    50   ~ 0
 VDD_3V
-Text Notes 6250 6350 0    50   ~ 0
+Text Notes 6250 6400 0    50   ~ 0
 Real time clock module with i2c interface
 Text Label 6400 5450 2    50   ~ 0
 SCL
@@ -1088,7 +1089,6 @@ Connection ~ 1700 5800
 Connection ~ 4250 1400
 NoConn ~ 3650 2250
 NoConn ~ 6800 3700
-NoConn ~ 7950 5650
 NoConn ~ 7550 5250
 $Comp
 L Device:C C3
@@ -1110,4 +1110,12 @@ F 10 "-" H -5150 -100 50  0001 C CNN "SIM"
 $EndComp
 Text Notes 8550 6250 0    50   ~ 0
 NB: ~CS~ ~WP~ ~RESET~ use inverted logic
+Text Label 7950 5650 0    50   ~ 0
+~INT1~
+Text Label 9550 2250 2    50   ~ 0
+~INT1~
+Text Notes 6250 6200 0    50   ~ 0
+~INT1~ uses inverted logic
+Text Notes 6250 6300 0    50   ~ 0
+~INT1~ routed to P1.13
 $EndSCHEMATC

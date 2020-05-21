@@ -1109,5 +1109,5 @@ F 10 "-" H -5150 -100 50  0001 C CNN "SIM"
 	1    0    0    -1  
 $EndComp
 Text Notes 8550 6250 0    50   ~ 0
-NB: CS# WP# RESET# use inverted logic
+NB: ~CS~ ~WP~ ~RESET~ use inverted logic
 $EndSCHEMATC
