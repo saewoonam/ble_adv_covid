@@ -333,4 +333,15 @@ F 5 "C15849" H 8350 2300 50  0001 C CNN "LCSC"
 	1    8350 2300
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:Micro_SD_Card_Det_Hirose_DM3AT J3
+U 1 1 5ECA2AC0
+P 8900 4650
+F 0 "J3" H 8850 5467 50  0000 C CNN
+F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 8850 5376 50  0000 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5" H 10950 5350 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 8900 4750 50  0001 C CNN
+	1    8900 4650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

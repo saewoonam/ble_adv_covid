@@ -21,6 +21,7 @@ F 0 "U1" H 6900 3881 50  0000 C CNN
 F 1 "W25Q128JV" H 6900 3790 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 6900 3300 50  0001 C CNN
 F 3 "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf" H 6900 3300 50  0001 C CNN
+F 4 "C97521" H 6900 3300 50  0001 C CNN "LCSC"
 	1    6900 3300
 	1    0    0    -1  
 $EndComp
@@ -116,6 +117,7 @@ F 0 "U2" H 7900 2649 50  0000 C CNN
 F 1 "XC6206P332MR" H 7900 2740 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 7900 2725 50  0001 C CIN
 F 3 "https://www.torexsemi.com/file/xc6206/XC6206.pdf" H 7900 2500 50  0001 C CNN
+F 4 "C5446" H 7900 2500 50  0001 C CNN "LCSC"
 	1    7900 2500
 	-1   0    0    1   
 $EndComp
@@ -329,6 +331,17 @@ F 3 "~" H 8350 2300 50  0001 C CNN
 F 4 "CL10A105KB8NNNC" H 8350 2300 50  0001 C CNN "MPN"
 F 5 "C15849" H 8350 2300 50  0001 C CNN "LCSC"
 	1    8350 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Micro_SD_Card_Det_Hirose_DM3AT J3
+U 1 1 5ECA2AC0
+P 8900 4650
+F 0 "J3" H 8850 5467 50  0000 C CNN
+F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 8850 5376 50  0000 C CNN
+F 2 "" H 10950 5350 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 8900 4750 50  0001 C CNN
+	1    8900 4650
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
