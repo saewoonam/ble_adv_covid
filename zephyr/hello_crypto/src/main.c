@@ -41,16 +41,17 @@ uint8_t key_exchange_13[] = { 0x09, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x
 #define key_exchange_13_size 32
 uint8_t key_exchange_14[] = { 0xa6, 0x0c, 0x2a, 0x7a, 0x4b, 0xe7, 0xa3, 0x9b, 0x12, 0x08, 0xf7, 0xcb, 0x73, 0x05, 0xc0, 0xca, 0xa7, 0x11, 0x17, 0x4f, 0x42, 0x5d, 0x93, 0x2b, 0x86, 0xb2, 0x01, 0x89, 0x62, 0x51, 0xf4, 0x52, };
 #define key_exchange_14_size 32
-int test(void) {
+int test(uint8_t *answer) {
     uint8_t       shared_key[32];
     u32_t start = k_uptime_get();
 
     int res=0;
 
     for (int i=0; i<100; i++) {
-        // X25519_calc_shared_secret(shared_key, key_exchange_1, key_exchange_0);
-        crypto_key_exchange(shared_key, key_exchange_0, key_exchange_1);
-        res += memcmp(shared_key, key_exchange_2, 32);
+        X25519_calc_shared_secret(shared_key, key_exchange_0, key_exchange_1);
+        // crypto_x25519(shared_key, key_exchange_0, key_exchange_1);
+        // crypto_key_exchange(shared_key, key_exchange_0, key_exchange_1);
+        res += memcmp(shared_key, answer, 32);
     }
     if (res!=0) {
         return -1; }
@@ -60,12 +61,23 @@ int test(void) {
 void main(void)
 {
     int res = 0;
+    uint8_t shared_key[32];
+    uint8_t shared_key2[32];
+    uint8_t public[64];
+    memset(public, 0, 64);
 
     printk("Hello World! %s\n", CONFIG_BOARD);
-    while (true) {
-        res = test();
-    }
+    memcpy(public, key_exchange_1, 32);
+    X25519_calc_shared_secret(shared_key, key_exchange_0, public);
+
+    crypto_x25519(shared_key2, key_exchange_0, key_exchange_1);
+    res += memcmp(shared_key, shared_key2, 32);
     printk("res: %d\n", res);
+
+    if (true) {
+        res = test(shared_key);
+    }
+    printk("time: %d\n", res);
 
 
 }
