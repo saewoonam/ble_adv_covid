@@ -16,332 +16,528 @@ $EndDescr
 $Comp
 L Memory_Flash:W25Q32JVSS U1
 U 1 1 5EC613D0
-P 6900 3300
-F 0 "U1" H 6900 3881 50  0000 C CNN
-F 1 "W25Q128JV" H 6900 3790 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 6900 3300 50  0001 C CNN
-F 3 "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf" H 6900 3300 50  0001 C CNN
-F 4 "C97521" H 6900 3300 50  0001 C CNN "LCSC"
-	1    6900 3300
+P 4000 3600
+F 0 "U1" H 4000 4181 50  0000 C CNN
+F 1 "W25Q128JV" H 4000 4090 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 4000 3600 50  0001 C CNN
+F 3 "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf" H 4000 3600 50  0001 C CNN
+F 4 "C97521" H 4000 3600 50  0001 C CNN "LCSC"
+	1    4000 3600
 	1    0    0    -1  
 $EndComp
-$Comp
-L lib_microbit_connector:microbit_edge_connector J1
-U 1 1 5EC62855
-P 5000 3500
-F 0 "J1" H 5000 5525 50  0000 C CNN
-F 1 "microbit_edge_connector" H 5000 5434 50  0000 C CNN
-F 2 "Connector_PCBEdge:4UCON_10156_2x40_P1.27mm_Socket_Horizontal" H 4900 3400 50  0001 C CNN
-F 3 "https://www.microbit.co.uk/device/pins" H 4900 3400 50  0001 C CNN
-	1    5000 3500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 3900 6200 3900
-Wire Wire Line
-	6200 3900 6200 3200
-Wire Wire Line
-	6400 3400 5500 3400
-Wire Wire Line
-	6400 3200 6200 3200
-Text Label 5500 3200 0    50   ~ 0
+Text Label 2600 3500 0    50   ~ 0
 mosi
-Text Label 5500 3300 0    50   ~ 0
+Text Label 2600 3600 0    50   ~ 0
 miso
-Text Label 7400 3100 0    50   ~ 0
+Text Label 4500 3400 0    50   ~ 0
 mosi
-Text Label 7400 3200 0    50   ~ 0
+Text Label 4500 3500 0    50   ~ 0
 miso
-Text Label 7400 3400 0    50   ~ 0
+Text Label 4500 3700 0    50   ~ 0
 wp
-Text Label 5500 3100 0    50   ~ 0
+Text Label 2600 4500 0    50   ~ 0
 wp
-Text Label 7400 3500 0    50   ~ 0
+Text Label 4500 3800 0    50   ~ 0
 hold
-Text Label 5500 4300 0    50   ~ 0
+Text Label 2600 5100 0    50   ~ 0
 hold
 Wire Wire Line
-	5500 2500 5600 2500
+	4000 2800 4000 3200
 Wire Wire Line
-	6900 2500 6900 2900
-Wire Wire Line
-	6900 3700 6900 4050
+	4000 4000 4000 4350
 $Comp
 L power:GND #PWR02
 U 1 1 5EC692F8
-P 6900 4050
-F 0 "#PWR02" H 6900 3800 50  0001 C CNN
-F 1 "GND" H 6905 3877 50  0000 C CNN
-F 2 "" H 6900 4050 50  0001 C CNN
-F 3 "" H 6900 4050 50  0001 C CNN
-	1    6900 4050
+P 4000 4350
+F 0 "#PWR02" H 4000 4100 50  0001 C CNN
+F 1 "GND" H 4005 4177 50  0000 C CNN
+F 2 "" H 4000 4350 50  0001 C CNN
+F 3 "" H 4000 4350 50  0001 C CNN
+	1    4000 4350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR01
 U 1 1 5EC69338
-P 5750 1700
-F 0 "#PWR01" H 5750 1450 50  0001 C CNN
-F 1 "GND" H 5755 1527 50  0000 C CNN
-F 2 "" H 5750 1700 50  0001 C CNN
-F 3 "" H 5750 1700 50  0001 C CNN
-	1    5750 1700
+P 2850 2000
+F 0 "#PWR01" H 2850 1750 50  0001 C CNN
+F 1 "GND" H 2855 1827 50  0000 C CNN
+F 2 "" H 2850 2000 50  0001 C CNN
+F 3 "" H 2850 2000 50  0001 C CNN
+	1    2850 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 1700 5550 1700
+	2600 2000 2650 2000
 $Comp
 L Device:C C1
 U 1 1 5EC69CB4
-P 6900 2350
-F 0 "C1" H 7015 2396 50  0000 L CNN
-F 1 "0.1uF" H 7015 2305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6938 2200 50  0001 C CNN
-F 3 "~" H 6900 2350 50  0001 C CNN
-F 4 "CC0603KRX7R9BB104" H 6900 2350 50  0001 C CNN "MPN"
-F 5 "C14663" H 6900 2350 50  0001 C CNN "LCSC"
-	1    6900 2350
+P 4000 2650
+F 0 "C1" H 4115 2696 50  0000 L CNN
+F 1 "0.1uF" H 4115 2605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4038 2500 50  0001 C CNN
+F 3 "~" H 4000 2650 50  0001 C CNN
+F 4 "CC0603KRX7R9BB104" H 4000 2650 50  0001 C CNN "MPN"
+F 5 "C14663" H 4000 2650 50  0001 C CNN "LCSC"
+	1    4000 2650
 	1    0    0    -1  
 $EndComp
-Connection ~ 6900 2500
+Connection ~ 4000 2800
 Wire Wire Line
-	5750 1700 6900 1700
+	2850 2000 4000 2000
 Wire Wire Line
-	6900 1700 6900 2200
-Connection ~ 5750 1700
-$Comp
-L Regulator_Linear:XC6206PxxxMR U2
-U 1 1 5EC6BB5B
-P 7900 2500
-F 0 "U2" H 7900 2649 50  0000 C CNN
-F 1 "XC6206P332MR" H 7900 2740 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7900 2725 50  0001 C CIN
-F 3 "https://www.torexsemi.com/file/xc6206/XC6206.pdf" H 7900 2500 50  0001 C CNN
-F 4 "C5446" H 7900 2500 50  0001 C CNN "LCSC"
-	1    7900 2500
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6900 1700 7450 1700
-Wire Wire Line
-	7900 1700 7900 2200
-Connection ~ 6900 1700
-Wire Wire Line
-	6900 2500 7450 2500
+	4000 2000 4000 2500
+Connection ~ 2850 2000
+Connection ~ 4000 2000
 $Comp
 L Device:C C2
 U 1 1 5EC738B4
-P 7450 2350
-F 0 "C2" H 7565 2396 50  0000 L CNN
-F 1 "1uF" H 7565 2305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7488 2200 50  0001 C CNN
-F 3 "~" H 7450 2350 50  0001 C CNN
-F 4 "CL10A105KB8NNNC" H 7450 2350 50  0001 C CNN "MPN"
-F 5 "C15849" H 7450 2350 50  0001 C CNN "LCSC"
-	1    7450 2350
+P 4450 2650
+F 0 "C2" H 4565 2696 50  0000 L CNN
+F 1 "1uF" H 4565 2605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4488 2500 50  0001 C CNN
+F 3 "~" H 4450 2650 50  0001 C CNN
+F 4 "CL10A105KB8NNNC" H 4450 2650 50  0001 C CNN "MPN"
+F 5 "C15849" H 4450 2650 50  0001 C CNN "LCSC"
+	1    4450 2650
 	1    0    0    -1  
 $EndComp
-Connection ~ 7450 2500
 Wire Wire Line
-	7450 2500 7600 2500
+	4450 2500 4450 2000
 Wire Wire Line
-	7450 2200 7450 1700
-Connection ~ 7450 1700
+	2650 2000 2650 2100
 Wire Wire Line
-	7450 1700 7900 1700
+	2650 2500 2600 2500
+Connection ~ 2650 2000
 Wire Wire Line
-	8200 2500 8350 2500
+	2650 2000 2850 2000
 Wire Wire Line
-	8350 2500 8350 2450
+	2600 2400 2650 2400
+Connection ~ 2650 2400
 Wire Wire Line
-	7900 1700 8350 1700
+	2650 2400 2650 2500
 Wire Wire Line
-	8350 1700 8350 2150
-Connection ~ 7900 1700
-$Comp
-L Connector:Conn_01x02_Male J2
-U 1 1 5EC756CE
-P 9200 2500
-F 0 "J2" H 9172 2382 50  0000 R CNN
-F 1 "Conn_01x02_Male" H 9172 2473 50  0000 R CNN
-F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 9200 2500 50  0001 C CNN
-F 3 "~" H 9200 2500 50  0001 C CNN
-	1    9200 2500
-	-1   0    0    1   
-$EndComp
+	2600 2300 2650 2300
+Connection ~ 2650 2300
 Wire Wire Line
-	8350 1700 9000 1700
+	2650 2300 2650 2400
 Wire Wire Line
-	9000 1700 9000 2400
-Connection ~ 8350 1700
+	2600 2200 2650 2200
+Connection ~ 2650 2200
 Wire Wire Line
-	5550 1700 5550 1800
+	2650 2200 2650 2300
 Wire Wire Line
-	5550 2200 5500 2200
-Connection ~ 5550 1700
+	2600 2100 2650 2100
+Connection ~ 2650 2100
 Wire Wire Line
-	5550 1700 5750 1700
+	2650 2100 2650 2200
 Wire Wire Line
-	5500 2100 5550 2100
-Connection ~ 5550 2100
+	2700 2800 2700 2900
+Connection ~ 2700 2800
+Connection ~ 2700 3200
 Wire Wire Line
-	5550 2100 5550 2200
+	2700 3200 2700 3300
+Connection ~ 2700 3100
 Wire Wire Line
-	5500 2000 5550 2000
-Connection ~ 5550 2000
+	2700 3100 2700 3200
+Connection ~ 2700 3000
 Wire Wire Line
-	5550 2000 5550 2100
+	2700 3000 2700 3100
+Connection ~ 2700 2900
 Wire Wire Line
-	5500 1900 5550 1900
-Connection ~ 5550 1900
+	2700 2900 2700 3000
 Wire Wire Line
-	5550 1900 5550 2000
+	2700 5500 2700 5600
+Connection ~ 2700 5700
 Wire Wire Line
-	5500 1800 5550 1800
-Connection ~ 5550 1800
+	2700 5700 2700 5800
+Connection ~ 2700 5600
 Wire Wire Line
-	5550 1800 5550 1900
+	2700 5600 2700 5700
 Wire Wire Line
-	5600 2500 5600 2600
+	2700 5000 2700 4900
+Connection ~ 2700 4800
 Wire Wire Line
-	5600 3000 5500 3000
-Connection ~ 5600 2500
+	2700 4800 2700 4700
+Connection ~ 2700 4900
 Wire Wire Line
-	5500 2900 5600 2900
-Connection ~ 5600 2900
+	2700 4900 2700 4800
 Wire Wire Line
-	5600 2900 5600 3000
+	2700 3800 2700 3900
+Connection ~ 2700 4000
 Wire Wire Line
-	5500 2800 5600 2800
-Connection ~ 5600 2800
+	2700 4000 2700 4100
+Connection ~ 2700 3900
 Wire Wire Line
-	5600 2800 5600 2900
-Wire Wire Line
-	5500 2700 5600 2700
-Connection ~ 5600 2700
-Wire Wire Line
-	5600 2700 5600 2800
-Wire Wire Line
-	5500 2600 5600 2600
-Connection ~ 5600 2600
-Wire Wire Line
-	5600 2600 5600 2700
-Wire Wire Line
-	5500 5200 5600 5200
-Wire Wire Line
-	5600 5200 5600 5300
-Wire Wire Line
-	5600 5500 5500 5500
-Wire Wire Line
-	5500 5400 5600 5400
-Connection ~ 5600 5400
-Wire Wire Line
-	5600 5400 5600 5500
-Wire Wire Line
-	5500 5300 5600 5300
-Connection ~ 5600 5300
-Wire Wire Line
-	5600 5300 5600 5400
-Wire Wire Line
-	5500 4700 5600 4700
-Wire Wire Line
-	5600 4700 5600 4600
-Wire Wire Line
-	5600 4400 5500 4400
-Wire Wire Line
-	5500 4500 5600 4500
-Connection ~ 5600 4500
-Wire Wire Line
-	5600 4500 5600 4400
-Wire Wire Line
-	5500 4600 5600 4600
-Connection ~ 5600 4600
-Wire Wire Line
-	5600 4600 5600 4500
-Wire Wire Line
-	5500 3500 5600 3500
-Wire Wire Line
-	5600 3500 5600 3600
-Wire Wire Line
-	5600 3800 5500 3800
-Wire Wire Line
-	5500 3700 5600 3700
-Connection ~ 5600 3700
-Wire Wire Line
-	5600 3700 5600 3800
-Wire Wire Line
-	5500 3600 5600 3600
-Connection ~ 5600 3600
-Wire Wire Line
-	5600 3600 5600 3700
+	2700 3900 2700 4000
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 5EC8B4A7
-P 5750 1700
-F 0 "#FLG0101" H 5750 1775 50  0001 C CNN
-F 1 "PWR_FLAG" H 5750 1873 50  0000 C CNN
-F 2 "" H 5750 1700 50  0001 C CNN
-F 3 "~" H 5750 1700 50  0001 C CNN
-	1    5750 1700
+P 2850 2000
+F 0 "#FLG0101" H 2850 2075 50  0001 C CNN
+F 1 "PWR_FLAG" H 2850 2173 50  0000 C CNN
+F 2 "" H 2850 2000 50  0001 C CNN
+F 3 "~" H 2850 2000 50  0001 C CNN
+	1    2850 2000
+	1    0    0    -1  
+$EndComp
+Text Label 5000 2800 0    50   ~ 0
+3.3V
+NoConn ~ 2600 5900
+NoConn ~ 2600 5400
+NoConn ~ 2600 5300
+NoConn ~ 2600 5200
+NoConn ~ 2600 4300
+NoConn ~ 2600 2700
+NoConn ~ 2600 2600
+Wire Wire Line
+	2700 2800 4000 2800
+Text Label 2950 3700 0    50   ~ 0
+sclk
+Text Label 2600 3400 0    50   ~ 0
+~CS0
+$Comp
+L Connector:Micro_SD_Card_Det_Hirose_DM3AT J3
+U 1 1 5ECA2AC0
+P 5800 5250
+F 0 "J3" H 5750 6067 50  0000 C CNN
+F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 5750 5976 50  0000 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3AT-SF-PEJM5" H 7850 5950 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 5800 5350 50  0001 C CNN
+	1    5800 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2500 8550 2500
+Wire Wire Line
+	8550 2400 8550 2200
+Text Label 9900 2500 0    50   ~ 0
+VIN
+Text Label 5000 2000 0    50   ~ 0
+GND
+$Comp
+L MCP1253-ADJI_MS:MCP1253-ADJI_MS U2
+U 1 1 5ECB15E8
+P 9900 2700
+F 0 "U2" H 10575 2113 60  0000 C CNN
+F 1 "MCP1253-ADJI_MS" H 10575 2219 60  0000 C CNN
+F 2 "0my_footprints:MCP1253-ADJI_MS" H 10600 2840 60  0001 C CNN
+F 3 "" H 9900 2700 60  0000 C CNN
+	1    9900 2700
+	-1   0    0    1   
+$EndComp
+Text Label 2600 4600 0    50   ~ 0
+~CS1
+Wire Wire Line
+	2700 5800 2600 5800
+Wire Wire Line
+	2600 5700 2700 5700
+Wire Wire Line
+	2600 5600 2700 5600
+Wire Wire Line
+	2600 5500 2700 5500
+Wire Wire Line
+	2600 5000 2700 5000
+Wire Wire Line
+	2600 4900 2700 4900
+Wire Wire Line
+	2600 4800 2700 4800
+Wire Wire Line
+	2700 4700 2600 4700
+Wire Wire Line
+	2700 4100 2600 4100
+Wire Wire Line
+	2600 4000 2700 4000
+Wire Wire Line
+	2600 3900 2700 3900
+Wire Wire Line
+	2600 3800 2700 3800
+Wire Wire Line
+	3500 3700 2600 3700
+Wire Wire Line
+	2700 3300 2600 3300
+Wire Wire Line
+	2600 3200 2700 3200
+Wire Wire Line
+	2600 3100 2700 3100
+Wire Wire Line
+	2600 3000 2700 3000
+Wire Wire Line
+	2600 2900 2700 2900
+Wire Wire Line
+	2600 2800 2700 2800
+Text Label 4900 4950 2    50   ~ 0
+~CS1
+Text Label 4900 5050 2    50   ~ 0
+mosi
+Text Label 4900 5150 2    50   ~ 0
+3.3V
+Text Label 4900 5250 2    50   ~ 0
+sclk
+Wire Wire Line
+	4900 5350 4600 5350
+$Comp
+L power:GND #PWR0101
+U 1 1 5ECC582B
+P 4600 5350
+F 0 "#PWR0101" H 4600 5100 50  0001 C CNN
+F 1 "GND" H 4605 5177 50  0000 C CNN
+F 2 "" H 4600 5350 50  0001 C CNN
+F 3 "" H 4600 5350 50  0001 C CNN
+	1    4600 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L lib_microbit_connector:microbit_edge_connector J1
+U 1 1 5EC62855
+P 2100 3800
+F 0 "J1" H 2100 5825 50  0000 C CNN
+F 1 "microbit_edge_connector" H 2100 5734 50  0000 C CNN
+F 2 "Connector_PCBEdge:4UCON_10156_2x40_P1.27mm_Socket_Horizontal" H 2000 3700 50  0001 C CNN
+F 3 "https://www.microbit.co.uk/device/pins" H 2000 3700 50  0001 C CNN
+	1    2100 3800
+	1    0    0    -1  
+$EndComp
+Text Label 2600 4400 0    50   ~ 0
+CD
+Text Label 4900 5650 2    50   ~ 0
+CD
+Text Label 4900 5450 2    50   ~ 0
+miso
+$Comp
+L Device:C C5
+U 1 1 5EC9866C
+P 8100 2350
+F 0 "C5" H 8215 2396 50  0000 L CNN
+F 1 "1uF" H 8215 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8138 2200 50  0001 C CNN
+F 3 "~" H 8100 2350 50  0001 C CNN
+F 4 "CL10A105KB8NNNC" H 8100 2350 50  0001 C CNN "MPN"
+F 5 "C15849" H 8100 2350 50  0001 C CNN "LCSC"
+	1    8100 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2200 8550 2200
+Text Label 8000 4700 2    50   ~ 0
+GND
+Text Notes 7900 3700 0    50   ~ 0
+R1 = R2 * [(VOUT/VFB)-1]\nVOUT = VFB(1+R1/R2)\nVFB = 1.21V\nLet R2 = 10K and VOUT = 3.3V\nR1 = 10K*[(3.3/1.21) -1] = 17.3K\ncheck 1.21(1+17.3K/10K) = 3.303\n
+$Comp
+L Device:R R2
+U 1 1 5ECFB015
+P 8550 2850
+F 0 "R2" H 8620 2896 50  0000 L CNN
+F 1 "10K" H 8620 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8480 2850 50  0001 C CNN
+F 3 "~" H 8550 2850 50  0001 C CNN
+	1    8550 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5ECFB8BA
+P 8150 2850
+F 0 "R1" H 8220 2896 50  0000 L CNN
+F 1 "17K3" H 8220 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8080 2850 50  0001 C CNN
+F 3 "~" H 8150 2850 50  0001 C CNN
+	1    8150 2850
+	1    0    0    -1  
+$EndComp
+Text Label 9900 2400 0    50   ~ 0
+GND
+$Comp
+L power:GND #PWR0102
+U 1 1 5ED071D5
+P 8550 3000
+F 0 "#PWR0102" H 8550 2750 50  0001 C CNN
+F 1 "GND" H 8555 2827 50  0000 C CNN
+F 2 "" H 8550 3000 50  0001 C CNN
+F 3 "" H 8550 3000 50  0001 C CNN
+	1    8550 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2700 8150 2700
+Connection ~ 8550 2700
+Wire Wire Line
+	8150 3000 8150 3100
+$Comp
+L Device:R R3
+U 1 1 5ED168ED
+P 9900 2850
+F 0 "R3" H 9970 2896 50  0000 L CNN
+F 1 "100K" H 9970 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9830 2850 50  0001 C CNN
+F 3 "~" H 9900 2850 50  0001 C CNN
+	1    9900 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3000 9900 3100
+$Comp
+L power:GND #PWR0103
+U 1 1 5ED0378E
+P 8550 4700
+F 0 "#PWR0103" H 8550 4450 50  0001 C CNN
+F 1 "GND" H 8555 4527 50  0000 C CNN
+F 2 "" H 8550 4700 50  0001 C CNN
+F 3 "" H 8550 4700 50  0001 C CNN
+	1    8550 4700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5ECB2BF5
+P 8150 5350
+F 0 "C6" H 8265 5396 50  0000 L CNN
+F 1 "10uF" H 8265 5305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8188 5200 50  0001 C CNN
+F 3 "~" H 8150 5350 50  0001 C CNN
+	1    8150 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5ECA190C
+P 8550 5350
+F 0 "C3" H 8665 5396 50  0000 L CNN
+F 1 "1uF" H 8665 5305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8588 5200 50  0001 C CNN
+F 3 "~" H 8550 5350 50  0001 C CNN
+F 4 "CL10A105KB8NNNC" H 8550 5350 50  0001 C CNN "MPN"
+F 5 "C15849" H 8550 5350 50  0001 C CNN "LCSC"
+	1    8550 5350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 5EC8BC46
-P 8800 2500
-F 0 "#FLG0102" H 8800 2575 50  0001 C CNN
-F 1 "PWR_FLAG" H 8800 2673 50  0000 C CNN
-F 2 "" H 8800 2500 50  0001 C CNN
-F 3 "~" H 8800 2500 50  0001 C CNN
-	1    8800 2500
+P 9050 5500
+F 0 "#FLG0102" H 9050 5575 50  0001 C CNN
+F 1 "PWR_FLAG" H 9050 5673 50  0000 C CNN
+F 2 "" H 9050 5500 50  0001 C CNN
+F 3 "~" H 9050 5500 50  0001 C CNN
+	1    9050 5500
 	1    0    0    -1  
 $EndComp
-Text Label 6250 2500 0    50   ~ 0
+Wire Wire Line
+	9350 4700 9350 5400
+$Comp
+L Connector:Conn_01x02_Male J2
+U 1 1 5EC756CE
+P 9550 5500
+F 0 "J2" H 9522 5382 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 9522 5473 50  0000 R CNN
+F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 9550 5500 50  0001 C CNN
+F 3 "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf" H 9550 5500 50  0001 C CNN
+F 4 "JST Sales America Inc." H 9550 5500 50  0001 C CNN "MFR"
+F 5 "S2B-PH-SM4-TB(LF)(SN)" H 9550 5500 50  0001 C CNN "MPN"
+F 6 "455-1749-1-ND" H 9550 5500 50  0001 C CNN "DPN"
+F 7 "C295747" H 9550 5500 50  0001 C CNN "LCSCPN"
+F 8 "" H 9550 5500 50  0001 C CNN "Field8"
+	1    9550 5500
+	-1   0    0    1   
+$EndComp
+Text Notes 7750 2400 0    50   ~ 0
+CFLY
+Connection ~ 4450 2000
+Wire Wire Line
+	4450 2000 5000 2000
+Connection ~ 4450 2800
+Wire Wire Line
+	4450 2800 4850 2800
+Wire Wire Line
+	4000 2000 4450 2000
+Wire Wire Line
+	4000 2800 4450 2800
+Connection ~ 8550 4700
+Wire Wire Line
+	8000 4700 8150 4700
+Connection ~ 8150 4700
+Wire Wire Line
+	8150 4700 8550 4700
+$Comp
+L Device:C C4
+U 1 1 5ED34BC1
+P 4850 2650
+F 0 "C4" H 4965 2696 50  0000 L CNN
+F 1 "10uF" H 4965 2605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4888 2500 50  0001 C CNN
+F 3 "~" H 4850 2650 50  0001 C CNN
+	1    4850 2650
+	1    0    0    -1  
+$EndComp
+Connection ~ 4850 2800
+Wire Wire Line
+	4850 2800 5000 2800
+Wire Wire Line
+	4850 2000 4850 2500
+Wire Wire Line
+	8000 5500 8150 5500
+Connection ~ 8150 5500
+Wire Wire Line
+	8150 5500 8550 5500
+Wire Wire Line
+	8150 4700 8150 5200
+Wire Wire Line
+	8550 4700 8550 5200
+Text Label 8550 2600 2    50   ~ 0
+VIN
+Text Notes 7900 2000 0    50   ~ 0
+Driving ~SHDN~ low places the MCP1253 in a low-power \nshutdown mode. Pulling it high enables the chip.
+Wire Notes Line
+	7550 4000 10450 4000
+Wire Notes Line
+	10450 4000 10450 1700
+Wire Notes Line
+	7550 4000 7550 1700
+Wire Notes Line
+	7550 1700 10450 1700
+Text Notes 7650 3950 0    50   ~ 0
+Adj 3.3V Regulated DC/DC converter
+Wire Notes Line
+	10450 6000 7550 6000
+Wire Notes Line
+	7550 6000 7550 4350
+Wire Notes Line
+	7550 4350 10450 4350
+Wire Notes Line
+	10450 6000 10450 4350
+Text Notes 7600 5950 0    50   ~ 0
+JST Lipo battery input. SMD right angle 2-pin (Adafruit compatible).
+Wire Wire Line
+	9050 5500 9350 5500
+Connection ~ 9050 5500
+Wire Wire Line
+	8550 5500 9050 5500
+Connection ~ 8550 5500
+Wire Wire Line
+	8550 4700 9350 4700
+$Comp
+L power:GND #PWR0104
+U 1 1 5ED6E22E
+P 6600 5750
+F 0 "#PWR0104" H 6600 5500 50  0001 C CNN
+F 1 "GND" H 6605 5577 50  0000 C CNN
+F 2 "" H 6600 5750 50  0001 C CNN
+F 3 "" H 6600 5750 50  0001 C CNN
+	1    6600 5750
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4900 4850
+NoConn ~ 4900 5550
+NoConn ~ 4900 5750
+Text Label 8000 5500 2    50   ~ 0
+VIN
+Text Label 9900 2600 0    50   ~ 0
 3.3V
-NoConn ~ 5500 5600
-NoConn ~ 5500 5100
-NoConn ~ 5500 5000
-NoConn ~ 5500 4900
-NoConn ~ 5500 4800
-NoConn ~ 5500 4200
-NoConn ~ 5500 4100
-NoConn ~ 5500 4000
-NoConn ~ 5500 2400
-NoConn ~ 5500 2300
-Wire Wire Line
-	8800 2500 9000 2500
-Connection ~ 8800 2500
-Connection ~ 8350 2500
-Wire Wire Line
-	8350 2500 8800 2500
-Wire Wire Line
-	5600 2500 6900 2500
-Text Label 5850 3400 0    50   ~ 0
-sclk
-Text Label 5800 3900 0    50   ~ 0
-~CS
-$Comp
-L Device:C C3
-U 1 1 5ECA190C
-P 8350 2300
-F 0 "C3" H 8465 2346 50  0000 L CNN
-F 1 "1uF" H 8465 2255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8388 2150 50  0001 C CNN
-F 3 "~" H 8350 2300 50  0001 C CNN
-F 4 "CL10A105KB8NNNC" H 8350 2300 50  0001 C CNN "MPN"
-F 5 "C15849" H 8350 2300 50  0001 C CNN "LCSC"
-	1    8350 2300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Micro_SD_Card_Det_Hirose_DM3AT J3
-U 1 1 5ECA2AC0
-P 8900 4650
-F 0 "J3" H 8850 5467 50  0000 C CNN
-F 1 "Micro_SD_Card_Det_Hirose_DM3AT" H 8850 5376 50  0000 C CNN
-F 2 "" H 10950 5350 50  0001 C CNN
-F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 8900 4750 50  0001 C CNN
-	1    8900 4650
-	1    0    0    -1  
-$EndComp
+Text Label 9900 3100 0    50   ~ 0
+3.3V
+Text Label 8150 3100 0    50   ~ 0
+3.3V
+NoConn ~ 2600 4200
+Text Label 3500 3500 2    50   ~ 0
+~CS0
 $EndSCHEMATC
