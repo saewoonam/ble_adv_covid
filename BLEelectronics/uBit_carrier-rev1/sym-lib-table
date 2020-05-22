@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name lib_microbit_connector)(type Legacy)(uri ${KIPRJMOD}/../libraries/lib_microbit_connector.lib)(options "")(descr ""))
+  (lib (name MCP1253-ADJI_MS)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/MCP1253-ADJI_MS.lib)(options "")(descr ""))
+  (lib (name MCP1252-33X50I_MS)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/MCP1252-33X50I_MS.lib)(options "")(descr ""))
+  (lib (name MCP1253-33X50I_MS)(type Legacy)(uri C:/Users/Matt/Documents/git/ble_adv_covid/BLEelectronics/libraries/MCP1253-33X50I_MS.lib)(options "")(descr ""))
+)
