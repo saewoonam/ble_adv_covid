@@ -1,0 +1,28 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,LCSCPN,MPN,MFR,SPN,DPN,SPR,SIM,LCSC
+1,Unpolarized capacitor,C,C1,100nF,C_0603_1608Metric,1,~,C14663,CC0603KRX7R9BB104,Yageo,-,311-1344-2-ND,-,-,C14663
+2,Unpolarized capacitor,C,C4 C6,10uF,C_0805_2012Metric,2,~,C126586,GCM21BR71A106KE22L,Murata,-,-,-,-,
+3,Unpolarized capacitor,C,C2 C3 C5,1uF,C_0603_1608Metric,3,~,C385893,C1608X5R1C105K080AA,TDK Corporation,-,445-1416-1-ND,-,-,C15849
+4,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",Conn_01x02_Male,J2,Conn_01x02_Male,JST_EH_S2B-EH_1x02_P2.50mm_Horizontal,1,http://www.jst-mfg.com/product/pdf/eng/ePH.pdf,C295747,S2B-PH-SM4-TB(LF)(SN),JST Sales America Inc.,-,455-1749-1-ND,-,-,
+5,Micro SD Card Socket with card detection pins,Micro_SD_Card_Det_Hirose_DM3AT,J3,Micro_SD_Card_Det_Hirose_DM3AT,microSD_HC_Hirose_DM3AT-SF-PEJM5,1,https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1,C114218,DM3AT-SF-PEJM5,Hirose,-,HR1964CT-ND,-,-,
+6,micro:bit vertial edge connector,microbit_edge_connector,J1,microbit_edge_connector,4UCON_10156_2x40_P1.27mm_Socket_Horizontal,1,https://www.microbit.co.uk/device/pins,-,-,-,-,-,-,-,
+7,Resistor,R,R3,100K,R_0603_1608Metric,1,~,C269682,RMC0603100K5%N,TyoHM,-,-,-,-,
+8,Resistor,R,R2,10K,R_0603_1608Metric,1,~,C209220,RC0603JR-0710KL,Yageo,-,311-10KGRCT-ND,-,RMS06JT103,
+9,Resistor,R,R1,17K4,R_0603_1608Metric,1,~,C234322,AR03FTC1742,Viking Tech,-,-,-,-,
+10,,MCP1253-ADJI_MS,U2,MCP1253-ADJI_MS,MCP1253-ADJI_MS,1,,C144295,MCP1253-ADJI/MS,Microchip Tech,-,MCP1253-ADJI/MS-ND,-,-,
+11,"32Mb Serial Flash Memory, Standard/Dual/Quad SPI, SOIC-8",W25Q32JVSS,U1,W25Q128JV,SOIC-8_5.23x5.23mm_P1.27mm,1,http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf,C113767,W25Q128JVSIQ,Wirbond Elec,-,,-,-,C97521
+
+
+
+
+
+Component Groups:,11
+Component Count:,14
+Fitted Components:,14
+Number of PCBs:,1
+Total components:,14
+Schematic Version:,
+Schematic Date:,
+PCB Variant:,default
+BoM Date:,2020-05-22 11:50:12 AM
+Schematic Source:,C:\Users\Matt\Documents\git\ble_adv_covid\BLEelectronics\uBit_carrier\uBit_carrier.sch
+KiCad Version:,Eeschema (5.1.5)-3
