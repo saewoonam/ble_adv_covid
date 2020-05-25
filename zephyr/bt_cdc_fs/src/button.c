@@ -24,12 +24,12 @@ void uart_print(char *buffer, int len);
 void button_pressed(struct device *dev, struct gpio_callback *cb,
             u32_t pins)
 {
-    char buffer[64];
 
     write_flash = !write_flash;
     // Flash led crashes things here...???
     // 
     //  This doesn't work all the time... Better with irq_lock
+    // char buffer[64];
     // int len = sprintf(buffer, "write_flash: %d\n", write_flash);
     // uart_print(buffer, len);
 }

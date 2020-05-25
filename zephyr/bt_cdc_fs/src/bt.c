@@ -33,6 +33,8 @@ extern struct ring_buf flashringbuf;
 extern struct fs_file_t encounter_file;
 extern int total_cache;
 
+extern uint8_t saewoo_hack[2];
+
 #define BT_LE_ADV_NCONN2 BT_LE_ADV_PARAM(4, BT_GAP_ADV_FAST_INT_MIN_2, \
                                         BT_GAP_ADV_FAST_INT_MAX_2, NULL)
 
@@ -96,6 +98,20 @@ void bt_adv (void) {
         if (write_flash) {
             blink(&led2,1);
         }
+        if (!start_adv) {
+            bt_le_adv_stop();
+
+            while (!start_adv) {
+                k_sleep(K_MSEC(1000));
+            }
+            int err = bt_le_adv_start(BT_LE_ADV_NCONN2, encounter_ad,
+                                    ARRAY_SIZE(encounter_ad), NULL, 0);
+            if (err) {
+                printk("Advertising failed to start (err %d)\n", err);
+                return;
+            }
+        }
+
         k_sleep(K_MSEC(RPI_PERIOD));
         rpi_update(tcn);
         err = bt_le_adv_update_data(encounter_ad, ARRAY_SIZE(encounter_ad), NULL, 0);
@@ -185,16 +201,33 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         char addr_string[20];
         memcpy(raw_event,(uint8_t *) &timestamp, 4);
         memcpy(raw_event+4, addr->a.val, 6);
-        raw_event[10] = 0xFF;
+        // raw_event[10] = 0xFF;
+        raw_event[10] = saewoo_hack[0]+37;
         raw_event[11] = rssi;
         memcpy(raw_event+12, buf->data+6, 20);  // skip 0x6FFD patterns
         if (show_binary) {
-            unsigned int key = irq_lock();
-            ring_buf_put(&outringbuf, raw_event, 32);
-            irq_unlock(key);
+            if (show_raw) {
+                unsigned int key = irq_lock();
+                ring_buf_put(&outringbuf, raw_event, 32);
+                irq_unlock(key);
+                uart_irq_tx_enable(cdc_dev);
+            }
             if (write_flash) {  // write to flash
-                int out_len = ring_buf_put(&flashringbuf, raw_event, 32);
+                if (ring_buf_space_get(&flashringbuf)>= 32) {  // enough space to write
+                    int out_len = ring_buf_put(&flashringbuf, raw_event, 32);
+                    if (out_len != 32) {
+                        char line[64];
+                        int len = sprintf(line, "flash write len: %d space: %d\n", 
+                                            out_len, ring_buf_space_get(&flashringbuf));
+                        // int len = sprintf(buffer, "flash_store: total_written:  %d, total_cache: %d\n", */
+                        //          total_written, total_cache); */
+                        unsigned int key = irq_lock();
+                        ring_buf_put(&outringbuf, line, len);
+                        irq_unlock(key);
+                        uart_irq_tx_enable(cdc_dev);
+                    }
                 total_cache += out_len;
+                }
             }
         } else {
             size = 0;
@@ -204,9 +237,9 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             }
             size += sprintf(addr_string+size, "%02X", addr->a.val[0]);
             char line[128];
-            int line_len = sprintf(line, "%11d, %3d, %s, %s\n",
-                            timestamp, rssi, addr_string, rpi_string);
-            
+            int line_len = sprintf(line, "%11d,%3d,%2d,%s,%s\n",
+                            timestamp, rssi, saewoo_hack[0]+37, addr_string, rpi_string);
+
             if (show_kernel) {  // This puts it on the debugger
                 printk("%s", line);
             }
@@ -219,6 +252,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
                 key=irq_lock();
                 out_len = ring_buf_put(&outringbuf, raw_event, 32);
                 irq_unlock(key);
+                uart_irq_tx_enable(cdc_dev);
             }
             if (write_flash) {  // write to flash
                 int out_len = ring_buf_put(&flashringbuf, line, line_len);

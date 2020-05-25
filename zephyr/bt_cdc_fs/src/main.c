@@ -27,14 +27,16 @@
 #include <fs/fs.h>
 #include <fs/littlefs.h>
 #include <storage/flash_map.h>
-
+#ifdef ENCOUNTER
+#include "encounter.h"
+#endif
 bool bt_started=false;
 bool start_adv=false;
 bool cdc_open=false;
 bool write_flash=false;
 bool flash_full=false;
 bool show_raw=false;
-bool show_binary=false;
+bool show_binary=true;
 bool show_kernel=false;
 bool usb_error=false;
 
@@ -48,7 +50,7 @@ extern void bt_adv(void);
 struct bt_le_scan_param scan_param = {
     .type       = BT_HCI_LE_SCAN_PASSIVE,
     .options    = BT_LE_SCAN_OPT_NONE,
-    .interval   = 0x1000,
+    .interval   = 0x0200,
     .window     = 0x0200,
 };
 
@@ -66,7 +68,7 @@ struct device *button_dev;
 
 #define MAX_PATH_LEN 255
 
-#define LINE_LENGTH 108
+#define LINE_LENGTH 100
 FS_LITTLEFS_DECLARE_DEFAULT_CONFIG(storage);
 static struct fs_mount_t lfs_storage_mnt = {
 .type = FS_LITTLEFS,
@@ -79,9 +81,26 @@ struct fs_mount_t *mp = &lfs_storage_mnt;
 struct fs_file_t encounter_file;
 extern int flash_init(void);
 extern void flash_close(void);
-// extern void clear_encounter(void);
 extern void ls(void);
 extern void encounter_info(void);
+
+uint32_t minute_timestamp=0;
+
+uint8_t private_key[32];
+uint8_t public_key[32];
+uint8_t shared_key[32];
+uint32_t next_minute;
+uint32_t epochtimesync;
+uint32_t offsettime=0;
+uint8_t saewoo_hack[2];
+#ifdef ENCOUNTER
+Encounter_record encounters[64];
+#endif
+uint32_t c_fifo_last_idx=0;
+uint32_t p_fifo_start_idx=0;
+uint32_t p_fifo_last_idx=0;
+
+bool hide_mac = true;
 
 void cdc_init(void)
 {
@@ -283,11 +302,20 @@ void read_time(uint32_t *local, uint32_t *rawtime) {
 
 void got_g(void) {
     struct fs_file_t file;
-    char line[1024];
+    char line[128];
     char fname[MAX_PATH_LEN];
     int rc;
     int total_bytes = 0;
-    memset(line, 0, 1024);
+    int pos = 0;
+    int record_length = 0;
+    int out_len = 0;
+    memset(line, 0, 128);
+
+    if (show_binary) {
+        record_length = 32;
+    } else {
+        record_length = 100;
+    }
 
     snprintf(fname, sizeof(fname), "%s/encounters", mp->mnt_point);
 
@@ -297,24 +325,27 @@ void got_g(void) {
         return;
     }
     printk("Opened file rc: %d\n", rc);
-    while((rc = fs_read(&file, line, LINE_LENGTH))) {
-        // printk("Read file rc: %d:%s", rc, line);
+    int line_count = 0;
+    while((rc = fs_read(&file, line, record_length))) {
         line[rc] = 0;
-        // usb_printf("%s", line);
-        unsigned int key = irq_lock();
-        int out_len = ring_buf_put(&outringbuf, line, rc);
-        irq_unlock(key);
-        if (out_len < rc) {
-            printk("Problem writing to uart/cdc\n");
+        if (rc == record_length) {
+            unsigned int key = irq_lock();
+            out_len = ring_buf_put(&outringbuf, line, rc);
+            irq_unlock(key);
+            uart_irq_tx_enable(cdc_dev);
+            if (out_len < rc) {
+                uart_printf("problem got_g, out_len: %d, line_len: %d\n", out_len, rc);
+            }
+
+            total_bytes += out_len;
+            line_count++;
         }
-        // printk("out_len: %d\n", out_len);
-        uart_irq_tx_enable(cdc_dev);
-        total_bytes += out_len;
     }
+    pos = fs_tell(&file);
     rc = fs_close(&file);
-    printk("Close file rc: %d\n", rc);
-    rc = sprintf(line, "total_bytes: %d\n", total_bytes);
-    uart_print(line, rc);
+    // printk("Close file rc: %d\n", rc);
+    uart_printf("total_bytes: %d\n", total_bytes);
+    // uart_print(line, rc);
 }
 
 void cleanup_cache(void) {
@@ -400,16 +431,11 @@ void flash_store(void) {
 }
 
 void parse_command(char c) {
-    uint32_t realtime=0;
     // int total_len, len_written;
             switch (c) {
                 case 'y':  // start_scan
                     {
                     start_scan();
-                    /*
-                    uart_printf("interval %u, window: %u\n", 
-                            scan_param.interval, scan_param.window);
-                    */
                     break;
                     }
                 case 'x':  // stop_scan
@@ -432,6 +458,26 @@ void parse_command(char c) {
                     // uart_printf("interval %u, window: %u\n", interval, window);
                     scan_param.interval = interval;
                     scan_param.window = window;
+                    break;
+                    }
+                case 'e':  // resume adv thread
+                    {
+                    //  thread_resume/suspend doesn't seem to work
+                    //k_thread_resume(bt_adv_id);
+                    start_adv = true;
+                    break;
+                    }
+                case 'd':  // suspend adv thread
+                    {
+                    //  thread_resume/suspend doesn't seem to work
+                    //k_thread_suspend(bt_adv_id);
+                    start_adv = false;
+                    break;
+                    }
+                case 'i': 
+                    {
+                    uart_printf("start_adv:%d, raw:%d, binary:%d, write_flash:%d, hide:%d\n", 
+                            start_adv, show_raw, show_binary, write_flash, hide_mac);
                     break;
                     }
                 case 'g':  // Get all data from FLASH
@@ -458,7 +504,7 @@ void parse_command(char c) {
                     printk("got r\n");
                     show_raw = true ;
                     break;
-                case 'z':  // Show data on USB_SERIAL PORT
+                case 'z':  // Stop data on USB_SERIAL PORT
                     printk("got z\n");
                     show_raw = false ;
                     break;
@@ -511,20 +557,25 @@ void parse_command(char c) {
                     int len = 0;
                     // char buffer[64];
                     uint32_t timestamp = k_uptime_get_32();
-                    uint8_t *temp = (uint8_t *) &realtime;
+                    uint8_t *temp = (uint8_t *) &epochtimesync;
                     //  Have to get 1 byte at a time...
                     do {
                         len += ring_buf_get(&inringbuf, temp+len, 1);
                     } while (len < 4);
 
-                    // len=sprintf(buffer, "%u, %u\n", realtime, timestamp);
+                    // len=sprintf(buffer, "%u, %u\n", epochtimesync, timestamp);
                     // uart_print(buffer, len);
-                    write_time(timestamp, realtime);
-
-                    /*
+                    write_time(timestamp, epochtimesync);
+                    offsettime = timestamp;
                     struct tm ts;
-                    time_t rawtime = (const time_t) realtime;
+                    time_t rawtime = (const time_t) epochtimesync;
                     ts = *gmtime(&rawtime);
+                    int delta = 60 - ts.tm_sec;
+                    if (delta <= 0) {
+                        delta += 60;
+                    }
+                    next_minute = timestamp + delta * 1000;
+                    /*
                     len = sprintf(buffer, "Day: %d Month: %d Year: %d\n",
                                     ts.tm_mday, ts.tm_mon, ts.tm_year);
                     uart_print(buffer, len);
@@ -534,6 +585,21 @@ void parse_command(char c) {
                     */
                     break;
                     }
+                case 'j':
+                    uart_printf("scan interval %u, window: %u\n", 
+                            scan_param.interval, scan_param.window);
+                    #ifdef ENCOUNTER
+                    uart_printf("sizeof encounter struct: %d\n", sizeof(Encounter_record));
+                    #endif
+                    break;
+                case 'o':
+                    break;
+                case 'p':
+                    hide_mac = false;
+                    break;
+                case 'q':
+                    hide_mac = true;
+                    break;
                 default:
                     {
                     printk("got %c, not defined\n", c);
@@ -566,7 +632,7 @@ void main(void)
     }
     // printk("Bluetooth initialized\n");
     bt_init();
-    start_adv = true;
+    // start_adv = true;
     // There is a thread that runs the bt_adv
     // bt_adv();
     //
@@ -576,7 +642,6 @@ void main(void)
     dtr_init();
     cdc_open=true;
     u8_t c;
-
     while (true) {
         while(ring_buf_get(&inringbuf, &c, 1)){
             parse_command(c);
