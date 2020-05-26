@@ -15,7 +15,7 @@
 #include <fs/fs.h>
 #include "encounter.h"
 #include "x25519-cortex-m4.h"
-
+#define SCAN_DEBUG
 extern void rpi_init(u8_t *rpi);
 extern void rpi_update(u8_t *rpi);
 extern void uart_printf(char *format, ...);
@@ -98,7 +98,9 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     bt_addr_le_t a[CONFIG_BT_ID_MAX];
     int count;
     */
-    // uart_printf("In callback\n");
+#ifdef SCAN_DEBUG
+    uart_printf("%u\tIn scan callback\n", timestamp);
+#endif
     /*
     bt_id_get(a, &count);
     uart_printf("num of id: %d\n", count);
@@ -140,9 +142,15 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         uint32_t epoch_minute = ((timestamp-offsettime) / 1000 + epochtimesync)/60;
         // Check if record already exists by mac
         int idx = in_encounters_fifo(addr->a.val, epoch_minute);
+#ifdef SCAN_DEBUG
+    uart_printf("\tp_idx: %d, c_idx: %d\n", p_fifo_last_idx, c_fifo_last_idx);
+#endif
         // uart_printf("idx:%d  ", idx);
         if (idx<0) {
             // No index returned
+#ifdef SCAN_DEBUG
+    uart_printf("\tCreat new encounter\n");
+#endif
             current_encounter = encounters + (c_fifo_last_idx & IDX_MASK);
             memcpy(current_encounter->mac, addr->a.val, 6);
             current_encounter->rssi_data[saewoo_hack[0]].n = 1;
@@ -155,6 +163,9 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             current_encounter->minute = epoch_minute;
             c_fifo_last_idx++;
         } else {
+#ifdef SCAN_DEBUG
+    uart_printf("\tFound previous encounter\n");
+#endif
             current_encounter = encounters + (idx & IDX_MASK);
             int n = ++current_encounter->rssi_data[saewoo_hack[0]].n;
             if (rssi > current_encounter->rssi_data[saewoo_hack[0]].max) {
@@ -173,7 +184,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         // uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
         // Update bobs shared key
         uint8_t hi_lo_byte = *(buf->data+6);
-        uart_printf("flag: %d, hi_lo_byte: %d\n", current_encounter->flag, hi_lo_byte);
+        uart_printf("\ttime: %u, flag: %d, hi_lo_byte: %d\n", timestamp, current_encounter->flag, hi_lo_byte);
         if (( current_encounter->flag &0x3) < 3) {
             if (((current_encounter->flag & 0x1) == 0) && (hi_lo_byte==0)) {
                 uart_printf("got lo part of public key\n");
@@ -193,7 +204,9 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             current_encounter->flag |= 0x4;
 
         }
-        // uart_printf("done scan cb\n");
+#ifdef SCAN_DEBUG
+         uart_printf("\tdone scan cb\n");
+#endif
         // uart_encounter(*current_encounter);
     }
 }

@@ -550,8 +550,9 @@ void parse_command(char c) {
                     {
                     printk("got s\n");
                     write_flash = false;
-                    cleanup_cache();
-                    // encounter_info();
+                    // No cleanup for encounter tracing
+                    // cleanup_cache();
+
 
                     break;
                     }
