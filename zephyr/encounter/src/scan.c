@@ -40,7 +40,7 @@ extern uint8_t shared_key[32];
 
 extern uint8_t saewoo_hack[2];
 
-extern Encounter_record encounters[64];
+extern Encounter_record encounters[IDX_MASK+1];
 
 extern uint32_t epochtimesync;
 extern uint32_t offsettime;
@@ -48,7 +48,6 @@ extern uint32_t next_minute;
 
 extern uint32_t c_fifo_last_idx;
 
-extern uint32_t p_fifo_start_idx;
 extern uint32_t p_fifo_last_idx;
 
 static bool data_cb_local(struct bt_data *data, void *user_data)
@@ -79,7 +78,7 @@ int in_encounters_fifo(const uint8_t * mac, uint32_t epoch_minute) {
     if (c_fifo_last_idx == 0) return -1;
     int start = c_fifo_last_idx - 1;
     do {
-        current_encounter = encounters + (start & 0x3F);
+        current_encounter = encounters + (start & IDX_MASK);
         if (current_encounter->minute < epoch_minute) return -1;
         if (memcmp(current_encounter->mac, mac, 6) == 0) return start;
         start--;
@@ -95,9 +94,11 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     u32_t timestamp = k_uptime_get_32();
     // uint8_t raw_event[32];
     char rpi_string[64];
+    /*
     bt_addr_le_t a[CONFIG_BT_ID_MAX];
     int count;
-
+    */
+    // uart_printf("In callback\n");
     /*
     bt_id_get(a, &count);
     uart_printf("num of id: %d\n", count);
@@ -117,6 +118,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     rssi = -rssi;
 
     bt_data_parse(buf, data_cb_local, uuid16);
+
     //if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
     if (true) {
         flash(&led2);
@@ -141,8 +143,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         // uart_printf("idx:%d  ", idx);
         if (idx<0) {
             // No index returned
-            current_encounter = encounters + (c_fifo_last_idx & 0x3F);
-            //memcpy(encounters[c_fifo_last_idx&0x3F].mac, addr->a.val, 6);
+            current_encounter = encounters + (c_fifo_last_idx & IDX_MASK);
             memcpy(current_encounter->mac, addr->a.val, 6);
             current_encounter->rssi_data[saewoo_hack[0]].n = 1;
             current_encounter->rssi_data[saewoo_hack[0]].max = rssi;
@@ -154,7 +155,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             current_encounter->minute = epoch_minute;
             c_fifo_last_idx++;
         } else {
-            current_encounter = encounters + idx;
+            current_encounter = encounters + (idx & IDX_MASK);
             int n = ++current_encounter->rssi_data[saewoo_hack[0]].n;
             if (rssi > current_encounter->rssi_data[saewoo_hack[0]].max) {
                 current_encounter->rssi_data[saewoo_hack[0]].max = rssi;
@@ -172,24 +173,27 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         // uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
         // Update bobs shared key
         uint8_t hi_lo_byte = *(buf->data+6);
+        uart_printf("flag: %d, hi_lo_byte: %d\n", current_encounter->flag, hi_lo_byte);
         if (( current_encounter->flag &0x3) < 3) {
             if (((current_encounter->flag & 0x1) == 0) && (hi_lo_byte==0)) {
+                uart_printf("got lo part of public key\n");
                 memcpy(current_encounter->public_key, buf->data+6+4, 16);
                 current_encounter->flag |= 0x1;
             }
             if (((current_encounter->flag & 0x2) == 0) && (hi_lo_byte==1)) {
+                uart_printf("got hi part of public key\n");
                 memcpy(current_encounter->public_key+16, buf->data+6+4, 16);
                 current_encounter->flag |= 0x2;
             }
         }
-        if (((current_encounter->flag&0x4)==0) && (current_encounter->flag&0x3 == 3)) {
-
+        if (((current_encounter->flag&0x4)==0) && ((current_encounter->flag&0x3) == 3)) {
+            uart_printf("calc shared key\n");
             X25519_calc_shared_secret(shared_key, private_key, current_encounter->public_key);
             memcpy(current_encounter->public_key, shared_key, 32);
             current_encounter->flag |= 0x4;
 
         }
-
+        // uart_printf("done scan cb\n");
         // uart_encounter(*current_encounter);
     }
 }

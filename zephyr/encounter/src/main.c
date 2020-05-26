@@ -94,7 +94,7 @@ uint32_t epochtimesync;
 uint32_t offsettime=0;
 uint8_t saewoo_hack[2];
 #ifdef ENCOUNTER
-Encounter_record encounters[64];
+Encounter_record encounters[IDX_MASK+1];
 #endif
 uint32_t c_fifo_last_idx=0;
 uint32_t p_fifo_start_idx=0;
@@ -384,15 +384,17 @@ void cleanup_cache(void) {
 }
 void flash_store(void) {
     Encounter_record *current_encounter;
-    uint32_t start = p_fifo_last_idx;
-    if (start==c_fifo_last_idx) return;
-
+    // uint32_t start = p_fifo_last_idx;
     uint32_t timestamp = k_uptime_get_32();
     uint32_t epoch_minute = ((timestamp-offsettime) / 1000 + epochtimesync)/60;
+    /*
+    uart_printf("epoch_minute: %d, p_idx: %d, c_idx: %d\n", epoch_minute,
+                    p_fifo_last_idx, c_fifo_last_idx);
+    */
+    while (c_fifo_last_idx > p_fifo_last_idx) {
 
-    while (c_fifo_last_idx > start) {
-
-        current_encounter = encounters + (start & 0x3F);
+        current_encounter = encounters + (p_fifo_last_idx & IDX_MASK);
+        // uart_printf("idx: %d, minute: %d\n", p_fifo_last_idx, current_encounter->minute);
         if (current_encounter->minute < epoch_minute) { // this is an old record write to flash
             uint32_t shared_key[32];
             // X25519_calc_shared_secret(shared_key, private_key, current_encounter->public_key);
@@ -400,11 +402,13 @@ void flash_store(void) {
             fs_sync(&encounter_file);
             total_written += len_written;
 
-            start++;
+            p_fifo_last_idx++;
         } else {
+            // uart_printf("Done flash_store looking back\n");
             return;
         }
     }
+    // uart_printf("Done flash_store, after while\n");
 
 }
 void flash_store_old(void) {
@@ -616,6 +620,15 @@ void parse_command(char c) {
                     uart_printf("sizeof encounter struct: %d\n", sizeof(Encounter_record));
                     #endif
                     break;
+                case 'a':
+                    printk("got a\r");
+                    uint32_t timestamp = k_uptime_get_32();
+                    printk("timestamp: %d\r", timestamp);
+                    unsigned int key = irq_lock();
+                    ring_buf_put(&outringbuf,(uint8_t *) &timestamp, 4);
+                    irq_unlock(key);
+                    uart_irq_tx_enable(cdc_dev);
+                    break;
                 case 'o':
                     break;
                 case 'p':
@@ -670,7 +683,7 @@ void main(void)
         while(ring_buf_get(&inringbuf, &c, 1)){
             parse_command(c);
         }
-        flash_store();
+        if (write_flash) flash_store();
         k_sleep(K_MSEC(2000));
 
     }
