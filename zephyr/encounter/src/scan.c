@@ -97,23 +97,24 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     char rpi_string[64];
     bt_addr_le_t a[CONFIG_BT_ID_MAX];
     int count;
-    
+
+    /*
     bt_id_get(a, &count);
     uart_printf("num of id: %d\n", count);
     for (int i=0; i<count; i++) {
         bt_addr_le_to_str(a+i, rpi_string, BT_ADDR_STR_LEN);
         uart_printf("id %d: %s\n", i, rpi_string);
     }
-    /*
     int size = 0;
     for(u8_t i=0; i<buf->len; i++) {
         size += sprintf(rpi_string+size, "%02X", buf->data[i]);
     }
-    */
     uart_printf("name: %s\n", bt_get_name());
-    rssi = -rssi;
     bt_addr_le_to_str(addr, rpi_string, BT_ADDR_STR_LEN);
     uart_printf("%s  ", rpi_string);
+    */
+
+    rssi = -rssi;
 
     bt_data_parse(buf, data_cb_local, uuid16);
     //if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
@@ -131,13 +132,13 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
         memcpy(raw_event+12, buf->data+6, 20);  // skip 0x6FFD patterns
         */
 
-        uart_printf("ch: %d, rssi: %d ", 37+saewoo_hack[0], rssi);
+        // uart_printf("ch: %d, rssi: %d ", 37+saewoo_hack[0], rssi);
 
         int sec_timestamp = (timestamp - (next_minute - 60000)) / 1000;
         uint32_t epoch_minute = ((timestamp-offsettime) / 1000 + epochtimesync)/60;
         // Check if record already exists by mac
         int idx = in_encounters_fifo(addr->a.val, epoch_minute);
-        uart_printf("idx:%d  ", idx);
+        // uart_printf("idx:%d  ", idx);
         if (idx<0) {
             // No index returned
             current_encounter = encounters + (c_fifo_last_idx & 0x3F);
@@ -151,7 +152,6 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             current_encounter->first_time = sec_timestamp;
             current_encounter->last_time = sec_timestamp;
             current_encounter->minute = epoch_minute;
-            uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
             c_fifo_last_idx++;
         } else {
             current_encounter = encounters + idx;
@@ -168,8 +168,8 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             current_encounter->rssi_data[saewoo_hack[0]].var += (rssi-new_mean)*(rssi-mean);
             current_encounter->last_time = sec_timestamp;
             current_encounter->minute = epoch_minute;
-            uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
         }
+        // uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
         // Update bobs shared key
         uint8_t hi_lo_byte = *(buf->data+6);
         if (( current_encounter->flag &0x3) < 3) {
