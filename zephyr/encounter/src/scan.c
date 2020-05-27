@@ -99,7 +99,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     int count;
     */
 #ifdef SCAN_DEBUG
-    uart_printf("%u\tIn scan callback\n", timestamp);
+    printk("%u\tIn scan callback\n", timestamp);
 #endif
     /*
     bt_id_get(a, &count);
@@ -120,7 +120,10 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
     rssi = -rssi;
 
     bt_data_parse(buf, data_cb_local, uuid16);
-
+#ifdef SCAN_DEBUG
+    printk("\tfinish parse data\n");
+#endif
+    
     //if ((uuid16[0]==0x6F) && (uuid16[1]==0xFD)) {
     if (true) {
         flash(&led2);
@@ -140,16 +143,20 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
 
         int sec_timestamp = (timestamp - (next_minute - 60000)) / 1000;
         uint32_t epoch_minute = ((timestamp-offsettime) / 1000 + epochtimesync)/60;
+
+#ifdef SCAN_DEBUG
+    printk("\tTry to check if in fifo\n");
+#endif
         // Check if record already exists by mac
         int idx = in_encounters_fifo(addr->a.val, epoch_minute);
 #ifdef SCAN_DEBUG
-    uart_printf("\tp_idx: %d, c_idx: %d\n", p_fifo_last_idx, c_fifo_last_idx);
+    printk("\tp_idx: %d, c_idx: %d\n", p_fifo_last_idx, c_fifo_last_idx);
 #endif
         // uart_printf("idx:%d  ", idx);
         if (idx<0) {
             // No index returned
 #ifdef SCAN_DEBUG
-    uart_printf("\tCreat new encounter\n");
+    printk("\tCreat new encounter\n");
 #endif
             current_encounter = encounters + (c_fifo_last_idx & IDX_MASK);
             memcpy(current_encounter->mac, addr->a.val, 6);
@@ -164,9 +171,12 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             c_fifo_last_idx++;
         } else {
 #ifdef SCAN_DEBUG
-    uart_printf("\tFound previous encounter\n");
+    printk("\tFound previous encounter: %d, %d\n",idx, (idx&IDX_MASK));
 #endif
             current_encounter = encounters + (idx & IDX_MASK);
+#ifdef SCAN_DEBUG
+    printk("\tsaewoo_hack[0]:%d\n",saewoo_hack[0] );
+#endif
             int n = ++current_encounter->rssi_data[saewoo_hack[0]].n;
             if (rssi > current_encounter->rssi_data[saewoo_hack[0]].max) {
                 current_encounter->rssi_data[saewoo_hack[0]].max = rssi;
@@ -174,17 +184,25 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
             if (rssi < current_encounter->rssi_data[saewoo_hack[0]].max) {
                 current_encounter->rssi_data[saewoo_hack[0]].min = rssi;
             }
-            int mean = current_encounter->rssi_data[saewoo_hack[0]].mean;
-            int new_mean = mean + (rssi - mean + n/2)/n;
-            current_encounter->rssi_data[saewoo_hack[0]].mean = new_mean;
-            current_encounter->rssi_data[saewoo_hack[0]].var += (rssi-new_mean)*(rssi-mean);
+#ifdef SCAN_DEBUG
+    printk("\tcompute new mean: n:%d\n",n );
+#endif
+            if (n>0) {
+                int mean = current_encounter->rssi_data[saewoo_hack[0]].mean;
+                int new_mean = mean + (rssi - mean + n/2)/n;
+                current_encounter->rssi_data[saewoo_hack[0]].mean = new_mean;
+                current_encounter->rssi_data[saewoo_hack[0]].var += (rssi-new_mean)*(rssi-mean);
+            }  // otherwise, 255 interactions in 1 minute... It has rolled over... don't computer new stuff
             current_encounter->last_time = sec_timestamp;
             current_encounter->minute = epoch_minute;
         }
         // uart_ch_rssi(current_encounter->rssi_data[saewoo_hack[0]]);
         // Update bobs shared key
+#ifdef SCAN_DEBUG
+    printk("\tDo crypto stuff\n");
+#endif
         uint8_t hi_lo_byte = *(buf->data+6);
-        uart_printf("\ttime: %u, flag: %d, hi_lo_byte: %d\n", timestamp, current_encounter->flag, hi_lo_byte);
+        // uart_printf("\ttime: %u, flag: %d, hi_lo_byte: %d\n", timestamp, current_encounter->flag, hi_lo_byte);
         if (( current_encounter->flag &0x3) < 3) {
             if (((current_encounter->flag & 0x1) == 0) && (hi_lo_byte==0)) {
                 uart_printf("got lo part of public key\n");
@@ -205,7 +223,7 @@ static void scan_cb_orig(const bt_addr_le_t *addr, s8_t rssi, u8_t adv_type,
 
         }
 #ifdef SCAN_DEBUG
-         uart_printf("\tdone scan cb\n");
+         printk("\tdone scan cb\n");
 #endif
         // uart_encounter(*current_encounter);
     }

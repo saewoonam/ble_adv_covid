@@ -146,7 +146,7 @@ void bt_adv (void) {
         }
         k_sleep(K_MSEC(1000));
 
-        printk("Update rpi\n");
+        // printk("Update rpi\n");
     } while (1);
 }
 
