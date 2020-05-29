@@ -45,12 +45,13 @@ extern void bt_init(void);
 extern void start_scan(void);
 extern void stop_scan(void);
 extern void bt_adv(void);
+extern void parse_command(char c);
 #define STACKSIZE 1024
 
 struct bt_le_scan_param scan_param = {
     .type       = BT_HCI_LE_SCAN_PASSIVE,
     .options    = BT_LE_SCAN_OPT_NONE,
-    .interval   = 0x0200,
+    .interval   = 0x1000,
     .window     = 0x0200,
 };
 
@@ -101,6 +102,8 @@ uint32_t p_fifo_start_idx=0;
 uint32_t p_fifo_last_idx=0;
 
 bool hide_mac = true;
+int ret_flash;
+uint8_t mac_addr[6];
 
 void cdc_init(void)
 {
@@ -378,9 +381,11 @@ void cleanup_cache(void) {
     fs_sync(&encounter_file);
     total_written += len_written;
 
-    len = sprintf(buffer, "cleanup cache total_written:  %d, total_cache: %d\n",
+    uart_printf( "cleanup cache total_written:  %d, total_cache: %d\n",
             total_written, total_cache);
-    uart_print(buffer, len);
+    // len = sprintf(buffer, "cleanup cache total_written:  %d, total_cache: %d\n",
+    //         total_written, total_cache);
+    // uart_print(buffer, len);
 }
 
 void flash_store(void) {
@@ -430,7 +435,9 @@ void flash_store(void) {
     }
 }
 
+/*
 void parse_command(char c) {
+    const char *version_str = "Version: " __DATE__ " " __TIME__;
     // int total_len, len_written;
             switch (c) {
                 case 'y':  // start_scan
@@ -530,8 +537,8 @@ void parse_command(char c) {
                 case 'f': // get info about flash and cache
                     {
                     char buffer[64];
-                    int len = sprintf(buffer, "total_written:  %d, total_cache: %d\n",
-                            total_written, total_cache);
+                    int len = sprintf(buffer, "init: %d, total_written:  %d, total_cache: %d\n",
+                            ret_flash, total_written, total_cache);
                     uart_print(buffer, len);
                     break;
                     }
@@ -575,14 +582,6 @@ void parse_command(char c) {
                         delta += 60;
                     }
                     next_minute = timestamp + delta * 1000;
-                    /*
-                    len = sprintf(buffer, "Day: %d Month: %d Year: %d\n",
-                                    ts.tm_mday, ts.tm_mon, ts.tm_year);
-                    uart_print(buffer, len);
-                    uint32_t a, b;
-                    read_time(&a, &b); 
-                    uart_printf("%u, %u\n", a, b);
-                    */
                     break;
                     }
                 case 'j':
@@ -592,8 +591,49 @@ void parse_command(char c) {
                     uart_printf("sizeof encounter struct: %d\n", sizeof(Encounter_record));
                     #endif
                     break;
-                case 'o':
+                case 'a':
+                    {
+                    printk("got a\r");
+                    uint32_t timestamp = k_uptime_get_32();
+                    printk("timestamp: %d\r", timestamp);
+                    unsigned int key = irq_lock();
+                    ring_buf_put(&outringbuf,(uint8_t *) &timestamp, 4);
+                    irq_unlock(key);
+                    uart_irq_tx_enable(cdc_dev);
                     break;
+                    }
+                case 'h':
+                    uart_printf("%s\n", version_str);
+                    break;
+                case 'm': // Send MAC address
+                    {
+                    unsigned int key = irq_lock();
+                    ring_buf_put(&outringbuf,(uint8_t *) mac_addr, 6);
+                    irq_unlock(key);
+                    uart_irq_tx_enable(cdc_dev);
+                    break;
+                    }
+                case 'o':
+                    {
+                    // uint32_t epochtimesync;
+                    // uint32_t offsettime;
+                    int len=0;
+                    uint8_t *temp;
+                    temp = (uint8_t *) &epochtimesync;
+                    //  Have to get 1 byte at a time...
+                    do {
+                        len += ring_buf_get(&inringbuf, temp+len, 1);
+                    } while (len < 4);
+                    len = 0;
+                    temp = (uint8_t *) &offsettime;
+                    //  Have to get 1 byte at a time...
+                    do {
+                        len += ring_buf_get(&inringbuf, temp+len, 1);
+                    } while (len < 4);
+                    uart_printf("%u %u\n", epochtimesync, offsettime);
+                    write_time(offsettime, epochtimesync);
+                    break;
+                    }
                 case 'p':
                     hide_mac = false;
                     break;
@@ -607,6 +647,7 @@ void parse_command(char c) {
                     }
             }
 }
+*/
 
 void main(void)
 {
@@ -626,7 +667,7 @@ void main(void)
     ring_buf_init(&inringbuf, sizeof(in_ring_buffer), in_ring_buffer);
     ring_buf_init(&outringbuf, sizeof(out_ring_buffer), out_ring_buffer);
     ring_buf_init(&flashringbuf, sizeof(flash_ring_buffer), flash_ring_buffer);
-    flash_init();
+    ret_flash = flash_init();
     for (int i=0; i<5; i++){
         flash(&led1);
     }
@@ -637,6 +678,15 @@ void main(void)
     // bt_adv();
     //
     start_scan();
+    // 
+    // Try to figure out mac address
+    //
+    bt_addr_le_t a[CONFIG_BT_ID_MAX];
+    int count;
+    bt_id_get(a, &count);
+    // First entry is probably mac address
+    memcpy(mac_addr, a->a.val, 6);
+
     cdc_init();
     usb_init();
     dtr_init();
