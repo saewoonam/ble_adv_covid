@@ -1,4 +1,4 @@
-# nRF520840 project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for BBC microbit, Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon), Sparkfun Pro nRF52840 mini, and our custom open source hardware we are developing
+# nRF5 nordic devices project to implement bluetooth part of Google/Apple contact tracing bluetooth protocol, radio part works for BBC microbit, Adafruit nRF52840 feather, nrf52840 dongle, Particle Gen 3 devices (Argon, Boron, Xenon), Sparkfun Pro nRF52840 mini, and our custom open source hardware we are developing
 [Apple/Google announcment](https://www.apple.com/covid19/contacttracing/)  
 [Bluetooth spec](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ContactTracing-BluetoothSpecificationv1.1.pdf)
 
