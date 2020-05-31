@@ -347,7 +347,7 @@ void got_g(void) {
     pos = fs_tell(&file);
     rc = fs_close(&file);
     // printk("Close file rc: %d\n", rc);
-    uart_printf("total_bytes: %d\n", total_bytes);
+    uart_printf("total_bytes: %d, line_count: %d\n", total_bytes, line_count);
     // uart_print(line, rc);
 }
 

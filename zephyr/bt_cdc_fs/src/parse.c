@@ -143,7 +143,7 @@ void parse_command(char c) {
                     {
                     char buffer[64];
                     // int len = sprintf(buffer, "init: %d, total_written:  %d, total_cache: %d\n",
-                    uart_printf(buffer, "init: %d, total_written:  %d, total_cache: %d\n",
+                    uart_printf("init: %d, total_written:  %d, total_cache: %d\n",
                             ret_flash, total_written, total_cache);
                     // uart_print(buffer, len);
                     break;
