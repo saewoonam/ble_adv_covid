@@ -6,4 +6,10 @@ K BLE Bluetooth microcontroller
 F https://www.adafruit.com/product/2471
 $ENDCMP
 #
+$CMP Nordic_nRF52840_breakout_noSWpins
+D BLE Bluetooth dongle
+K BLE Bluetooth microcontroller
+F https://www.adafruit.com/product/2471
+$ENDCMP
+#
 #End Doc Library
