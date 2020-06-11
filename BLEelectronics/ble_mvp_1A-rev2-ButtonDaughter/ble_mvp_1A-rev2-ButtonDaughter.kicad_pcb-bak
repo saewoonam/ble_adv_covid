@@ -88,7 +88,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "gerbers/rev2/"))
+      (outputdirectory "gerbers/ButtonDaught-rev0-formvp1arev2/"))
   )
 
   (net 0 "")
@@ -520,7 +520,7 @@
   (segment (start 145.6131 90.56) (end 141.8068 86.7537) (width 0.25) (layer B.Cu) (net 20))
   (segment (start 156.761793 90.56) (end 145.6131 90.56) (width 0.25) (layer B.Cu) (net 20))
 
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5EDF9E72) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5EDFA90D) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -699,7 +699,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5EDF9E6F) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5EDFA90A) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
